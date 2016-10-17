@@ -1,0 +1,93 @@
+/* 
+  Localizable.strings
+  Streamini
+
+  Created by Vasily Evreinov on 29/06/15.
+  Copyright (c) 2015 UniProgy s.r.o. All rights reserved.
+*/
+
+"current_password" = "Current Password";
+"new_password" = "New Password";
+"confirm_password" = "Confirm Password";
+"sign_in" = "Sign In";
+"sign_up" = "Sign Up";
+"username" = "Username";
+"password" = "Password";
+"email" = "Email address";
+"username_or_email" = "Username or Email Address";
+"forgot_password" = "Forgot password?";
+"please_provide_username" = "Please input either username or email address in the field above";
+"password_reset" = "Your password has been reset. Please check your email";
+"profile_change_password" = "Change Password";
+"current_password_wrong" = "Current password is not correct";
+"passwords_do_not_match" = "Passwords do not match";
+"password_changed" = "New password has been saved";
+"ok" = "Ok";
+"yes" = "Yes";
+"no" = "No";
+"view" = "View";
+"dismiss" = "Dismiss";
+"cancel" = "Cancel";
+"table_no_data" = "Nothing found.";
+"login_with_twitter_button" = "Login with Twitter";
+"login_twitter_error" = "Can't authorize with your Twitter account";
+"recent_streams" = "RECENT";
+"stream_name_placeholder" = "What's happening?";
+"go_live_button" = "GO LIVE!";
+"connecting_stream_label" = "Connecting...";
+"stream_live_count" = "LIVE";
+"global_title" = "Global";
+"followed_title" = "Followed";
+"cant_join_stream_alert_title" = "Can't join the stream";
+"cant_join_stream_alert_message" = "Looks like you can't join the video now. Please, try again later";
+"create_stream_post_message" = "Watch %1$@ live: %2$@";
+"stream_info_share_button" = "Share";
+"stream_info_report_button" = "Report";
+"report_stream_alert_title" = "Report stream";
+"report_stream_alert_message" = "Are you sure you want to report stream %1$@ ?";
+"select_followers_title" = "Share Stream";
+"share_actionsheet_title" = "Share streem with";
+"share_all_followers" = "All Followers";
+"select_followers" = "Select Followers";
+"search_followers_placeholder" = "Search follower";
+"stat_viewers" = "VIEWERS";
+"stat_likes" = "LIKES";
+"stat_replays" = "REPLAYS";
+"stream_close_alert_title" = "Stream ended";
+"stream_close_alert_message" = "Stream ended. To close the view and return to Main screen tap on Close button";
+"w_share_notification" = "%@ wants you to see %@";
+"w_live_notification" = "%@ is live!";
+"user_card_followers" = "FOLLOWERS";
+"user_card_following" = "FOLLOWING";
+"user_card_recent" = "RECENT";
+"user_card_follow" = "Follow";
+"user_card_unfollow" = "Unfollow";
+"user_card_block" = "Block";
+"user_card_unblock" = "Unblock";
+"people_title" = "People";
+"people_top" = "TOP";
+"people_featured" = "FEATURED";
+"profile_title" = "My Account";
+"profile_userpic_actionsheet_title" = "Change user picture";
+"profile_userpic_camera" = "Camera";
+"profile_userpic_gallery" = "Gallery";
+"profile_description_placeholder" = "Tap here to add description";
+"profile_logout_actionsheet_title" = "You want to log out?";
+"profile_following" = "Following";
+"profile_followers" = "Followers";
+"profile_blocked" = "Blocked";
+"profile_streams" = "Streams";
+"profile_share" = "Share";
+"profile_share_message" = "Streamini is awesome!";
+"profile_feedback" = "Feedback";
+"profile_terms" = "Terms of Service";
+"profile_privacy" = "Privacy Policy";
+"profile_logout" = "Logout";
+"feedback_title" = "Feedback";
+"mail_unavailable_error_alert_title" = "Can't send emails";
+"mail_unavailable_error_alert_message" = "Please check your email settings to send emails";
+"blocked_alert_message" = "You have been blocked by the stream author.";
+"category" = "Category";
+"broadcasts" = "Broadcasts";
+"places" = "Places";
+"people" = "People";

@@ -1,0 +1,89 @@
+//
+//  GetStartedViewController.swift
+//  Streamini
+//
+//  Created by Ankit Garg on 8/27/16.
+//  Copyright © 2016 UniProgy s.r.o. All rights reserved.
+//
+
+class GetStartedViewController: UIViewController
+{
+    @IBOutlet var pageControl:UIPageControl?
+    @IBOutlet var titleLbl:UILabel?
+    @IBOutlet var descriptionLbl:UILabel?
+    
+    var backgroundPlayer:BackgroundVideo?
+    let titlesArray=["Browse","Find","New","Way","View"]
+    let descriptionsArray=["Lets meet of new way of explore world0", "Lets meet of new way of explore world1", "Lets meet of new way of explore world2", "Lets meet of new way of explore world3", "Lets meet of new way of explore world4"]
+    var count=0
+    var timer:NSTimer?
+    
+    override func viewDidLoad()
+    {
+        super.viewDidLoad()
+        
+        backgroundPlayer=BackgroundVideo(onViewController:self,withVideoURL:"test.mp4")
+        backgroundPlayer?.setUpBackground()
+        
+        titleLbl?.text=titlesArray[count]
+        descriptionLbl?.text=descriptionsArray[count]
+        
+        timer=NSTimer.scheduledTimerWithTimeInterval(5, target:self, selector:#selector(GetStartedViewController.swipeLeft), userInfo:nil, repeats:true)
+        
+        let swipeLeft=UISwipeGestureRecognizer(target:self, action:#selector(GetStartedViewController.swipe(_:)))
+        swipeLeft.direction = .Left
+        view.addGestureRecognizer(swipeLeft)
+        
+        let swipeRight=UISwipeGestureRecognizer(target:self, action:#selector(GetStartedViewController.swipe(_:)))
+        swipeRight.direction = .Right
+        view.addGestureRecognizer(swipeRight)
+    }
+    
+    func swipe(recognizer:UISwipeGestureRecognizer)
+    {
+        if(recognizer.direction == .Left)
+        {
+            timer?.invalidate()
+            swipeLeft()
+        }
+        if(recognizer.direction == .Right)
+        {
+            timer?.invalidate()
+            swipeRight()
+        }
+        if(recognizer.state == .Ended)
+        {
+            timer=NSTimer.scheduledTimerWithTimeInterval(5, target:self, selector:#selector(GetStartedViewController.swipeLeft), userInfo:nil, repeats:true)
+        }
+    }
+    
+    func swipeLeft()
+    {
+        count += 1
+        
+        if(count>4)
+        {
+            count=0
+        }
+        
+        pageControl?.currentPage=count
+        
+        titleLbl?.text=titlesArray[count]
+        descriptionLbl?.text=descriptionsArray[count]
+    }
+    
+    func swipeRight()
+    {
+        count -= 1
+        
+        if(count<0)
+        {
+            count=4
+        }
+        
+        pageControl?.currentPage=count
+        
+        titleLbl?.text=titlesArray[count]
+        descriptionLbl?.text=descriptionsArray[count]
+    }
+}

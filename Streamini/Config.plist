@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>PubNub</key>
+	<dict>
+		<key>publishKey</key>
+		<string></string>
+		<key>subscribeKey</key>
+		<string></string>
+	</dict>
+	<key>Twitter</key>
+	<dict>
+		<key>consumerKey</key>
+		<string></string>
+		<key>consumerSecret</key>
+		<string></string>
+		<key>tweetURL</key>
+		<string></string>
+	</dict>
+	<key>Amazon</key>
+	<dict>
+		<key>accessKeyId</key>
+		<string></string>
+		<key>secretAccessKey</key>
+		<string></string>
+		<key>region</key>
+		<string></string>
+		<key>imagesBucket</key>
+		<string></string>
+		<key>streamBucket</key>
+		<string></string>
+	</dict>
+	<key>Wowza</key>
+	<dict>
+		<key>host</key>
+		<string>cedricm.cn</string>
+		<key>port</key>
+		<string>1935</string>
+		<key>application</key>
+		<string>live</string>
+		<key>username</key>
+		<string>cmtv</string>
+		<key>password</key>
+		<string>dotnetdev</string>
+	</dict>
+	<key>Feedback</key>
+	<dict>
+		<key>email</key>
+		<string></string>
+	</dict>
+	<key>Legal</key>
+	<dict>
+		<key>termsOfService</key>
+		<string></string>
+		<key>privacyPolicy</key>
+		<string></string>
+	</dict>
+	<key>API</key>
+	<dict>
+		<key>site</key>
+		<string>http://beinit.live</string>
+		<key>host</key>
+		<string>http://beinit.live/api</string>
+	</dict>
+</dict>
+</plist>

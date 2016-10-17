@@ -1,0 +1,1 @@
+../../../PubNub/PubNub/PubNub/PubNub/Data/PNChannelEvents+Protected.h
