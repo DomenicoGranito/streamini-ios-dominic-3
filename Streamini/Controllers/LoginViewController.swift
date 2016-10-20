@@ -8,7 +8,6 @@
 
 class LoginViewController: BaseViewController
 {
-   
     @IBOutlet var usernameTxt:UITextField?
     @IBOutlet var passwordTxt:UITextField?
     @IBOutlet var usernameImageView:UIImageView?
@@ -32,16 +31,8 @@ class LoginViewController: BaseViewController
             let vc=storyBoard.instantiateViewControllerWithIdentifier("RootViewControllerId")
             navigationController?.pushViewController(vc, animated:false)
         }
-        
-        
-        
-       // UserConnector().get(nil, success: successUser, failure: failureUser)
-        
     }
     
-    
-    
-
     @IBAction func login()
     {
         let loginData=NSMutableDictionary()
@@ -64,27 +55,9 @@ class LoginViewController: BaseViewController
             loginData["apn"]=""
         }
         
-        
-     //   UserConnector().get(nil, success: successUser, failure: failureUser)
-        
         let connector=UserConnector()
         connector.login(loginData, success:loginSuccess, failure:forgotFailure)
-        UserConnector().get(nil, success: successUser, failure: failureUser)
     }
-    
-    
-    
-    func successUser(user: User) {
-        UserContainer.shared.setLogged(user)
-    }
-    
-    func failureUser(error: NSError) {
-        handleError(error)
-    }
-    
-    
-    
-    
     
     func loginSuccess(session:String)
     {
@@ -150,5 +123,5 @@ class LoginViewController: BaseViewController
         }
         
         return true
-    }    
+    }
 }
