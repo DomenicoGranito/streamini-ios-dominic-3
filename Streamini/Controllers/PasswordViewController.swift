@@ -15,7 +15,7 @@ class PasswordViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let doneBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Done, target: self, action: #selector(PasswordViewController.doneButtonPressed(_:)))
+        let doneBarButtonItem=UIBarButtonItem(barButtonSystemItem:.Done, target:self, action:#selector(doneButtonPressed))
         self.navigationItem.rightBarButtonItem = doneBarButtonItem
         
         currentPassword.placeholder = NSLocalizedString("current_password", comment: "")

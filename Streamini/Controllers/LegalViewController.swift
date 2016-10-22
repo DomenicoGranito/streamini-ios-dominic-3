@@ -32,11 +32,7 @@ class LegalViewController: BaseViewController, UIWebViewDelegate {
         
         let url = NSURL(string: urlString)!
         webView.loadRequest(NSURLRequest(URL: url))
-        
-        // Do any additional setup after loading the view.
     }
-    
-    // MARK: - UIWebViewDelegate
     
     func webView(webView: UIWebView, shouldStartLoadWithRequest request: NSURLRequest, navigationType: UIWebViewNavigationType) -> Bool {
         if navigationType == UIWebViewNavigationType.LinkClicked {

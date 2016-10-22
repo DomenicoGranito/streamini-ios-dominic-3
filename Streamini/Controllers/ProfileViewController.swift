@@ -7,7 +7,6 @@
 //
 
 import MessageUI
-//import TwitterKit
 
 enum ProfileActionSheetType: Int {
     case ChangeAvatar
@@ -154,8 +153,6 @@ ProfileDelegate {
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: activator)
         UserConnector().get(nil, success: successGetUser, failure: successFailure)
-        
-        // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -209,11 +206,6 @@ ProfileDelegate {
         handleError(error)
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     func logoutSuccess() {
         if let session = A0SimpleKeychain().stringForKey("PHPSESSID") {
             A0SimpleKeychain().deleteEntryForKey("PHPSESSID")

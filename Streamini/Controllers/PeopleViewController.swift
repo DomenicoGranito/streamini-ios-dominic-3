@@ -6,9 +6,6 @@
 //  Copyright (c) 2015 UniProgy s.r.o. All rights reserved.
 //
 
-
-
-
 import UIKit
 
 class PeopleViewController: BaseViewController, UserSelecting, ProfileDelegate, UISearchBarDelegate, UserStatusDelegate {
@@ -91,13 +88,12 @@ class PeopleViewController: BaseViewController, UserSelecting, ProfileDelegate, 
         hideSearch(false)
     }
     
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
         configureView()
         
         dataSource!.reload()
-        // Do any additional setup after loading the view.
-
     }
     
     override func viewWillAppear(animated: Bool) {

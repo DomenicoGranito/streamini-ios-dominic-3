@@ -19,15 +19,15 @@ class CategoriesViewController: UIViewController
     
     func tableView(tableView:UITableView, viewForHeaderInSection section:Int)->UIView?
     {
-        let headerView=UIView(frame:CGRectMake(0,0,60,tableView.frame.size.width))
+        let headerView=UIView(frame:CGRectMake(0, 0, 60, tableView.frame.size.width))
         headerView.backgroundColor=UIColor(colorLiteralRed:18/255, green:19/255, blue:21/255, alpha:1)
         
-        let titleLbl=UILabel(frame:CGRectMake(10,20,300,20))
+        let titleLbl=UILabel(frame:CGRectMake(10, 20, 300, 20))
         titleLbl.text="POPULAR LIST"
         titleLbl.font=UIFont.systemFontOfSize(14)
         titleLbl.textColor=UIColor.lightGrayColor()
         
-        let lineView=UIView(frame:CGRectMake(10,45,tableView.frame.size.width-20,1))
+        let lineView=UIView(frame:CGRectMake(10, 45, tableView.frame.size.width-20, 1))
         lineView.backgroundColor=UIColor.darkGrayColor()
         
         headerView.addSubview(lineView)

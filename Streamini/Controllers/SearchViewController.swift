@@ -65,13 +65,12 @@ class SearchViewController: BaseViewController, UserSelecting, StreamSelecting, 
         //self.edgesForExtendedLayout = UIRectEdgeNone;
     }
     
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
         configureView()
         
         dataSource!.reload()
-        // Do any additional setup after loading the view.
-        
     }
     
     override func viewWillAppear(animated: Bool) {

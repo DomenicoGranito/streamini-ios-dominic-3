@@ -298,13 +298,6 @@ UITextViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
         aTextview.alpha = 1.0
     }
     
-    // MARK: - Memory management
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     deinit {
         camera.stop()
     }
@@ -318,28 +311,24 @@ UITextViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
         })
     }
     
-    // The number of columns of data
-    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+    func numberOfComponentsInPickerView(pickerView:UIPickerView)->Int
+    {
         return 1
     }
     
-    // The number of rows of data
-    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+    func pickerView(pickerView:UIPickerView, numberOfRowsInComponent component:Int)->Int
+    {
         return categories.count
     }
     
-    // The data to return for the row and component (column) that's being passed in
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        let c = categories[row]
-        return c.name
+    func pickerView(pickerView:UIPickerView, titleForRow row:Int, forComponent component:Int)->String?
+    {
+        return categories[row].name
     }
     
-    // Catpure the picker view selection
-    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        // This method is triggered whenever the user makes a change to the picker selection.
-        // The parameter named row and component represents what was selected.
-        let c = categories[row]
-        self.selectedCategory = c;
+    func pickerView(pickerView:UIPickerView, didSelectRow row:Int, inComponent component:Int)
+    {
+        self.selectedCategory=categories[row]
         updateCategory()
     }
 }

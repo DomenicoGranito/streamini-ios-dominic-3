@@ -20,7 +20,7 @@ class RootViewController: BaseViewController, RootViewControllerDelegate {
     var containerViewController: ContainerViewController?
     
    // weak var delegate: MainViewControllerDelegate?
-    weak var delegate: HomeViewControllerDelegate?
+   // weak var delegate: HomeViewControllerDelegate?
     var isGlobal = false
     
     // MARK: - Actions

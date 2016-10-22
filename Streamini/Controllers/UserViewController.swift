@@ -140,9 +140,9 @@ class UserViewController: BaseViewController, UserHeaderViewDelegate, ProfileDel
         blockButton.hidden  = UserContainer.shared.logged().id == user!.id
     }
     
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         
         configureView()
         update(user!.id)
