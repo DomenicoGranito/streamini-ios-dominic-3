@@ -96,34 +96,40 @@ class PeopleViewController: BaseViewController, UserSelecting, ProfileDelegate, 
         dataSource!.reload()
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(animated: Bool)
+    {
         super.viewWillAppear(animated)
         UIApplication.sharedApplication().setStatusBarHidden(false, withAnimation: .Fade)
     }
     
     // MARK: - ProfileDelegate
     
-    func reload() {
+    func reload()
+    {
         dataSource!.reload()
     }
     
-    func close() {
+    func close()
+    {
+        
     }    
     
     // MARK: - UserStatusDelegate
     
-    func followStatusDidChange(status: Bool, user: User) {
+    func followStatusDidChange(status: Bool, user: User)
+    {
         dataSource!.updateUser(user, isFollowed: status, isBlocked: user.isBlocked)
     }
     
-    func blockStatusDidChange(status: Bool, user: User) {
+    func blockStatusDidChange(status: Bool, user: User)
+    {
         dataSource!.updateUser(user, isFollowed: user.isFollowed, isBlocked: status)
     }
     
     // MARK: - UserSelecting protocol
     
     func userDidSelected(user: User) {
-        self.showUserInfo(user, userStatusDelegate: self)
+        //self.showUserInfo(user, userStatusDelegate: self)
         searchBar.resignFirstResponder()
     }
 }

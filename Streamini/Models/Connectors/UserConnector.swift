@@ -38,7 +38,8 @@ class UserConnector: Connector {
         manager.addResponseDescriptor(userResponseDescriptor)
         
         var params = self.sessionParams()
-        if let uid = id {
+        if let uid = id
+        {
             params!["id"] = uid
         }
         

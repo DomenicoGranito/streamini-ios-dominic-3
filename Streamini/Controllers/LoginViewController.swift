@@ -63,8 +63,15 @@ class LoginViewController: BaseViewController
     {
         A0SimpleKeychain().setString(session, forKey:"PHPSESSID")
         
+        UserConnector().get(nil, success:successUser, failure:forgotFailure)
+        
         let vc=storyBoard.instantiateViewControllerWithIdentifier("RootViewControllerId")
         navigationController?.pushViewController(vc, animated:true)
+    }
+    
+    func successUser(user:User)
+    {
+        UserContainer.shared.setLogged(user)
     }
     
     @IBAction func forgotPassword()

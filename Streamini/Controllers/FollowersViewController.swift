@@ -88,15 +88,18 @@ class FollowersViewController: BaseTableViewController, UISearchBarDelegate, Use
     
     // MARK: - UITableView Delegate & DataSource
     
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSectionsInTableView(tableView:UITableView)->Int
+    {
         return 1
     }
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(tableView:UITableView, numberOfRowsInSection section:Int)->Int
+    {
         return users.count
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    override func tableView(tableView:UITableView, cellForRowAtIndexPath indexPath:NSIndexPath)->UITableViewCell
+    {
         let user = users[indexPath.row]
         let cell = tableView.dequeueReusableCellWithIdentifier("followerCell", forIndexPath: indexPath) as! FollowerCell
         cell.userSelectedDelegate = self
@@ -105,7 +108,8 @@ class FollowersViewController: BaseTableViewController, UISearchBarDelegate, Use
         return cell        
     }
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(tableView:UITableView, didSelectRowAtIndexPath indexPath:NSIndexPath)
+    {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         let user = users[indexPath.row]
         let cell = tableView.cellForRowAtIndexPath(indexPath) as! FollowerCell
