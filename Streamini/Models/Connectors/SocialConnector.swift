@@ -19,12 +19,12 @@ class SocialConnector: Connector {
         }
         
         let responseMapping = UserMappingProvider.userResponseMapping()
-        let statusCode = RKStatusCodeIndexSetForClass(RKStatusCodeClass.Successful)
+        let statusCode = RKStatusCodeIndexSetForClass(.Successful)
         
-        let topResponseDescriptor = RKResponseDescriptor(mapping: responseMapping, method: RKRequestMethod.GET, pathPattern: nil, keyPath: "data.top", statusCodes: statusCode)
+        let topResponseDescriptor = RKResponseDescriptor(mapping: responseMapping, method:.GET, pathPattern: nil, keyPath: "data.top", statusCodes: statusCode)
         manager.addResponseDescriptor(topResponseDescriptor)
         
-        let featuresResponseDescriptor = RKResponseDescriptor(mapping: responseMapping, method: RKRequestMethod.GET, pathPattern: nil, keyPath: "data.featured", statusCodes: statusCode)
+        let featuresResponseDescriptor = RKResponseDescriptor(mapping: responseMapping, method:.GET, pathPattern: nil, keyPath: "data.featured", statusCodes: statusCode)
         manager.addResponseDescriptor(featuresResponseDescriptor)
         
         manager.getObjectsAtPath(path, parameters: params, success: { (operation, mappingResult) -> Void in
@@ -62,9 +62,9 @@ class SocialConnector: Connector {
         }
 
         let responseMapping = UserMappingProvider.userResponseMapping()
-        let statusCode = RKStatusCodeIndexSetForClass(RKStatusCodeClass.Successful)
+        let statusCode = RKStatusCodeIndexSetForClass(.Successful)
         
-        let responseDescriptor = RKResponseDescriptor(mapping: responseMapping, method: RKRequestMethod.GET, pathPattern: nil, keyPath: "data.users", statusCodes: statusCode)
+        let responseDescriptor = RKResponseDescriptor(mapping: responseMapping, method:.GET, pathPattern: nil, keyPath: "data.users", statusCodes: statusCode)
         manager.addResponseDescriptor(responseDescriptor)
         
         manager.getObjectsAtPath(path, parameters: params, success: { (operation, mappingResult) -> Void in

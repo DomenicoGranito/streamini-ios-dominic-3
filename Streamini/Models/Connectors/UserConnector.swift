@@ -32,13 +32,14 @@ class UserConnector: Connector {
         
         let responseMapping = UserMappingProvider.userResponseMapping()
         
-        let statusCode = RKStatusCodeIndexSetForClass(RKStatusCodeClass.Successful)
+        let statusCode = RKStatusCodeIndexSetForClass(.Successful)
         
-        let userResponseDescriptor = RKResponseDescriptor(mapping: responseMapping, method: RKRequestMethod.GET, pathPattern: nil, keyPath: "data", statusCodes: statusCode)
+        let userResponseDescriptor = RKResponseDescriptor(mapping: responseMapping, method:.GET, pathPattern: nil, keyPath: "data", statusCodes: statusCode)
         manager.addResponseDescriptor(userResponseDescriptor)
         
-        var params = self.sessionParams()
-        if let uid = id
+        var params=self.sessionParams()
+        
+        if let uid=id
         {
             params!["id"] = uid
         }
@@ -106,7 +107,7 @@ class UserConnector: Connector {
         let path = "user/avatar"
         
         let request =
-        manager.multipartFormRequestWithObject(nil, method: RKRequestMethod.POST, path: path, parameters: self.sessionParams()) { (formData) -> Void in
+        manager.multipartFormRequestWithObject(nil, method:.POST, path: path, parameters: self.sessionParams()) { (formData) -> Void in
             formData.appendPartWithFileData(data, name: "image", fileName: filename, mimeType: "image/jpeg")
         }
         
@@ -212,9 +213,9 @@ class UserConnector: Connector {
     
     private func usersList(path: String, data: NSDictionary, success: (users: [User]) -> (), failure: (error: NSError) -> ()) {
         let responseMapping = UserMappingProvider.userResponseMapping()
-        let statusCode = RKStatusCodeIndexSetForClass(RKStatusCodeClass.Successful)
+        let statusCode = RKStatusCodeIndexSetForClass(.Successful)
         
-        let userResponseDescriptor = RKResponseDescriptor(mapping: responseMapping, method: RKRequestMethod.GET, pathPattern: nil, keyPath: "data.users", statusCodes: statusCode)
+        let userResponseDescriptor = RKResponseDescriptor(mapping: responseMapping, method:.GET, pathPattern: nil, keyPath: "data.users", statusCodes: statusCode)
         manager.addResponseDescriptor(userResponseDescriptor)
         
         var params = self.sessionParams()

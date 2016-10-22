@@ -23,11 +23,14 @@ class Connector: NSObject {
         self.addErrorResponseDescriptor()
     }
     
-    func sessionParams() -> [NSObject : AnyObject]? {
-        if let session = A0SimpleKeychain().stringForKey("PHPSESSID") {
-            let params: [NSObject: AnyObject] = [ "PHPSESSID" : session ]
-            return params
-        } else {
+    func sessionParams()->[String:AnyObject]?
+    {
+        if let session=A0SimpleKeychain().stringForKey("PHPSESSID")
+        {
+            return ["PHPSESSID":session]
+        }
+        else
+        {
             return nil
         }
     }
@@ -53,13 +56,13 @@ class Connector: NSObject {
         let requestMapping  = UserMappingProvider.loginRequestMapping()
         let responseMapping = UserMappingProvider.loginResponseMapping()
         
-        let requestDescriptor = RKRequestDescriptor(mapping: requestMapping, objectClass: NSDictionary.self, rootKeyPath: nil, method: RKRequestMethod.POST)
+        let requestDescriptor = RKRequestDescriptor(mapping: requestMapping, objectClass: NSDictionary.self, rootKeyPath: nil, method:.POST)
         
         manager.addRequestDescriptor(requestDescriptor)
         
-        let statusCode = RKStatusCodeIndexSetForClass(RKStatusCodeClass.Successful)
+        let statusCode = RKStatusCodeIndexSetForClass(.Successful)
         
-        let loginResponseDescriptor = RKResponseDescriptor(mapping: responseMapping, method: RKRequestMethod.POST, pathPattern: nil, keyPath: "data", statusCodes: statusCode)
+        let loginResponseDescriptor = RKResponseDescriptor(mapping: responseMapping, method:.POST, pathPattern: nil, keyPath: "data", statusCodes: statusCode)
         manager.addResponseDescriptor(loginResponseDescriptor)
         
         manager.postObject(loginData, path: path, parameters: nil, success: { (operation, mappingResult) -> Void in
@@ -96,8 +99,8 @@ class Connector: NSObject {
     func addErrorResponseDescriptor() {
         let mapping = ErrorMappingProvider.errorObjectMapping()
 
-        let statusCode = RKStatusCodeIndexSetForClass(RKStatusCodeClass.Successful)
-        self.errorDescriptor = RKResponseDescriptor(mapping: mapping, method:RKRequestMethod.Any, pathPattern: nil, keyPath: "", statusCodes: statusCode)
+        let statusCode = RKStatusCodeIndexSetForClass(.Successful)
+        self.errorDescriptor = RKResponseDescriptor(mapping: mapping, method:.Any, pathPattern: nil, keyPath: "", statusCodes: statusCode)
         self.manager.addResponseDescriptor(self.errorDescriptor)
     }
     

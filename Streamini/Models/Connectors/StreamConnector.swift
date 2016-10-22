@@ -14,9 +14,9 @@ class StreamConnector: Connector {
         let path = "stream/cities"
         
         let mapping = StreamMappingProvider.cityResponseMapping()
-        let statusCode = RKStatusCodeIndexSetForClass(RKStatusCodeClass.Successful)
+        let statusCode = RKStatusCodeIndexSetForClass(.Successful)
         
-        let responseDescriptor = RKResponseDescriptor(mapping: mapping, method: RKRequestMethod.GET, pathPattern: nil, keyPath: "data.cities", statusCodes: statusCode)
+        let responseDescriptor = RKResponseDescriptor(mapping: mapping, method:.GET, pathPattern: nil, keyPath: "data.cities", statusCodes: statusCode)
         
         manager.addResponseDescriptor(responseDescriptor)
         
@@ -52,9 +52,9 @@ class StreamConnector: Connector {
         let path = "stream/categories"
         
         let mapping = CategoryMappingProvider.categoryResponseMapping()
-        let statusCode = RKStatusCodeIndexSetForClass(RKStatusCodeClass.Successful)
+        let statusCode = RKStatusCodeIndexSetForClass(.Successful)
         
-        let responseDescriptor = RKResponseDescriptor(mapping: mapping, method: RKRequestMethod.GET, pathPattern: nil, keyPath: "data.categories", statusCodes: statusCode)
+        let responseDescriptor = RKResponseDescriptor(mapping: mapping, method:.GET, pathPattern: nil, keyPath: "data.categories", statusCodes: statusCode)
         
         manager.addResponseDescriptor(responseDescriptor)
         
@@ -85,9 +85,9 @@ class StreamConnector: Connector {
         let path = (getGlobal) ? "stream/global" : "stream/followed"
         
         let streamMapping = StreamMappingProvider.streamResponseMapping()
-        let statusCode = RKStatusCodeIndexSetForClass(RKStatusCodeClass.Successful)
+        let statusCode = RKStatusCodeIndexSetForClass(.Successful)
         
-        let liveStreamResponseDescriptor = RKResponseDescriptor(mapping: streamMapping, method: RKRequestMethod.GET, pathPattern: nil, keyPath: "data.live", statusCodes: statusCode)
+        let liveStreamResponseDescriptor = RKResponseDescriptor(mapping: streamMapping, method:.GET, pathPattern: nil, keyPath: "data.live", statusCodes: statusCode)
         
         let recentStreamResponseDescriptor = RKResponseDescriptor(mapping: streamMapping, method: RKRequestMethod.GET, pathPattern: nil, keyPath: "data.recent", statusCodes: statusCode)
         
@@ -130,9 +130,9 @@ class StreamConnector: Connector {
         let path = "stream/search"
         
         let streamMapping = StreamMappingProvider.streamResponseMapping()
-        let statusCode = RKStatusCodeIndexSetForClass(RKStatusCodeClass.Successful)
+        let statusCode = RKStatusCodeIndexSetForClass(.Successful)
         
-        let responseDescriptor = RKResponseDescriptor(mapping: streamMapping, method: RKRequestMethod.GET, pathPattern: nil, keyPath: "data.streams", statusCodes: statusCode)
+        let responseDescriptor = RKResponseDescriptor(mapping: streamMapping, method:.GET, pathPattern: nil, keyPath: "data.streams", statusCodes: statusCode)
         
         manager.addResponseDescriptor(responseDescriptor)
         
@@ -169,9 +169,9 @@ class StreamConnector: Connector {
         let path = ("stream/recent" as NSString).stringByAppendingPathComponent("\(userId)")
         
         let streamMapping = StreamMappingProvider.streamResponseMapping()
-        let statusCode = RKStatusCodeIndexSetForClass(RKStatusCodeClass.Successful)
+        let statusCode = RKStatusCodeIndexSetForClass(.Successful)
         
-        let responseDescriptor = RKResponseDescriptor(mapping: streamMapping, method: RKRequestMethod.GET, pathPattern: nil, keyPath: "data.recent", statusCodes: statusCode)
+        let responseDescriptor = RKResponseDescriptor(mapping: streamMapping, method:.GET, pathPattern: nil, keyPath: "data.recent", statusCodes: statusCode)
         
         manager.addResponseDescriptor(responseDescriptor)
         
@@ -202,9 +202,9 @@ class StreamConnector: Connector {
         let path = "stream/my"
         
         let streamMapping = StreamMappingProvider.streamResponseMapping()
-        let statusCode = RKStatusCodeIndexSetForClass(RKStatusCodeClass.Successful)
+        let statusCode = RKStatusCodeIndexSetForClass(.Successful)
         
-        let responseDescriptor = RKResponseDescriptor(mapping: streamMapping, method: RKRequestMethod.GET, pathPattern: nil, keyPath: "data.streams", statusCodes: statusCode)
+        let responseDescriptor = RKResponseDescriptor(mapping: streamMapping, method:.GET, pathPattern: nil, keyPath: "data.streams", statusCodes: statusCode)
         
         manager.addResponseDescriptor(responseDescriptor)
         
@@ -237,11 +237,11 @@ class StreamConnector: Connector {
         let requestMapping  = StreamMappingProvider.createStreamRequestMapping()
         let streamMapping   = StreamMappingProvider.streamResponseMapping()
         
-        let requestDescriptor = RKRequestDescriptor(mapping: requestMapping, objectClass: NSDictionary.self, rootKeyPath: nil, method: RKRequestMethod.POST)
+        let requestDescriptor = RKRequestDescriptor(mapping: requestMapping, objectClass: NSDictionary.self, rootKeyPath: nil, method:.POST)
         manager.addRequestDescriptor(requestDescriptor)
 
-        let statusCode = RKStatusCodeIndexSetForClass(RKStatusCodeClass.Successful)
-        let streamResponseDescriptor = RKResponseDescriptor(mapping: streamMapping, method: RKRequestMethod.POST, pathPattern: nil, keyPath: "data", statusCodes: statusCode)
+        let statusCode = RKStatusCodeIndexSetForClass(.Successful)
+        let streamResponseDescriptor = RKResponseDescriptor(mapping: streamMapping, method:.POST, pathPattern: nil, keyPath: "data", statusCodes: statusCode)
         
         manager.addResponseDescriptor(streamResponseDescriptor)
         
@@ -274,16 +274,16 @@ class StreamConnector: Connector {
         let requestMapping  = StreamMappingProvider.createStreamRequestMapping()
         let streamMapping   = StreamMappingProvider.streamResponseMapping()
         
-        let requestDescriptor = RKRequestDescriptor(mapping: requestMapping, objectClass: NSDictionary.self, rootKeyPath: nil, method: RKRequestMethod.POST)
+        let requestDescriptor = RKRequestDescriptor(mapping: requestMapping, objectClass: NSDictionary.self, rootKeyPath: nil, method:.POST)
         manager.addRequestDescriptor(requestDescriptor)
         
-        let statusCode = RKStatusCodeIndexSetForClass(RKStatusCodeClass.Successful)
-        let streamResponseDescriptor = RKResponseDescriptor(mapping: streamMapping, method: RKRequestMethod.POST, pathPattern: nil, keyPath: "data", statusCodes: statusCode)
+        let statusCode = RKStatusCodeIndexSetForClass(.Successful)
+        let streamResponseDescriptor = RKResponseDescriptor(mapping: streamMapping, method:.POST, pathPattern: nil, keyPath: "data", statusCodes: statusCode)
         
         manager.addResponseDescriptor(streamResponseDescriptor)
         
         let request =
-        manager.multipartFormRequestWithObject(data, method: RKRequestMethod.POST, path: path, parameters: self.sessionParams()) { (formData) -> Void in
+        manager.multipartFormRequestWithObject(data, method:.POST, path: path, parameters: self.sessionParams()) { (formData) -> Void in
             formData.appendPartWithFileData(fileData, name: "image", fileName: filename, mimeType: "image/jpeg")
         }
         
@@ -421,9 +421,9 @@ class StreamConnector: Connector {
         let path = ("stream/viewers" as NSString).stringByAppendingPathComponent("\(streamId)")
         
         let streamMapping = StreamMappingProvider.viewersResponseMapping()
-        let statusCode = RKStatusCodeIndexSetForClass(RKStatusCodeClass.Successful)
+        let statusCode = RKStatusCodeIndexSetForClass(.Successful)
         
-        let streamResponseDescriptor = RKResponseDescriptor(mapping: streamMapping, method: RKRequestMethod.GET, pathPattern: nil, keyPath: "data", statusCodes: statusCode)
+        let streamResponseDescriptor = RKResponseDescriptor(mapping: streamMapping, method:.GET, pathPattern: nil, keyPath: "data", statusCodes: statusCode)
         
         manager.addResponseDescriptor(streamResponseDescriptor)
         
@@ -460,9 +460,9 @@ class StreamConnector: Connector {
         let path = ("stream/rviewers" as NSString).stringByAppendingPathComponent("\(streamId)")
         
         let streamMapping = StreamMappingProvider.viewersResponseMapping()
-        let statusCode = RKStatusCodeIndexSetForClass(RKStatusCodeClass.Successful)
+        let statusCode = RKStatusCodeIndexSetForClass(.Successful)
         
-        let streamResponseDescriptor = RKResponseDescriptor(mapping: streamMapping, method: RKRequestMethod.GET, pathPattern: nil, keyPath: "data", statusCodes: statusCode)
+        let streamResponseDescriptor = RKResponseDescriptor(mapping: streamMapping, method:.GET, pathPattern: nil, keyPath: "data", statusCodes: statusCode)
         
         manager.addResponseDescriptor(streamResponseDescriptor)
         
@@ -498,9 +498,9 @@ class StreamConnector: Connector {
         let path = ("stream" as NSString).stringByAppendingPathComponent("\(streamId)")
         
         let streamMapping = StreamMappingProvider.streamResponseMapping()
-        let statusCode = RKStatusCodeIndexSetForClass(RKStatusCodeClass.Successful)
+        let statusCode = RKStatusCodeIndexSetForClass(.Successful)
         
-        let streamResponseDescriptor = RKResponseDescriptor(mapping: streamMapping, method: RKRequestMethod.GET, pathPattern: nil, keyPath: "data", statusCodes: statusCode)
+        let streamResponseDescriptor = RKResponseDescriptor(mapping: streamMapping, method:.GET, pathPattern: nil, keyPath: "data", statusCodes: statusCode)
         
         manager.addResponseDescriptor(streamResponseDescriptor)
         

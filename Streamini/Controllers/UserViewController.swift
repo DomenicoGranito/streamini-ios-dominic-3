@@ -218,19 +218,22 @@ class UserViewController: BaseViewController, UserHeaderViewDelegate, ProfileDel
         let buttonTitle = NSLocalizedString("user_card_block", comment: "")
         blockButton.setTitle(buttonTitle, forState: UIControlState.Normal)
         
-        if let delegate = userStatusDelegate {
+        if let delegate = userStatusDelegate
+        {
             delegate.blockStatusDidChange(false, user: user!)
         }
     }
     
-    func unblockFailure(error: NSError) {
+    func unblockFailure(error: NSError)
+    {
         handleError(error)
         blockButton.enabled = true
     }
     
     // MARK: - Update user
     
-    func getUserSuccess(user: User) {
+    func getUserSuccess(user: User)
+    {
         self.user = user
         
         userHeaderView.update(user)
@@ -258,12 +261,14 @@ class UserViewController: BaseViewController, UserHeaderViewDelegate, ProfileDel
         changeVisibility(hide: false, animated: true)        
     }
     
-    func getUserFailure(error: NSError) {
+    func getUserFailure(error: NSError)
+    {
         handleError(error)
         activityIndicator.stopAnimating()
     }
     
-    func update(userId: UInt) {
+    func update(userId: UInt)
+    {
         activityIndicator.startAnimating()
         UserConnector().get(userId, success: getUserSuccess, failure: getUserFailure)
     }

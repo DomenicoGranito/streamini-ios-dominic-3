@@ -128,8 +128,9 @@ class PeopleViewController: BaseViewController, UserSelecting, ProfileDelegate, 
     
     // MARK: - UserSelecting protocol
     
-    func userDidSelected(user: User) {
-        //self.showUserInfo(user, userStatusDelegate: self)
+    func userDidSelected(user:User)
+    {
+        self.showUserInfo(user, userStatusDelegate:self)
         searchBar.resignFirstResponder()
     }
 }

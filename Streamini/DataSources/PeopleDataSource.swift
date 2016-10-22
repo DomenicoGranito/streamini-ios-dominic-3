@@ -125,7 +125,8 @@ class PeopleDataSource: NSObject, UITableViewDataSource, UITableViewDelegate, Li
             user = (indexPath.section == 0) ? top[indexPath.row] : featured[indexPath.row]
         }
         
-        if let delegate = userSelectedDelegate {
+        if let delegate=userSelectedDelegate
+        {
             delegate.userDidSelected(user)
         }
     }
