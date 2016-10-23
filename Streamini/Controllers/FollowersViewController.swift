@@ -74,16 +74,13 @@ class FollowersViewController: BaseTableViewController, UISearchBarDelegate, Use
         self.searchBar.placeholder = NSLocalizedString("search_followers_placeholder", comment: "")
     }
     
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
         configureView()
         
         let data = [ "p" : page ]
         UserConnector().followers(data, success: followersSuccess, failure: followersFailure)
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
     }
     
     // MARK: - UITableView Delegate & DataSource

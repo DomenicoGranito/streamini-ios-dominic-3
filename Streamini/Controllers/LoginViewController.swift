@@ -28,6 +28,8 @@ class LoginViewController: BaseViewController
         
         if let _=A0SimpleKeychain().stringForKey("PHPSESSID")
         {
+            UserConnector().get(nil, success:successUser, failure:forgotFailure)
+            
             let vc=storyBoard.instantiateViewControllerWithIdentifier("RootViewControllerId")
             navigationController?.pushViewController(vc, animated:false)
         }

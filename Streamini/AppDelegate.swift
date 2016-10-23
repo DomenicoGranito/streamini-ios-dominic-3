@@ -186,6 +186,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError){
         NSLog("%@",error.localizedDescription)
     }
-    
 }
-

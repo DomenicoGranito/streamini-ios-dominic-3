@@ -6,8 +6,6 @@
 //  Copyright (c) 2015 UniProgy s.r.o. All rights reserved.
 //
 
-import UIKit
-
 class PeopleViewController: BaseViewController, UserSelecting, ProfileDelegate, UISearchBarDelegate, UserStatusDelegate {
     var dataSource: PeopleDataSource?
     @IBOutlet weak var searchBar: UISearchBar!
@@ -55,8 +53,8 @@ class PeopleViewController: BaseViewController, UserSelecting, ProfileDelegate, 
     
     // MARK: - UISearchBarDelegate
     
-    // called when cancel button pressed
-    func searchBarCancelButtonClicked(searchBar: UISearchBar) {
+    func searchBarCancelButtonClicked(searchBar:UISearchBar)
+    {
         hideSearch(true)
         dataSource!.reload()
     }
@@ -96,10 +94,9 @@ class PeopleViewController: BaseViewController, UserSelecting, ProfileDelegate, 
         dataSource!.reload()
     }
     
-    override func viewWillAppear(animated: Bool)
+    override func viewWillAppear(animated:Bool)
     {
-        super.viewWillAppear(animated)
-        UIApplication.sharedApplication().setStatusBarHidden(false, withAnimation: .Fade)
+        UIApplication.sharedApplication().setStatusBarHidden(false, withAnimation:.Fade)
     }
     
     // MARK: - ProfileDelegate
@@ -130,7 +127,11 @@ class PeopleViewController: BaseViewController, UserSelecting, ProfileDelegate, 
     
     func userDidSelected(user:User)
     {
-        self.showUserInfo(user, userStatusDelegate:self)
+        let storyboard=UIStoryboard(name:"Main", bundle:nil)
+        let vc=storyboard.instantiateViewControllerWithIdentifier("UserViewControllerId") as! UserViewController
+        vc.user=user
+        navigationController?.pushViewController(vc, animated:true)
+        
         searchBar.resignFirstResponder()
     }
 }
