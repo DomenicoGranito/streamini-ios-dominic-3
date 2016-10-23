@@ -162,7 +162,7 @@ class UserHeaderView: UIView, UITextViewDelegate {
         }
         isFullMode = true
         
-        UIView.animateWithDuration(UserViewController.animationDuration, animations: { () -> Void in
+        UIView.animateWithDuration(0.2, animations: { () -> Void in
             self.userImageView.alpha        = 1.0
             self.likeIcon.alpha             = 1.0
             self.likeCountLabel.alpha       = 1.0
@@ -186,7 +186,7 @@ class UserHeaderView: UIView, UITextViewDelegate {
         }
         isFullMode = false
         
-        UIView.animateWithDuration(UserViewController.animationDuration, animations: { () -> Void in
+        UIView.animateWithDuration(0.2, animations: { () -> Void in
             self.userImageView.alpha        = 0.0
             self.likeIcon.alpha             = 0.0
             self.likeCountLabel.alpha       = 0.0

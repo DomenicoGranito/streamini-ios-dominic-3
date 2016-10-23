@@ -25,74 +25,97 @@ protocol UserStatusDelegate: class {
     func blockStatusDidChange(status: Bool, user: User)
 }
 
-class UserViewController: BaseViewController, ProfileDelegate {
-    static let animationDuration = 0.2
+class UserViewController: BaseViewController, ProfileDelegate
+{
+    @IBOutlet var userHeaderView:UserHeaderView!
+    @IBOutlet var recentCountLabel:UILabel!
+    @IBOutlet var recentLabel:UILabel!
+    @IBOutlet var followersCountLabel:UILabel!
+    @IBOutlet var followersLabel:UILabel!
+    @IBOutlet var followingCountLabel:UILabel!
+    @IBOutlet var followingLabel:UILabel!
+    @IBOutlet var followButton:UIButton!
+    @IBOutlet var blockButton:UIButton!
+    @IBOutlet var activityIndicator:UIActivityIndicatorView!
     
-    @IBOutlet weak var userHeaderView: UserHeaderView!
-    @IBOutlet weak var recentCountLabel: UILabel!
-    @IBOutlet weak var recentLabel: UILabel!
-    @IBOutlet weak var followersCountLabel: UILabel!
-    @IBOutlet weak var followersLabel: UILabel!
-    @IBOutlet weak var followingCountLabel: UILabel!
-    @IBOutlet weak var followingLabel: UILabel!
-    @IBOutlet weak var followButton: UIButton!
-    @IBOutlet weak var blockButton: UIButton!
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    var user:User?
+    var userStatisticsDelegate:UserStatisticsDelegate?
+    var userStatusDelegate:UserStatusDelegate?
     
-    var user: User?
-    var userStatisticsDelegate: UserStatisticsDelegate?
-    var userStatusDelegate: UserStatusDelegate?
+    override func viewDidLoad()
+    {
+        super.viewDidLoad()
+        
+        configureView()
+        update(user!.id)
+    }
     
-    // MARK: - Actions
-    
+    func configureView()
+    {
+        let recentLabelText=NSLocalizedString("user_card_recent", comment:"")
+        recentLabel.text=recentLabelText
+        
+        let followersLabelText=NSLocalizedString("user_card_followers", comment:"")
+        followersLabel.text=followersLabelText
+        
+        let followingLabelText=NSLocalizedString("user_card_following", comment:"")
+        followingLabel.text=followingLabelText
+        
+        followButton.hidden=UserContainer.shared.logged().id==user!.id
+        blockButton.hidden=UserContainer.shared.logged().id==user!.id
+    }
+
     @IBAction func recentButtonPressed()
     {
-        userHeaderView.showCompactMode()
-        
-        if let del = userStatisticsDelegate {
+        if let del=userStatisticsDelegate
+        {
             del.recentStreamsDidSelected(user!.id)
         }
     }
     
     @IBAction func followersButtonPressed()
     {
-        userHeaderView.showCompactMode()
-        
-        if let del = userStatisticsDelegate {
+        if let del=userStatisticsDelegate
+        {
             del.followersDidSelected(user!.id)
         }
     }
     
     @IBAction func followingButtonPressed()
     {
-        userHeaderView.showCompactMode()
-        
-        if let del = userStatisticsDelegate {
+        if let del=userStatisticsDelegate
+        {
             del.followingDidSelected(user!.id)
         }
     }
     
     @IBAction func followButtonPressed()
     {
-        followButton.enabled = false
-        if user!.isFollowed {
-            SocialConnector().unfollow(user!.id, success: unfollowSuccess, failure: unfollowFailure)
-        } else {
-            SocialConnector().follow(user!.id, success: followSuccess, failure: followFailure)
+        followButton.enabled=false
+        
+        if user!.isFollowed
+        {
+            SocialConnector().unfollow(user!.id, success:unfollowSuccess, failure:unfollowFailure)
+        }
+        else
+        {
+            SocialConnector().follow(user!.id, success:followSuccess, failure:followFailure)
         }
     }
     
     @IBAction func blockButtonPressed()
     {
-        blockButton.enabled = false
-        if user!.isBlocked {
-            SocialConnector().unblock(user!.id, success: unblockSuccess, failure: unblockFailure)
-        } else {
-            SocialConnector().block(user!.id, success: blockSuccess, failure: blockFailure)
+        blockButton.enabled=false
+        
+        if user!.isBlocked
+        {
+            SocialConnector().unblock(user!.id, success:unblockSuccess, failure:unblockFailure)
+        }
+        else
+        {
+            SocialConnector().block(user!.id, success:blockSuccess, failure:blockFailure)
         }
     }
-    
-    // MARK: - ProfileDelegate
     
     func reload()
     {
@@ -102,32 +125,6 @@ class UserViewController: BaseViewController, ProfileDelegate {
     func close()
     {
         
-    }
-    
-    // MARK: - View life cycle
-    
-    func configureView() {
-        changeVisibility(hide: true, animated: false)
-        
-        let recentLabelText = NSLocalizedString("user_card_recent", comment: "")
-        recentLabel.text = recentLabelText
-        
-        let followersLabelText = NSLocalizedString("user_card_followers", comment: "")
-        followersLabel.text = followersLabelText
-        
-        let followingLabelText = NSLocalizedString("user_card_following", comment: "")
-        followingLabel.text = followingLabelText
-        
-        followButton.hidden = UserContainer.shared.logged().id == user!.id
-        blockButton.hidden  = UserContainer.shared.logged().id == user!.id
-    }
-    
-    override func viewDidLoad()
-    {
-        super.viewDidLoad()
-        
-        configureView()
-        update(user!.id)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -140,107 +137,122 @@ class UserViewController: BaseViewController, ProfileDelegate {
         }
     }
     
-    // MARK: - Network communication
-    
-    func followSuccess() {
-        followButton.enabled = true
-        user!.isFollowed = true
-        let buttonTitle = NSLocalizedString("user_card_unfollow", comment: "")
-        followButton.setTitle(buttonTitle, forState: UIControlState.Normal)
+    func followSuccess()
+    {
+        followButton.enabled=true
+        user!.isFollowed=true
         
-        if let delegate = userStatusDelegate {
-            delegate.followStatusDidChange(true, user: user!)
-        }
+        let buttonTitle=NSLocalizedString("user_card_unfollow", comment:"")
+        followButton.setTitle(buttonTitle, forState:.Normal)
         
-        update(user!.id)
-    }
-    
-    func followFailure(error: NSError) {
-        handleError(error)
-        followButton.enabled = true
-    }
-    
-    func unfollowSuccess() {
-        followButton.enabled = true
-        user!.isFollowed = false
-        let buttonTitle = NSLocalizedString("user_card_follow", comment: "")
-        followButton.setTitle(buttonTitle, forState: UIControlState.Normal)
-        
-        if let delegate = userStatusDelegate {
-            delegate.followStatusDidChange(false, user: user!)
-        }
-        
-        update(user!.id)
-    }
-    
-    func unfollowFailure(error: NSError) {
-        handleError(error)
-        followButton.enabled = true
-    }
-    
-    func blockSuccess() {
-        blockButton.enabled = true
-        user!.isBlocked = true
-        let buttonTitle = NSLocalizedString("user_card_unblock", comment: "")
-        blockButton.setTitle(buttonTitle, forState: UIControlState.Normal)
-        
-        if let delegate = userStatusDelegate {
-            delegate.blockStatusDidChange(true, user: user!)
-        }
-    }
-    
-    func blockFailure(error: NSError) {
-        handleError(error)
-        blockButton.enabled = true
-    }
-    
-    func unblockSuccess() {
-        blockButton.enabled = true
-        user!.isBlocked = false
-        let buttonTitle = NSLocalizedString("user_card_block", comment: "")
-        blockButton.setTitle(buttonTitle, forState: UIControlState.Normal)
-        
-        if let delegate = userStatusDelegate
+        if let delegate=userStatusDelegate
         {
-            delegate.blockStatusDidChange(false, user: user!)
+            delegate.followStatusDidChange(true, user:user!)
+        }
+        
+        update(user!.id)
+    }
+    
+    func followFailure(error:NSError)
+    {
+        handleError(error)
+        followButton.enabled=true
+    }
+    
+    func unfollowSuccess()
+    {
+        followButton.enabled=true
+        user!.isFollowed=false
+        
+        let buttonTitle=NSLocalizedString("user_card_follow", comment:"")
+        followButton.setTitle(buttonTitle, forState:.Normal)
+        
+        if let delegate=userStatusDelegate
+        {
+            delegate.followStatusDidChange(false, user:user!)
+        }
+        
+        update(user!.id)
+    }
+    
+    func unfollowFailure(error:NSError)
+    {
+        handleError(error)
+        followButton.enabled=true
+    }
+    
+    func blockSuccess()
+    {
+        blockButton.enabled=true
+        user!.isBlocked=true
+        
+        let buttonTitle=NSLocalizedString("user_card_unblock", comment:"")
+        blockButton.setTitle(buttonTitle, forState:.Normal)
+        
+        if let delegate=userStatusDelegate
+        {
+            delegate.blockStatusDidChange(true, user:user!)
         }
     }
     
-    func unblockFailure(error: NSError)
+    func blockFailure(error:NSError)
     {
         handleError(error)
-        blockButton.enabled = true
+        blockButton.enabled=true
     }
     
-    // MARK: - Update user
-    
-    func getUserSuccess(user: User)
+    func unblockSuccess()
     {
-        self.user = user
+        blockButton.enabled=true
+        user!.isBlocked=false
+        
+        let buttonTitle=NSLocalizedString("user_card_block", comment:"")
+        blockButton.setTitle(buttonTitle, forState:.Normal)
+        
+        if let delegate=userStatusDelegate
+        {
+            delegate.blockStatusDidChange(false, user:user!)
+        }
+    }
+    
+    func unblockFailure(error:NSError)
+    {
+        handleError(error)
+        blockButton.enabled=true
+    }
+    
+    func getUserSuccess(user:User)
+    {
+        self.user=user
         
         userHeaderView.update(user)
-        recentCountLabel.text       = "\(user.recent)"
-        followersCountLabel.text    = "\(user.followers)"
-        followingCountLabel.text    = "\(user.following)"
+        recentCountLabel.text="\(user.recent)"
+        followersCountLabel.text="\(user.followers)"
+        followingCountLabel.text="\(user.following)"
         
-        if user.isFollowed {
-            let buttonTitle = NSLocalizedString("user_card_unfollow", comment: "")
-            followButton.setTitle(buttonTitle, forState: UIControlState.Normal)
-        } else {
-            let buttonTitle = NSLocalizedString("user_card_follow", comment: "")
-            followButton.setTitle(buttonTitle, forState: UIControlState.Normal)
+        if user.isFollowed
+        {
+            let buttonTitle=NSLocalizedString("user_card_unfollow", comment:"")
+            followButton.setTitle(buttonTitle, forState:.Normal)
+        }
+        else
+        {
+            let buttonTitle=NSLocalizedString("user_card_follow", comment:"")
+            followButton.setTitle(buttonTitle, forState:.Normal)
         }
         
-        if user.isBlocked {
-            let buttonTitle = NSLocalizedString("user_card_unblock", comment: "")
-            blockButton.setTitle(buttonTitle, forState: UIControlState.Normal)
-        } else {
-            let buttonTitle = NSLocalizedString("user_card_block", comment: "")
-            blockButton.setTitle(buttonTitle, forState: UIControlState.Normal)
+        if user.isBlocked
+        {
+            let buttonTitle=NSLocalizedString("user_card_unblock", comment:"")
+            blockButton.setTitle(buttonTitle, forState:.Normal)
+        }
+        else
+        {
+            let buttonTitle=NSLocalizedString("user_card_block", comment:"")
+            blockButton.setTitle(buttonTitle, forState:.Normal)
         }
         
         activityIndicator.stopAnimating()
-        changeVisibility(hide: false, animated: true)        
     }
     
     func getUserFailure(error:NSError)
@@ -253,24 +265,5 @@ class UserViewController: BaseViewController, ProfileDelegate {
     {
         activityIndicator.startAnimating()
         UserConnector().get(userId, success:getUserSuccess, failure:getUserFailure)
-    }
-    
-    // MARK: - Private methods
-    
-    private func changeVisibility(hide hide: Bool, animated: Bool) {
-        let alpha: CGFloat = hide ? 0.0 : 1.0
-        let duration = (animated) ? 0.3 : 0.0
-        
-        UIView.animateWithDuration(duration, animations: { () -> Void in
-            self.userHeaderView.alpha       = alpha
-            self.recentCountLabel.alpha     = alpha
-            self.recentLabel.alpha          = alpha
-            self.followersCountLabel.alpha  = alpha
-            self.followersLabel.alpha       = alpha
-            self.followingCountLabel.alpha  = alpha
-            self.followingLabel.alpha       = alpha
-            self.followButton.alpha         = alpha
-            self.blockButton.alpha          = alpha
-        })
     }
 }
