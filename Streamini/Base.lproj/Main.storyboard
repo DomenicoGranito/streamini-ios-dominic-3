@@ -3166,7 +3166,7 @@
                                             </mask>
                                         </variation>
                                     </imageView>
-                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Ze-Cb-9sI" userLabel="TapableView">
+                                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Ze-Cb-9sI" userLabel="TapableView">
                                         <frame key="frameInset" width="320" height="568"/>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -3305,42 +3305,10 @@
                                             </mask>
                                         </variation>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vxA-AK-NyY">
-                                        <frame key="frameInset" minX="384" minY="22" width="20" height="22"/>
-                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="22" id="BA7-T1-dbv">
-                                                <variation key="heightClass=regular-widthClass=compact" constant="20"/>
-                                            </constraint>
-                                            <constraint firstAttribute="width" constant="20" id="jE1-zL-LaR"/>
-                                        </constraints>
-                                        <color key="tintColor" red="0.1215686275" green="0.43529411759999997" blue="0.85098039219999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" image="close-small">
-                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <variation key="default">
-                                            <mask key="constraints">
-                                                <exclude reference="BA7-T1-dbv"/>
-                                                <exclude reference="jE1-zL-LaR"/>
-                                            </mask>
-                                        </variation>
-                                        <variation key="heightClass=regular-widthClass=compact">
-                                            <mask key="constraints">
-                                                <include reference="BA7-T1-dbv"/>
-                                                <include reference="jE1-zL-LaR"/>
-                                            </mask>
-                                        </variation>
-                                        <connections>
-                                            <action selector="closeButtonPressed:" destination="Y6w-SG-5gm" eventType="touchUpInside" id="6Xe-cM-xSk"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="gCD-K7-AdK" firstAttribute="leading" secondItem="Y6w-SG-5gm" secondAttribute="leading" constant="8" id="2uT-6j-NiF">
-                                        <variation key="heightClass=regular-widthClass=compact" constant="16"/>
-                                    </constraint>
-                                    <constraint firstItem="vxA-AK-NyY" firstAttribute="top" secondItem="Y6w-SG-5gm" secondAttribute="top" constant="10" id="6vq-dt-R78">
                                         <variation key="heightClass=regular-widthClass=compact" constant="16"/>
                                     </constraint>
                                     <constraint firstItem="isf-eq-D0Y" firstAttribute="top" secondItem="v41-an-odk" secondAttribute="bottom" constant="10" id="7ve-lQ-KbL">
@@ -3353,16 +3321,10 @@
                                         <variation key="heightClass=regular-widthClass=compact" constant="15"/>
                                     </constraint>
                                     <constraint firstItem="gCD-K7-AdK" firstAttribute="centerX" secondItem="bxb-W1-6oJ" secondAttribute="centerX" id="HrL-Jd-s0V"/>
-                                    <constraint firstItem="vxA-AK-NyY" firstAttribute="leading" secondItem="3Ze-Cb-9sI" secondAttribute="trailing" constant="8" id="KuP-xK-UI3">
-                                        <variation key="heightClass=regular-widthClass=compact" constant="16"/>
-                                    </constraint>
                                     <constraint firstItem="a5n-iG-7c3" firstAttribute="top" secondItem="Y6w-SG-5gm" secondAttribute="top" constant="8" id="Ntb-qh-Xtc">
                                         <variation key="heightClass=regular-widthClass=compact" constant="14"/>
                                     </constraint>
                                     <constraint firstItem="bxb-W1-6oJ" firstAttribute="top" secondItem="gCD-K7-AdK" secondAttribute="bottom" constant="8" id="Rx0-46-eJu"/>
-                                    <constraint firstAttribute="trailing" secondItem="vxA-AK-NyY" secondAttribute="trailing" constant="8" id="Vo9-Ac-Gpk">
-                                        <variation key="heightClass=regular-widthClass=compact" constant="16"/>
-                                    </constraint>
                                     <constraint firstItem="3Ze-Cb-9sI" firstAttribute="top" secondItem="Y6w-SG-5gm" secondAttribute="top" constant="8" id="WTG-7x-hxU">
                                         <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                                     </constraint>
@@ -3417,9 +3379,6 @@
                                         <exclude reference="BbK-6f-UNs"/>
                                         <exclude reference="Ges-WC-rgM"/>
                                         <exclude reference="f9P-PY-jij"/>
-                                        <exclude reference="6vq-dt-R78"/>
-                                        <exclude reference="KuP-xK-UI3"/>
-                                        <exclude reference="Vo9-Ac-Gpk"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact">
@@ -3445,13 +3404,9 @@
                                         <include reference="BbK-6f-UNs"/>
                                         <include reference="Ges-WC-rgM"/>
                                         <include reference="f9P-PY-jij"/>
-                                        <include reference="6vq-dt-R78"/>
-                                        <include reference="KuP-xK-UI3"/>
-                                        <include reference="Vo9-Ac-Gpk"/>
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <outlet property="closeButton" destination="vxA-AK-NyY" id="Hdy-2b-ckt"/>
                                     <outlet property="height" destination="edz-dG-1Ve" id="Dck-2Y-EeC"/>
                                     <outlet property="likeCountLabel" destination="rdd-I1-vpj" id="6ZQ-GE-dEX"/>
                                     <outlet property="likeIcon" destination="v41-an-odk" id="e89-4Y-qNV"/>
@@ -3500,7 +3455,7 @@
                                             <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="recentButtonPressed:" destination="1MS-UY-meQ" eventType="touchUpInside" id="ckw-tp-egx"/>
+                                            <action selector="recentButtonPressed" destination="1MS-UY-meQ" eventType="touchUpInside" id="QpL-E3-TGF"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -3603,7 +3558,7 @@
                                             <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="followersButtonPressed:" destination="1MS-UY-meQ" eventType="touchUpInside" id="uF3-pG-S1k"/>
+                                            <action selector="followersButtonPressed" destination="1MS-UY-meQ" eventType="touchUpInside" id="YFG-fi-ZZv"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -3706,7 +3661,7 @@
                                             <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="followingButtonPressed:" destination="1MS-UY-meQ" eventType="touchUpInside" id="geN-nh-QGg"/>
+                                            <action selector="followingButtonPressed" destination="1MS-UY-meQ" eventType="touchUpInside" id="7td-1M-IlA"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -3827,7 +3782,7 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <action selector="followButtonPressed:" destination="1MS-UY-meQ" eventType="touchUpInside" id="3yt-i0-TwP"/>
+                                    <action selector="followButtonPressed" destination="1MS-UY-meQ" eventType="touchUpInside" id="fXc-Td-BLF"/>
                                 </connections>
                             </button>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PgE-0v-T0z">
@@ -3862,7 +3817,7 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <action selector="blockButtonPressed:" destination="1MS-UY-meQ" eventType="touchUpInside" id="6U5-W3-q01"/>
+                                    <action selector="blockButtonPressed" destination="1MS-UY-meQ" eventType="touchUpInside" id="WAc-HE-lx3"/>
                                 </connections>
                             </button>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="akS-n2-RdG">
@@ -3999,8 +3954,6 @@
                     <connections>
                         <outlet property="activityIndicator" destination="akS-n2-RdG" id="LZ7-zD-eS8"/>
                         <outlet property="blockButton" destination="PgE-0v-T0z" id="Lvv-dL-zUb"/>
-                        <outlet property="containerView" destination="iAp-qO-BtP" id="Zqi-DJ-Ufr"/>
-                        <outlet property="containerViewHeight" destination="L22-3F-7VH" id="1S0-J9-252"/>
                         <outlet property="followButton" destination="Lab-41-7os" id="PfA-Xg-yGi"/>
                         <outlet property="followersCountLabel" destination="olG-wh-IKf" id="yQr-ub-sNI"/>
                         <outlet property="followersLabel" destination="JLR-Yg-Wtg" id="FJB-V2-21K"/>
@@ -8032,11 +7985,11 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="200" sectionHeaderHeight="60" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="ZtH-TU-uzt">
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="200" id="kgH-SI-miz" customClass="AllCategoriesRow" customModule="Streamini" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="60" width="1000" height="200"/>
+                                    <tableViewCell contentMode="scaleToFill" misplaced="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="200" id="kgH-SI-miz" customClass="AllCategoriesRow" customModule="Streamini" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="60" width="320" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kgH-SI-miz" id="woL-XW-VUK">
-                                            <frame key="frameInset" width="1000" height="200"/>
+                                            <frame key="frameInset" width="320" height="200"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="s0l-LL-G2h">
@@ -8142,7 +8095,6 @@
         <image name="back.png" width="16" height="27"/>
         <image name="checkmark" width="20" height="20"/>
         <image name="close" width="27" height="27"/>
-        <image name="close-small" width="20" height="20"/>
         <image name="eye" width="27" height="19"/>
         <image name="heart-small" width="15" height="14"/>
         <image name="home" width="30" height="30"/>

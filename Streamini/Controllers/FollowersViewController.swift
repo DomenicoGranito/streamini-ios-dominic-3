@@ -52,8 +52,9 @@ class FollowersViewController: BaseTableViewController, UISearchBarDelegate, Use
     
     // MARK: - UserSelecting protocol
     
-    func userDidSelected(user: User) {
-        self.showUserInfo(user, userStatusDelegate: nil)
+    func userDidSelected(user:User)
+    {
+        //self.showUserInfo(user, userStatusDelegate: nil)
     }
     
     // MARK: - View life cycle

@@ -112,7 +112,6 @@
 		B7AA932B1B3172740005972E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7AA93291B3172740005972E /* Main.storyboard */; };
 		B7AA932D1B3172740005972E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7AA932C1B3172740005972E /* Images.xcassets */; };
 		B7AA93301B3172740005972E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7AA932E1B3172740005972E /* LaunchScreen.xib */; };
-		B7AA933C1B3172740005972E /* StreaminiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AA933B1B3172740005972E /* StreaminiTests.swift */; };
 		B7B737A51B972CCA00231BC3 /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B737A41B972CCA00231BC3 /* BaseTableViewController.swift */; };
 		B7BFB2921B5D52B0002BEC63 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BFB2911B5D52B0002BEC63 /* UIImageExtension.swift */; };
 		B7C9BB2C1B4E7491005874A9 /* UIButton+tintImage.m in Sources */ = {isa = PBXBuildFile; fileRef = B7C9BB2B1B4E7491005874A9 /* UIButton+tintImage.m */; };
@@ -138,16 +137,6 @@
 		B7EAD9531B4D72A40009C698 /* QuickLook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7EAD9521B4D72A40009C698 /* QuickLook.framework */; };
 		B7EB82B71B6746500022C76A /* NotificationsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EB82B61B6746500022C76A /* NotificationsDelegate.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		B7AA93361B3172740005972E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B7AA93161B3172740005972E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = B7AA931D1B3172740005972E;
-			remoteInfo = Golfstream;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		2CAED7ECE417F66C9C2CF9E2 /* Pods-Streamini.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Streamini.release.xcconfig"; path = "Pods/Target Support Files/Pods-Streamini/Pods-Streamini.release.xcconfig"; sourceTree = "<group>"; };
@@ -261,9 +250,6 @@
 		B7AA932A1B3172740005972E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B7AA932C1B3172740005972E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B7AA932F1B3172740005972E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		B7AA93351B3172740005972E /* StreaminiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StreaminiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B7AA933A1B3172740005972E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B7AA933B1B3172740005972E /* StreaminiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreaminiTests.swift; sourceTree = "<group>"; };
 		B7B737A41B972CCA00231BC3 /* BaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		B7BFB2911B5D52B0002BEC63 /* UIImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		B7C9BB2A1B4E7491005874A9 /* UIButton+tintImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+tintImage.h"; sourceTree = "<group>"; };
@@ -303,13 +289,6 @@
 				B70FAA011B539BB300607EA9 /* CFNetwork.framework in Frameworks */,
 				B7EAD9531B4D72A40009C698 /* QuickLook.framework in Frameworks */,
 				70C6007BAC329996E72C79DC /* libPods-Streamini.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B7AA93321B3172740005972E /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -451,7 +430,6 @@
 			isa = PBXGroup;
 			children = (
 				B7AA93201B3172740005972E /* Streamini */,
-				B7AA93381B3172740005972E /* StreaminiTests */,
 				B7AA931F1B3172740005972E /* Products */,
 				786304F139CBAD59E4F652FD /* Frameworks */,
 				B4061B12EEC4402C32D96510 /* Pods */,
@@ -462,7 +440,6 @@
 			isa = PBXGroup;
 			children = (
 				B7AA931E1B3172740005972E /* Streamini.app */,
-				B7AA93351B3172740005972E /* StreaminiTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -508,23 +485,6 @@
 				B7763B001B6110DA00D469E3 /* NSDateTimeAgo.bundle */,
 				B7AA93221B3172740005972E /* Info.plist */,
 				B724758B1B4133F50080BE1B /* Localizable.strings */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		B7AA93381B3172740005972E /* StreaminiTests */ = {
-			isa = PBXGroup;
-			children = (
-				B7AA933B1B3172740005972E /* StreaminiTests.swift */,
-				B7AA93391B3172740005972E /* Supporting Files */,
-			);
-			path = StreaminiTests;
-			sourceTree = "<group>";
-		};
-		B7AA93391B3172740005972E /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				B7AA933A1B3172740005972E /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -664,24 +624,6 @@
 			productReference = B7AA931E1B3172740005972E /* Streamini.app */;
 			productType = "com.apple.product-type.application";
 		};
-		B7AA93341B3172740005972E /* StreaminiTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = B7AA93421B3172740005972E /* Build configuration list for PBXNativeTarget "StreaminiTests" */;
-			buildPhases = (
-				B7AA93311B3172740005972E /* Sources */,
-				B7AA93321B3172740005972E /* Frameworks */,
-				B7AA93331B3172740005972E /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				B7AA93371B3172740005972E /* PBXTargetDependency */,
-			);
-			name = StreaminiTests;
-			productName = GolfstreamTests;
-			productReference = B7AA93351B3172740005972E /* StreaminiTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -703,11 +645,6 @@
 							};
 						};
 					};
-					B7AA93341B3172740005972E = {
-						CreatedOnToolsVersion = 6.3.2;
-						LastSwiftMigration = 0800;
-						TestTargetID = B7AA931D1B3172740005972E;
-					};
 				};
 			};
 			buildConfigurationList = B7AA93191B3172740005972E /* Build configuration list for PBXProject "BEINIT" */;
@@ -723,7 +660,6 @@
 			projectRoot = "";
 			targets = (
 				B7AA931D1B3172740005972E /* Streamini */,
-				B7AA93341B3172740005972E /* StreaminiTests */,
 			);
 		};
 /* End PBXProject section */
@@ -746,13 +682,6 @@
 				A6572B301BCD697800AFED0D /* Default-568h@2x.png in Resources */,
 				B7D6F0B91B37F4D90070C36A /* Config.plist in Resources */,
 				B7AA932D1B3172740005972E /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B7AA93331B3172740005972E /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -953,23 +882,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B7AA93311B3172740005972E /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B7AA933C1B3172740005972E /* StreaminiTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		B7AA93371B3172740005972E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = B7AA931D1B3172740005972E /* Streamini */;
-			targetProxy = B7AA93361B3172740005972E /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		B724758B1B4133F50080BE1B /* Localizable.strings */ = {
@@ -1187,44 +1100,6 @@
 			};
 			name = Release;
 		};
-		B7AA93431B3172740005972E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = StreaminiTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "triangle.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = StreaminiTests;
-				PROVISIONING_PROFILE = "144c46bd-8112-48c7-93d0-4bb301ba452f";
-				SWIFT_VERSION = 2.3;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Streamini.app/Streamini";
-			};
-			name = Debug;
-		};
-		B7AA93441B3172740005972E /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = StreaminiTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "triangle.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = StreaminiTests;
-				PROVISIONING_PROFILE = "144c46bd-8112-48c7-93d0-4bb301ba452f";
-				SWIFT_VERSION = 2.3;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Streamini.app/Streamini";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1242,15 +1117,6 @@
 			buildConfigurations = (
 				B7AA93401B3172740005972E /* Debug */,
 				B7AA93411B3172740005972E /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		B7AA93421B3172740005972E /* Build configuration list for PBXNativeTarget "StreaminiTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				B7AA93431B3172740005972E /* Debug */,
-				B7AA93441B3172740005972E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

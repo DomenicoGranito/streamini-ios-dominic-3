@@ -25,7 +25,7 @@ protocol UserStatusDelegate: class {
     func blockStatusDidChange(status: Bool, user: User)
 }
 
-class UserViewController: BaseViewController, UserHeaderViewDelegate, ProfileDelegate {
+class UserViewController: BaseViewController, ProfileDelegate {
     static let animationDuration = 0.2
     
     @IBOutlet weak var userHeaderView: UserHeaderView!
@@ -38,20 +38,15 @@ class UserViewController: BaseViewController, UserHeaderViewDelegate, ProfileDel
     @IBOutlet weak var followButton: UIButton!
     @IBOutlet weak var blockButton: UIButton!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    @IBOutlet weak var containerView: UIView!
-    @IBOutlet weak var containerViewHeight: NSLayoutConstraint!
     
     var user: User?
     var userStatisticsDelegate: UserStatisticsDelegate?
     var userStatusDelegate: UserStatusDelegate?
     
-    var originalViewFrame     = CGRectZero
-    var originalFormSheetSize = CGSizeZero
-    
     // MARK: - Actions
     
-    @IBAction func recentButtonPressed(sender: AnyObject) {
-        expandFormSheet()
+    @IBAction func recentButtonPressed()
+    {
         userHeaderView.showCompactMode()
         
         if let del = userStatisticsDelegate {
@@ -59,8 +54,8 @@ class UserViewController: BaseViewController, UserHeaderViewDelegate, ProfileDel
         }
     }
     
-    @IBAction func followersButtonPressed(sender: AnyObject) {
-        expandFormSheet()
+    @IBAction func followersButtonPressed()
+    {
         userHeaderView.showCompactMode()
         
         if let del = userStatisticsDelegate {
@@ -68,8 +63,8 @@ class UserViewController: BaseViewController, UserHeaderViewDelegate, ProfileDel
         }
     }
     
-    @IBAction func followingButtonPressed(sender: AnyObject) {
-        expandFormSheet()        
+    @IBAction func followingButtonPressed()
+    {
         userHeaderView.showCompactMode()
         
         if let del = userStatisticsDelegate {
@@ -77,7 +72,8 @@ class UserViewController: BaseViewController, UserHeaderViewDelegate, ProfileDel
         }
     }
     
-    @IBAction func followButtonPressed(sender: AnyObject) {
+    @IBAction func followButtonPressed()
+    {
         followButton.enabled = false
         if user!.isFollowed {
             SocialConnector().unfollow(user!.id, success: unfollowSuccess, failure: unfollowFailure)
@@ -86,7 +82,8 @@ class UserViewController: BaseViewController, UserHeaderViewDelegate, ProfileDel
         }
     }
     
-    @IBAction func blockButtonPressed(sender: AnyObject) {
+    @IBAction func blockButtonPressed()
+    {
         blockButton.enabled = false
         if user!.isBlocked {
             SocialConnector().unblock(user!.id, success: unblockSuccess, failure: unblockFailure)
@@ -97,35 +94,20 @@ class UserViewController: BaseViewController, UserHeaderViewDelegate, ProfileDel
     
     // MARK: - ProfileDelegate
     
-    func reload() {
+    func reload()
+    {
         update(user!.id)
     }
     
-    func close() {
-        self.closeButtonPressed(self)
-    }
-    
-    // MARK: - UserHeaderViewDelegate
-    
-    func closeButtonPressed(sender: AnyObject) {
-        self.mz_dismissFormSheetControllerAnimated(true, completionHandler: { (formSheetController) -> Void in
-            self.changeVisibility(hide: true, animated: false)
-        })
-    }
-    
-    func usernameLabelPressed() {
-        fallFormSheet()
-        userHeaderView.showFullMode()
-    }
-    
-    func descriptionWillStartEdit() {
+    func close()
+    {
+        
     }
     
     // MARK: - View life cycle
     
     func configureView() {
         changeVisibility(hide: true, animated: false)
-        userHeaderView.delegate = self
         
         let recentLabelText = NSLocalizedString("user_card_recent", comment: "")
         recentLabel.text = recentLabelText
@@ -261,48 +243,19 @@ class UserViewController: BaseViewController, UserHeaderViewDelegate, ProfileDel
         changeVisibility(hide: false, animated: true)        
     }
     
-    func getUserFailure(error: NSError)
+    func getUserFailure(error:NSError)
     {
         handleError(error)
         activityIndicator.stopAnimating()
     }
     
-    func update(userId: UInt)
+    func update(userId:UInt)
     {
         activityIndicator.startAnimating()
-        UserConnector().get(userId, success: getUserSuccess, failure: getUserFailure)
+        UserConnector().get(userId, success:getUserSuccess, failure:getUserFailure)
     }
     
     // MARK: - Private methods
-    
-    private func expandFormSheet() {
-        let formSheetController = self.formSheetController!
-        
-        // calculate new size
-        let size = formSheetController.presentedFormSheetSize
-        let height = UIScreen.mainScreen().bounds.height - 10.0 // new height
-        formSheetController.presentedFormSheetSize = CGSizeMake(size.width, height)
-        
-        // animatable update formsheet size
-        UIView.animateWithDuration(UserViewController.animationDuration, animations: { () -> Void in
-            let x       = self.view.frame.origin.x
-            let y       = CGFloat(25.0)
-            let width   = self.view.frame.size.width
-            self.view.frame = CGRectMake(x, y, width, height)
-            self.containerViewHeight.constant = height - UserHeaderViewHeight.Compact.rawValue - 102.0
-            self.view.layoutIfNeeded()
-        })
-    }
-    
-    private func fallFormSheet() {
-        // animatable update formsheet size
-        UIView.animateWithDuration(UserViewController.animationDuration, animations: { () -> Void in
-            self.formSheetController!.presentedFormSheetSize = self.originalFormSheetSize
-            self.view.frame = self.originalViewFrame
-            self.containerViewHeight.constant = 0.0
-            self.view.layoutIfNeeded()
-        })
-    }
     
     private func changeVisibility(hide hide: Bool, animated: Bool) {
         let alpha: CGFloat = hide ? 0.0 : 1.0

@@ -127,6 +127,6 @@ class MainViewController: BaseViewController, MainViewControllerDelegate, UserSe
     // MARK: - UserSelecting protocol
     
     func userDidSelected(user: User) {
-        self.showUserInfo(user, userStatusDelegate: nil)
+        //self.showUserInfo(user, userStatusDelegate: nil)
     }
 }

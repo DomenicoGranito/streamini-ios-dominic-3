@@ -110,7 +110,7 @@ UIActionSheetDelegate, SelectFollowersDelegate, ReplayViewDelegate, UserSelectin
     }
     
     @IBAction func authorImageViewPressed(sender: AnyObject) {
-        self.showUserInfo(stream!.user, userStatusDelegate: nil)
+        //self.showUserInfo(stream!.user, userStatusDelegate: nil)
     }
     
     @IBAction func tapGesturePerformed(sender: AnyObject) {
@@ -363,7 +363,7 @@ UIActionSheetDelegate, SelectFollowersDelegate, ReplayViewDelegate, UserSelectin
     // MARK: - UserSelecting protocol
     
     func userDidSelected(user: User) {
-        self.showUserInfo(user, userStatusDelegate: nil)
+        //self.showUserInfo(user, userStatusDelegate: nil)
     }
     
     // MARK: - View life cycle

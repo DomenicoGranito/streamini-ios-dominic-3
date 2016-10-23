@@ -100,7 +100,7 @@ class SearchViewController: BaseViewController, UserSelecting, StreamSelecting, 
     // MARK: - SearchSelecting protocol
     
     func userDidSelected(user: User) {
-        self.showUserInfo(user, userStatusDelegate: self)
+        //self.showUserInfo(user, userStatusDelegate: self)
         searchBar.resignFirstResponder()
     }
     

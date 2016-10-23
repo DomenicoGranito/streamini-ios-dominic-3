@@ -87,8 +87,9 @@ class ProfileStatisticsViewController: UIViewController, UserSelecting, UserStat
     
     // MARK: - UserSelecting
     
-    func userDidSelected(user: User) {
-        self.showUserInfo(user, userStatusDelegate: self)
+    func userDidSelected(user:User)
+    {
+        //self.showUserInfo(user, userStatusDelegate: self)
     }
     
     // MARK: - UserStatusDelegate

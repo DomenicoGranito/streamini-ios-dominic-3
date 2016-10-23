@@ -139,7 +139,7 @@ class LiveStreamViewController: BaseViewController, UserSelecting, UserStatusDel
     // MARK: - UserSelecting protocol
     
     func userDidSelected(user: User) {
-        self.showUserInfo(user, userStatusDelegate: self)
+        //self.showUserInfo(user, userStatusDelegate: self)
     }
     
     // MARK: - UserStatusDelegae
