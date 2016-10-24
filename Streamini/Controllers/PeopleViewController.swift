@@ -96,6 +96,7 @@ class PeopleViewController: BaseViewController, UserSelecting, ProfileDelegate, 
     
     override func viewWillAppear(animated:Bool)
     {
+        navigationController?.navigationBarHidden=false
         UIApplication.sharedApplication().setStatusBarHidden(false, withAnimation:.Fade)
     }
     

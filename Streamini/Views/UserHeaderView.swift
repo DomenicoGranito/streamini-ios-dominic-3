@@ -114,28 +114,28 @@ class UserHeaderView: UIView, UITextViewDelegate {
             live.hidden = !user.isLive
         }
         
-        calculateUsernameLabelWidth()
+        //calculateUsernameLabelWidth()
     }
     
-    private func calculateUsernameLabelWidth() {
-        usernameLabel.sizeToFit()
-        
-        var maxWidth: CGFloat = 0.0
-        if let close = closeButton {
-            let kPadding: CGFloat = 8.0
-            maxWidth = self.frame.width - (kPadding * 4.0 + userImageView.bounds.width + close.frame.width)
-        } else {
-            maxWidth = self.frame.width - (20.0 + userImageView.bounds.width + 30.0)
-        }
-        
-        if usernameLabel.frame.width > maxWidth {
-            usernameLabel.frame = CGRectMake(usernameLabel.frame.origin.x, usernameLabel.frame.origin.y, maxWidth, usernameLabel.frame.height)
-            usernameLabelWidth.constant = maxWidth
-        } else {
-            usernameLabelWidth.constant = usernameLabel.frame.width
-        }
-        self.layoutIfNeeded()
-    }
+//    private func calculateUsernameLabelWidth() {
+//        usernameLabel.sizeToFit()
+//        
+//        var maxWidth: CGFloat = 0.0
+//        if let close = closeButton {
+//            let kPadding: CGFloat = 8.0
+//            maxWidth = self.frame.width - (kPadding * 4.0 + userImageView.bounds.width + close.frame.width)
+//        } else {
+//            maxWidth = self.frame.width - (20.0 + userImageView.bounds.width + 30.0)
+//        }
+//        
+//        if usernameLabel.frame.width > maxWidth {
+//            usernameLabel.frame = CGRectMake(usernameLabel.frame.origin.x, usernameLabel.frame.origin.y, maxWidth, usernameLabel.frame.height)
+//            usernameLabelWidth.constant = maxWidth
+//        } else {
+//            usernameLabelWidth.constant = usernameLabel.frame.width
+//        }
+//        self.layoutIfNeeded()
+//    }
     
     func updateAvatar(user: User, placeholder: UIImage) {
         // Change image in UIImageView
@@ -247,13 +247,4 @@ class UserHeaderView: UIView, UITextViewDelegate {
             textView.selectedRange = NSMakeRange(0, 0);
         })
     }
-    
-    /*
-    // Only override drawRect: if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func drawRect(rect: CGRect) {
-        // Drawing code
-    }
-    */
-
 }

@@ -48,6 +48,8 @@ class UserViewController: BaseViewController, ProfileDelegate
         
         configureView()
         update(user!.id)
+        
+        navigationController?.navigationBarHidden=true
     }
     
     func configureView()
@@ -127,12 +129,15 @@ class UserViewController: BaseViewController, ProfileDelegate
         
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if let sid = segue.identifier {
-            if sid == "UserToLinkedUsers" {
-                let controller = segue.destinationViewController as! LinkedUsersViewController
-                controller.profileDelegate = self
-                self.userStatisticsDelegate = controller
+    override func prepareForSegue(segue:UIStoryboardSegue, sender:AnyObject?)
+    {
+        if let sid=segue.identifier
+        {
+            if sid=="UserToLinkedUsers"
+            {
+                let controller=segue.destinationViewController as! LinkedUsersViewController
+                controller.profileDelegate=self
+                self.userStatisticsDelegate=controller
             }
         }
     }
@@ -265,5 +270,10 @@ class UserViewController: BaseViewController, ProfileDelegate
     {
         activityIndicator.startAnimating()
         UserConnector().get(userId, success:getUserSuccess, failure:getUserFailure)
+    }
+    
+    @IBAction func back()
+    {
+        navigationController?.popViewControllerAnimated(true)
     }
 }
