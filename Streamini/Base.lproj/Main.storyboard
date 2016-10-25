@@ -346,7 +346,6 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VIc-T3-NVY">
                                         <frame key="frameInset" width="320" height="568"/>
-                                        <color key="backgroundColor" red="0.25098040700000002" green="0.0" blue="0.50196081400000003" alpha="0.24781788790000001" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="tlM-iu-c64">
                                                 <userDefinedRuntimeAttributes>
@@ -404,7 +403,6 @@
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="centerX" secondItem="54h-VC-N4O" secondAttribute="centerX" id="GZ8-Cv-Vrb"/>
                                             <constraint firstAttribute="centerY" secondItem="54h-VC-N4O" secondAttribute="centerY" id="UYB-OM-kJ9"/>
@@ -437,7 +435,6 @@
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="centerX" secondItem="DOb-wB-2L2" secondAttribute="centerX" id="UId-aC-moU"/>
                                             <constraint firstAttribute="centerY" secondItem="DOb-wB-2L2" secondAttribute="centerY" id="ZAl-99-vfo"/>
@@ -515,7 +512,6 @@
                                 </variation>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.25098040700000002" green="0.0" blue="0.50196081400000003" alpha="0.24781788793103449" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="5x1-x2-KDZ" firstAttribute="top" secondItem="S2p-Vt-NVn" secondAttribute="bottom" id="1MW-qz-u2U"/>
                             <constraint firstAttribute="trailing" secondItem="ZCL-KU-VBb" secondAttribute="trailing" id="1aO-9X-Lff"/>
