@@ -328,15 +328,15 @@ ProfileDelegate {
     
     // MARK: - UserHeaderViewDelegate
     
-    func closeButtonPressed(sender: AnyObject) {
+    func usernameLabelPressed()
+    {
+        
     }
     
-    func usernameLabelPressed() {        
-    }
-    
-    func descriptionWillStartEdit() {
-        let doneBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Done, target: self, action: #selector(ProfileViewController.doneButtonPressed(_:)))
-        self.navigationItem.rightBarButtonItem = doneBarButtonItem
+    func descriptionWillStartEdit()
+    {
+        let doneBarButtonItem=UIBarButtonItem(barButtonSystemItem:.Done, target:self, action:#selector(doneButtonPressed))
+        self.navigationItem.rightBarButtonItem=doneBarButtonItem
     }
     
     func doneButtonPressed(sender: AnyObject) {
@@ -363,9 +363,10 @@ ProfileDelegate {
         }
     }
     
-    func userDescriptionTextFailure(error: NSError) {
+    func userDescriptionTextFailure(error:NSError)
+    {
         handleError(error)
-        let doneBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Done, target: self, action: #selector(ProfileViewController.doneButtonPressed(_:)))
-        self.navigationItem.rightBarButtonItem = doneBarButtonItem
+        let doneBarButtonItem=UIBarButtonItem(barButtonSystemItem:.Done, target:self, action:#selector(doneButtonPressed))
+        self.navigationItem.rightBarButtonItem=doneBarButtonItem
     }
 }

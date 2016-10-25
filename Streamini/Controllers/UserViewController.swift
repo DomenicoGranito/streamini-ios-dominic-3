@@ -35,7 +35,6 @@ class UserViewController: BaseViewController, ProfileDelegate
     @IBOutlet var followingCountLabel:UILabel!
     @IBOutlet var followingLabel:UILabel!
     @IBOutlet var followButton:UIButton!
-    @IBOutlet var blockButton:UIButton!
     @IBOutlet var activityIndicator:UIActivityIndicatorView!
     
     var user:User?
@@ -48,6 +47,8 @@ class UserViewController: BaseViewController, ProfileDelegate
         
         configureView()
         update(user!.id)
+        
+        recentButtonPressed()
         
         navigationController?.navigationBarHidden=true
     }
@@ -64,7 +65,6 @@ class UserViewController: BaseViewController, ProfileDelegate
         followingLabel.text=followingLabelText
         
         followButton.hidden=UserContainer.shared.logged().id==user!.id
-        blockButton.hidden=UserContainer.shared.logged().id==user!.id
     }
 
     @IBAction func recentButtonPressed()
@@ -102,20 +102,6 @@ class UserViewController: BaseViewController, ProfileDelegate
         else
         {
             SocialConnector().follow(user!.id, success:followSuccess, failure:followFailure)
-        }
-    }
-    
-    @IBAction func blockButtonPressed()
-    {
-        blockButton.enabled=false
-        
-        if user!.isBlocked
-        {
-            SocialConnector().unblock(user!.id, success:unblockSuccess, failure:unblockFailure)
-        }
-        else
-        {
-            SocialConnector().block(user!.id, success:blockSuccess, failure:blockFailure)
         }
     }
     
@@ -186,46 +172,6 @@ class UserViewController: BaseViewController, ProfileDelegate
         followButton.enabled=true
     }
     
-    func blockSuccess()
-    {
-        blockButton.enabled=true
-        user!.isBlocked=true
-        
-        let buttonTitle=NSLocalizedString("user_card_unblock", comment:"")
-        blockButton.setTitle(buttonTitle, forState:.Normal)
-        
-        if let delegate=userStatusDelegate
-        {
-            delegate.blockStatusDidChange(true, user:user!)
-        }
-    }
-    
-    func blockFailure(error:NSError)
-    {
-        handleError(error)
-        blockButton.enabled=true
-    }
-    
-    func unblockSuccess()
-    {
-        blockButton.enabled=true
-        user!.isBlocked=false
-        
-        let buttonTitle=NSLocalizedString("user_card_block", comment:"")
-        blockButton.setTitle(buttonTitle, forState:.Normal)
-        
-        if let delegate=userStatusDelegate
-        {
-            delegate.blockStatusDidChange(false, user:user!)
-        }
-    }
-    
-    func unblockFailure(error:NSError)
-    {
-        handleError(error)
-        blockButton.enabled=true
-    }
-    
     func getUserSuccess(user:User)
     {
         self.user=user
@@ -244,17 +190,6 @@ class UserViewController: BaseViewController, ProfileDelegate
         {
             let buttonTitle=NSLocalizedString("user_card_follow", comment:"")
             followButton.setTitle(buttonTitle, forState:.Normal)
-        }
-        
-        if user.isBlocked
-        {
-            let buttonTitle=NSLocalizedString("user_card_unblock", comment:"")
-            blockButton.setTitle(buttonTitle, forState:.Normal)
-        }
-        else
-        {
-            let buttonTitle=NSLocalizedString("user_card_block", comment:"")
-            blockButton.setTitle(buttonTitle, forState:.Normal)
         }
         
         activityIndicator.stopAnimating()
