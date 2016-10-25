@@ -53,7 +53,8 @@ ProfileDelegate {
         actionSheet.showInView(self.view)
     }
     
-    func configureView() {
+    func configureView()
+    {
         self.title = NSLocalizedString("profile_title", comment: "")
         followingLabel.text = NSLocalizedString("profile_following", comment: "")
         followersLabel.text = NSLocalizedString("profile_followers", comment: "")
@@ -144,15 +145,16 @@ ProfileDelegate {
         }
     }
     
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
         self.configureView()
         
-        let activator = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.White)
+        let activator=UIActivityIndicatorView(activityIndicatorStyle:.White)
         activator.startAnimating()
         
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: activator)
-        UserConnector().get(nil, success: successGetUser, failure: successFailure)
+        self.navigationItem.rightBarButtonItem=UIBarButtonItem(customView:activator)
+        UserConnector().get(nil, success:successGetUser, failure:successFailure)
     }
     
     override func viewWillAppear(animated: Bool) {

@@ -603,7 +603,7 @@
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <color key="sectionIndexBackgroundColor" red="0.90196078430000004" green="0.90196078430000004" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="gray" indentationWidth="10" reuseIdentifier="LiveStreamCell" rowHeight="180" id="sBe-6x-sWb" customClass="LiveStreamCell" customModule="Streamini" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" misplaced="YES" selectionStyle="gray" indentationWidth="10" reuseIdentifier="LiveStreamCell" rowHeight="180" id="sBe-6x-sWb" customClass="LiveStreamCell" customModule="Streamini" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="22" width="375" height="180"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sBe-6x-sWb" id="aS7-Mp-zbu">
@@ -815,7 +815,7 @@
                                             <segue destination="vl6-2K-I2j" kind="presentation" identifier="MainToJoinStream" id="qHz-m7-Ohg"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="gray" indentationWidth="10" reuseIdentifier="RecentStreamCell" rowHeight="56" id="KYt-8x-D0X" customClass="RecentStreamCell" customModule="Streamini" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" misplaced="YES" selectionStyle="gray" indentationWidth="10" reuseIdentifier="RecentStreamCell" rowHeight="56" id="KYt-8x-D0X" customClass="RecentStreamCell" customModule="Streamini" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="202" width="375" height="56"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KYt-8x-D0X" id="XAP-G6-AtG">
@@ -2391,7 +2391,6 @@
                                                         <outlet property="userDescriptionTextView" destination="eX8-zp-egQ" id="2RH-eZ-SHL"/>
                                                         <outlet property="userImageView" destination="yCP-dA-KmR" id="vMb-8j-p1Z"/>
                                                         <outlet property="usernameLabel" destination="KB7-fq-14Z" id="yof-R2-hm6"/>
-                                                        <outlet property="usernameLabelWidth" destination="k7T-w6-6pc" id="u5j-bw-yP6"/>
                                                     </connections>
                                                 </view>
                                             </subviews>
@@ -7515,11 +7514,11 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="200" sectionHeaderHeight="60" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="ZtH-TU-uzt">
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="200" id="kgH-SI-miz" customClass="AllCategoriesRow" customModule="Streamini" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="60" width="1000" height="200"/>
+                                    <tableViewCell contentMode="scaleToFill" misplaced="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="200" id="kgH-SI-miz" customClass="AllCategoriesRow" customModule="Streamini" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="60" width="320" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kgH-SI-miz" id="woL-XW-VUK">
-                                            <frame key="frameInset" width="1000" height="200"/>
+                                            <frame key="frameInset" width="320" height="200"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="s0l-LL-G2h">
@@ -7641,7 +7640,7 @@
         <image name="user.png" width="40" height="41"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="7w1-zz-osQ"/>
         <segue reference="ybU-Cf-XEH"/>
-        <segue reference="qHz-m7-Ohg"/>
     </inferredMetricsTieBreakers>
 </document>
