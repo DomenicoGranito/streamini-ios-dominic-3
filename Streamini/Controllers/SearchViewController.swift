@@ -63,6 +63,14 @@ class SearchViewController: BaseViewController, UserSelecting, StreamSelecting, 
         searchTypeSegment.setTitle(NSLocalizedString("people", comment: ""), forSegmentAtIndex: 2)
         
         //self.edgesForExtendedLayout = UIRectEdgeNone;
+        
+        //
+        
+        searchTypeSegment.layer.cornerRadius = 0.0;
+        searchTypeSegment.layer.borderWidth = 1.5;
+      
+        //
+
     }
     
     override func viewDidLoad()
