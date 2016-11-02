@@ -10,11 +10,41 @@ class CategoriesViewController: UIViewController
 {
     @IBOutlet var topImageView:UIImageView?
     
+    var allItemsArray=NSMutableArray()
+    var sectionItemsArray=NSMutableArray()
+    var count=0
+    
     override func viewDidLoad()
     {
         navigationController?.navigationBarHidden=true
         
-        super.viewDidLoad()
+        let file=NSBundle.mainBundle().pathForResource("category", ofType:"json")
+        let jsonData=NSData(contentsOfFile:file!)
+        let jsonDictionary=try! NSJSONSerialization.JSONObjectWithData(jsonData!, options:[]) as! NSDictionary
+        
+        let videos=jsonDictionary["videos"]!
+        
+        for i in 0 ..< videos.count
+        {
+            let videoID=videos[i]["video_id"] as! Int
+            let videoTitle=videos[i]["video_title"] as! String
+            let videoURL=videos[i]["video_url"] as! String
+            let videoThumbnail=videos[i]["video_thumbnail"] as! String
+            let followersCount=videos[i]["followers_count"] as! String
+            
+            let video=Video(id:videoID, title:videoTitle, url:videoURL, thumbnail:videoThumbnail, followersCount:followersCount)
+            
+            sectionItemsArray.addObject(video)
+            
+            count+=1
+            
+            if(count==2||(count==1&&i==videos.count-1))
+            {
+                count=0
+                allItemsArray.addObject(sectionItemsArray)
+                sectionItemsArray=NSMutableArray()
+            }
+        }
     }
     
     func tableView(tableView:UITableView, viewForHeaderInSection section:Int)->UIView?
@@ -38,12 +68,15 @@ class CategoriesViewController: UIViewController
     
     func tableView(tableView:UITableView, numberOfRowsInSection section:Int)->Int
     {
-        return 4
+        return allItemsArray.count
     }
     
     func tableView(tableView:UITableView, cellForRowAtIndexPath indexPath:NSIndexPath)->UITableViewCell
     {
         let cell=tableView.dequeueReusableCellWithIdentifier("cell") as! AllCategoriesRow
+        
+        cell.sectionItemsArray=allItemsArray[indexPath.row] as! NSArray
+        
         return cell
     }
     

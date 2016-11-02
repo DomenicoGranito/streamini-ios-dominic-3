@@ -8,14 +8,23 @@
 
 class AllCategoriesRow: UITableViewCell
 {
+    var sectionItemsArray:NSArray!
+    
     func collectionView(collectionView:UICollectionView, numberOfItemsInSection section:Int)->Int
     {
-        return 2
+        return sectionItemsArray.count
     }
     
     func collectionView(collectionView:UICollectionView, cellForItemAtIndexPath indexPath:NSIndexPath)->UICollectionViewCell
     {
         let cell=collectionView.dequeueReusableCellWithReuseIdentifier("videoCell", forIndexPath:indexPath) as! VideoCell
+        
+        let video=sectionItemsArray[indexPath.row] as! Video
+        
+        cell.videoTitleLbl?.text=video.title
+        cell.followersCountLbl?.text="\(video.followersCount) FOLLOWERS"
+        cell.videoThumbnailImageView?.image=UIImage(named:video.thumbnail)
+
         return cell
     }
     

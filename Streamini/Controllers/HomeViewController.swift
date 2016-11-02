@@ -8,7 +8,46 @@
 
 class HomeViewController: UIViewController
 {
-    let categories=["Action", "Drama", "Science Fiction", "Kids", "Horror"]
+    var categoryNamesArray=NSMutableArray()
+    var categoryIDsArray=NSMutableArray()
+    var allCategoryItemsArray=NSMutableArray()
+    
+    override func viewDidLoad()
+    {
+        let file=NSBundle.mainBundle().pathForResource("home", ofType:"json")
+        let jsonData=NSData(contentsOfFile:file!)
+        let jsonDictionary=try! NSJSONSerialization.JSONObjectWithData(jsonData!, options:[]) as! NSDictionary
+        
+        let data=jsonDictionary["data"]!
+        
+        for i in 0 ..< data.count
+        {
+            let categoryName=data[i]["category_name"] as! String
+            let categoryID=data[i]["category_id"] as! Int
+            
+            categoryNamesArray.addObject(categoryName)
+            categoryIDsArray.addObject(categoryID)
+            
+            let videos=data[i]["videos"] as! NSArray
+            
+            let oneCategoryItemsArray=NSMutableArray()
+            
+            for j in 0 ..< videos.count
+            {
+                let videoID=videos[j]["video_id"] as! Int
+                let videoTitle=videos[j]["video_title"] as! String
+                let videoURL=videos[j]["video_url"] as! String
+                let videoThumbnail=videos[j]["video_thumbnail"] as! String
+                let followersCount=videos[j]["followers_count"] as! String
+                
+                let video=Video(id:videoID, title:videoTitle, url:videoURL, thumbnail:videoThumbnail, followersCount:followersCount)
+                
+                oneCategoryItemsArray.addObject(video)
+            }
+            
+            allCategoryItemsArray.addObject(oneCategoryItemsArray)
+        }
+    }
     
     override func viewWillAppear(animated:Bool)
     {
@@ -21,7 +60,7 @@ class HomeViewController: UIViewController
         headerView.backgroundColor=UIColor(colorLiteralRed:18/255, green:19/255, blue:21/255, alpha:1)
         
         let titleLbl=UILabel(frame:CGRectMake(5, 20, 310, 20))
-        titleLbl.text=categories[section]
+        titleLbl.text=categoryNamesArray[section] as? String
         titleLbl.font=UIFont.systemFontOfSize(14)
         titleLbl.textColor=UIColor.lightGrayColor()
         
@@ -46,7 +85,7 @@ class HomeViewController: UIViewController
     
     func numberOfSectionsInTableView(tableView:UITableView)->Int
     {
-        return categories.count
+        return categoryNamesArray.count
     }
     
     func tableView(tableView:UITableView, numberOfRowsInSection section:Int)->Int
@@ -57,6 +96,9 @@ class HomeViewController: UIViewController
     func tableView(tableView:UITableView, cellForRowAtIndexPath indexPath:NSIndexPath)->UITableViewCell
     {
         let cell=tableView.dequeueReusableCellWithIdentifier("cell") as! CategoryRow
+        
+        cell.oneCategoryItemsArray=allCategoryItemsArray[indexPath.section] as! NSArray
+        
         return cell
     }
 }

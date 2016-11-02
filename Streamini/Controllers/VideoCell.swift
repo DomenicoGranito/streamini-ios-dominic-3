@@ -8,5 +8,7 @@
 
 class VideoCell: UICollectionViewCell
 {
-    @IBOutlet var imageView:UIImageView?
+    @IBOutlet var videoTitleLbl:UILabel?
+    @IBOutlet var followersCountLbl:UILabel?
+    @IBOutlet var videoThumbnailImageView:UIImageView?
 }
