@@ -98,6 +98,7 @@ class HomeViewController: UIViewController
         let cell=tableView.dequeueReusableCellWithIdentifier("cell") as! CategoryRow
         
         cell.oneCategoryItemsArray=allCategoryItemsArray[indexPath.section] as! NSArray
+        cell.navigationControllerReference=navigationController
         
         return cell
     }

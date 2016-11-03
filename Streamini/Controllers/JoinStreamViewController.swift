@@ -373,12 +373,12 @@ UIActionSheetDelegate, SelectFollowersDelegate, ReplayViewDelegate, UserSelectin
         configureView()
 
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(JoinStreamViewController.forceLeave(_:)), name: "Close/Leave", object: nil)
-        if !isRecent {
-            StreamConnector().join(stream!.id, success: joinSuccess, failure: joinFailure)
-        } else {
-            streamPlayer = StreamPlayer(stream: stream!, isRecent: isRecent, view: previewView, indicator: activityIndicator)
-            self.streamPlayer!.delegate = DefaultStreamPlayerDelegate(isRecent: isRecent, replayView: replayView)
-        }
+//        if !isRecent {
+//            StreamConnector().join(stream!.id, success: joinSuccess, failure: joinFailure)
+//        } else {
+//            streamPlayer = StreamPlayer(stream: stream!, isRecent: isRecent, view: previewView, indicator: activityIndicator)
+//            self.streamPlayer!.delegate = DefaultStreamPlayerDelegate(isRecent: isRecent, replayView: replayView)
+//        }
     }
     
     deinit {

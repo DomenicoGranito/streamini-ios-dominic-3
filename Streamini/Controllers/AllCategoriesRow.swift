@@ -9,6 +9,7 @@
 class AllCategoriesRow: UITableViewCell
 {
     var sectionItemsArray:NSArray!
+    var navigationControllerReference:UINavigationController?
     
     func collectionView(collectionView:UICollectionView, numberOfItemsInSection section:Int)->Int
     {
@@ -25,7 +26,17 @@ class AllCategoriesRow: UITableViewCell
         cell.followersCountLbl?.text="\(video.followersCount) FOLLOWERS"
         cell.videoThumbnailImageView?.image=UIImage(named:video.thumbnail)
 
+        let cellRecognizer=UITapGestureRecognizer(target:self, action:#selector(cellTapped))
+        cell.addGestureRecognizer(cellRecognizer)
+        
         return cell
+    }
+    
+    func cellTapped()
+    {
+        let storyboard=UIStoryboard(name:"Main", bundle:nil)
+        let vc=storyboard.instantiateViewControllerWithIdentifier("JoinStreamViewControllerId") as! JoinStreamViewController
+        navigationControllerReference?.pushViewController(vc, animated:true)
     }
     
     func collectionView(collectionView:UICollectionView, layout collectionViewLayout:UICollectionViewLayout, sizeForItemAtIndexPath indexPath:NSIndexPath)->CGSize

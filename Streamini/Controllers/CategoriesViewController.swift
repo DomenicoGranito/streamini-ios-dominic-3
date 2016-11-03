@@ -76,6 +76,7 @@ class CategoriesViewController: UIViewController
         let cell=tableView.dequeueReusableCellWithIdentifier("cell") as! AllCategoriesRow
         
         cell.sectionItemsArray=allItemsArray[indexPath.row] as! NSArray
+        cell.navigationControllerReference=navigationController
         
         return cell
     }
