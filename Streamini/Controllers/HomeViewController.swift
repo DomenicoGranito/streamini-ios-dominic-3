@@ -6,8 +6,21 @@
 //  Copyright © 2016 UniProgy s.r.o. All rights reserved.
 //
 
+//protocol HomeViewControllerDelegate: class {
+//    func streamListReload()
+//    func changeMode(isGlobal: Bool)
+//}
+
+
+
+
 class HomeViewController: UIViewController
 {
+   // let dataSource  = StreamDataSource()
+   // weak var rootControllerDelegate: RootViewControllerDelegate?
+   // var isGlobal    = false
+   // var timer: NSTimer?
+    
     var categoryNamesArray=NSMutableArray()
     var categoryIDsArray=NSMutableArray()
     var allCategoryItemsArray=NSMutableArray()
@@ -108,4 +121,21 @@ class HomeViewController: UIViewController
         
         return cell
     }
+    
+    
+    //isRecent settings
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let sid = segue.identifier {
+            if sid == "ProfileStatisticsToJoinStream" {
+                let navigationController = segue.destinationViewController as! UINavigationController
+                let controller = navigationController.viewControllers[0] as! JoinStreamViewController
+                controller.stream = (sender as! StreamCell).stream
+                controller.isRecent = true
+               // controller.delegate = self
+            }
+        }
+    }
+    
+
 }
