@@ -49,7 +49,8 @@ class StreamConnector: Connector {
     }
     
     func categories(success: (cats: [Category]) -> (), failure: (error: NSError) -> ()) {
-        let path = "stream/categories"
+        //let path = "stream/categories"
+        let path = "category/categories"
         
         let mapping = CategoryMappingProvider.categoryResponseMapping()
         let statusCode = RKStatusCodeIndexSetForClass(.Successful)
