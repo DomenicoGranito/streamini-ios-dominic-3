@@ -164,11 +164,16 @@ class StreamPlayer: NSObject {
         let url: String
         let (accessKeyId, _, _, streamBucket, _) = Config.shared.amazon()
         if isRecent {
-            url = accessKeyId == ""
-                ? "http://\(host):\(port)/vod/_definist_/mp4:\(streamName).mp4/playlist.m3u8"
-                : "http://\(host):\(port)/vods3/_definist_/mp4:amazons3/\(streamBucket)/\(streamName).mp4/playlist.m3u8"
+           // url = accessKeyId == ""
+             //   ? "http://\(host):\(port)/vod/_definist_/mp4:\(streamName).mp4/playlist.m3u8"
+              //  : "http://\(host):\(port)/vods3/_definist_/mp4:amazons3/\(streamBucket)/\(streamName).mp4/playlist.m3u8"
+       
+            url = "http://\(host)/media/\(stream.id).mp4"
+        
         } else {
             url = "http://\(host):\(port)/\(application)/\(streamName)/playlist.m3u8"
+            
+            
         }
         return NSURL(string: url)!
     }
