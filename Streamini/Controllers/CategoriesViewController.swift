@@ -12,6 +12,7 @@ class CategoriesViewController: UIViewController
     
     var allItemsArray=NSMutableArray()
     var sectionItemsArray=NSMutableArray()
+    var categoryName:String?
     var count=0
     
     override func viewDidLoad()
@@ -53,7 +54,7 @@ class CategoriesViewController: UIViewController
         headerView.backgroundColor=UIColor(colorLiteralRed:18/255, green:19/255, blue:21/255, alpha:1)
         
         let titleLbl=UILabel(frame:CGRectMake(10, 20, 300, 20))
-        titleLbl.text="POPULAR LIST"
+        titleLbl.text=categoryName
         titleLbl.font=UIFont.systemFontOfSize(14)
         titleLbl.textColor=UIColor.lightGrayColor()
         

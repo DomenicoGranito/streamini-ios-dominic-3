@@ -6,21 +6,8 @@
 //  Copyright © 2016 UniProgy s.r.o. All rights reserved.
 //
 
-//protocol HomeViewControllerDelegate: class {
-//    func streamListReload()
-//    func changeMode(isGlobal: Bool)
-//}
-
-
-
-
 class HomeViewController: UIViewController
 {
-   // let dataSource  = StreamDataSource()
-   // weak var rootControllerDelegate: RootViewControllerDelegate?
-   // var isGlobal    = false
-   // var timer: NSTimer?
-    
     var categoryNamesArray=NSMutableArray()
     var categoryIDsArray=NSMutableArray()
     var allCategoryItemsArray=NSMutableArray()
@@ -87,6 +74,7 @@ class HomeViewController: UIViewController
         
         let tapGesture=UITapGestureRecognizer(target:self, action:#selector(headerTapped))
         headerView.addGestureRecognizer(tapGesture)
+        headerView.tag=section
         
         headerView.addSubview(lineView)
         headerView.addSubview(accessoryLbl)
@@ -95,10 +83,11 @@ class HomeViewController: UIViewController
         return headerView
     }
     
-    func headerTapped()
+    func headerTapped(gestureRecognizer:UITapGestureRecognizer)
     {
         let storyboard=UIStoryboard(name:"Main", bundle:nil)
         let vc=storyboard.instantiateViewControllerWithIdentifier("CategoriesViewController") as! CategoriesViewController
+        vc.categoryName=categoryNamesArray[gestureRecognizer.view!.tag] as? String
         navigationController?.pushViewController(vc, animated:true)
     }
     
@@ -121,21 +110,4 @@ class HomeViewController: UIViewController
         
         return cell
     }
-    
-    
-    //isRecent settings
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if let sid = segue.identifier {
-            if sid == "ProfileStatisticsToJoinStream" {
-                let navigationController = segue.destinationViewController as! UINavigationController
-                let controller = navigationController.viewControllers[0] as! JoinStreamViewController
-                controller.stream = (sender as! StreamCell).stream
-                controller.isRecent = true
-               // controller.delegate = self
-            }
-        }
-    }
-    
-
 }
