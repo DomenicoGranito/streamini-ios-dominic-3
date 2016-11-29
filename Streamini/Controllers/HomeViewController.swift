@@ -59,10 +59,15 @@ class HomeViewController: UIViewController
         let headerView=UIView(frame:CGRectMake(0, 0, 60, tableView.frame.size.width))
         headerView.backgroundColor=UIColor(colorLiteralRed:18/255, green:19/255, blue:21/255, alpha:1)
         
-        let titleLbl=UILabel(frame:CGRectMake(5, 20, 310, 20))
+        let titleLbl=UILabel(frame:CGRectMake(5, 20, 285, 20))
         titleLbl.text=categoryNamesArray[section] as? String
         titleLbl.font=UIFont.systemFontOfSize(14)
         titleLbl.textColor=UIColor.lightGrayColor()
+        
+        let accessoryLbl=UILabel(frame:CGRectMake(295, 20, 20, 20))
+        accessoryLbl.text=">"
+        accessoryLbl.font=UIFont.systemFontOfSize(18)
+        accessoryLbl.textColor=UIColor.lightGrayColor()
         
         let lineView=UIView(frame:CGRectMake(5, 45, tableView.frame.size.width-10, 1))
         lineView.backgroundColor=UIColor.darkGrayColor()
@@ -71,6 +76,7 @@ class HomeViewController: UIViewController
         headerView.addGestureRecognizer(tapGesture)
         
         headerView.addSubview(lineView)
+        headerView.addSubview(accessoryLbl)
         headerView.addSubview(titleLbl)
         
         return headerView
