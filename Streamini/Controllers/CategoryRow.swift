@@ -20,22 +20,25 @@ class CategoryRow: UITableViewCell
     {
         let cell=collectionView.dequeueReusableCellWithReuseIdentifier("videoCell", forIndexPath:indexPath) as! VideoCell
         
-        let video=oneCategoryItemsArray[indexPath.row] as! Video
+        let video=oneCategoryItemsArray[indexPath.row] as! Stream
         
         cell.videoTitleLbl?.text=video.title
-        cell.followersCountLbl?.text="\(video.followersCount) FOLLOWERS"
-        cell.videoThumbnailImageView?.image=UIImage(named:video.thumbnail)
         
         let cellRecognizer=UITapGestureRecognizer(target:self, action:#selector(cellTapped))
+        cell.tag=indexPath.row
         cell.addGestureRecognizer(cellRecognizer)
         
         return cell
     }
     
-    func cellTapped()
+    func cellTapped(gestureRecognizer:UITapGestureRecognizer)
     {
+        let video=oneCategoryItemsArray[gestureRecognizer.view!.tag] as! Stream
+        
         let storyboard=UIStoryboard(name:"Main", bundle:nil)
         let vc=storyboard.instantiateViewControllerWithIdentifier("JoinStreamViewControllerId") as! JoinStreamViewController
+        vc.stream=video
+        vc.isRecent=(video.ended != nil)
         navigationControllerReference?.pushViewController(vc, animated:true)
     }
 }

@@ -127,6 +127,46 @@ class StreamConnector: Connector {
         }
     }
     
+    /*** WRITTEN BY ANKIT GARG ***/
+    
+    func homeStreams(success:(data:NSDictionary)->(), failure:(error:NSError)->())
+    {
+        let path="category/streams"
+        
+        manager.getObjectsAtPath(path, parameters:self.sessionParams(), success:{ (operation, mappingResult)->Void in
+            
+            let error=self.findErrorObject(mappingResult:mappingResult)!
+            
+            if !error.status
+            {
+                if error.code==Error.kLoginExpiredCode
+                {
+                    self.relogin({()->() in
+                        self.homeStreams(success, failure:failure)
+                        },
+                                 failure:{()->() in
+                                    failure(error:error.toNSError())
+                    })
+                }
+                else
+                {
+                    failure(error:error.toNSError())
+                }
+            }
+            else
+            {
+                let json=try! NSJSONSerialization.JSONObjectWithData(operation.HTTPRequestOperation.responseData, options:.MutableLeaves) as! NSDictionary
+                
+                success(data:json)
+            }
+            })
+        {(operation, error)->Void in
+            failure(error:error)
+        }
+    }
+    
+    /*** WRITTEN BY ANKIT GARG ***/
+    
     func search(page: UInt, category: UInt, query: String, city: String, success: (streams: [Stream]) -> (), failure: (error: NSError) -> ()) {
         let path = "stream/search"
         

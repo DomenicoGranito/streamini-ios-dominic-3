@@ -6,47 +6,17 @@
 //  Copyright © 2016 UniProgy s.r.o. All rights reserved.
 //
 
-class HomeViewController: UIViewController
+class HomeViewController: BaseViewController
 {
+    @IBOutlet var itemsTbl:UITableView?
+    
     var categoryNamesArray=NSMutableArray()
     var categoryIDsArray=NSMutableArray()
     var allCategoryItemsArray=NSMutableArray()
     
     override func viewDidLoad()
     {
-        let file=NSBundle.mainBundle().pathForResource("home", ofType:"json")
-        let jsonData=NSData(contentsOfFile:file!)
-        let jsonDictionary=try! NSJSONSerialization.JSONObjectWithData(jsonData!, options:[]) as! NSDictionary
-        
-        let data=jsonDictionary["data"]!
-        
-        for i in 0 ..< data.count
-        {
-            let categoryName=data[i]["category_name"] as! String
-            let categoryID=data[i]["category_id"] as! Int
-            
-            categoryNamesArray.addObject(categoryName)
-            categoryIDsArray.addObject(categoryID)
-            
-            let videos=data[i]["videos"] as! NSArray
-            
-            let oneCategoryItemsArray=NSMutableArray()
-            
-            for j in 0 ..< videos.count
-            {
-                let videoID=videos[j]["video_id"] as! Int
-                let videoTitle=videos[j]["video_title"] as! String
-                let videoURL=videos[j]["video_url"] as! String
-                let videoThumbnail=videos[j]["video_thumbnail"] as! String
-                let followersCount=videos[j]["followers_count"] as! String
-                
-                let video=Video(id:videoID, title:videoTitle, url:videoURL, thumbnail:videoThumbnail, followersCount:followersCount)
-                
-                oneCategoryItemsArray.addObject(video)
-            }
-            
-            allCategoryItemsArray.addObject(oneCategoryItemsArray)
-        }
+        StreamConnector().homeStreams(successStreams, failure:failureStream)
     }
     
     override func viewWillAppear(animated:Bool)
@@ -109,5 +79,73 @@ class HomeViewController: UIViewController
         cell.navigationControllerReference=navigationController
         
         return cell
+    }
+    
+    func successStreams(data:NSDictionary)
+    {
+        let data=data["data"]!
+        
+        for i in 0 ..< data.count
+        {
+            let categoryName=data[i]["category_name"] as! String
+            let categoryID=data[i]["category_id"]!.integerValue
+            
+            categoryNamesArray.addObject(categoryName)
+            categoryIDsArray.addObject(categoryID)
+            
+            let videos=data[i]["videos"] as! NSArray
+            
+            let oneCategoryItemsArray=NSMutableArray()
+            
+            for j in 0 ..< videos.count
+            {
+                let videoID=videos[j]["id"] as! String
+                let videoTitle=videos[j]["title"] as! String
+                let videoHash=videos[j]["hash"] as! String
+                let lon=videos[j]["lon"]!.doubleValue
+                let lat=videos[j]["lat"]!.doubleValue
+                let city=videos[j]["city"] as! String
+                let ended=videos[j]["ended"] as? NSDate
+                let viewers=videos[j]["viewers"] as! String
+                let tviewers=videos[j]["tviewers"] as! String
+                let rviewers=videos[j]["rviewers"] as! String
+                let likes=videos[j]["likes"] as! String
+                let rlikes=videos[j]["rlikes"] as! String
+                let userID=videos[j]["user"]!["id"] as! String
+                let userName=videos[j]["user"]!["name"] as! String
+                let userAvatar=videos[j]["user"]!["avatar"] as? String
+                
+                let user=User()
+                user.id=UInt(userID)!
+                user.name=userName
+                user.avatar=userAvatar
+                
+                let video=Stream()
+                video.id=UInt(videoID)!
+                video.title=videoTitle
+                video.streamHash=videoHash
+                video.lon=lon
+                video.lat=lat
+                video.city=city
+                video.ended=ended
+                video.viewers=UInt(viewers)!
+                video.tviewers=UInt(tviewers)!
+                video.rviewers=UInt(rviewers)!
+                video.likes=UInt(likes)!
+                video.rlikes=UInt(rlikes)!
+                video.user=user
+                
+                oneCategoryItemsArray.addObject(video)
+            }
+            
+            allCategoryItemsArray.addObject(oneCategoryItemsArray)
+        }
+        
+        itemsTbl!.reloadData()
+    }
+    
+    func failureStream(error:NSError)
+    {
+        handleError(error)
     }
 }
