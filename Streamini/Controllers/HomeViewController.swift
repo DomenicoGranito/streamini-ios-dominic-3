@@ -105,7 +105,7 @@ class HomeViewController: BaseViewController
                 let lon=videos[j]["lon"]!.doubleValue
                 let lat=videos[j]["lat"]!.doubleValue
                 let city=videos[j]["city"] as! String
-                let ended=videos[j]["ended"] as? NSDate
+                let ended=videos[j]["ended"] as? String
                 let viewers=videos[j]["viewers"] as! String
                 let tviewers=videos[j]["tviewers"] as! String
                 let rviewers=videos[j]["rviewers"] as! String
@@ -127,7 +127,12 @@ class HomeViewController: BaseViewController
                 video.lon=lon
                 video.lat=lat
                 video.city=city
-                video.ended=ended
+                
+                if let e=ended
+                {
+                    video.ended=NSDate(timeIntervalSince1970:Double(e)!)
+                }
+                
                 video.viewers=UInt(viewers)!
                 video.tviewers=UInt(tviewers)!
                 video.rviewers=UInt(rviewers)!

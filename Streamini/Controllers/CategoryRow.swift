@@ -23,6 +23,7 @@ class CategoryRow: UITableViewCell
         let video=oneCategoryItemsArray[indexPath.row] as! Stream
         
         cell.videoTitleLbl?.text=video.title
+        cell.videoThumbnailImageView?.sd_setImageWithURL(NSURL(string:"http://cedricm.cn/thumbs/\(video.id).jpg"))
         
         let cellRecognizer=UITapGestureRecognizer(target:self, action:#selector(cellTapped))
         cell.tag=indexPath.row
