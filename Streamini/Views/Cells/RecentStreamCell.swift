@@ -28,7 +28,7 @@ class RecentStreamCell: StreamCell {
     
     override func update(stream: Stream) {
         super.update(stream)
-        
+        playImageView.sd_setImageWithURL(NSURL(string:"http://cedricm.cn/thumbs/\(stream.id).jpg"))
         userLabel.text = stream.user.name
         streamNameLabel.text  = stream.title
         streamEndedLabel.text = stream.ended!.timeAgoSimple

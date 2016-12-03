@@ -24,8 +24,11 @@ class AllCategoriesRow: UITableViewCell
         
         cell.videoTitleLbl?.text=video.title
         cell.followersCountLbl?.text="\(video.followersCount) FOLLOWERS"
-        cell.videoThumbnailImageView?.image=UIImage(named:video.thumbnail)
+        //cell.videoThumbnailImageView?.image=UIImage(named:video.thumbnail)
 
+        cell.videoThumbnailImageView?.sd_setImageWithURL(NSURL(string:"http://cedricm.cn/thumbs/\(video.id).jpg"))
+        
+        
         let cellRecognizer=UITapGestureRecognizer(target:self, action:#selector(cellTapped))
         cell.addGestureRecognizer(cellRecognizer)
         
