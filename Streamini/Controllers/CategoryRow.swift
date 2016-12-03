@@ -34,12 +34,15 @@ class CategoryRow: UITableViewCell
     
     func cellTapped(gestureRecognizer:UITapGestureRecognizer)
     {
+        let root=UIApplication.sharedApplication().delegate!.window!?.rootViewController as! UINavigationController
+        
         let video=oneCategoryItemsArray[gestureRecognizer.view!.tag] as! Stream
         
         let storyboard=UIStoryboard(name:"Main", bundle:nil)
-        let vc=storyboard.instantiateViewControllerWithIdentifier("JoinStreamViewControllerId") as! JoinStreamViewController
-        vc.stream=video
-        vc.isRecent=(video.ended != nil)
-        navigationControllerReference?.pushViewController(vc, animated:true)
+        let joinNavController=storyboard.instantiateViewControllerWithIdentifier("JoinStreamNavigationControllerId") as! UINavigationController
+        let joinController=joinNavController.viewControllers[0] as! JoinStreamViewController
+        joinController.stream=video
+        joinController.isRecent=(video.ended != nil)
+        root.presentViewController(joinNavController, animated:true, completion:nil)
     }
 }
