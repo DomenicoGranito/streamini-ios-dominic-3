@@ -58,6 +58,7 @@ class HomeViewController: BaseViewController
         let storyboard=UIStoryboard(name:"Main", bundle:nil)
         let vc=storyboard.instantiateViewControllerWithIdentifier("CategoriesViewController") as! CategoriesViewController
         vc.categoryName=categoryNamesArray[gestureRecognizer.view!.tag] as? String
+        vc.categoryID=categoryIDsArray[gestureRecognizer.view!.tag] as? Int
         navigationController?.pushViewController(vc, animated:true)
     }
     

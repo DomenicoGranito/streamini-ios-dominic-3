@@ -165,6 +165,42 @@ class StreamConnector: Connector {
         }
     }
     
+    func categoryStreams(categoryID:Int, success:(data:NSDictionary)->(), failure:(error:NSError)->())
+    {
+        let path="category/streamscategory?c=\(categoryID)"
+        
+        manager.getObjectsAtPath(path, parameters:self.sessionParams(), success:{ (operation, mappingResult)->Void in
+            
+            let error=self.findErrorObject(mappingResult:mappingResult)!
+            
+            if !error.status
+            {
+                if error.code==Error.kLoginExpiredCode
+                {
+                    self.relogin({()->() in
+                        self.categoryStreams(categoryID, success:success, failure:failure)
+                        },
+                        failure:{()->() in
+                            failure(error:error.toNSError())
+                    })
+                }
+                else
+                {
+                    failure(error:error.toNSError())
+                }
+            }
+            else
+            {
+                let json=try! NSJSONSerialization.JSONObjectWithData(operation.HTTPRequestOperation.responseData, options:.MutableLeaves) as! NSDictionary
+                
+                success(data:json)
+            }
+            })
+        {(operation, error)->Void in
+            failure(error:error)
+        }
+    }
+
     /*** WRITTEN BY ANKIT GARG ***/
     
     func search(page: UInt, category: UInt, query: String, city: String, success: (streams: [Stream]) -> (), failure: (error: NSError) -> ()) {
@@ -644,7 +680,5 @@ class StreamConnector: Connector {
             }) { (operation, error) -> Void in
                 failure(error: error)
         }
-        
-        
     }
 }

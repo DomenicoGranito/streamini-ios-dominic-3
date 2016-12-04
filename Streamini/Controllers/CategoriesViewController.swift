@@ -6,46 +6,22 @@
 //  Copyright © 2016 UniProgy s.r.o. All rights reserved.
 //
 
-class CategoriesViewController: UIViewController
+class CategoriesViewController: BaseViewController
 {
+    @IBOutlet var itemsTbl:UITableView?
     @IBOutlet var topImageView:UIImageView?
     
     var allItemsArray=NSMutableArray()
     var sectionItemsArray=NSMutableArray()
     var categoryName:String?
     var count=0
+    var categoryID:Int?
     
     override func viewDidLoad()
     {
         navigationController?.navigationBarHidden=true
         
-        let file=NSBundle.mainBundle().pathForResource("category", ofType:"json")
-        let jsonData=NSData(contentsOfFile:file!)
-        let jsonDictionary=try! NSJSONSerialization.JSONObjectWithData(jsonData!, options:[]) as! NSDictionary
-        
-        let videos=jsonDictionary["videos"]!
-        
-        for i in 0 ..< videos.count
-        {
-            let videoID=videos[i]["video_id"] as! Int
-            let videoTitle=videos[i]["video_title"] as! String
-            let videoURL=videos[i]["video_url"] as! String
-            let videoThumbnail=videos[i]["video_thumbnail"] as! String
-            let followersCount=videos[i]["followers_count"] as! String
-            
-            let video=Video(id:videoID, title:videoTitle, url:videoURL, thumbnail:videoThumbnail, followersCount:followersCount)
-            
-            sectionItemsArray.addObject(video)
-            
-            count+=1
-            
-            if(count==2||(count==1&&i==videos.count-1))
-            {
-                count=0
-                allItemsArray.addObject(sectionItemsArray)
-                sectionItemsArray=NSMutableArray()
-            }
-        }
+        StreamConnector().categoryStreams(categoryID!, success:successStreams, failure:failureStream)
     }
     
     func tableView(tableView:UITableView, viewForHeaderInSection section:Int)->UIView?
@@ -85,5 +61,72 @@ class CategoriesViewController: UIViewController
     @IBAction func back()
     {
         navigationController?.popViewControllerAnimated(true)
+    }
+    
+    func successStreams(data:NSDictionary)
+    {
+        let data=data["data"]!
+        
+        for i in 0 ..< data.count
+        {
+            let videoID=data[i]["id"] as! String
+            let videoTitle=data[i]["title"] as! String
+            let videoHash=data[i]["hash"] as! String
+            let lon=data[i]["lon"]!.doubleValue
+            let lat=data[i]["lat"]!.doubleValue
+            let city=data[i]["city"] as! String
+            let ended=data[i]["ended"] as? String
+            let viewers=data[i]["viewers"] as! String
+            let tviewers=data[i]["tviewers"] as! String
+            let rviewers=data[i]["rviewers"] as! String
+            let likes=data[i]["likes"] as! String
+            let rlikes=data[i]["rlikes"] as! String
+            let userID=data[i]["user"]!["id"] as! String
+            let userName=data[i]["user"]!["name"] as! String
+            let userAvatar=data[i]["user"]!["avatar"] as? String
+            
+            let user=User()
+            user.id=UInt(userID)!
+            user.name=userName
+            user.avatar=userAvatar
+            
+            let video=Stream()
+            video.id=UInt(videoID)!
+            video.title=videoTitle
+            video.streamHash=videoHash
+            video.lon=lon
+            video.lat=lat
+            video.city=city
+            
+            if let e=ended
+            {
+                video.ended=NSDate(timeIntervalSince1970:Double(e)!)
+            }
+            
+            video.viewers=UInt(viewers)!
+            video.tviewers=UInt(tviewers)!
+            video.rviewers=UInt(rviewers)!
+            video.likes=UInt(likes)!
+            video.rlikes=UInt(rlikes)!
+            video.user=user
+            
+            sectionItemsArray.addObject(video)
+            
+            count+=1
+            
+            if(count==2||(count==1&&i==data.count-1))
+            {
+                count=0
+                allItemsArray.addObject(sectionItemsArray)
+                sectionItemsArray=NSMutableArray()
+            }
+        }
+        
+        itemsTbl?.reloadData()
+    }
+    
+    func failureStream(error:NSError)
+    {
+        handleError(error)
     }
 }

@@ -20,26 +20,30 @@ class AllCategoriesRow: UITableViewCell
     {
         let cell=collectionView.dequeueReusableCellWithReuseIdentifier("videoCell", forIndexPath:indexPath) as! VideoCell
         
-        let video=sectionItemsArray[indexPath.row] as! Video
+        let video=sectionItemsArray[indexPath.row] as! Stream
         
         cell.videoTitleLbl?.text=video.title
-        cell.followersCountLbl?.text="\(video.followersCount) FOLLOWERS"
-        //cell.videoThumbnailImageView?.image=UIImage(named:video.thumbnail)
-
         cell.videoThumbnailImageView?.sd_setImageWithURL(NSURL(string:"http://cedricm.cn/thumbs/\(video.id).jpg"))
         
-        
         let cellRecognizer=UITapGestureRecognizer(target:self, action:#selector(cellTapped))
+        cell.tag=indexPath.row
         cell.addGestureRecognizer(cellRecognizer)
         
         return cell
     }
     
-    func cellTapped()
+    func cellTapped(gestureRecognizer:UITapGestureRecognizer)
     {
+        let root=UIApplication.sharedApplication().delegate!.window!?.rootViewController as! UINavigationController
+        
+        let video=sectionItemsArray[gestureRecognizer.view!.tag] as! Stream
+        
         let storyboard=UIStoryboard(name:"Main", bundle:nil)
-        let vc=storyboard.instantiateViewControllerWithIdentifier("JoinStreamViewControllerId") as! JoinStreamViewController
-        navigationControllerReference?.pushViewController(vc, animated:true)
+        let joinNavController=storyboard.instantiateViewControllerWithIdentifier("JoinStreamNavigationControllerId") as! UINavigationController
+        let joinController=joinNavController.viewControllers[0] as! JoinStreamViewController
+        joinController.stream=video
+        joinController.isRecent=(video.ended != nil)
+        root.presentViewController(joinNavController, animated:true, completion:nil)
     }
     
     func collectionView(collectionView:UICollectionView, layout collectionViewLayout:UICollectionViewLayout, sizeForItemAtIndexPath indexPath:NSIndexPath)->CGSize
