@@ -29,8 +29,6 @@
 		A60F82EF1D4917FE002E2CEA /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60F82EE1D4917FE002E2CEA /* SearchViewController.swift */; };
 		A60F82F11D491AAF002E2CEA /* SearchDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60F82F01D491AAF002E2CEA /* SearchDataSource.swift */; };
 		A631E6321D378D95002C7F78 /* PasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A631E6311D378D95002C7F78 /* PasswordViewController.swift */; };
-		A6572B301BCD697800AFED0D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A6572B2E1BCD697800AFED0D /* Default-568h@2x.png */; };
-		A6572B311BCD697800AFED0D /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A6572B2F1BCD697800AFED0D /* Default@2x.png */; };
 		A68B73191BB2859800695C80 /* NSLayoutConstraint+preciseConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68B73181BB2859800695C80 /* NSLayoutConstraint+preciseConstant.swift */; };
 		A68B731D1BB28DBB00695C80 /* UIImage+imageWithColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68B731C1BB28DBB00695C80 /* UIImage+imageWithColor.swift */; };
 		A6F80F1F1BBC13B800A376CD /* UINavigationBarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F80F1E1BBC13B800A376CD /* UINavigationBarExtension.swift */; };
@@ -164,8 +162,6 @@
 		A60F82EE1D4917FE002E2CEA /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		A60F82F01D491AAF002E2CEA /* SearchDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchDataSource.swift; sourceTree = "<group>"; };
 		A631E6311D378D95002C7F78 /* PasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordViewController.swift; sourceTree = "<group>"; };
-		A6572B2E1BCD697800AFED0D /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		A6572B2F1BCD697800AFED0D /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		A68B73181BB2859800695C80 /* NSLayoutConstraint+preciseConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSLayoutConstraint+preciseConstant.swift"; sourceTree = "<group>"; };
 		A68B731C1BB28DBB00695C80 /* UIImage+imageWithColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+imageWithColor.swift"; sourceTree = "<group>"; };
 		A6F80F1E1BBC13B800A376CD /* UINavigationBarExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UINavigationBarExtension.swift; sourceTree = "<group>"; };
@@ -456,8 +452,6 @@
 				3E2674DA1D7530BA00E33DCD /* user.png */,
 				3EF1F0311D719F280055A372 /* BackgroundVideo.swift */,
 				3EF1F02F1D719DE40055A372 /* test.mp4 */,
-				A6572B2E1BCD697800AFED0D /* Default-568h@2x.png */,
-				A6572B2F1BCD697800AFED0D /* Default@2x.png */,
 				B7E15E511B6A6277000C8C69 /* Keyboard */,
 				B7E15E4E1B6A59D8000C8C69 /* Delegates */,
 				B7C9BB291B4E7491005874A9 /* Categories */,
@@ -676,13 +670,11 @@
 				B72475891B4133F50080BE1B /* Localizable.strings in Resources */,
 				3EF1F0301D719DE40055A372 /* test.mp4 in Resources */,
 				3E2674DE1D7530BA00E33DCD /* user.png in Resources */,
-				A6572B311BCD697800AFED0D /* Default@2x.png in Resources */,
 				B7AA932B1B3172740005972E /* Main.storyboard in Resources */,
 				B7AA93301B3172740005972E /* LaunchScreen.xib in Resources */,
 				3E2674DB1D7530BA00E33DCD /* back.png in Resources */,
 				3E2674DC1D7530BA00E33DCD /* lock.png in Resources */,
 				3E2674DD1D7530BA00E33DCD /* msg.png in Resources */,
-				A6572B301BCD697800AFED0D /* Default-568h@2x.png in Resources */,
 				B7D6F0B91B37F4D90070C36A /* Config.plist in Resources */,
 				B7AA932D1B3172740005972E /* Images.xcassets in Resources */,
 			);
