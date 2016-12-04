@@ -13,17 +13,19 @@ class CategoriesViewController: BaseViewController
     @IBOutlet var topImageView:UIImageView?
     
     var allItemsArray=NSMutableArray()
-    var sectionItemsArray=NSMutableArray()
     var categoryName:String?
-    var count=0
+    var page=0
     var categoryID:Int?
     
     override func viewDidLoad()
     {
         headerLbl?.text=categoryName
         navigationController?.navigationBarHidden=true
+        itemsTbl?.addInfiniteScrollingWithActionHandler{()->Void in
+            self.fetchMore()
+        }
         
-        StreamConnector().categoryStreams(categoryID!, success:successStreams, failure:failureStream)
+        StreamConnector().categoryStreams(categoryID!, pageID:page, success:successStreams, failure:failureStream)
     }
     
     override func viewWillAppear(animated:Bool)
@@ -31,6 +33,12 @@ class CategoriesViewController: BaseViewController
         UIApplication.sharedApplication().setStatusBarHidden(false, withAnimation:.Fade)
     }
 
+    func fetchMore()
+    {
+        page+=1
+        StreamConnector().categoryStreams(categoryID!, pageID:page, success:fetchMoreSuccess, failure:failureStream)
+    }
+    
     func tableView(tableView:UITableView, numberOfRowsInSection section:Int)->Int
     {
         return allItemsArray.count
@@ -53,7 +61,24 @@ class CategoriesViewController: BaseViewController
     
     func successStreams(data:NSDictionary)
     {
+        allItemsArray.addObjectsFromArray(getData(data) as [AnyObject])
+        itemsTbl?.reloadData()
+    }
+    
+    func fetchMoreSuccess(data:NSDictionary)
+    {
+        itemsTbl?.infiniteScrollingView.stopAnimating()
+        allItemsArray.addObjectsFromArray(getData(data) as [AnyObject])
+        itemsTbl?.reloadData()
+    }
+    
+    func getData(data:NSDictionary)->NSMutableArray
+    {
         let data=data["data"]!
+        
+        var sectionItemsArray=NSMutableArray()
+        let allItemsArray=NSMutableArray()
+        var count=0
         
         for i in 0 ..< data.count
         {
@@ -110,7 +135,7 @@ class CategoriesViewController: BaseViewController
             }
         }
         
-        itemsTbl?.reloadData()
+        return allItemsArray
     }
     
     func failureStream(error:NSError)
