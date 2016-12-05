@@ -31,10 +31,7 @@ class HomeViewController: BaseViewController
         headerView.backgroundColor=UIColor(colorLiteralRed:18/255, green:19/255, blue:21/255, alpha:1)
         
         let titleLbl=UILabel(frame:CGRectMake(5, 20, 285, 20))
-        titleLbl.text=categoryNamesArray[section].uppercaseString as? String
-        //titleLbl.text=String(titleLbl).uppercaseString
-        
-        
+        titleLbl.text=categoryNamesArray[section].uppercaseString
         titleLbl.font=UIFont.systemFontOfSize(14)
         titleLbl.textColor=UIColor.lightGrayColor()
         

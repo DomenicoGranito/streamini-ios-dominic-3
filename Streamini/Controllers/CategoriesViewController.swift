@@ -20,8 +20,6 @@ class CategoriesViewController: BaseViewController
     override func viewDidLoad()
     {
         headerLbl?.text=categoryName
-        
-        
         navigationController?.navigationBarHidden=true
         itemsTbl?.addInfiniteScrollingWithActionHandler{()->Void in
             self.fetchMore()
@@ -96,16 +94,14 @@ class CategoriesViewController: BaseViewController
             let rviewers=data[i]["rviewers"] as! String
             let likes=data[i]["likes"] as! String
             let rlikes=data[i]["rlikes"] as! String
-          
+            let userID=data[i]["user"]!["id"] as! String
+            let userName=data[i]["user"]!["name"] as! String
+            let userAvatar=data[i]["user"]!["avatar"] as? String
             
-         //   let userID=data[i]["user"]!["id"] as! String
-         //   let userName=data[i]["user"]!["name"] as! String
-         //   let userAvatar=data[i]["user"]!["avatar"] as? String
-            
-         //   let user=User()
-         //   user.id=UInt(userID)!
-         //   user.name=userName
-         //   user.avatar=userAvatar
+            let user=User()
+            user.id=UInt(userID)!
+            user.name=userName
+            user.avatar=userAvatar
             
             let video=Stream()
             video.id=UInt(videoID)!
@@ -125,8 +121,7 @@ class CategoriesViewController: BaseViewController
             video.rviewers=UInt(rviewers)!
             video.likes=UInt(likes)!
             video.rlikes=UInt(rlikes)!
-       
-        //    video.user=user
+            video.user=user
             
             sectionItemsArray.addObject(video)
             
