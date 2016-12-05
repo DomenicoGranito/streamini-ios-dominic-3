@@ -9,6 +9,9 @@
 class JoinStreamViewController: BaseViewController, UITextFieldDelegate, UITableViewDelegate, UIAlertViewDelegate,
 UIActionSheetDelegate, SelectFollowersDelegate, ReplayViewDelegate, UserSelecting, CollectionViewPullDelegate {
     @IBOutlet weak var infoView: InfoView!
+    
+    @IBOutlet weak var playerView: PlayerView!
+    
     @IBOutlet weak var replayView: ReplayView!
     
     @IBOutlet weak var closeButton: SensibleButton!

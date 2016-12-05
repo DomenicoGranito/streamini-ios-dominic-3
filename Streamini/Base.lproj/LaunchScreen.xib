@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1605" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -13,41 +14,37 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zuW-Nb-gP7">
-                    <rect key="frame" x="0.0" y="240" width="480" height="240"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="uniprogy" translatesAutoresizingMaskIntoConstraints="NO" id="mOS-60-M26">
-                            <rect key="frame" x="187" y="177" width="106" height="33"/>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mOS-60-M26">
                             <constraints>
                                 <constraint firstAttribute="width" constant="106" id="6xT-Cx-Aea"/>
                                 <constraint firstAttribute="height" constant="33" id="hEW-jV-Jry"/>
                             </constraints>
                         </imageView>
                     </subviews>
-                    <color key="backgroundColor" red="0.0" green="0.47843137254901957" blue="0.58039215686274503" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="0.062745098040000002" green="0.066666666669999999" blue="0.070588235289999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="centerX" secondItem="mOS-60-M26" secondAttribute="centerX" id="EGK-km-OYS"/>
                         <constraint firstAttribute="bottom" secondItem="mOS-60-M26" secondAttribute="bottom" constant="30" id="L2C-ZM-YSn"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hgV-Dd-JgF">
-                    <rect key="frame" x="0.0" y="0.0" width="480" height="240"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="h6B-pU-bHx">
-                            <rect key="frame" x="156" y="101" width="168" height="37"/>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="h6B-pU-bHx">
                             <constraints>
                                 <constraint firstAttribute="height" constant="37" id="UMg-jh-WGS"/>
                                 <constraint firstAttribute="width" constant="168" id="wiq-op-h1f"/>
                             </constraints>
                         </imageView>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" red="0.062745098040000002" green="0.066666666669999999" blue="0.070588235289999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="centerX" secondItem="h6B-pU-bHx" secondAttribute="centerX" id="Hny-lw-8fU"/>
                         <constraint firstAttribute="centerY" secondItem="h6B-pU-bHx" secondAttribute="centerY" id="d2v-lH-M25"/>
                     </constraints>
                 </view>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="hgV-Dd-JgF" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="0Va-zL-spT"/>
                 <constraint firstItem="zuW-Nb-gP7" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="C0d-A7-Xgx"/>
@@ -63,8 +60,4 @@
             <point key="canvasLocation" x="548" y="455"/>
         </view>
     </objects>
-    <resources>
-        <image name="logo" width="168" height="36"/>
-        <image name="uniprogy" width="106" height="32"/>
-    </resources>
 </document>

@@ -4,6 +4,8 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
+	<key>CFBundleDisplayName</key>
+	<string>BEINIT</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -27,12 +29,12 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>NSCameraUsageDescription</key>
+	<string>Allow user Camera</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Allow user location</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>Allow user Microphone</string>
-	<key>NSCameraUsageDescription</key>
-	<string>Allow user Camera</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Allow user photo </string>
 	<key>UIBackgroundModes</key>
