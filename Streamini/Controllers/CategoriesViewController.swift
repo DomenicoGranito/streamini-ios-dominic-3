@@ -54,6 +54,13 @@ class CategoriesViewController: BaseViewController
         return cell
     }
     
+    func tableView(tableView:UITableView, willDisplayCell cell:UITableViewCell, forRowAtIndexPath indexPath:NSIndexPath)
+    {
+        let cell=cell as! AllCategoriesRow
+        
+        cell.reloadCollectionView()
+    }
+
     @IBAction func back()
     {
         navigationController?.popViewControllerAnimated(true)
