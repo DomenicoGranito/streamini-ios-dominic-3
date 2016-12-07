@@ -8,8 +8,14 @@
 
 class CategoryRow: UITableViewCell
 {
+    @IBOutlet var collectionView:UICollectionView?
     var oneCategoryItemsArray:NSArray!
     var navigationControllerReference:UINavigationController?
+    
+    func reloadCollectionView()
+    {
+        collectionView!.reloadData()
+    }
     
     func collectionView(collectionView:UICollectionView, numberOfItemsInSection section:Int)->Int
     {

@@ -83,6 +83,13 @@ class HomeViewController: BaseViewController
         return cell
     }
     
+    func tableView(tableView:UITableView, willDisplayCell cell:UITableViewCell, forRowAtIndexPath indexPath:NSIndexPath)
+    {
+        let cell=cell as! CategoryRow
+        
+        cell.reloadCollectionView()
+    }
+    
     func successStreams(data:NSDictionary)
     {
         let data=data["data"]!
