@@ -40,7 +40,7 @@ class SearchViewController: BaseViewController, UserSelecting, StreamSelecting, 
     
     // called when text changes (including clear)
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
-        if searchText.characters.count > 1 && (dataSource!.mode == "streams" || dataSource!.mode == "people") {
+        if searchText.characters.count > 0 && (dataSource!.mode == "streams" || dataSource!.mode == "people") {
             dataSource!.search(searchText)
         }
     }
