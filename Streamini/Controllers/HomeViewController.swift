@@ -35,7 +35,7 @@ class HomeViewController: BaseViewController
         titleLbl.font=UIFont.systemFontOfSize(14)
         titleLbl.textColor=UIColor.lightGrayColor()
         
-        let accessoryLbl=UILabel(frame:CGRectMake(295, 20, 20, 20))
+        let accessoryLbl=UILabel(frame:CGRectMake(tableView.frame.size.width-25, 20, 20, 20))
         accessoryLbl.text=">"
         accessoryLbl.font=UIFont.systemFontOfSize(18)
         accessoryLbl.textColor=UIColor.lightGrayColor()
