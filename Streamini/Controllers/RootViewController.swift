@@ -87,11 +87,11 @@ class RootViewController: BaseViewController, RootViewControllerDelegate {
             self.title = NSLocalizedString("global_title",  comment: "")
             itemImage = UIImage(named: "following")!
         } else {
-            self.title = NSLocalizedString("followed_title",  comment: "")
+            self.title = ""//NSLocalizedString("followed_title",  comment: "")
             itemImage = UIImage(named: "global")!
         }
         
-        let button = UIButton(frame: CGRectMake(0.0, 0.0, 25.0, 25.0))
+        let button = UIButton(frame: CGRectMake(0.0, 0.0, 125.0, 25.0))
         button.setImage(itemImage, forState: UIControlState.Normal)
       ///  button.addTarget(self, action: #selector(RootViewController.modeChanged), forControlEvents: UIControlEvents.TouchUpInside)
         button.setImageTintColor(UIColor(white: 1.0, alpha: 0.5), forState: UIControlState.Normal)
