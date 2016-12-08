@@ -30,7 +30,7 @@ class SearchStreamCell: StreamCell {
     override func update(stream: Stream) {
         super.update(stream)
         
-        //self.backgroundColor = UIColor.blackColor()
+        self.backgroundColor = UIColor.blackColor()
         userLabel.text = stream.user.name
         streamNameLabel.text = stream.title
         
@@ -39,6 +39,8 @@ class SearchStreamCell: StreamCell {
         
         self.streamLiveView.setCount(stream.viewers)
                 
-        streamImageView.sd_setImageWithURL(stream.urlToStreamImage())
+        //streamImageView.sd_setImageWithURL(stream.urlToStreamImage())
+        streamImageView.sd_setImageWithURL(NSURL(string:"http://cedricm.cn/thumbs/\(stream.id).jpg"))
+
     }
 }
