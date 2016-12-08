@@ -204,8 +204,9 @@ class StreamConnector: Connector {
     /*** WRITTEN BY ANKIT GARG ***/
     
     func search(page: UInt, category: UInt, query: String, city: String, success: (streams: [Stream]) -> (), failure: (error: NSError) -> ()) {
-        let path = "stream/search"
-        
+        //let path = "stream/search"
+       // let path = "stream/search"
+        let path="stream/search?q=\(query)"
         let streamMapping = StreamMappingProvider.streamResponseMapping()
         let statusCode = RKStatusCodeIndexSetForClass(.Successful)
         

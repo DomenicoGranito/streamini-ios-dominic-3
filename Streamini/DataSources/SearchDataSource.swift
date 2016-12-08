@@ -20,7 +20,8 @@ class SearchDataSource: NSObject, UITableViewDataSource, UITableViewDelegate, Li
     var page: UInt = 0
     private let l = UILabel()
     
-    var mode = "categories"
+    //var mode = "categories"
+    var mode = "streams"
     
     var selectedCells: [PeopleCell] = []
     
