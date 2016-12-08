@@ -27,7 +27,7 @@ class CategoryRow: UITableViewCell
         let cell=collectionView.dequeueReusableCellWithReuseIdentifier("videoCell", forIndexPath:indexPath) as! VideoCell
         
         let video=oneCategoryItemsArray[indexPath.row] as! Stream
-        
+        cell.followersCountLbl?.text=video.user.name 
         cell.videoTitleLbl?.text=video.title
         cell.videoThumbnailImageView?.sd_setImageWithURL(NSURL(string:"http://cedricm.cn/thumbs/\(video.id).jpg"))
         
