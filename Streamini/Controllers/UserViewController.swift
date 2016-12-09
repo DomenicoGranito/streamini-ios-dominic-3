@@ -51,11 +51,6 @@ class UserViewController: BaseViewController, ProfileDelegate
         recentButtonPressed()
         
         navigationController?.navigationBarHidden=true
-        
-        let blurEffect=UIBlurEffect(style:.Dark)
-        let blurEffectView=UIVisualEffectView(effect:blurEffect)
-        blurEffectView.frame=CGRectMake(0, 0, userHeaderView.frame.width, userHeaderView.frame.height)
-        view.insertSubview(blurEffectView, atIndex:0)
     }
     
     func configureView()
