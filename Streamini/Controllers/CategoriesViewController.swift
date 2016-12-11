@@ -19,7 +19,7 @@ class CategoriesViewController: BaseViewController
     
     override func viewDidLoad()
     {
-        headerLbl?.text=categoryName
+        headerLbl?.text=categoryName?.uppercaseString
         navigationController?.navigationBarHidden=true
         itemsTbl?.addInfiniteScrollingWithActionHandler{()->Void in
             self.fetchMore()
@@ -39,6 +39,25 @@ class CategoriesViewController: BaseViewController
         StreamConnector().categoryStreams(categoryID!, pageID:page, success:fetchMoreSuccess, failure:failureStream)
     }
     
+    func tableView(tableView:UITableView, viewForHeaderInSection section:Int)->UIView?
+    {
+        let headerView=UIView(frame:CGRectMake(0, 0, 60, tableView.frame.size.width))
+        headerView.backgroundColor=UIColor.clearColor()
+        
+        let titleLbl=UILabel(frame:CGRectMake(10, 20, 150, 20))
+        titleLbl.text=categoryName?.uppercaseString
+        titleLbl.font=UIFont.systemFontOfSize(14)
+        titleLbl.textColor=UIColor.lightGrayColor()
+        
+        let lineView=UIView(frame:CGRectMake(10, 59, tableView.frame.size.width-20, 1))
+        lineView.backgroundColor=UIColor.darkGrayColor()
+        
+        headerView.addSubview(lineView)
+        headerView.addSubview(titleLbl)
+        
+        return headerView
+    }
+
     func tableView(tableView:UITableView, numberOfRowsInSection section:Int)->Int
     {
         return allItemsArray.count
