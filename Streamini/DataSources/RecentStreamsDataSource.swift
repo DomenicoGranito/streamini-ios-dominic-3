@@ -18,7 +18,7 @@ class RecentStreamsDataSource:UserStatisticsDataSource
     func tableView(tableView:UITableView, viewForHeaderInSection section:Int)->UIView?
     {
         let headerView=UIView(frame:CGRectMake(0, 0, 40, tableView.frame.size.width))
-        headerView.backgroundColor=UIColor.clearColor()
+        headerView.backgroundColor=UIColor.darkGrayColor()
         
         let titleLbl=UILabel(frame:CGRectMake(5, 10, 150, 20))
         titleLbl.text="ALL VIDEOS"
