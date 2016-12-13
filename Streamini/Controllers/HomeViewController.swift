@@ -36,6 +36,9 @@ class HomeViewController: BaseViewController
     
     func reload()
     {
+        categoryNamesArray=NSMutableArray()
+        categoryIDsArray=NSMutableArray()
+        allCategoryItemsArray=NSMutableArray()
         StreamConnector().homeStreams(successStreams, failure:failureStream)
     }
     
