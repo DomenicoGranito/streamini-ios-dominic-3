@@ -13,18 +13,34 @@ class HomeViewController: BaseViewController
     var categoryNamesArray=NSMutableArray()
     var categoryIDsArray=NSMutableArray()
     var allCategoryItemsArray=NSMutableArray()
+    var timer:NSTimer?
     
     override func viewDidLoad()
     {
-        StreamConnector().homeStreams(successStreams, failure:failureStream)
+        timer=NSTimer(timeInterval:NSTimeInterval(10.0), target:self, selector:#selector(reload), userInfo:nil, repeats:true)
+        NSRunLoop.mainRunLoop().addTimer(timer!, forMode:NSRunLoopCommonModes)
     }
     
     override func viewWillAppear(animated:Bool)
     {
         navigationController?.navigationBarHidden=false
         UIApplication.sharedApplication().setStatusBarHidden(false, withAnimation:.Fade)
+        
+        timer=NSTimer(timeInterval:NSTimeInterval(10.0), target:self, selector:#selector(reload), userInfo:nil, repeats:true)
+        NSRunLoop.mainRunLoop().addTimer(timer!, forMode:NSRunLoopCommonModes)
     }
     
+    func reload()
+    {
+        StreamConnector().homeStreams(successStreams, failure:failureStream)
+    }
+    
+    override func viewWillDisappear(animated:Bool)
+    {
+        timer!.invalidate()
+        timer=nil
+    }
+
     func tableView(tableView:UITableView, viewForHeaderInSection section:Int)->UIView?
     {
         let headerView=UIView(frame:CGRectMake(0, 0, 60, tableView.frame.size.width))
