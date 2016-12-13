@@ -276,18 +276,23 @@ UIActionSheetDelegate, SelectFollowersDelegate, ReplayViewDelegate, UserSelectin
         if !isRecent {
             streamPlayer = StreamPlayer(stream: stream!, isRecent: isRecent, view: previewView, indicator: activityIndicator)
             self.streamPlayer!.delegate = DefaultStreamPlayerDelegate(isRecent: isRecent, replayView: replayView)
+            
+            messenger = MessengerFactory.getMessenger("pubnub")!
+            messenger!.connect(stream!.id)
+            messenger!.receive(chatMessageReceived)
+            messenger!.send(Message.connected(), streamId: stream!.id)
         } else {
             streamPlayer!.play()
             replayView.hide(true)
             
             infoButton.hidden       = false
-            messageTextView.hidden  = false
+            messageTextView.hidden  = true
         }
         
-        messenger = MessengerFactory.getMessenger("pubnub")!
-        messenger!.connect(stream!.id)
-        messenger!.receive(chatMessageReceived)
-        messenger!.send(Message.connected(), streamId: stream!.id)
+      //  messenger = MessengerFactory.getMessenger("pubnub")!
+      //  messenger!.connect(stream!.id)
+      //  messenger!.receive(chatMessageReceived)
+      //  messenger!.send(Message.connected(), streamId: stream!.id)
     }
     
     func joinFailure(error: NSError) {

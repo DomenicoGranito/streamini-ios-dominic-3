@@ -167,8 +167,10 @@ class StreamPlayer: NSObject {
            // url = accessKeyId == ""
              //   ? "http://\(host):\(port)/vod/_definist_/mp4:\(streamName).mp4/playlist.m3u8"
               //  : "http://\(host):\(port)/vods3/_definist_/mp4:amazons3/\(streamBucket)/\(streamName).mp4/playlist.m3u8"
-       
-            url = "http://\(host)/media/\(stream.id).mp4"
+            url = stream.streamHash == "e5446fb6e576e69132ae32f4d01d52a1"
+               ? "http://\(host)/media/\(stream.id).mp4" 
+              : "http://\(host):\(port)/vod/_definist_/mp4:\(streamName).mp4/playlist.m3u8"
+            //url = "http://\(host)/media/\(stream.id).mp4"
         
         } else {
             url = "http://\(host):\(port)/\(application)/\(streamName)/playlist.m3u8"
