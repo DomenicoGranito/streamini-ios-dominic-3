@@ -17,6 +17,10 @@ class HomeViewController: BaseViewController
     
     override func viewDidLoad()
     {
+        itemsTbl!.addPullToRefreshWithActionHandler{()->Void in
+            self.reload()
+        }
+        
         timer=NSTimer(timeInterval:NSTimeInterval(10.0), target:self, selector:#selector(reload), userInfo:nil, repeats:true)
         NSRunLoop.mainRunLoop().addTimer(timer!, forMode:NSRunLoopCommonModes)
     }
@@ -108,6 +112,8 @@ class HomeViewController: BaseViewController
     
     func successStreams(data:NSDictionary)
     {
+        itemsTbl?.pullToRefreshView.stopAnimating()
+        
         let data=data["data"]!
         
         for i in 0 ..< data.count
@@ -176,6 +182,7 @@ class HomeViewController: BaseViewController
     
     func failureStream(error:NSError)
     {
+        itemsTbl?.pullToRefreshView.stopAnimating()
         handleError(error)
     }
 }
