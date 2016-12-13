@@ -17,6 +17,8 @@ class HomeViewController: BaseViewController
     
     override func viewDidLoad()
     {
+        reload()
+        
         itemsTbl!.addPullToRefreshWithActionHandler{()->Void in
             self.reload()
         }
@@ -36,9 +38,6 @@ class HomeViewController: BaseViewController
     
     func reload()
     {
-        categoryNamesArray=NSMutableArray()
-        categoryIDsArray=NSMutableArray()
-        allCategoryItemsArray=NSMutableArray()
         StreamConnector().homeStreams(successStreams, failure:failureStream)
     }
     
@@ -54,7 +53,12 @@ class HomeViewController: BaseViewController
         headerView.backgroundColor=UIColor(colorLiteralRed:18/255, green:19/255, blue:21/255, alpha:1)
         
         let titleLbl=UILabel(frame:CGRectMake(5, 20, 285, 20))
-        titleLbl.text=categoryNamesArray[section].uppercaseString
+        
+        if(allCategoryItemsArray.count>0)
+        {
+            titleLbl.text=categoryNamesArray[section].uppercaseString
+        }
+        
         titleLbl.font=UIFont.systemFontOfSize(14)
         titleLbl.textColor=UIColor.lightGrayColor()
         
@@ -100,8 +104,11 @@ class HomeViewController: BaseViewController
     {
         let cell=tableView.dequeueReusableCellWithIdentifier("cell") as! CategoryRow
         
-        cell.oneCategoryItemsArray=allCategoryItemsArray[indexPath.section] as! NSArray
-        cell.navigationControllerReference=navigationController
+        if(allCategoryItemsArray.count>0)
+        {
+            cell.oneCategoryItemsArray=allCategoryItemsArray[indexPath.section] as! NSArray
+            cell.navigationControllerReference=navigationController
+        }
         
         return cell
     }
@@ -115,6 +122,10 @@ class HomeViewController: BaseViewController
     
     func successStreams(data:NSDictionary)
     {
+        categoryNamesArray=NSMutableArray()
+        categoryIDsArray=NSMutableArray()
+        allCategoryItemsArray=NSMutableArray()
+
         itemsTbl?.pullToRefreshView.stopAnimating()
         
         let data=data["data"]!
