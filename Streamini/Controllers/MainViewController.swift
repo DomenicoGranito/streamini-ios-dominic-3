@@ -6,12 +6,7 @@
 //  Copyright (c) 2015 UniProgy s.r.o. All rights reserved.
 //
 
-protocol MainViewControllerDelegate: class {
-    func streamListReload()
-    func changeMode(isGlobal: Bool)
-}
-
-class MainViewController: BaseViewController, MainViewControllerDelegate, UserSelecting {
+class MainViewController: BaseViewController, UserSelecting {
     @IBOutlet weak var tableView: UITableView!
     let dataSource  = StreamDataSource()
     weak var rootControllerDelegate: RootViewControllerDelegate?
@@ -19,10 +14,6 @@ class MainViewController: BaseViewController, MainViewControllerDelegate, UserSe
     var timer: NSTimer?
     
     func successStreams(live: [Stream], recent: [Stream]) {
-        self.tableView.pullToRefreshView.stopAnimating()
-        
-        dataSource.lives  = live//live.sorted({ (stream1, stream2) -> Bool in stream1.id > stream2.id })
-        dataSource.recent = recent//recent.sorted({ (stream1, stream2) -> Bool in stream1.id > stream2.id })
         
         tableView.reloadData()
         
@@ -33,7 +24,6 @@ class MainViewController: BaseViewController, MainViewControllerDelegate, UserSe
     
     func failureStream(error: NSError) {
         handleError(error)
-        self.tableView.pullToRefreshView.stopAnimating()
         self.navigationItem.rightBarButtonItem?.enabled = true
     }
     
@@ -43,20 +33,6 @@ class MainViewController: BaseViewController, MainViewControllerDelegate, UserSe
     
     func failureUser(error: NSError) {
         handleError(error)
-    }
-    
-    func streamListReload() {
-        StreamConnector().streams(isGlobal, success: successStreams, failure: failureStream)
-    }
-    
-    func changeMode(isGlobal: Bool) {
-        self.isGlobal = isGlobal
-        self.navigationItem.rightBarButtonItem?.enabled = false
-        StreamConnector().streams(isGlobal, success: successStreams, failure: failureStream)
-        
-        if let delegate = rootControllerDelegate {
-            delegate.modeDidChange(isGlobal)
-        }
     }
     
     func configureView() {
@@ -76,7 +52,6 @@ class MainViewController: BaseViewController, MainViewControllerDelegate, UserSe
         }
         
         UserConnector().get(nil, success: successUser, failure: failureUser)
-        changeMode(isGlobal)
 }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -86,7 +61,7 @@ class MainViewController: BaseViewController, MainViewControllerDelegate, UserSe
                 let controller = navigationController.viewControllers[0] as! JoinStreamViewController
                 controller.stream = (sender as! StreamCell).stream
                 controller.isRecent = (sid == "MainRecentToJoinStream")
-                controller.delegate = self
+                //controller.delegate = self
             }
         }
     }

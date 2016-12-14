@@ -13,7 +13,7 @@ enum ProfileStatisticsType: Int {
     case Streams
 }
 
-class ProfileStatisticsViewController: UIViewController, UserSelecting, UserStatusDelegate, MainViewControllerDelegate {
+class ProfileStatisticsViewController: UIViewController, UserSelecting, UserStatusDelegate {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var emptyLabel: UILabel!
     var dataSource: UserStatisticsDataSource?
@@ -66,23 +66,8 @@ class ProfileStatisticsViewController: UIViewController, UserSelecting, UserStat
                 let controller = navigationController.viewControllers[0] as! JoinStreamViewController
                 controller.stream = (sender as! StreamCell).stream
                 controller.isRecent = true
-                controller.delegate = self
             }
         }
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    // MARK: - MainViewControllerDelegate
-    
-    func streamListReload() {
-        dataSource!.reload()
-    }
-    
-    func changeMode(isGlobal: Bool) {
     }
     
     // MARK: - UserSelecting

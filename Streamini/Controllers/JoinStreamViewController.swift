@@ -54,18 +54,11 @@ UIActionSheetDelegate, SelectFollowersDelegate, ReplayViewDelegate, UserSelectin
     
     var page: UInt = 0
     
-    weak var delegate: MainViewControllerDelegate?
-    //weak var delegate: HomeViewControllerDelegate?
-    
     // MARK: - Actions
     
     @IBAction func closeButtonPressed(sender: AnyObject) {
         closeButton.enabled = false
-        
-        if let del = delegate {
-            del.streamListReload()
-        }
-        
+                
         if streamPlayer != nil {
             StreamConnector().leave(stream!.id, likes: likes, success: leaveSuccess, failure: leaveFailure)
         } else {
