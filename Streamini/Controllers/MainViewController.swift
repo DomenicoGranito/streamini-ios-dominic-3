@@ -18,8 +18,6 @@ class MainViewController: BaseViewController, MainViewControllerDelegate, UserSe
     var isGlobal    = false
     var timer: NSTimer?
     
-    // MARK: - Network responses
-    
     func successStreams(live: [Stream], recent: [Stream]) {
         self.tableView.pullToRefreshView.stopAnimating()
         
@@ -47,8 +45,6 @@ class MainViewController: BaseViewController, MainViewControllerDelegate, UserSe
         handleError(error)
     }
     
-    // MARK: - MainViewControllerDelegate
-    
     func streamListReload() {
         StreamConnector().streams(isGlobal, success: successStreams, failure: failureStream)
     }
@@ -63,13 +59,9 @@ class MainViewController: BaseViewController, MainViewControllerDelegate, UserSe
         }
     }
     
-    // MARK: - Update
-    
     func reload(timer: NSTimer) {
         StreamConnector().streams(isGlobal, success: successStreams, failure: failureStream)
     }    
-    
-    // MARK: - View life cycle
     
     func configureView() {
         dataSource.userSelectedDelegate = self
@@ -123,11 +115,6 @@ class MainViewController: BaseViewController, MainViewControllerDelegate, UserSe
             }
         }
     }
-    
-    
-    
-    
-    // MARK: - UserSelecting protocol
     
     func userDidSelected(user: User) {
         //self.showUserInfo(user, userStatusDelegate: nil)
