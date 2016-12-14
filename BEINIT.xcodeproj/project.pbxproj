@@ -121,7 +121,6 @@
 		B7D5EA981B579CDC003EE25D /* CommentsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D5EA971B579CDC003EE25D /* CommentsDataSource.swift */; };
 		B7D5EA9A1B579D47003EE25D /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D5EA991B579D47003EE25D /* CommentCell.swift */; };
 		B7D6F0B11B37F16C0070C36A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D6F0B01B37F16C0070C36A /* LoginViewController.swift */; };
-		B7D6F0B31B37F3940070C36A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D6F0B21B37F3940070C36A /* MainViewController.swift */; };
 		B7D6F0B51B37F41F0070C36A /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D6F0B41B37F41F0070C36A /* BaseViewController.swift */; };
 		B7D6F0B71B37F46A0070C36A /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D6F0B61B37F46A0070C36A /* Config.swift */; };
 		B7D6F0B91B37F4D90070C36A /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = B7D6F0B81B37F4D90070C36A /* Config.plist */; };
@@ -260,7 +259,6 @@
 		B7D5EA971B579CDC003EE25D /* CommentsDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentsDataSource.swift; sourceTree = "<group>"; };
 		B7D5EA991B579D47003EE25D /* CommentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
 		B7D6F0B01B37F16C0070C36A /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		B7D6F0B21B37F3940070C36A /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		B7D6F0B41B37F41F0070C36A /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		B7D6F0B61B37F46A0070C36A /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		B7D6F0B81B37F4D90070C36A /* Config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Config.plist; sourceTree = "<group>"; };
@@ -558,7 +556,6 @@
 				3E2021701D81ACFE0058DAAD /* VideoCell.swift */,
 				3EEF52BC1D83127B0015BA92 /* CategoriesViewController.swift */,
 				3EEF52BE1D83B5AF0015BA92 /* AllCategoriesRow.swift */,
-				B7D6F0B21B37F3940070C36A /* MainViewController.swift */,
 				B72475821B411D910080BE1B /* CreateStreamViewController.swift */,
 				B7A886931B500C7100D37B63 /* LiveStreamViewController.swift */,
 				B7316E071B55342F0079D387 /* JoinStreamViewController.swift */,
@@ -783,7 +780,6 @@
 				B7D5EA961B5685EF003EE25D /* UserExtension.swift in Sources */,
 				B7C9BB2C1B4E7491005874A9 /* UIButton+tintImage.m in Sources */,
 				B7EAD9501B4D1F100009C698 /* LocationManager.swift in Sources */,
-				B7D6F0B31B37F3940070C36A /* MainViewController.swift in Sources */,
 				B791879B1B4437FC002DFAB4 /* TwitterTool.swift in Sources */,
 				B7D6F0B51B37F41F0070C36A /* BaseViewController.swift in Sources */,
 				B77AABE01B398492007DE187 /* UserMappingProvider.swift in Sources */,
