@@ -59,10 +59,6 @@ class MainViewController: BaseViewController, MainViewControllerDelegate, UserSe
         }
     }
     
-    func reload(timer: NSTimer) {
-        StreamConnector().streams(isGlobal, success: successStreams, failure: failureStream)
-    }    
-    
     func configureView() {
         dataSource.userSelectedDelegate = self
     }
@@ -81,28 +77,7 @@ class MainViewController: BaseViewController, MainViewControllerDelegate, UserSe
         
         UserConnector().get(nil, success: successUser, failure: failureUser)
         changeMode(isGlobal)
-        
-        self.timer = NSTimer(timeInterval: NSTimeInterval(10.0), target: self, selector: #selector(MainViewController.reload(_:)), userInfo: nil, repeats: true)
-        NSRunLoop.mainRunLoop().addTimer(timer!, forMode: NSRunLoopCommonModes)
-        
-        UIApplication.sharedApplication().setStatusBarHidden(false, withAnimation: .None)
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        StreamConnector().streams(isGlobal, success: successStreams, failure: failureStream)
-        if timer == nil {
-            self.timer = NSTimer(timeInterval: NSTimeInterval(10.0), target: self, selector: #selector(MainViewController.reload(_:)), userInfo: nil, repeats: true)
-            NSRunLoop.mainRunLoop().addTimer(timer!, forMode: NSRunLoopCommonModes)
-        }
-        UIApplication.sharedApplication().setStatusBarHidden(false, withAnimation: .None)
-    }
-    
-    override func viewWillDisappear(animated: Bool) {
-        super.viewWillDisappear(animated)
-        timer!.invalidate()
-        timer = nil
-    }
+}
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let sid = segue.identifier {
