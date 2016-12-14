@@ -50,8 +50,6 @@ class ProfileStatisticsViewController: UIViewController, UserSelecting, UserStat
         dataSource!.profileDelegate = profileDelegate
         dataSource!.userSelectedDelegate = self
         dataSource!.reload()
-        
-        // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(animated: Bool) {
