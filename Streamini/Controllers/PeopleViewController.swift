@@ -41,7 +41,7 @@ class PeopleViewController: BaseViewController, UserSelecting, ProfileDelegate, 
                     self.view.layoutIfNeeded()
                 })
             } else {
-                self.searchBarTop.constant = -self.searchBar.bounds.size.height
+                self.searchBarTop.constant = -44
                 self.view.layoutIfNeeded()
             }
             isSearchMode = false
