@@ -32,6 +32,12 @@
 		A68B731D1BB28DBB00695C80 /* UIImage+imageWithColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68B731C1BB28DBB00695C80 /* UIImage+imageWithColor.swift */; };
 		A6F80F1F1BBC13B800A376CD /* UINavigationBarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F80F1E1BBC13B800A376CD /* UINavigationBarExtension.swift */; };
 		B64176D31DF4EDE200099A9D /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64176D21DF4EDE200099A9D /* PlayerView.swift */; };
+		B66561E21E09884100EDA684 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = B66561DD1E09884100EDA684 /* README.txt */; };
+		B66561E31E09884100EDA684 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B66561E11E09884100EDA684 /* libWeChatSDK.a */; };
+		B66561E51E0988D900EDA684 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B66561E41E0988D900EDA684 /* libc++.tbd */; };
+		B66561E71E0988E900EDA684 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B66561E61E0988E900EDA684 /* CoreTelephony.framework */; };
+		B66561E91E0988F800EDA684 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B66561E81E0988F800EDA684 /* libsqlite3.tbd */; };
+		B66561EB1E09890600EDA684 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B66561EA1E09890600EDA684 /* libz.tbd */; };
 		B70AB1321B73731200BAD62A /* LinkedUsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70AB1311B73731200BAD62A /* LinkedUsersViewController.swift */; };
 		B70AB1381B73839C00BAD62A /* UserHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70AB1371B73839C00BAD62A /* UserHeaderView.swift */; };
 		B70E04191B74E5B000422AF0 /* LinkedUserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70E04181B74E5B000422AF0 /* LinkedUserCell.swift */; };
@@ -164,6 +170,15 @@
 		A68B731C1BB28DBB00695C80 /* UIImage+imageWithColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+imageWithColor.swift"; sourceTree = "<group>"; };
 		A6F80F1E1BBC13B800A376CD /* UINavigationBarExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UINavigationBarExtension.swift; sourceTree = "<group>"; };
 		B64176D21DF4EDE200099A9D /* PlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
+		B66561DD1E09884100EDA684 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = README.txt; path = OpenSDK1.7.5/README.txt; sourceTree = "<group>"; };
+		B66561DE1E09884100EDA684 /* WechatAuthSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WechatAuthSDK.h; path = OpenSDK1.7.5/WechatAuthSDK.h; sourceTree = "<group>"; };
+		B66561DF1E09884100EDA684 /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WXApi.h; path = OpenSDK1.7.5/WXApi.h; sourceTree = "<group>"; };
+		B66561E01E09884100EDA684 /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WXApiObject.h; path = OpenSDK1.7.5/WXApiObject.h; sourceTree = "<group>"; };
+		B66561E11E09884100EDA684 /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libWeChatSDK.a; path = OpenSDK1.7.5/libWeChatSDK.a; sourceTree = "<group>"; };
+		B66561E41E0988D900EDA684 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		B66561E61E0988E900EDA684 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		B66561E81E0988F800EDA684 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		B66561EA1E09890600EDA684 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		B70AB1311B73731200BAD62A /* LinkedUsersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkedUsersViewController.swift; sourceTree = "<group>"; };
 		B70AB1371B73839C00BAD62A /* UserHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserHeaderView.swift; sourceTree = "<group>"; };
 		B70E04181B74E5B000422AF0 /* LinkedUserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkedUserCell.swift; sourceTree = "<group>"; };
@@ -280,6 +295,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B66561E31E09884100EDA684 /* libWeChatSDK.a in Frameworks */,
+				B66561EB1E09890600EDA684 /* libz.tbd in Frameworks */,
+				B66561E91E0988F800EDA684 /* libsqlite3.tbd in Frameworks */,
+				B66561E71E0988E900EDA684 /* CoreTelephony.framework in Frameworks */,
+				B66561E51E0988D900EDA684 /* libc++.tbd in Frameworks */,
 				B70FAA051B539BCA00607EA9 /* libz.dylib in Frameworks */,
 				B70FAA031B539BC000607EA9 /* SystemConfiguration.framework in Frameworks */,
 				B70FAA011B539BB300607EA9 /* CFNetwork.framework in Frameworks */,
@@ -294,6 +314,10 @@
 		786304F139CBAD59E4F652FD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B66561EA1E09890600EDA684 /* libz.tbd */,
+				B66561E81E0988F800EDA684 /* libsqlite3.tbd */,
+				B66561E61E0988E900EDA684 /* CoreTelephony.framework */,
+				B66561E41E0988D900EDA684 /* libc++.tbd */,
 				B70FAA041B539BCA00607EA9 /* libz.dylib */,
 				B70FAA021B539BC000607EA9 /* SystemConfiguration.framework */,
 				B70FAA001B539BB300607EA9 /* CFNetwork.framework */,
@@ -310,6 +334,18 @@
 				2CAED7ECE417F66C9C2CF9E2 /* Pods-Streamini.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		B66561DC1E09882C00EDA684 /* WECHAT */ = {
+			isa = PBXGroup;
+			children = (
+				B66561DD1E09884100EDA684 /* README.txt */,
+				B66561DE1E09884100EDA684 /* WechatAuthSDK.h */,
+				B66561DF1E09884100EDA684 /* WXApi.h */,
+				B66561E01E09884100EDA684 /* WXApiObject.h */,
+				B66561E11E09884100EDA684 /* libWeChatSDK.a */,
+			);
+			name = WECHAT;
 			sourceTree = "<group>";
 		};
 		B72475841B4130750080BE1B /* Extensions */ = {
@@ -444,6 +480,7 @@
 		B7AA93201B3172740005972E /* Streamini */ = {
 			isa = PBXGroup;
 			children = (
+				B66561DC1E09882C00EDA684 /* WECHAT */,
 				3EB1AB3F1DBBCFBB0047726D /* Streamini.entitlements */,
 				3E2674D71D7530B900E33DCD /* back.png */,
 				3E2674D81D7530BA00E33DCD /* lock.png */,
@@ -676,6 +713,7 @@
 				3E2674DC1D7530BA00E33DCD /* lock.png in Resources */,
 				3E2674DD1D7530BA00E33DCD /* msg.png in Resources */,
 				B7D6F0B91B37F4D90070C36A /* Config.plist in Resources */,
+				B66561E21E09884100EDA684 /* README.txt in Resources */,
 				B7AA932D1B3172740005972E /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1034,6 +1072,10 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Streamini/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Streamini/OpenSDK1.7.5",
+				);
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.uniprogy.dominic;
 				PRODUCT_NAME = Streamini;
@@ -1085,6 +1127,10 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Streamini/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Streamini/OpenSDK1.7.5",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.uniprogy.dominic;
 				PRODUCT_NAME = Streamini;
 				PROVISIONING_PROFILE = "";

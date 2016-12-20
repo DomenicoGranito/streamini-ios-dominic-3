@@ -9,7 +9,7 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate ,WXApiDelegate{
 
     var window: UIWindow?
     var deviceToken: String?
@@ -17,8 +17,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var bgTask: UIBackgroundTaskIdentifier?
     var closeStream: Bool = false
 
+    
+    
+    //dominicg weixin login
+    private let appID = "wx282a923ebe81d445"
+    private let appSecret = "1710a218426502adfbf7352fdd451c9b"
+    
+    private let accessTokenPrefix = "https://api.weixin.qq.com/sns/oauth2/access_token?"
+    
+    private func buildAccessTokenLink(withCode code: String) -> String {
+        
+        return accessTokenPrefix + "appid=" + appID + "&secret=" + appSecret + "&code=" + code + "&grant_type=authorization_code"
+        
+    }
+    //end weixin login
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool
     {
+        //weixin login 
+        let req = SendAuthReq()
+        req.scope = "snsapi_userinfo" //Important that this is the same
+        req.state = "co.company.yourapp_wx_login" //This can be any random value
+        WXApi.sendReq(req)
+        
+        
+        
+        //end login weixin
+        
+        
         UITextField.appearance().tintColor=UIColor(colorLiteralRed:43/255, green:185/255, blue:86/255, alpha:1)
         UITextField.appearance().keyboardAppearance = .Dark
         
@@ -63,7 +89,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
         
-        
+        // WeChat: replace with your AppID
+        WXApi.registerApp("wx68aa08d12b601234")
+
         
         
         return true
@@ -186,4 +214,41 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError){
         NSLog("%@",error.localizedDescription)
     }
+    
+    
+    func application(application: UIApplication, handleOpenURL url: NSURL) -> Bool {
+        return WXApi.handleOpenURL(url, delegate: self)
+    }
+    
+    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
+        return WXApi.handleOpenURL(url, delegate: self)
+    }
+    
+    func onReq(req: BaseReq!) {
+        // do optional stuff
+    }
+    
+    func onResp(resp: BaseResp!) {
+        
+        if let authResp = resp as? SendAuthResp {
+            
+            if authResp.code != nil {
+                
+                let dict = ["response": authResp.code]
+                NSNotificationCenter.defaultCenter().postNotificationName("WeChatAuthCodeResp", object: nil, userInfo: dict)
+                
+            } else {
+                
+                let dict = ["response": "Fail"]
+                NSNotificationCenter.defaultCenter().postNotificationName("WeChatAuthCodeResp", object: nil, userInfo: dict)
+                
+            }
+            
+        } else {
+            
+            let dict = ["response": "Fail"]
+            NSNotificationCenter.defaultCenter().postNotificationName("WeChatAuthCodeResp", object: nil, userInfo: dict)
+        }
+    }
+
 }

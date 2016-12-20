@@ -16,3 +16,5 @@
 #import "GrowingTextViewHandler.h"
 #import "UIViewController+TargetViewController.h"
 #import "MZFormSheetController.h"
+
+#import "WXApi.h"
