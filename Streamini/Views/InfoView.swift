@@ -35,8 +35,8 @@ class InfoView: UIView {
         super.awakeFromNib()
         self.userInteractionEnabled = false
         
-        shareButton.addTarget(self, action: #selector(InfoView.shareButtonPressed(_:)), forControlEvents: UIControlEvents.TouchUpInside)
-        reportButton.addTarget(self, action: #selector(InfoView.reportButtonPressed(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+        //shareButton.addTarget(self, action: #selector(InfoView.shareButtonPressed(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+        //reportButton.addTarget(self, action: #selector(InfoView.reportButtonPressed(_:)), forControlEvents: UIControlEvents.TouchUpInside)
     }
     
     // MARK: - Actions

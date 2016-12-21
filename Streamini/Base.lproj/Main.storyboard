@@ -343,6 +343,45 @@
                                     <segue destination="Z8C-a7-wAe" kind="embed" identifier="RootToContainer" id="AaP-HZ-BaA"/>
                                 </connections>
                             </containerView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0iM-8b-ZnC" customClass="LineView" customModule="Streamini" customModuleProvider="target">
+                                <subviews>
+                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ejb-mk-4cT">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="22" id="NKd-zH-pja"/>
+                                            <constraint firstAttribute="width" constant="125" id="PQW-1H-5a6"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Song Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="naw-l4-Nj5">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="125" id="c49-X9-98z"/>
+                                            <constraint firstAttribute="height" constant="22" id="iSc-HF-nh8"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eqw-VK-zj7">
+                                        <connections>
+                                            <action selector="tapMiniPlayerButton" destination="i8i-d4-DIm" eventType="touchUpInside" id="Xij-YH-nkd"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="Ejb-mk-4cT" firstAttribute="centerX" secondItem="0iM-8b-ZnC" secondAttribute="centerX" id="1VW-cT-165"/>
+                                    <constraint firstItem="naw-l4-Nj5" firstAttribute="centerX" secondItem="0iM-8b-ZnC" secondAttribute="centerX" id="9vR-rJ-cn4"/>
+                                    <constraint firstItem="naw-l4-Nj5" firstAttribute="top" secondItem="Ejb-mk-4cT" secondAttribute="bottom" id="HFH-V8-9cB"/>
+                                    <constraint firstItem="Ejb-mk-4cT" firstAttribute="top" secondItem="0iM-8b-ZnC" secondAttribute="top" id="csb-39-Pi2"/>
+                                    <constraint firstAttribute="height" constant="44" id="hKE-T4-wvk"/>
+                                    <constraint firstItem="eqw-VK-zj7" firstAttribute="leading" secondItem="0iM-8b-ZnC" secondAttribute="leading" id="mug-NT-BZk"/>
+                                    <constraint firstItem="eqw-VK-zj7" firstAttribute="top" secondItem="0iM-8b-ZnC" secondAttribute="top" id="rpp-4L-D4G"/>
+                                    <constraint firstAttribute="trailing" secondItem="eqw-VK-zj7" secondAttribute="trailing" id="s8h-wS-ehN"/>
+                                    <constraint firstAttribute="bottom" secondItem="eqw-VK-zj7" secondAttribute="bottom" id="sCH-KB-i0U"/>
+                                </constraints>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZCL-KU-VBb">
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VIc-T3-NVY">
@@ -511,10 +550,13 @@
                             <constraint firstItem="5x1-x2-KDZ" firstAttribute="top" secondItem="S2p-Vt-NVn" secondAttribute="bottom" id="1MW-qz-u2U"/>
                             <constraint firstAttribute="trailing" secondItem="ZCL-KU-VBb" secondAttribute="trailing" id="1aO-9X-Lff"/>
                             <constraint firstItem="j2V-f1-306" firstAttribute="top" secondItem="ZCL-KU-VBb" secondAttribute="bottom" id="6LR-ab-pmn"/>
+                            <constraint firstItem="0iM-8b-ZnC" firstAttribute="top" secondItem="5x1-x2-KDZ" secondAttribute="bottom" id="BRj-f5-QH6"/>
                             <constraint firstAttribute="trailing" secondItem="5x1-x2-KDZ" secondAttribute="trailing" id="Ewu-0E-hWi"/>
                             <constraint firstItem="ZCL-KU-VBb" firstAttribute="leading" secondItem="oSi-ct-S97" secondAttribute="leading" id="Rfn-bv-3H7"/>
-                            <constraint firstItem="ZCL-KU-VBb" firstAttribute="top" secondItem="5x1-x2-KDZ" secondAttribute="bottom" id="jGW-Rk-tFh"/>
+                            <constraint firstAttribute="trailing" secondItem="0iM-8b-ZnC" secondAttribute="trailing" id="Zyo-xY-xQ9"/>
+                            <constraint firstItem="0iM-8b-ZnC" firstAttribute="leading" secondItem="oSi-ct-S97" secondAttribute="leading" id="dMw-sF-H53"/>
                             <constraint firstItem="5x1-x2-KDZ" firstAttribute="leading" secondItem="oSi-ct-S97" secondAttribute="leading" id="usd-hB-CvA"/>
+                            <constraint firstItem="ZCL-KU-VBb" firstAttribute="top" secondItem="0iM-8b-ZnC" secondAttribute="bottom" id="vMw-D1-1rt"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
@@ -534,7 +576,6 @@
                                 <include reference="usd-hB-CvA"/>
                                 <include reference="1aO-9X-Lff"/>
                                 <include reference="Rfn-bv-3H7"/>
-                                <include reference="jGW-Rk-tFh"/>
                             </mask>
                         </variation>
                     </view>
@@ -544,8 +585,10 @@
                     <connections>
                         <outlet property="containerView" destination="5x1-x2-KDZ" id="1df-q0-7sU"/>
                         <outlet property="homeButton" destination="DOb-wB-2L2" id="82m-aY-TwS"/>
+                        <outlet property="miniPlayerView" destination="0iM-8b-ZnC" id="L2g-8H-pSK"/>
                         <outlet property="peopleButton" destination="54h-VC-N4O" id="aaM-eY-ple"/>
                         <outlet property="recButton" destination="Ykd-6L-m9J" id="VYC-Kq-2AH"/>
+                        <outlet property="tabBar" destination="ZCL-KU-VBb" id="f8u-VY-iOc"/>
                         <segue destination="5YH-26-Wgh" kind="presentation" identifier="RootToCreate" id="Yqq-48-ckz"/>
                         <segue destination="GZe-kb-Al5" kind="show" identifier="RootToProfile" id="pOl-KN-qrJ"/>
                     </connections>
@@ -563,7 +606,7 @@
                         <viewControllerLayoutGuide type="bottom" id="JpF-AK-Yd2"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="621-hw-lV1">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="366"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="322"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -7959,10 +8002,10 @@
             </objects>
             <point key="canvasLocation" x="-643" y="-674"/>
         </scene>
-        <!--Bk Join Stream View Controller-->
+        <!--View Controller-->
         <scene sceneID="Jb4-I4-xN6">
             <objects>
-                <viewController storyboardIdentifier="bkJoinStreamViewControllerId" id="4Kk-WS-jGZ" customClass="bkJoinStreamViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BKViewController" id="4Kk-WS-jGZ" customClass="BKViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="vHi-4R-j3w"/>
                         <viewControllerLayoutGuide type="bottom" id="czk-H8-WWA"/>
@@ -7978,9 +8021,6 @@
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Snu-ZE-dNe" userLabel="tapView">
                                 <frame key="frameInset" width="240" height="128"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="b07-KN-u2h" appends="YES" id="wHg-sG-s1K"/>
-                                </connections>
                             </view>
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UXd-f8-sL4" userLabel="likeView">
                                 <frame key="frameInset" width="320" height="568"/>
@@ -8027,9 +8067,6 @@
                                         <include reference="Unj-gr-qhg"/>
                                     </mask>
                                 </variation>
-                                <connections>
-                                    <action selector="closeButtonPressed:" destination="4Kk-WS-jGZ" eventType="touchUpInside" id="BE3-nV-teH"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="36x-zf-1lw" customClass="SensibleButton" customModule="Streamini" customModuleProvider="target">
                                 <frame key="frameInset" minX="15" minY="25" width="32" height="32"/>
@@ -8056,9 +8093,6 @@
                                         <include reference="rUY-5w-DdR"/>
                                     </mask>
                                 </variation>
-                                <connections>
-                                    <action selector="infoButtonPressed:" destination="4Kk-WS-jGZ" eventType="touchUpInside" id="KQM-zh-Bix"/>
-                                </connections>
                             </button>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" hidesWhenStopped="YES" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="pP0-GG-Kpf">
                                 <frame key="frameInset" minX="-10" minY="-10" width="20" height="20"/>
@@ -8228,9 +8262,6 @@
                                         <include reference="oKs-k4-qYZ"/>
                                     </mask>
                                 </variation>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="NjV-GL-RI8" appends="YES" id="lIm-9Z-S1W"/>
-                                </connections>
                             </tableView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VV3-cN-t3j">
                                 <frame key="frameInset" width="240" height="128"/>
@@ -8258,9 +8289,6 @@
                                         <include reference="vPY-Sw-fpF"/>
                                     </mask>
                                 </variation>
-                                <connections>
-                                    <outlet property="delegate" destination="4Kk-WS-jGZ" id="yOr-Jh-Q5T"/>
-                                </connections>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zyf-gd-QX7" customClass="SensibleButton" customModule="Streamini" customModuleProvider="target">
                                 <frame key="frameInset" minX="367" minY="750" width="27" height="22"/>
@@ -8283,9 +8311,6 @@
                                         <include reference="prR-K2-EOm"/>
                                     </mask>
                                 </variation>
-                                <connections>
-                                    <action selector="viewersButtonPressed:" destination="4Kk-WS-jGZ" eventType="touchUpInside" id="u2B-R6-ZFE"/>
-                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bs0-hv-00m">
                                 <frame key="frameInset" minX="361" minY="772" width="39" height="15"/>
@@ -8420,9 +8445,6 @@
                                                 <include reference="rTw-N4-x0A"/>
                                             </mask>
                                         </variation>
-                                        <connections>
-                                            <outletCollection property="gestureRecognizers" destination="G9e-Ba-pa5" appends="YES" id="qkk-7v-0Cu"/>
-                                        </connections>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tLs-5r-BZA">
                                         <frame key="frameInset" minX="-23" minY="-15" width="46" height="30"/>
@@ -8912,24 +8934,6 @@
                                         <include reference="xIK-S8-l3U"/>
                                     </mask>
                                 </variation>
-                                <connections>
-                                    <outlet property="closeButton" destination="NOX-a9-XNS" id="bmv-Ea-JIc"/>
-                                    <outlet property="likesLabel" destination="jio-gW-cd7" id="aLo-BV-3uq"/>
-                                    <outlet property="likesValueLabel" destination="igj-We-F7B" id="Pmy-uF-VtS"/>
-                                    <outlet property="locationLabel" destination="yVE-xu-dcT" id="yvu-Rd-4Pt"/>
-                                    <outlet property="locationWidthConstraint" destination="hID-fj-0lq" id="KvA-C1-4cn"/>
-                                    <outlet property="playButton" destination="tLs-5r-BZA" id="tx6-xs-j4e"/>
-                                    <outlet property="replaysButton" destination="C8q-bi-6RF" id="WHQ-Kc-CyW"/>
-                                    <outlet property="replaysLabel" destination="4Nb-BB-D5Z" id="y1a-mu-Xh8"/>
-                                    <outlet property="replaysValueLabel" destination="GAW-P1-r75" id="pMB-bq-aRz"/>
-                                    <outlet property="streamNameHeightConstraint" destination="tUo-5b-qKw" id="4Fi-PZ-2mF"/>
-                                    <outlet property="streamNameLabel" destination="sxh-2f-GTc" id="6mL-jp-odW"/>
-                                    <outlet property="userImageView" destination="2hy-y5-1lG" id="H0Y-0m-Cn8"/>
-                                    <outlet property="usernameLabel" destination="igy-HI-j8i" id="dTe-X8-zMS"/>
-                                    <outlet property="viewersButton" destination="Sp8-0M-ZGf" id="exF-Gu-J3O"/>
-                                    <outlet property="viewersLabel" destination="jXp-nu-D2E" id="IAP-86-B1l"/>
-                                    <outlet property="viewersValueLabel" destination="xOD-kk-qaQ" id="nD8-HC-Zca"/>
-                                </connections>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceHorizontal="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="DKI-dg-X5d">
                                 <frame key="frameInset" width="320" height="568"/>
@@ -9322,17 +9326,6 @@
                                         <include reference="Vt4-mL-HSP"/>
                                     </mask>
                                 </variation>
-                                <connections>
-                                    <outlet property="locationLabel" destination="qS8-ku-MN4" id="Vc3-ZG-wi4"/>
-                                    <outlet property="locationWidthConstraint" destination="3yg-Ri-UJY" id="vSa-hJ-AQ7"/>
-                                    <outlet property="reportButton" destination="keA-rX-v71" id="CmD-NC-01t"/>
-                                    <outlet property="shareButton" destination="xzP-zG-7UZ" id="L5u-TS-6Xc"/>
-                                    <outlet property="streamNameHeightConstraint" destination="xwu-T3-1hc" id="jqO-Af-nd8"/>
-                                    <outlet property="streamNameLabel" destination="ZYB-KK-Pzo" id="cZh-5F-cpq"/>
-                                    <outlet property="userImageView" destination="DoK-rv-W6f" id="2aR-Yd-dmG"/>
-                                    <outlet property="usernameLabel" destination="bXg-T5-HSi" id="N8k-gX-duZ"/>
-                                    <outletCollection property="gestureRecognizers" destination="zMY-cn-kss" appends="YES" id="a5P-wY-CGu"/>
-                                </connections>
                             </view>
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="s6n-f7-Icd" userLabel="Player View">
                                 <frame key="frameInset" minX="19" minY="34" width="375" height="667"/>
@@ -9771,52 +9764,8 @@
                     <navigationItem key="navigationItem" id="ngk-Vj-B3Q"/>
                     <nil key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedTopBarMetrics"/>
-                    <connections>
-                        <outlet property="activityIndicator" destination="pP0-GG-Kpf" id="OJs-FT-aHJ"/>
-                        <outlet property="closeButton" destination="xRd-l3-KAA" id="95n-Zu-FVp"/>
-                        <outlet property="commentsTableView" destination="7Ky-8d-IBU" id="b7Y-UR-ndc"/>
-                        <outlet property="commentsTableViewHeight" destination="oKs-k4-qYZ" id="VUC-iL-Jen"/>
-                        <outlet property="eyeButton" destination="zyf-gd-QX7" id="5Uc-dd-oow"/>
-                        <outlet property="infoButton" destination="36x-zf-1lw" id="kBR-IQ-C6F"/>
-                        <outlet property="infoView" destination="tJy-ni-4ME" id="X9A-2r-qbh"/>
-                        <outlet property="likeView" destination="UXd-f8-sL4" id="N9f-gS-x6U"/>
-                        <outlet property="likesViewBottom" destination="xIK-S8-l3U" id="P4B-xD-KwE"/>
-                        <outlet property="messageTextView" destination="VV3-cN-t3j" id="eet-bF-mE4"/>
-                        <outlet property="messageTextViewRightConstraint" destination="6do-dZ-MnL" id="RP2-hl-R1z"/>
-                        <outlet property="messageViewBottomConstraint" destination="kbO-Q8-IB4" id="QzA-L7-V5x"/>
-                        <outlet property="messageViewHeightConstraint" destination="vPY-Sw-fpF" id="KGm-nr-kpK"/>
-                        <outlet property="previewView" destination="b71-Ix-dhE" id="cHJ-Na-a9Y"/>
-                        <outlet property="replayView" destination="WJI-0c-Nnf" id="suD-3Z-ebx"/>
-                        <outlet property="replaysBottom" destination="tPn-q3-UR5" id="okC-Jc-zFi"/>
-                        <outlet property="viewersBottom" destination="BbG-5n-6IF" id="8tp-fL-T2F"/>
-                        <outlet property="viewersCollectionView" destination="DKI-dg-X5d" id="ZJE-m0-1ed"/>
-                        <outlet property="viewersCollectionViewHeight" destination="T4W-Tk-WX8" id="Hdw-Ym-g9m"/>
-                        <outlet property="viewersLabel" destination="bs0-hv-00m" id="Msh-or-v12"/>
-                        <outlet property="viewersLabelBottomConstraint" destination="UGu-Th-A2W" id="5e7-gX-G6y"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wyp-Fz-8X2" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="NjV-GL-RI8">
-                    <connections>
-                        <action selector="tapGesturePerformed:" destination="4Kk-WS-jGZ" id="MX2-CT-xmS"/>
-                    </connections>
-                </tapGestureRecognizer>
-                <tapGestureRecognizer id="b07-KN-u2h">
-                    <connections>
-                        <action selector="tapGesturePerformed:" destination="4Kk-WS-jGZ" id="Kr8-mS-AZt"/>
-                    </connections>
-                </tapGestureRecognizer>
-                <tapGestureRecognizer id="zMY-cn-kss">
-                    <connections>
-                        <action selector="tapGesturePerformed:" destination="tJy-ni-4ME" id="Pbg-Xg-g6v"/>
-                        <outlet property="delegate" destination="tJy-ni-4ME" id="MBU-DM-Df9"/>
-                    </connections>
-                </tapGestureRecognizer>
-                <tapGestureRecognizer id="G9e-Ba-pa5">
-                    <connections>
-                        <action selector="authorImageViewPressed:" destination="4Kk-WS-jGZ" id="7be-6h-xsI"/>
-                    </connections>
-                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1689" y="1710"/>
         </scene>
@@ -10695,6 +10644,28 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-643" y="-1511"/>
+        </scene>
+        <!--Modal View Controller-->
+        <scene sceneID="cbI-kA-loa">
+            <objects>
+                <viewController storyboardIdentifier="ModalViewController" id="2vo-h0-thv" customClass="ModalViewController" customModule="Streamini" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lXS-Xx-gkk"/>
+                        <viewControllerLayoutGuide type="bottom" id="SJU-pR-fyk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1R6-6e-2FY">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <navigationItem key="navigationItem" id="Xxb-7N-8x0"/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Okh-6R-glF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2364" y="1710"/>
         </scene>
     </scenes>
     <resources>

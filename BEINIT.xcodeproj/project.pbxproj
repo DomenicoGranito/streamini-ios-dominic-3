@@ -21,6 +21,15 @@
 		3EF1F02E1D719B110055A372 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF1F02D1D719B100055A372 /* RegisterViewController.swift */; };
 		3EF1F0301D719DE40055A372 /* test.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 3EF1F02F1D719DE40055A372 /* test.mp4 */; };
 		3EF1F0321D719F280055A372 /* BackgroundVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF1F0311D719F280055A372 /* BackgroundVideo.swift */; };
+		3EF535AD1E0920B90049B2E9 /* AnimatedTransitioning .swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF535A71E0920B90049B2E9 /* AnimatedTransitioning .swift */; };
+		3EF535AE1E0920B90049B2E9 /* ARNTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF535A81E0920B90049B2E9 /* ARNTransitionAnimator.swift */; };
+		3EF535AF1E0920B90049B2E9 /* InteractiveTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF535A91E0920B90049B2E9 /* InteractiveTransitioning.swift */; };
+		3EF535B01E0920B90049B2E9 /* TransitionAnimatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF535AA1E0920B90049B2E9 /* TransitionAnimatable.swift */; };
+		3EF535B11E0920B90049B2E9 /* TransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF535AB1E0920B90049B2E9 /* TransitionAnimator.swift */; };
+		3EF535B21E0920B90049B2E9 /* TransitionGestureHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF535AC1E0920B90049B2E9 /* TransitionGestureHandler.swift */; };
+		3EF535B41E0921430049B2E9 /* LineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF535B31E0921430049B2E9 /* LineView.swift */; };
+		3EF535B61E0922D40049B2E9 /* MusicPlayerTransitionAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF535B51E0922D40049B2E9 /* MusicPlayerTransitionAnimation.swift */; };
+		3EF535B81E092A330049B2E9 /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF535B71E092A330049B2E9 /* ModalViewController.swift */; };
 		70C6007BAC329996E72C79DC /* libPods-Streamini.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BB289E14C1B03C34F816C2AE /* libPods-Streamini.a */; };
 		A60F82E91D490F4D002E2CEA /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60F82E81D490F4D002E2CEA /* Category.swift */; };
 		A60F82EB1D490F70002E2CEA /* CategoryMappingProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60F82EA1D490F70002E2CEA /* CategoryMappingProvider.swift */; };
@@ -154,6 +163,15 @@
 		3EF1F02D1D719B100055A372 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		3EF1F02F1D719DE40055A372 /* test.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = test.mp4; sourceTree = "<group>"; };
 		3EF1F0311D719F280055A372 /* BackgroundVideo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundVideo.swift; sourceTree = "<group>"; };
+		3EF535A71E0920B90049B2E9 /* AnimatedTransitioning .swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "AnimatedTransitioning .swift"; path = "ARNTransitionAnimator/AnimatedTransitioning .swift"; sourceTree = "<group>"; };
+		3EF535A81E0920B90049B2E9 /* ARNTransitionAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ARNTransitionAnimator.swift; path = ARNTransitionAnimator/ARNTransitionAnimator.swift; sourceTree = "<group>"; };
+		3EF535A91E0920B90049B2E9 /* InteractiveTransitioning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InteractiveTransitioning.swift; path = ARNTransitionAnimator/InteractiveTransitioning.swift; sourceTree = "<group>"; };
+		3EF535AA1E0920B90049B2E9 /* TransitionAnimatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TransitionAnimatable.swift; path = ARNTransitionAnimator/TransitionAnimatable.swift; sourceTree = "<group>"; };
+		3EF535AB1E0920B90049B2E9 /* TransitionAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TransitionAnimator.swift; path = ARNTransitionAnimator/TransitionAnimator.swift; sourceTree = "<group>"; };
+		3EF535AC1E0920B90049B2E9 /* TransitionGestureHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TransitionGestureHandler.swift; path = ARNTransitionAnimator/TransitionGestureHandler.swift; sourceTree = "<group>"; };
+		3EF535B31E0921430049B2E9 /* LineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineView.swift; sourceTree = "<group>"; };
+		3EF535B51E0922D40049B2E9 /* MusicPlayerTransitionAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicPlayerTransitionAnimation.swift; sourceTree = "<group>"; };
+		3EF535B71E092A330049B2E9 /* ModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
 		A60F82E81D490F4D002E2CEA /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		A60F82EA1D490F70002E2CEA /* CategoryMappingProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryMappingProvider.swift; sourceTree = "<group>"; };
 		A60F82EC1D49168E002E2CEA /* SearchStreamCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchStreamCell.swift; sourceTree = "<group>"; };
@@ -291,6 +309,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3EF535A61E0920920049B2E9 /* ARNTransitionAnimator */ = {
+			isa = PBXGroup;
+			children = (
+				3EF535A71E0920B90049B2E9 /* AnimatedTransitioning .swift */,
+				3EF535A81E0920B90049B2E9 /* ARNTransitionAnimator.swift */,
+				3EF535A91E0920B90049B2E9 /* InteractiveTransitioning.swift */,
+				3EF535AA1E0920B90049B2E9 /* TransitionAnimatable.swift */,
+				3EF535AB1E0920B90049B2E9 /* TransitionAnimator.swift */,
+				3EF535AC1E0920B90049B2E9 /* TransitionGestureHandler.swift */,
+			);
+			name = ARNTransitionAnimator;
+			sourceTree = "<group>";
+		};
 		786304F139CBAD59E4F652FD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -444,12 +475,15 @@
 		B7AA93201B3172740005972E /* Streamini */ = {
 			isa = PBXGroup;
 			children = (
+				3EF535A61E0920920049B2E9 /* ARNTransitionAnimator */,
 				3EB1AB3F1DBBCFBB0047726D /* Streamini.entitlements */,
 				3E2674D71D7530B900E33DCD /* back.png */,
 				3E2674D81D7530BA00E33DCD /* lock.png */,
 				3E2674D91D7530BA00E33DCD /* msg.png */,
 				3E2674DA1D7530BA00E33DCD /* user.png */,
 				3EF1F0311D719F280055A372 /* BackgroundVideo.swift */,
+				3EF535B31E0921430049B2E9 /* LineView.swift */,
+				3EF535B51E0922D40049B2E9 /* MusicPlayerTransitionAnimation.swift */,
 				3EF1F02F1D719DE40055A372 /* test.mp4 */,
 				B7E15E511B6A6277000C8C69 /* Keyboard */,
 				B7E15E4E1B6A59D8000C8C69 /* Delegates */,
@@ -564,6 +598,7 @@
 				B70AB1311B73731200BAD62A /* LinkedUsersViewController.swift */,
 				B733B1F41B78CF04002FEAB6 /* PeopleViewController.swift */,
 				B7AA45571B79CAC8001D293A /* RootViewController.swift */,
+				3EF535B71E092A330049B2E9 /* ModalViewController.swift */,
 				B7AA45591B79F766001D293A /* ContainerViewController.swift */,
 				B7A6BB981B7A0CFE0080497F /* ProfileViewController.swift */,
 				B79669841B821C5D0071AF91 /* LegalViewController.swift */,
@@ -779,6 +814,7 @@
 				B64176D31DF4EDE200099A9D /* PlayerView.swift in Sources */,
 				B7D5EA961B5685EF003EE25D /* UserExtension.swift in Sources */,
 				B7C9BB2C1B4E7491005874A9 /* UIButton+tintImage.m in Sources */,
+				3EF535B81E092A330049B2E9 /* ModalViewController.swift in Sources */,
 				B7EAD9501B4D1F100009C698 /* LocationManager.swift in Sources */,
 				B791879B1B4437FC002DFAB4 /* TwitterTool.swift in Sources */,
 				B7D6F0B51B37F41F0070C36A /* BaseViewController.swift in Sources */,
@@ -793,7 +829,9 @@
 				B71BA5DB1B84A86C0055F427 /* ProfileStatisticsViewController.swift in Sources */,
 				B79187981B4437FC002DFAB4 /* AmazonTool.swift in Sources */,
 				3EEF52BF1D83B5AF0015BA92 /* AllCategoriesRow.swift in Sources */,
+				3EF535B41E0921430049B2E9 /* LineView.swift in Sources */,
 				B77AABEE1B398B95007DE187 /* StreamConnector.swift in Sources */,
+				3EF535B61E0922D40049B2E9 /* MusicPlayerTransitionAnimation.swift in Sources */,
 				A631E6321D378D95002C7F78 /* PasswordViewController.swift in Sources */,
 				A60F82E91D490F4D002E2CEA /* Category.swift in Sources */,
 				B77AABE81B398A3C007DE187 /* Connector.swift in Sources */,
@@ -830,6 +868,7 @@
 				B74188291B5CDD9400427156 /* ClosedMessageController.swift in Sources */,
 				B77AABDE1B39847B007DE187 /* UserConnector.swift in Sources */,
 				A6F80F1F1BBC13B800A376CD /* UINavigationBarExtension.swift in Sources */,
+				3EF535AD1E0920B90049B2E9 /* AnimatedTransitioning .swift in Sources */,
 				B791879D1B457ABE002DFAB4 /* UserContainer.swift in Sources */,
 				B7D5EA9A1B579D47003EE25D /* CommentCell.swift in Sources */,
 				B796A4921BB1520E0018B085 /* ViewersDelegate.swift in Sources */,
@@ -843,13 +882,16 @@
 				B746FB0E1B5F93BE00DE3534 /* SensibleButton.swift in Sources */,
 				B77AABD81B398284007DE187 /* User.swift in Sources */,
 				B7EB82B71B6746500022C76A /* NotificationsDelegate.swift in Sources */,
+				3EF535B11E0920B90049B2E9 /* TransitionAnimator.swift in Sources */,
 				B76635F31B4BC47E0013FCE2 /* PubNubMessenger.swift in Sources */,
 				B7D6F0B11B37F16C0070C36A /* LoginViewController.swift in Sources */,
+				3EF535B01E0920B90049B2E9 /* TransitionAnimatable.swift in Sources */,
 				B71BA5DD1B84A9580055F427 /* BlockedDataSource.swift in Sources */,
 				B7D5EA921B564BAA003EE25D /* Message.swift in Sources */,
 				B746FB121B5FC27900DE3534 /* FollowerCell.swift in Sources */,
 				B794ADA21B59560B0069C2A8 /* UIEdgeInsets.swift in Sources */,
 				B728153E1B5EBCB10005BBC6 /* UIColorExtension.swift in Sources */,
+				3EF535AF1E0920B90049B2E9 /* InteractiveTransitioning.swift in Sources */,
 				B72475831B411D910080BE1B /* CreateStreamViewController.swift in Sources */,
 				B746FB101B5FC23100DE3534 /* FollowersViewController.swift in Sources */,
 				A60F82F11D491AAF002E2CEA /* SearchDataSource.swift in Sources */,
@@ -864,7 +906,9 @@
 				B72475901B41627E0080BE1B /* StringExtension.swift in Sources */,
 				3EF1F0321D719F280055A372 /* BackgroundVideo.swift in Sources */,
 				B72815381B5E38D00005BBC6 /* ViewersCollectionViewCell.swift in Sources */,
+				3EF535B21E0920B90049B2E9 /* TransitionGestureHandler.swift in Sources */,
 				B77AABE61B398815007DE187 /* StreamMappingProvider.swift in Sources */,
+				3EF535AE1E0920B90049B2E9 /* ARNTransitionAnimator.swift in Sources */,
 				A68B73191BB2859800695C80 /* NSLayoutConstraint+preciseConstant.swift in Sources */,
 				A60F82EB1D490F70002E2CEA /* CategoryMappingProvider.swift in Sources */,
 				B77E0BD71B8B52B3007C3107 /* MyStreamsDataSource.swift in Sources */,

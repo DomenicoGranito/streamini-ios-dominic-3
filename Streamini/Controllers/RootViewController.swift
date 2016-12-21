@@ -8,14 +8,52 @@
 
 import Photos
 
-class RootViewController: BaseViewController
+class RootViewController: UIViewController
 {
+    @IBOutlet var tabBar:UIView!
+    @IBOutlet var miniPlayerView:UIView!
     @IBOutlet var homeButton:UIButton!
     @IBOutlet var recButton:UIButton!
     @IBOutlet var peopleButton:UIButton!
     @IBOutlet var containerView:UIView!
+
+    var animator:ARNTransitionAnimator!
+    var modalVC:ModalViewController!
     var containerViewController:ContainerViewController?
     
+    @IBAction func tapMiniPlayerButton()
+    {
+        presentViewController(modalVC, animated:true, completion:nil)
+    }
+
+    func setupAnimator()
+    {
+        let animation=MusicPlayerTransitionAnimation(rootVC:self, modalVC:modalVC)
+        
+        animation.completion={isPresenting in
+            if isPresenting
+            {
+                let modalGestureHandler=TransitionGestureHandler(targetVC:self, direction:.bottom)
+                modalGestureHandler.registerGesture(self.modalVC.view)
+                modalGestureHandler.panCompletionThreshold=15.0
+                self.animator.registerInteractiveTransitioning(.dismiss, gestureHandler:modalGestureHandler)
+            }
+            else
+            {
+                self.setupAnimator()
+            }
+        }
+        
+        let gestureHandler=TransitionGestureHandler(targetVC:self, direction:.top)
+        gestureHandler.registerGesture(miniPlayerView)
+        gestureHandler.panCompletionThreshold=15.0
+        
+        animator=ARNTransitionAnimator(duration:0.5, animation:animation)
+        animator.registerInteractiveTransitioning(.present, gestureHandler:gestureHandler)
+        
+        modalVC.transitioningDelegate=animator
+    }
+
     @IBAction func recButtonPressed(sender:AnyObject)
     {
         self.performSegueWithIdentifier("RootToCreate", sender:self)
@@ -130,6 +168,12 @@ class RootViewController: BaseViewController
 
     override func viewDidLoad()
     {
+        let storyboard=UIStoryboard(name:"Main", bundle:nil)
+        modalVC=storyboard.instantiateViewControllerWithIdentifier("ModalViewController") as? ModalViewController
+        modalVC.modalPresentationStyle = .OverFullScreen
+        
+        setupAnimator()
+
         configureView()
         setupMainNavigationItems()
         

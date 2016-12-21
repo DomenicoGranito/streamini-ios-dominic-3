@@ -47,14 +47,14 @@ class ReplayView: UIView {
         
         self.backgroundColor = UIColor(white: 0.0, alpha: 0.6)
         
-        playButton.addTarget(self, action: #selector(ReplayView.playButtonPressed(_:)), forControlEvents: UIControlEvents.TouchUpInside)
-        closeButton.addTarget(self, action: #selector(ReplayView.closeButtonPressed(_:)), forControlEvents: UIControlEvents.TouchUpInside)
-        viewersButton.addTarget(self, action: #selector(ReplayView.viewersButtonPressed(_:)), forControlEvents: UIControlEvents.TouchUpInside)
-        replaysButton.addTarget(self, action: #selector(ReplayView.replaysButtonPressed(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+        //playButton.addTarget(self, action: #selector(ReplayView.playButtonPressed(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+        //closeButton.addTarget(self, action: #selector(ReplayView.closeButtonPressed(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+        //viewersButton.addTarget(self, action: #selector(ReplayView.viewersButtonPressed(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+        //replaysButton.addTarget(self, action: #selector(ReplayView.replaysButtonPressed(_:)), forControlEvents: UIControlEvents.TouchUpInside)
         
-        viewersLabel.text   = NSLocalizedString("stat_viewers", comment: "")
-        likesLabel.text     = NSLocalizedString("stat_likes", comment: "")
-        replaysLabel.text   = NSLocalizedString("stat_replays", comment: "")
+        //viewersLabel.text   = NSLocalizedString("stat_viewers", comment: "")
+        //likesLabel.text     = NSLocalizedString("stat_likes", comment: "")
+        //replaysLabel.text   = NSLocalizedString("stat_replays", comment: "")
     }
     
     func playButtonPressed(sender: UIView) {
