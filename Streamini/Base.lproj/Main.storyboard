@@ -641,7 +641,7 @@
                                 <color key="separatorColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PeopleCell" id="k1O-A1-Ox8" customClass="PeopleCell" customModule="Streamini" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" misplaced="YES" selectionStyle="default" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PeopleCell" id="k1O-A1-Ox8" customClass="PeopleCell" customModule="Streamini" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="22" width="320" height="110"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="k1O-A1-Ox8" id="ghm-KZ-oCl">
@@ -3104,7 +3104,7 @@
                                 <color key="separatorColor" red="0.1803921568627451" green="0.18431372549019609" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <inset key="separatorInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="LinkedUserCell" rowHeight="66" id="bt9-Du-siP" customClass="LinkedUserCell" customModule="Streamini" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" misplaced="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="LinkedUserCell" rowHeight="66" id="bt9-Du-siP" customClass="LinkedUserCell" customModule="Streamini" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="40" width="320" height="66"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bt9-Du-siP" id="5BE-M8-NNW">
@@ -3232,7 +3232,7 @@
                                             <outlet property="usernameLabel" destination="2bV-0q-x6V" id="TEf-Lq-AHz"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" restorationIdentifier="RecentStreamCell" selectionStyle="none" indentationWidth="10" reuseIdentifier="RecentStreamCell" rowHeight="100" id="xZv-S5-XPB" customClass="RecentStreamCell" customModule="Streamini" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" misplaced="YES" restorationIdentifier="RecentStreamCell" selectionStyle="none" indentationWidth="10" reuseIdentifier="RecentStreamCell" rowHeight="100" id="xZv-S5-XPB" customClass="RecentStreamCell" customModule="Streamini" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="106" width="320" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xZv-S5-XPB" id="dMx-UB-aJF">
@@ -4127,7 +4127,7 @@
                                     </constraint>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CommentCell" id="gil-x2-ecp" customClass="CommentCell" customModule="Streamini" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" misplaced="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CommentCell" id="gil-x2-ecp" customClass="CommentCell" customModule="Streamini" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="22" width="277" height="57"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gil-x2-ecp" id="DRt-T0-z3S">
@@ -5814,7 +5814,7 @@
                                     </constraint>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CommentCell" id="O3q-b2-JGS" customClass="CommentCell" customModule="Streamini" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" misplaced="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CommentCell" id="O3q-b2-JGS" customClass="CommentCell" customModule="Streamini" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="22" width="312" height="57"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="O3q-b2-JGS" id="h53-1A-J2u">
@@ -8002,10 +8002,10 @@
             </objects>
             <point key="canvasLocation" x="-643" y="-674"/>
         </scene>
-        <!--View Controller-->
+        <!--Modal View Controller-->
         <scene sceneID="Jb4-I4-xN6">
             <objects>
-                <viewController storyboardIdentifier="BKViewController" id="4Kk-WS-jGZ" customClass="BKViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ModalViewController" id="4Kk-WS-jGZ" customClass="ModalViewController" customModule="Streamini" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="vHi-4R-j3w"/>
                         <viewControllerLayoutGuide type="bottom" id="czk-H8-WWA"/>
@@ -10644,28 +10644,6 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-643" y="-1511"/>
-        </scene>
-        <!--Modal View Controller-->
-        <scene sceneID="cbI-kA-loa">
-            <objects>
-                <viewController storyboardIdentifier="ModalViewController" id="2vo-h0-thv" customClass="ModalViewController" customModule="Streamini" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="lXS-Xx-gkk"/>
-                        <viewControllerLayoutGuide type="bottom" id="SJU-pR-fyk"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="1R6-6e-2FY">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </view>
-                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
-                    <navigationItem key="navigationItem" id="Xxb-7N-8x0"/>
-                    <nil key="simulatedStatusBarMetrics"/>
-                    <nil key="simulatedTopBarMetrics"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Okh-6R-glF" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2364" y="1710"/>
         </scene>
     </scenes>
     <resources>
