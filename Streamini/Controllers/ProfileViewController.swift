@@ -208,20 +208,26 @@ ProfileDelegate {
         handleError(error)
     }
 
-    func logoutSuccess() {
-        if let session = A0SimpleKeychain().stringForKey("PHPSESSID") {
+    func logoutSuccess()
+    {
+        if A0SimpleKeychain().stringForKey("PHPSESSID") != nil
+        {
             A0SimpleKeychain().deleteEntryForKey("PHPSESSID")
         }
-        if let id = A0SimpleKeychain().stringForKey("id") {
+        if A0SimpleKeychain().stringForKey("id") != nil
+        {
             A0SimpleKeychain().deleteEntryForKey("id")
         }
-        if let token = A0SimpleKeychain().stringForKey("password") {
+        if A0SimpleKeychain().stringForKey("password") != nil
+        {
             A0SimpleKeychain().deleteEntryForKey("password")
         }
-        if let secret = A0SimpleKeychain().stringForKey("secret") {
+        if A0SimpleKeychain().stringForKey("secret") != nil
+        {
             A0SimpleKeychain().deleteEntryForKey("secret")
         }
-        if let type = A0SimpleKeychain().stringForKey("type") {
+        if A0SimpleKeychain().stringForKey("type") != nil
+        {
             A0SimpleKeychain().deleteEntryForKey("type")
         }
         

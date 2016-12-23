@@ -17,5 +17,10 @@ class ModalViewController: UIViewController
         blurView.frame=view.bounds
         view.addSubview(blurView)
         view.sendSubviewToBack(blurView)
-    }    
+    }
+        
+    @IBAction func close()
+    {
+        dismissViewControllerAnimated(true, completion:nil)
+    }
 }
