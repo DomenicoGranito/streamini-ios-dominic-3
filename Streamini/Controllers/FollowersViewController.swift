@@ -36,7 +36,7 @@ class FollowersViewController: BaseTableViewController, UISearchBarDelegate, Use
         
         let range = NSMakeRange(0, tableView.numberOfSections)
         let indexSet = NSIndexSet(indexesInRange: range)
-        tableView.reloadSections(indexSet, withRowAnimation: UITableViewRowAnimation.Automatic)
+        tableView.reloadSections(indexSet, withRowAnimation:.Automatic)
     }
     
     func addFollowersSuccess(users: [User]) {
@@ -63,7 +63,7 @@ class FollowersViewController: BaseTableViewController, UISearchBarDelegate, Use
         self.navigationController!.navigationBar.tintColor = UIColor.whiteColor()
         self.title = NSLocalizedString("select_followers_title", comment: "")
         
-        let buttonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Done, target: self, action: #selector(FollowersViewController.selectedDone))
+        let buttonItem = UIBarButtonItem(barButtonSystemItem:.Done, target: self, action: #selector(FollowersViewController.selectedDone))
         self.navigationItem.rightBarButtonItem = buttonItem
         
         self.tableView.addInfiniteScrollingWithActionHandler { () -> Void in

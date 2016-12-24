@@ -35,7 +35,7 @@ class LegalViewController: BaseViewController, UIWebViewDelegate {
     }
     
     func webView(webView: UIWebView, shouldStartLoadWithRequest request: NSURLRequest, navigationType: UIWebViewNavigationType) -> Bool {
-        if navigationType == UIWebViewNavigationType.LinkClicked {
+        if navigationType == .LinkClicked {
             UIApplication.sharedApplication().openURL(request.URL!)
             return false
         }

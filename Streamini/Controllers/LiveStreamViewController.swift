@@ -185,14 +185,14 @@ class LiveStreamViewController: BaseViewController, UserSelecting, UserStatusDel
     // MARK: - View life cycle
     
     func configureView() {        
-        closeButton.setImageTintColor(UIColor(white: 1.0, alpha: 1.0), forState: UIControlState.Normal)
-        closeButton.setImageTintColor(UIColor(white: 1.0, alpha: 0.5), forState: UIControlState.Highlighted)
-        rotateButton.setImageTintColor(UIColor(white: 1.0, alpha: 1.0), forState: UIControlState.Normal)
-        rotateButton.setImageTintColor(UIColor(white: 1.0, alpha: 0.5), forState: UIControlState.Highlighted)
-        infoButton.setImageTintColor(UIColor(white: 1.0, alpha: 0.7), forState: UIControlState.Normal)
-        infoButton.setImageTintColor(UIColor(white: 1.0, alpha: 1.0), forState: UIControlState.Highlighted)
-        eyeButton.setImageTintColor(UIColor(white: 1.0, alpha: 0.7), forState: UIControlState.Normal)
-        eyeButton.setImageTintColor(UIColor(white: 1.0, alpha: 1.0), forState: UIControlState.Highlighted)
+        closeButton.setImageTintColor(UIColor(white: 1.0, alpha: 1.0), forState:.Normal)
+        closeButton.setImageTintColor(UIColor(white: 1.0, alpha: 0.5), forState:.Highlighted)
+        rotateButton.setImageTintColor(UIColor(white: 1.0, alpha: 1.0), forState:.Normal)
+        rotateButton.setImageTintColor(UIColor(white: 1.0, alpha: 0.5), forState:.Highlighted)
+        infoButton.setImageTintColor(UIColor(white: 1.0, alpha: 0.7), forState:.Normal)
+        infoButton.setImageTintColor(UIColor(white: 1.0, alpha: 1.0), forState:.Highlighted)
+        eyeButton.setImageTintColor(UIColor(white: 1.0, alpha: 0.7), forState:.Normal)
+        eyeButton.setImageTintColor(UIColor(white: 1.0, alpha: 1.0), forState:.Highlighted)
         
         commentsDataSource.userSelectedDelegate = self
         commentsTableView.delegate = commentsDataSource
@@ -250,6 +250,6 @@ class LiveStreamViewController: BaseViewController, UserSelecting, UserStatusDel
     
     private func removeCommentAt(indexPath: NSIndexPath) {
         commentsDataSource.removeCommentAt(indexPath.row)
-        commentsTableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
+        commentsTableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation:.Fade)
     }
 }
