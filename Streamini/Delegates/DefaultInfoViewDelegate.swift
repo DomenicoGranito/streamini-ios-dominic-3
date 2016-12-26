@@ -63,5 +63,4 @@ class JoinInfoViewDelegate: DefaultInfoViewDelegate {
     override func shareButtonPressed() {
         UIActionSheet.shareActionSheet(actionSheetDelegate).showInView(actionSheetView)
     }
-    
 }

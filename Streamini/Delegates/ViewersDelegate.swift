@@ -31,7 +31,7 @@ class ViewersDelegate: NSObject, UICollectionViewDelegate {
                 delegate.collectionViewDidBeginPullingLeft(scrollView, offset: offset)
             }
 
-            pullingDirection = PullingDirection.Left;
+            pullingDirection = .Left;
             pulling = true
         }
     }
@@ -49,5 +49,4 @@ class ViewersDelegate: NSObject, UICollectionViewDelegate {
     func scrollingEnded() {
         pulling = false
     }
-    
 }

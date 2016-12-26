@@ -95,7 +95,6 @@ class JoinStreamKeyboardHandler: NSObject {
     func keyboardWillHide(notification: NSNotification) {
         let tmp : [NSObject : AnyObject] = notification.userInfo!
         let duration : NSTimeInterval = tmp[UIKeyboardAnimationDurationUserInfoKey] as! NSTimeInterval
-        let keyboardFrame : CGRect = (tmp[UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
         
         UIView.animateWithDuration(duration, animations: { () -> Void in
             self.messageTextView.backgroundColor = UIColor(white: 1.0, alpha: 0.2)

@@ -30,7 +30,7 @@ class StreamPlayer: NSObject {
         self.isRecent   = isRecent
         
         let url = streamURL(stream)
-        self.player = AVPlayer(URL: url) as? AVPlayer
+        self.player = AVPlayer(URL: url)
         player!.addObserver(self, forKeyPath: "status", options: NSKeyValueObservingOptions(), context: nil)
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(StreamPlayer.streamDidFinish(_:)), name: AVPlayerItemDidPlayToEndTimeNotification, object: nil)        
@@ -162,7 +162,7 @@ class StreamPlayer: NSObject {
         let (host, port, application, _, _) = Config.shared.wowza()
         let streamName = "\(stream.streamHash)-\(stream.id)"
         let url: String
-        let (accessKeyId, _, _, streamBucket, _) = Config.shared.amazon()
+        
         if isRecent {
            // url = accessKeyId == ""
              //   ? "http://\(host):\(port)/vod/_definist_/mp4:\(streamName).mp4/playlist.m3u8"

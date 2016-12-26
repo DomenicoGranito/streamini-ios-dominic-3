@@ -28,7 +28,7 @@ class CommentMessageController: NSObject, MessageControllerProtocol {
         
         // change opacity of old messages
         let opacities = calculateOpacities()
-        for var i = 0; i < commentsTableView.visibleCells.count; i += 1 {
+        for i in 0 ..< commentsTableView.visibleCells.count {
         
         //for i in 0 ..< commentsTableView.visibleCells.count += 1 {
             let indexPath = NSIndexPath(forRow: i, inSection: 0)
@@ -79,8 +79,8 @@ class CommentMessageController: NSObject, MessageControllerProtocol {
         
         var height: CGFloat = 0.0
         
-        for var i = 0; i < cellsCount; i += 1 {
-        //for i in 0 ..< cellsCount += 1 {
+        for i in 0 ..< cellsCount
+        {
             let indexPath = NSIndexPath(forRow: i, inSection: 0)
             let cellHeight = commentsDataSource.calculateHeight(commentsTableView, indexPath: indexPath)
             height += cellHeight

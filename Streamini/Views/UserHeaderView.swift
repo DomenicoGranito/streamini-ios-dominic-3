@@ -28,7 +28,7 @@ class UserHeaderView: UIView, UITextViewDelegate {
         likeIcon.tintColor = UIColor.navigationBarColor()
         
         // Set placeholder for NameTextView
-        if let textView = userDescriptionTextView {
+        if userDescriptionTextView != nil {
             userDescriptionTextView.tintColor = UIColor.navigationBarColor()
             let placeholderText = NSLocalizedString("profile_description_placeholder", comment: "")
             applyPlaceholderStyle(userDescriptionTextView, placeholderText: placeholderText)
