@@ -158,12 +158,14 @@ class StreamPlayer: NSObject {
 
     // MARK: - Private methods
     
-    private func streamURL(stream: Stream) -> NSURL {
+    private func streamURL(stream: Stream) -> NSURL
+    {
         let (host, port, application, _, _) = Config.shared.wowza()
         let streamName = "\(stream.streamHash)-\(stream.id)"
         let url: String
         
-        if isRecent {
+        if isRecent
+        {
            // url = accessKeyId == ""
              //   ? "http://\(host):\(port)/vod/_definist_/mp4:\(streamName).mp4/playlist.m3u8"
               //  : "http://\(host):\(port)/vods3/_definist_/mp4:amazons3/\(streamBucket)/\(streamName).mp4/playlist.m3u8"
@@ -171,12 +173,12 @@ class StreamPlayer: NSObject {
                ? "http://\(host)/media/\(stream.id).mp4" 
               : "http://\(host):\(port)/vod/_definist_/mp4:\(streamName).mp4/playlist.m3u8"
             //url = "http://\(host)/media/\(stream.id).mp4"
-        
-        } else {
-            url = "http://\(host):\(port)/\(application)/\(streamName)/playlist.m3u8"
-            
-            
         }
-        return NSURL(string: url)!
+        else
+        {
+            url = "http://\(host):\(port)/\(application)/\(streamName)/playlist.m3u8"
+        }
+        
+        return NSURL(string:url)!
     }
 }

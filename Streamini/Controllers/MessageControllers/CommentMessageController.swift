@@ -89,8 +89,9 @@ class CommentMessageController: NSObject, MessageControllerProtocol {
         return height < tableViewHeight
     }
     
-    private func removeCommentAt(indexPath: NSIndexPath) {
+    private func removeCommentAt(indexPath:NSIndexPath)
+    {
         commentsDataSource.removeCommentAt(indexPath.row)
-        commentsTableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
+        commentsTableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation:.Fade)
     }
 }
