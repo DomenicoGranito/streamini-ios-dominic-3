@@ -62,12 +62,15 @@ class StreamPlayer: NSObject {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(StreamPlayer.playInterrupt(_:)), name: AVAudioSessionInterruptionNotification, object: audioSession)
     }
     
-    deinit {
+    deinit
+    {
         reset()
     }
     
-    func reset() {
-        if let p = player, let pl = playerLayer {
+    func reset()
+    {
+        if let p = player, let pl = playerLayer
+        {
             NSNotificationCenter.defaultCenter().removeObserver(self)
             
             player!.removeObserver(self, forKeyPath: "status")
@@ -90,8 +93,10 @@ class StreamPlayer: NSObject {
         }
     }
         
-    func stop() {
-        if let p = player {
+    func stop()
+    {
+        if player != nil
+        {
             player!.pause()
         }
     }
