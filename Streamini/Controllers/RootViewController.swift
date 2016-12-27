@@ -170,7 +170,6 @@ class RootViewController: UIViewController
     {
         let storyboard=UIStoryboard(name:"Main", bundle:nil)
         modalVC=storyboard.instantiateViewControllerWithIdentifier("ModalViewController") as? ModalViewController
-        modalVC.modalPresentationStyle = .OverFullScreen
         
         setupAnimator()
 

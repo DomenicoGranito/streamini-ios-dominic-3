@@ -59,12 +59,20 @@ class ModalViewController: UIViewController
     {
         timer?.invalidate()
         
+        playButton?.setImage(UIImage(named:"big_play_button"), forState:.Normal)
         controlsView?.hidden=false
+        
+        isPlaying=false
         
         timer=NSTimer.scheduledTimerWithTimeInterval(5, target:self, selector:#selector(hideControls), userInfo:nil, repeats:true)
         
         let tapGesture=UITapGestureRecognizer(target:self, action:#selector(showControls))
         view.addGestureRecognizer(tapGesture)
+    }
+    
+    override func viewDidDisappear(animated:Bool)
+    {
+        player?.pause()
     }
     
     func showControls()

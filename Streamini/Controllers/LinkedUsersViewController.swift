@@ -16,15 +16,18 @@ class LinkedUsersViewController: UIViewController, UserStatisticsDelegate, Strea
     
     // MARK: - View life cycle
     
-    func configureView() {
-        self.tableView.tableFooterView = UIView()
-        emptyLabel.text = NSLocalizedString("table_no_data", comment: "")
+    func configureView()
+    {
+        tableView.tableFooterView=UIView()
+        emptyLabel.text=NSLocalizedString("table_no_data", comment:"")
         
-        tableView.addPullToRefreshWithActionHandler { () -> Void in
+        tableView.addPullToRefreshWithActionHandler
+        {()->Void in
             self.dataSource!.reload()
         }
 
-        tableView.addInfiniteScrollingWithActionHandler { () -> Void in
+        tableView.addInfiniteScrollingWithActionHandler
+        {()->Void in
             self.dataSource!.fetchMore()
         }
     }
@@ -37,38 +40,18 @@ class LinkedUsersViewController: UIViewController, UserStatisticsDelegate, Strea
         
     // MARK: - StreamSelecting
     
-    func streamDidSelected(stream: Stream) {
-        // Post notifications to current controllers
-        NSNotificationCenter.defaultCenter().postNotification(NSNotification(name: "Close/Leave", object: nil))
-        
-        // Dismiss all view controllers behind MainViewController
-        let root = UIApplication.sharedApplication().delegate!.window!?.rootViewController as! UINavigationController
-        
-        if root.topViewController!.presentedViewController != nil {
-            root.topViewController!.presentedViewController!.dismissViewControllerAnimated(true, completion: nil)
-        }
-        
-        // Load join controller
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let joinNavController = storyboard.instantiateViewControllerWithIdentifier("JoinStreamNavigationControllerId") as! UINavigationController
-        let joinController = joinNavController.viewControllers[0] as! JoinStreamViewController
-        
-        // Setup joinController
-        joinController.stream   = stream
-        joinController.isRecent = (stream.ended != nil)
-        
-        // Show JoinController
-        root.presentViewController(joinNavController, animated: true, completion: nil)
-        
-        if let delegate = profileDelegate {
-            delegate.close()
-        }
+    func streamDidSelected(stream:Stream)
+    {
+        let storyboard=UIStoryboard(name:"Main", bundle:nil)
+        let modalVC=storyboard.instantiateViewControllerWithIdentifier("ModalViewController") as! ModalViewController
+        presentViewController(modalVC, animated:true, completion:nil)
     }
 
     // MARK: - ProfileDelegate
     
-    func reload() {
-        // reload header view
+    func reload()
+    {
+        
     }
     
     // MARK: - UserStatisticsDelegate
