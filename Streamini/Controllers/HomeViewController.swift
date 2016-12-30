@@ -16,7 +16,7 @@ class HomeViewController: BaseViewController
     var timer:NSTimer?
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        (tabBarController as! mTBViewController).showButton()
+        //(tabBarController as! mTBViewController).showButton()
     }
 
     override func viewDidLoad()

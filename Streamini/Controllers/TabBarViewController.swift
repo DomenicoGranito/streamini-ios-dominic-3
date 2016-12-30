@@ -13,29 +13,24 @@ import Photos
 
 class mTBViewController: UITabBarController
 {
-    //[self.tabBarController.view addSubview:yourView];
     
-    // UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController
-    // UITabBar *tabBar = tabBarController.tabBar
-    // @IBOutlet var tabBar:UIView!
+    
     @IBOutlet var vtabBar:UITabBar!
     @IBOutlet var miniPlayerView:UIView!
-    // @IBOutlet var homeButton:UIButton!
-    //@IBOutlet var recButton:UIButton!
-    //@IBOutlet var peopleButton:UIButton!
+  
     @IBOutlet var containerView:UIView!
     @IBOutlet var playView:UIView!
-    
-    
+    @IBOutlet var miniPlayerButton : UIButton!
+
     
     
     func hideButton() {
-   //     playView.hidden = true
+        //     playView.hidden = true
     }
     
     func showButton() {
-   //     playView.hidden = false
-     //   view.bringSubviewToFront(playView)
+        //     playView.hidden = false
+        //   view.bringSubviewToFront(playView)
     }
     
     var animator:ARNTransitionAnimator!
@@ -217,20 +212,18 @@ class mTBViewController: UITabBarController
                 PHPhotoLibrary.requestAuthorization{(status)->Void in }
             }
         }
-    }
-    
-    override func prepareForSegue(segue:UIStoryboardSegue, sender:AnyObject?)
-    {
         
+       
+        //  self.view.addSubview(playView)
     }
+
     
     func addCenterButton() {
+     
         
-        self.view.addSubview(playView)
+
         
-        
-        
-        
+         self.view.addSubview(miniPlayerView)
         
     }
 

@@ -11,8 +11,4 @@ import Photos
 class RootViewController: UIViewController
 {
 }
-class TBViewController: UIViewController
-{
-    
-    
- }
+
