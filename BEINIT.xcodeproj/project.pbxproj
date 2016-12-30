@@ -47,6 +47,8 @@
 		B66561E71E0988E900EDA684 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B66561E61E0988E900EDA684 /* CoreTelephony.framework */; };
 		B66561E91E0988F800EDA684 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B66561E81E0988F800EDA684 /* libsqlite3.tbd */; };
 		B66561EB1E09890600EDA684 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B66561EA1E09890600EDA684 /* libz.tbd */; };
+		B6D4134D1E141DBE001E8108 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D4134C1E141DBE001E8108 /* TabBarViewController.swift */; };
+		B6D4134F1E156829001E8108 /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D4134E1E156829001E8108 /* DiscoverViewController.swift */; };
 		B70AB1321B73731200BAD62A /* LinkedUsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70AB1311B73731200BAD62A /* LinkedUsersViewController.swift */; };
 		B70AB1381B73839C00BAD62A /* UserHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70AB1371B73839C00BAD62A /* UserHeaderView.swift */; };
 		B70E04191B74E5B000422AF0 /* LinkedUserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70E04181B74E5B000422AF0 /* LinkedUserCell.swift */; };
@@ -197,6 +199,8 @@
 		B66561E61E0988E900EDA684 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		B66561E81E0988F800EDA684 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		B66561EA1E09890600EDA684 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		B6D4134C1E141DBE001E8108 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		B6D4134E1E156829001E8108 /* DiscoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverViewController.swift; sourceTree = "<group>"; };
 		B70AB1311B73731200BAD62A /* LinkedUsersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkedUsersViewController.swift; sourceTree = "<group>"; };
 		B70AB1371B73839C00BAD62A /* UserHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserHeaderView.swift; sourceTree = "<group>"; };
 		B70E04181B74E5B000422AF0 /* LinkedUserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkedUserCell.swift; sourceTree = "<group>"; };
@@ -633,11 +637,13 @@
 				B746FB0F1B5FC23100DE3534 /* FollowersViewController.swift */,
 				B7E15E4A1B6A24E5000C8C69 /* UserViewController.swift */,
 				B70AB1311B73731200BAD62A /* LinkedUsersViewController.swift */,
+				B6D4134C1E141DBE001E8108 /* TabBarViewController.swift */,
 				B733B1F41B78CF04002FEAB6 /* PeopleViewController.swift */,
 				B7AA45571B79CAC8001D293A /* RootViewController.swift */,
 				3EF535B71E092A330049B2E9 /* ModalViewController.swift */,
 				B7AA45591B79F766001D293A /* ContainerViewController.swift */,
 				B7A6BB981B7A0CFE0080497F /* ProfileViewController.swift */,
+				B6D4134E1E156829001E8108 /* DiscoverViewController.swift */,
 				B79669841B821C5D0071AF91 /* LegalViewController.swift */,
 				B71BA5DA1B84A86C0055F427 /* ProfileStatisticsViewController.swift */,
 				A631E6311D378D95002C7F78 /* PasswordViewController.swift */,
@@ -926,6 +932,7 @@
 				3EF535B01E0920B90049B2E9 /* TransitionAnimatable.swift in Sources */,
 				B71BA5DD1B84A9580055F427 /* BlockedDataSource.swift in Sources */,
 				B7D5EA921B564BAA003EE25D /* Message.swift in Sources */,
+				B6D4134D1E141DBE001E8108 /* TabBarViewController.swift in Sources */,
 				B746FB121B5FC27900DE3534 /* FollowerCell.swift in Sources */,
 				B794ADA21B59560B0069C2A8 /* UIEdgeInsets.swift in Sources */,
 				B728153E1B5EBCB10005BBC6 /* UIColorExtension.swift in Sources */,
@@ -942,6 +949,7 @@
 				B77AABDA1B3983B3007DE187 /* Stream.swift in Sources */,
 				3E2674D61D7453DB00E33DCD /* Empty.swift in Sources */,
 				B72475901B41627E0080BE1B /* StringExtension.swift in Sources */,
+				B6D4134F1E156829001E8108 /* DiscoverViewController.swift in Sources */,
 				3EF1F0321D719F280055A372 /* BackgroundVideo.swift in Sources */,
 				B72815381B5E38D00005BBC6 /* ViewersCollectionViewCell.swift in Sources */,
 				3EF535B21E0920B90049B2E9 /* TransitionGestureHandler.swift in Sources */,
