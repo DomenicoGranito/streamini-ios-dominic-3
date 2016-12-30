@@ -14,9 +14,17 @@ class HomeViewController: BaseViewController
     var categoryIDsArray=NSMutableArray()
     var allCategoryItemsArray=NSMutableArray()
     var timer:NSTimer?
-    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        (tabBarController as! mTBViewController).showButton()
+    }
+
     override func viewDidLoad()
     {
+        super.viewDidLoad()
+         (tabBarController as! mTBViewController).addCenterButton()
+        
+        
         reload()
         
         itemsTbl!.addPullToRefreshWithActionHandler{()->Void in
@@ -29,6 +37,7 @@ class HomeViewController: BaseViewController
     
     override func viewWillAppear(animated:Bool)
     {
+        self.tabBarController!.navigationItem.hidesBackButton = true
         navigationController?.navigationBarHidden=false
         UIApplication.sharedApplication().setStatusBarHidden(false, withAnimation:.Fade)
         

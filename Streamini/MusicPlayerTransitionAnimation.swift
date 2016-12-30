@@ -10,7 +10,7 @@ import UIKit
 
 final class MusicPlayerTransitionAnimation : TransitionAnimatable
 {
-    var rootVC:TBViewController!
+    var rootVC:mTBViewController!
      //var rootVC:TabBarViewController!
     var modalVC:ModalViewController!
     var completion:((Bool)->Void)?
@@ -31,7 +31,7 @@ final class MusicPlayerTransitionAnimation : TransitionAnimatable
     
     
    
-    init(rootVC:TBViewController, modalVC:ModalViewController)
+    init(rootVC:mTBViewController, modalVC:ModalViewController)
     {
         self.rootVC=rootVC
         self.modalVC=modalVC
