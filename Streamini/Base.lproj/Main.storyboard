@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -349,12 +350,15 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" id="Xqz-DH-rwJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="0.74443717279999999" green="0.55735154870000003" blue="0.25056629460000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
                         <outlet property="containerView" destination="Etm-DM-rdg" id="eWu-DQ-Dy7"/>
                         <outlet property="miniPlayerButton" destination="gxZ-gJ-V4G" id="jVX-09-I0I"/>
                         <outlet property="miniPlayerView" destination="WbR-XY-JoC" id="cKa-0B-sen"/>
+                        <outlet property="playView" destination="uKY-RZ-Mkp" id="Cf2-MW-pfw"/>
                         <outlet property="vtabBar" destination="Xqz-DH-rwJ" id="FE9-5s-XWZ"/>
                         <segue destination="aIF-hk-ASP" kind="relationship" relationship="viewControllers" id="Buo-jA-njN"/>
                         <segue destination="dl5-aR-JXz" kind="relationship" relationship="viewControllers" id="o5Z-O8-67w"/>
@@ -364,16 +368,21 @@
                     </connections>
                 </tabBarController>
                 <view contentMode="scaleToFill" id="uKY-RZ-Mkp">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <subviews>
                         <containerView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Etm-DM-rdg">
-                            <frame key="frameInset" width="375" height="602"/>
+                            <frame key="frameInset" width="375" height="100"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="652" id="NHB-Ey-ULW"/>
+                                <constraint firstAttribute="width" constant="299" id="ksq-am-ybh"/>
+                            </constraints>
                         </containerView>
                         <view alpha="0.64999997615814209" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WbR-XY-JoC" customClass="LineView" customModule="Streamini" customModuleProvider="target">
-                            <frame key="frameInset" minY="558" width="375" height="44"/>
+                            <frame key="frameInset" width="375" height="44"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="F0CF6E00-EB0D-4F84-829F-7443895E7C91" translatesAutoresizingMaskIntoConstraints="NO" id="bAf-AH-pQ5">
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="F5CF5F0A-16CA-4D70-A9A9-527636230E89" translatesAutoresizingMaskIntoConstraints="NO" id="bAf-AH-pQ5">
                                     <frame key="frameInset" minX="10" minY="16" width="20" height="12"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="12" id="BYG-p1-viV"/>
@@ -400,14 +409,14 @@
                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="BC0E6A2D-781B-46E9-B042-9EA386549A53" translatesAutoresizingMaskIntoConstraints="NO" id="41q-Rp-r7x">
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="CC812E2A-FE9F-4750-AACF-66A9C26DF67F" translatesAutoresizingMaskIntoConstraints="NO" id="41q-Rp-r7x">
                                     <frame key="frameInset" minX="339" minY="9" width="26" height="26"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="26" id="TT8-ro-toq"/>
                                         <constraint firstAttribute="width" constant="26" id="mnO-gk-SW7"/>
                                     </constraints>
                                 </imageView>
-                                <button clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gxZ-gJ-V4G">
+                                <button clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gxZ-gJ-V4G">
                                     <frame key="frameInset" width="375" height="44"/>
                                     <connections>
                                         <action selector="tapMiniPlayerButton" destination="hDB-Gb-oqN" eventType="touchUpInside" id="SMn-0V-nsy"/>
@@ -425,17 +434,20 @@
                                 <constraint firstItem="bAf-AH-pQ5" firstAttribute="leading" secondItem="WbR-XY-JoC" secondAttribute="leading" constant="10" id="SeH-YR-KkF"/>
                                 <constraint firstAttribute="trailing" secondItem="41q-Rp-r7x" secondAttribute="trailing" constant="10" id="Vvi-RD-xgI"/>
                                 <constraint firstItem="gxZ-gJ-V4G" firstAttribute="top" secondItem="WbR-XY-JoC" secondAttribute="top" id="ZGz-ly-rfy"/>
+                                <constraint firstAttribute="width" secondItem="WbR-XY-JoC" secondAttribute="height" multiplier="375:44" id="bFw-yw-a5O"/>
                                 <constraint firstAttribute="bottom" secondItem="nsN-sz-hU5" secondAttribute="bottom" id="buh-Gn-Usw"/>
                                 <constraint firstAttribute="bottom" secondItem="gxZ-gJ-V4G" secondAttribute="bottom" id="gGx-Ug-Wne"/>
                                 <constraint firstItem="gxZ-gJ-V4G" firstAttribute="leading" secondItem="WbR-XY-JoC" secondAttribute="leading" id="jDF-rp-JM2"/>
                                 <constraint firstItem="jab-IU-Wgi" firstAttribute="top" secondItem="WbR-XY-JoC" secondAttribute="top" id="lAQ-3o-jae"/>
+                                <constraint firstAttribute="width" constant="375" id="obI-Ga-ccd"/>
                                 <constraint firstAttribute="trailing" secondItem="gxZ-gJ-V4G" secondAttribute="trailing" id="pda-Lv-q2L"/>
                                 <constraint firstItem="41q-Rp-r7x" firstAttribute="top" secondItem="WbR-XY-JoC" secondAttribute="top" constant="9" id="u4f-qG-TGe"/>
                             </constraints>
                         </view>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
+                        <constraint firstItem="WbR-XY-JoC" firstAttribute="centerX" secondItem="uKY-RZ-Mkp" secondAttribute="centerX" id="Ntd-jX-G2f"/>
                         <constraint firstItem="WbR-XY-JoC" firstAttribute="top" secondItem="Etm-DM-rdg" secondAttribute="bottom" id="ujN-LL-vvJ"/>
                     </constraints>
                 </view>
@@ -3774,7 +3786,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="rec-on" id="DlL-8s-Eg1"/>
+                    <tabBarItem key="tabBarItem" title="" image="rec-off" id="DlL-8s-Eg1"/>
                     <navigationItem key="navigationItem" id="oZv-Td-BFR"/>
                     <nil key="simulatedStatusBarMetrics"/>
                     <connections>
@@ -5549,10 +5561,12 @@
             <objects>
                 <navigationController storyboardIdentifier="JoinStreamNavigationControllerId" automaticallyAdjustsScrollViewInsets="NO" id="vl6-2K-I2j" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="xhH-o7-mSA">
+                    <navigationBar key="navigationBar" alpha="0.55000000000000004" contentMode="scaleToFill" misplaced="YES" id="xhH-o7-mSA">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.062745098040000002" green="0.066666666669999999" blue="0.070588235289999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="0.74443717279999999" green="0.55735154870000003" blue="0.25056629460000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
@@ -7856,7 +7870,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="BC0E6A2D-781B-46E9-B042-9EA386549A53" width="60" height="60">
+        <image name="CC812E2A-FE9F-4750-AACF-66A9C26DF67F" width="60" height="60">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -8147,7 +8161,7 @@ AMIA2QDbAN1Bv0HEQc9B2EHrQe9B+kIDQghCEEITQhhCJ0IrQjJCOkJHQkxCTkJQQlVCXUJgQmVCbUJw
 QoJChUKKAAAAAAAAAgEAAAAAAAAAQQAAAAAAAAAAAAAAAAAAQow
 </mutableData>
         </image>
-        <image name="F0CF6E00-EB0D-4F84-829F-7443895E7C91" width="45" height="27">
+        <image name="F5CF5F0A-16CA-4D70-A9A9-527636230E89" width="45" height="27">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGOjtYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK0HCBEW
 GxwgISgrLjQ3VSRudWxs1AkKCwwNDg8QViRjbGFzc1xOU0ltYWdlRmxhZ3NWTlNSZXBzV05TQ29sb3KA
@@ -8320,7 +8334,7 @@ AAAAAAAhow
         <image name="play" width="20" height="23"/>
         <image name="play-big" width="60" height="70"/>
         <image name="prev_song" width="20" height="28"/>
-        <image name="rec-on" width="60" height="60"/>
+        <image name="rec-off" width="30" height="30"/>
         <image name="rotate" width="27" height="27"/>
         <image name="search" width="25" height="25"/>
         <image name="shuffle_icon" width="17" height="14"/>
@@ -8329,7 +8343,7 @@ AAAAAAAhow
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="AcD-60-gNs"/>
-        <segue reference="BYz-25-82p"/>
         <segue reference="Buo-jA-njN"/>
+        <segue reference="xBr-ik-ei7"/>
     </inferredMetricsTieBreakers>
 </document>

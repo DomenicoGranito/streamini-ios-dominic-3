@@ -142,15 +142,15 @@ class mTBViewController: UITabBarController
         button.setImageTintColor(UIColor(white:1, alpha:1), forState:.Highlighted)
         let item=UIBarButtonItem(customView:button)
         
-        let leftButton=UIButton(frame:CGRectMake(0, 0, 25, 25))
-        leftButton.setImage(UIImage(named:"search"), forState:.Normal)
-        leftButton.addTarget(self, action:#selector(searchTapped), forControlEvents:.TouchUpInside)
-        leftButton.setImageTintColor(UIColor(white:1, alpha:0.5), forState:.Normal)
-        leftButton.setImageTintColor(UIColor(white:1, alpha:1), forState:.Highlighted)
-        let leftBarButtonItem=UIBarButtonItem(customView:leftButton)
+       // let leftButton=UIButton(frame:CGRectMake(0, 0, 25, 25))
+       // leftButton.setImage(UIImage(named:"search"), forState:.Normal)
+       // leftButton.addTarget(self, action:#selector(searchTapped), forControlEvents:.TouchUpInside)
+        //leftButton.setImageTintColor(UIColor(white:1, alpha:0.5), forState:.Normal)
+        //leftButton.setImageTintColor(UIColor(white:1, alpha:1), forState:.Highlighted)
+        //let leftBarButtonItem=UIBarButtonItem(customView:leftButton)
         
         self.navigationItem.rightBarButtonItem=item
-        self.navigationItem.leftBarButtonItem=leftBarButtonItem
+       // self.navigationItem.leftBarButtonItem=leftBarButtonItem
     }
     
     func searchTapped()
@@ -220,10 +220,18 @@ class mTBViewController: UITabBarController
     
     func addCenterButton() {
      
+        let xPosition = playView.frame.origin.x
         
+        //View will slide 20px up
+        let yPosition = playView.frame.origin.y 
+        
+        let height = playView.frame.size.height
+        let width = playView.frame.size.width
+
+        playView.frame = CGRectMake(xPosition, yPosition, height, width)
 
         
-         self.view.addSubview(miniPlayerView)
+         self.view.addSubview(playView)
         
     }
 
