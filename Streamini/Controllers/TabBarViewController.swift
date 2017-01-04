@@ -219,11 +219,13 @@ class mTBViewController: UITabBarController
 
     
     func addCenterButton() {
-     
-        let xPosition = playView.frame.origin.x
-        
+        let xPosition: [CGFloat] = [5.0, 5.0]
+        let yPosition: [CGFloat] = [5.0, 5.0]
+        //let xPosition = 10.0
+        //let yPosition = 10.0
+        //self.tabBarController?.tabBar.frame.origin.x
         //View will slide 20px up
-        let yPosition = playView.frame.origin.y 
+       // let yPosition = playView.frame.origin.y +
         
         let height = playView.frame.size.height
         let width = playView.frame.size.width
