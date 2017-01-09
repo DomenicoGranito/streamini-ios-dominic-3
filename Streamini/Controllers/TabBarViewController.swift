@@ -23,6 +23,11 @@ class mTBViewController: UITabBarController
     @IBOutlet var miniPlayerButton : UIButton!
 
     
+    func tapMiniPlayer()
+    {
+        presentViewController(modalVC, animated:true, completion:nil)
+    }
+
     
     func hideButton() {
         //     playView.hidden = true
@@ -229,12 +234,24 @@ class mTBViewController: UITabBarController
         
         let height = playView.frame.size.height
         let width = playView.frame.size.width
-
-        playView.frame = CGRectMake(xPosition, yPosition, height, width)
-
+//xPosition, yPosition, height, width
+       // playView.frame = CGRectMake(300, 520,  50,  50)
+//self.view.frame = CGRectMake(300, 520,  50,  50)
         
-         self.view.addSubview(playView)
+            //CGRectMake(300, 520,  50,  50)
+       // playView.bounds.origin.y
+    //    let bounds = self.playView.bounds
+     
         
+      // self.playView.bounds.origin.y = 300
+       // self.playView.bounds.origin.x = 300
+      //  self.playView.frame.origin.y = 500
+       // self.playView.frame.origin.x = 300
+       // playView.frame.size.height = 600
+        self.view.addSubview(playView)
+       // self.playView.bounds = CGRectMake( 600,  100, 60, 50)
+        
+      //  self.playView.bounds.origin.y = 100
     }
 
 }

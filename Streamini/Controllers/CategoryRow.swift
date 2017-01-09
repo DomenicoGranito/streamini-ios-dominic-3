@@ -12,6 +12,8 @@ class CategoryRow: UITableViewCell
     var oneCategoryItemsArray:NSArray!
     var navigationControllerReference:UINavigationController?
     
+    
+    
     func reloadCollectionView()
     {
         collectionView!.reloadData()
@@ -40,7 +42,22 @@ class CategoryRow: UITableViewCell
     
     func cellTapped(gestureRecognizer:UITapGestureRecognizer)
     {
+        
         let root=UIApplication.sharedApplication().delegate!.window!?.rootViewController as! UINavigationController
+        
+        
+        let modalVC:ModalViewController = ModalViewController()
+        
+        root.presentViewController(modalVC, animated: true, completion: nil)
+
+       //  let TVC=mTBViewController!
+       // var modalVC:ModalViewController!
+        
+     //   root.presentViewController(modalVC, animated:true, completion:nil)
+        
+        
+       // var modalVC:ModalViewController!
+        //root.presentViewController(modalVC, animated:true, completion:nil)
         
         let video=oneCategoryItemsArray[gestureRecognizer.view!.tag] as! Stream
         
@@ -49,6 +66,8 @@ class CategoryRow: UITableViewCell
         let joinController=joinNavController.viewControllers[0] as! JoinStreamViewController
         joinController.stream=video
         joinController.isRecent=(video.ended != nil)
-        root.presentViewController(joinNavController, animated:true, completion:nil)
+       // root.presentViewController(joinNavController, animated:true, completion:nil)
+        
+       
     }
 }
