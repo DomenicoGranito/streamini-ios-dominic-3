@@ -55,17 +55,18 @@ DiscoverDelegate {
     
     func configureView()
     {
-        self.title = NSLocalizedString("Discover_title", comment: "")
-        followingLabel.text = NSLocalizedString("Discover_following", comment: "")
-        followersLabel.text = NSLocalizedString("Discover_followers", comment: "")
-        blockedLabel.text   = NSLocalizedString("Discover_blocked", comment: "")
-        streamsLabel.text   = NSLocalizedString("Discover_streams", comment: "")
-        shareLabel.text     = NSLocalizedString("Discover_share", comment: "")
-        feedbackLabel.text  = NSLocalizedString("Discover_feedback", comment: "")
-        termsLabel.text     = NSLocalizedString("Discover_terms", comment: "")
-        privacyLabel.text   = NSLocalizedString("Discover_privacy", comment: "")
-        logoutLabel.text    = NSLocalizedString("Discover_logout", comment: "")
-        changePasswordLabel.text = NSLocalizedString("Discover_change_password", comment: "")
+        self.title = NSLocalizedString("Discover", comment: "")
+       // followingLabel.text = NSLocalizedString("Discover_following", comment: "")
+        followingLabel.text = NSLocalizedString("Charts", comment: "")
+        followersLabel.text = NSLocalizedString("Playlists", comment: "")
+        blockedLabel.text   = NSLocalizedString("Series", comment: "")
+        streamsLabel.text   = NSLocalizedString("Channels", comment: "")
+        shareLabel.text     = NSLocalizedString("Live Streams", comment: "")
+       // feedbackLabel.text  = NSLocalizedString("Discover_feedback", comment: "")
+       // termsLabel.text     = NSLocalizedString("Discover_terms", comment: "")
+       // privacyLabel.text   = NSLocalizedString("Discover_privacy", comment: "")
+       // logoutLabel.text    = NSLocalizedString("Discover_logout", comment: "")
+       // changePasswordLabel.text = NSLocalizedString("Discover_change_password", comment: "")
         
         userHeaderView.delegate = self
     }

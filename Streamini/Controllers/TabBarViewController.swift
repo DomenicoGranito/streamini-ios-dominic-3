@@ -232,8 +232,8 @@ class mTBViewController: UITabBarController
         //View will slide 20px up
        // let yPosition = playView.frame.origin.y +
         
-        let height = playView.frame.size.height
-        let width = playView.frame.size.width
+      //  let height = playView.frame.size.height
+       // let width = playView.frame.size.width
 //xPosition, yPosition, height, width
        // playView.frame = CGRectMake(300, 520,  50,  50)
 //self.view.frame = CGRectMake(300, 520,  50,  50)
@@ -245,9 +245,9 @@ class mTBViewController: UITabBarController
         
       // self.playView.bounds.origin.y = 300
        // self.playView.bounds.origin.x = 300
-      //  self.playView.frame.origin.y = 500
-       // self.playView.frame.origin.x = 300
-       // playView.frame.size.height = 600
+        self.playView.frame.origin.y = 520
+        self.playView.frame.origin.x = 0
+        self.playView.frame.size.width = 375
         self.view.addSubview(playView)
        // self.playView.bounds = CGRectMake( 600,  100, 60, 50)
         

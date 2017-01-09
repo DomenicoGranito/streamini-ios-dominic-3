@@ -48,6 +48,7 @@
 		B66561E91E0988F800EDA684 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B66561E81E0988F800EDA684 /* libsqlite3.tbd */; };
 		B66561EB1E09890600EDA684 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B66561EA1E09890600EDA684 /* libz.tbd */; };
 		B6782DDA1E1969F600289D8A /* ARNVTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6782DD91E1969F500289D8A /* ARNVTransitionAnimator.swift */; };
+		B6D198A51E23883F008B8604 /* ChartsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D198A41E23883F008B8604 /* ChartsViewController.swift */; };
 		B6D4134D1E141DBE001E8108 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D4134C1E141DBE001E8108 /* TabBarViewController.swift */; };
 		B6D4134F1E156829001E8108 /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D4134E1E156829001E8108 /* DiscoverViewController.swift */; };
 		B6D413571E17AC1A001E8108 /* ARNImageTransitionNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D413541E17AC1A001E8108 /* ARNImageTransitionNavigationController.swift */; };
@@ -204,6 +205,7 @@
 		B66561E81E0988F800EDA684 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		B66561EA1E09890600EDA684 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		B6782DD91E1969F500289D8A /* ARNVTransitionAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ARNVTransitionAnimator.swift; path = ARNTransitionAnimator/ARNVTransitionAnimator.swift; sourceTree = "<group>"; };
+		B6D198A41E23883F008B8604 /* ChartsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartsViewController.swift; sourceTree = "<group>"; };
 		B6D4134C1E141DBE001E8108 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		B6D4134E1E156829001E8108 /* DiscoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverViewController.swift; sourceTree = "<group>"; };
 		B6D413541E17AC1A001E8108 /* ARNImageTransitionNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ARNImageTransitionNavigationController.swift; path = ARNTransitionAnimator/ARNImageTransitionNavigationController.swift; sourceTree = "<group>"; };
@@ -642,6 +644,7 @@
 				3E20216E1D81AB440058DAAD /* CategoryRow.swift */,
 				3E2021701D81ACFE0058DAAD /* VideoCell.swift */,
 				3EEF52BC1D83127B0015BA92 /* CategoriesViewController.swift */,
+				B6D198A41E23883F008B8604 /* ChartsViewController.swift */,
 				3EEF52BE1D83B5AF0015BA92 /* AllCategoriesRow.swift */,
 				B72475821B411D910080BE1B /* CreateStreamViewController.swift */,
 				B7A886931B500C7100D37B63 /* LiveStreamViewController.swift */,
@@ -910,6 +913,7 @@
 				B714059D1B62367800EAEC61 /* UIAlertViewExtensions.swift in Sources */,
 				B746FB141B5FC7B300DE3534 /* SocialConnector.swift in Sources */,
 				A60F82ED1D49168E002E2CEA /* SearchStreamCell.swift in Sources */,
+				B6D198A51E23883F008B8604 /* ChartsViewController.swift in Sources */,
 				B70AB1321B73731200BAD62A /* LinkedUsersViewController.swift in Sources */,
 				B714059B1B6235D500EAEC61 /* UIActionSheetExtensions.swift in Sources */,
 				3EF1F02E1D719B110055A372 /* RegisterViewController.swift in Sources */,

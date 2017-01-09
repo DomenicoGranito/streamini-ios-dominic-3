@@ -46,9 +46,9 @@ class CategoryRow: UITableViewCell
         let root=UIApplication.sharedApplication().delegate!.window!?.rootViewController as! UINavigationController
         
         
-        let modalVC:ModalViewController = ModalViewController()
+      //  let modalVC:ModalViewController = ModalViewController()
         
-        root.presentViewController(modalVC, animated: true, completion: nil)
+       // root.presentViewController(modalVC, animated: true, completion: nil)
 
        //  let TVC=mTBViewController!
        // var modalVC:ModalViewController!
@@ -66,7 +66,7 @@ class CategoryRow: UITableViewCell
         let joinController=joinNavController.viewControllers[0] as! JoinStreamViewController
         joinController.stream=video
         joinController.isRecent=(video.ended != nil)
-       // root.presentViewController(joinNavController, animated:true, completion:nil)
+        root.presentViewController(joinNavController, animated:true, completion:nil)
         
        
     }
