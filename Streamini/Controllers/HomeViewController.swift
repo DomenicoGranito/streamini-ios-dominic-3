@@ -72,12 +72,13 @@ class HomeViewController: BaseViewController
         titleLbl.textColor=UIColor.lightGrayColor()
         
         let accessoryLbl=UILabel(frame:CGRectMake(tableView.frame.size.width-25, 20, 20, 20))
-        accessoryLbl.text=">"
+       // accessoryLbl.text=">"
         accessoryLbl.font=UIFont.systemFontOfSize(18)
         accessoryLbl.textColor=UIColor.lightGrayColor()
         
         let lineView=UIView(frame:CGRectMake(5, 45, tableView.frame.size.width-10, 1))
         lineView.backgroundColor=UIColor.darkGrayColor()
+        
         
         let tapGesture=UITapGestureRecognizer(target:self, action:#selector(headerTapped))
         headerView.addGestureRecognizer(tapGesture)

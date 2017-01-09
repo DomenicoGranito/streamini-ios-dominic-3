@@ -245,7 +245,7 @@ class mTBViewController: UITabBarController
         
       // self.playView.bounds.origin.y = 300
        // self.playView.bounds.origin.x = 300
-        self.playView.frame.origin.y = 520
+        self.playView.frame.origin.y = 20
         self.playView.frame.origin.x = 0
         self.playView.frame.size.width = 375
         self.view.addSubview(playView)
