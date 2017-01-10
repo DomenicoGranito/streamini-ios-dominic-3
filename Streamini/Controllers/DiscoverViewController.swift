@@ -61,19 +61,19 @@ DiscoverDelegate {
         followersLabel.text = NSLocalizedString("Playlists", comment: "")
         blockedLabel.text   = NSLocalizedString("Series", comment: "")
         streamsLabel.text   = NSLocalizedString("Channels", comment: "")
-        shareLabel.text     = NSLocalizedString("Live Streams", comment: "")
+      //  shareLabel.text     = NSLocalizedString("Live Streams", comment: "")
        // feedbackLabel.text  = NSLocalizedString("Discover_feedback", comment: "")
        // termsLabel.text     = NSLocalizedString("Discover_terms", comment: "")
        // privacyLabel.text   = NSLocalizedString("Discover_privacy", comment: "")
        // logoutLabel.text    = NSLocalizedString("Discover_logout", comment: "")
        // changePasswordLabel.text = NSLocalizedString("Discover_change_password", comment: "")
         
-        userHeaderView.delegate = self
+      //  userHeaderView.delegate = self
     }
     
     func successGetUser(user: User) {
         self.user = user
-        userHeaderView.update(user)
+       // userHeaderView.update(user)
         
         followingValueLabel.text    = "\(user.following)"
         followersValueLabel.text    = "\(user.followers)"
