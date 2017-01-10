@@ -48,7 +48,7 @@ class SearchViewController: BaseViewController, UserSelecting, StreamSelecting, 
     // MARK: - View life cycle
     
     func configureView() {
-        
+        self.navigationController!.setNavigationBarHidden(true, animated: true)
         tableView.tableFooterView = UIView()
         tableView.addInfiniteScrollingWithActionHandler { () -> Void in
             self.dataSource!.fetchMore()
@@ -75,6 +75,7 @@ class SearchViewController: BaseViewController, UserSelecting, StreamSelecting, 
     
     override func viewDidLoad()
     {
+        self.navigationController!.setNavigationBarHidden(true, animated: true)
         super.viewDidLoad()
         configureView()
         
@@ -112,7 +113,29 @@ class SearchViewController: BaseViewController, UserSelecting, StreamSelecting, 
         searchBar.resignFirstResponder()
     }
     
+    
+    
+    
     func streamDidSelected(stream: Stream) {
+    let storyboardn=UIStoryboard(name:"Main", bundle:nil)
+    let modalVC=storyboardn.instantiateViewControllerWithIdentifier("ModalViewController") as! ModalViewController
+    
+    
+    modalVC.stream=stream
+    
+    
+    self.presentViewController(modalVC, animated:true, completion:nil)
+
+    }
+    
+    
+    func bkstreamDidSelected(stream: Stream) {
+        
+        
+        
+        
+        
+        
         // Load join controller
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let joinNavController = storyboard.instantiateViewControllerWithIdentifier("JoinStreamNavigationControllerId") as! UINavigationController

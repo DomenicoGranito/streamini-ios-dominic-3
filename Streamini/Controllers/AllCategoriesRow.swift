@@ -44,6 +44,32 @@ class AllCategoriesRow: UITableViewCell
         
         let video=sectionItemsArray[gestureRecognizer.view!.tag] as! Stream
         
+        
+        
+        
+        let storyboardn=UIStoryboard(name:"Main", bundle:nil)
+        let modalVC=storyboardn.instantiateViewControllerWithIdentifier("ModalViewController") as! ModalViewController
+        
+       // let video=oneCategoryItemsArray[gestureRecognizer.view!.tag] as! Stream
+        
+        modalVC.stream=video
+        
+        
+        root.presentViewController(modalVC, animated:true, completion:nil)
+        
+        
+     
+    }
+
+    
+    
+    
+    func bkcellTapped(gestureRecognizer:UITapGestureRecognizer)
+    {
+        let root=UIApplication.sharedApplication().delegate!.window!?.rootViewController as! UINavigationController
+        
+        let video=sectionItemsArray[gestureRecognizer.view!.tag] as! Stream
+        
         let storyboard=UIStoryboard(name:"Main", bundle:nil)
         let joinNavController=storyboard.instantiateViewControllerWithIdentifier("JoinStreamNavigationControllerId") as! UINavigationController
         let joinController=joinNavController.viewControllers[0] as! JoinStreamViewController

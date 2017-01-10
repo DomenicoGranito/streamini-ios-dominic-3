@@ -37,6 +37,11 @@ DiscoverDelegate {
     @IBOutlet weak var logoutLabel: UILabel!
     @IBOutlet weak var changePasswordLabel: UILabel!
     
+    
+    var categoryNamesArray=NSMutableArray()
+    var categoryIDsArray=NSMutableArray()
+    var allCategoryItemsArray=NSMutableArray()
+    
     var user: User?
   //  var DiscoverDelegate: DiscoverDelegate?
     var selectedImage: UIImage?
@@ -46,6 +51,19 @@ DiscoverDelegate {
         actionSheet.tag = DiscoverActionSheetType.ChangeAvatar.rawValue
         actionSheet.showInView(self.view)
     }
+    
+    
+    
+    func menuTapped(gestureRecognizer:UITapGestureRecognizer)
+    {
+        let storyboard=UIStoryboard(name:"Main", bundle:nil)
+        let vc=storyboard.instantiateViewControllerWithIdentifier("CategoriesViewController") as! CategoriesViewController
+        vc.categoryName=categoryNamesArray[gestureRecognizer.view!.tag] as? String
+        vc.categoryID=categoryIDsArray[gestureRecognizer.view!.tag] as? Int
+        navigationController?.pushViewController(vc, animated:true)
+    }
+
+    
     
     func logout() {
         let actionSheet = UIActionSheet.confirmLogoutActionSheet(self)
@@ -244,7 +262,17 @@ DiscoverDelegate {
         tableView.deselectRowAtIndexPath(indexPath, animated: false)
         
         if indexPath.section == 1 { // following, followers, blocked, streams
-            self.performSegueWithIdentifier("DiscoverToDiscoverStatistics", sender: indexPath)
+            
+            let storyboard=UIStoryboard(name:"Main", bundle:nil)
+            let vc=storyboard.instantiateViewControllerWithIdentifier("PeopleViewController") as! PeopleViewController
+           // vc.categoryName=categoryNamesArray[gestureRecognizer.view!.tag] as? String
+           // vc.categoryID=categoryIDsArray[gestureRecognizer.view!.tag] as? Int
+            navigationController?.pushViewController(vc, animated:true)
+
+            
+            
+            
+         //   self.performSegueWithIdentifier("DiscoverToDiscoverStatistics", sender: indexPath)
         }
         
         if indexPath.section == 2 && indexPath.row == 0 { // share
