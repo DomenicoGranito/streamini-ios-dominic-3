@@ -46,6 +46,21 @@ class CategoryRow: UITableViewCell
         let root=UIApplication.sharedApplication().delegate!.window!?.rootViewController as! UINavigationController
         
         
+        
+        
+        
+        
+        
+        let storyboardn=UIStoryboard(name:"Main", bundle:nil)
+        let modalVC=storyboardn.instantiateViewControllerWithIdentifier("ModalViewController") as! ModalViewController
+       
+        let video=oneCategoryItemsArray[gestureRecognizer.view!.tag] as! Stream
+        
+        modalVC.stream=video
+        
+        
+        root.presentViewController(modalVC, animated:true, completion:nil)
+        
       //  let modalVC:ModalViewController = ModalViewController()
         
        // root.presentViewController(modalVC, animated: true, completion: nil)
@@ -59,14 +74,14 @@ class CategoryRow: UITableViewCell
        // var modalVC:ModalViewController!
         //root.presentViewController(modalVC, animated:true, completion:nil)
         
-        let video=oneCategoryItemsArray[gestureRecognizer.view!.tag] as! Stream
+       // let video=oneCategoryItemsArray[gestureRecognizer.view!.tag] as! Stream
         
-        let storyboard=UIStoryboard(name:"Main", bundle:nil)
-        let joinNavController=storyboard.instantiateViewControllerWithIdentifier("JoinStreamNavigationControllerId") as! UINavigationController
-        let joinController=joinNavController.viewControllers[0] as! JoinStreamViewController
-        joinController.stream=video
-        joinController.isRecent=(video.ended != nil)
-        root.presentViewController(joinNavController, animated:true, completion:nil)
+       // let storyboard=UIStoryboard(name:"Main", bundle:nil)
+        //let joinNavController=storyboard.instantiateViewControllerWithIdentifier("JoinStreamNavigationControllerId") as! UINavigationController
+        //let joinController=joinNavController.viewControllers[0] as! JoinStreamViewController
+      //  joinController.stream=video
+    //    joinController.isRecent=(video.ended != nil)
+       // root.presentViewController(joinNavController, animated:true, completion:nil)
         
        
     }

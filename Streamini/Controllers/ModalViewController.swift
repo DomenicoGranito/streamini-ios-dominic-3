@@ -27,9 +27,13 @@ class ModalViewController: UIViewController
     var player:AVPlayer?
     var timer:NSTimer?
     
+    var stream: Stream?
+    
     override func viewDidLoad()
     {
-        let videoURL=NSURL(string:"https://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4")
+        let (host, port, application, _, _) = Config.shared.wowza()
+       // let videoURL=NSURL(string:"https://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4")
+        let videoURL=NSURL(string:"http://\(host)/media/\(stream!.id).mp4")
         player=AVPlayer(URL:videoURL!)
         
         let durationSeconds=Int(CMTimeGetSeconds(player!.currentItem!.asset.duration))
