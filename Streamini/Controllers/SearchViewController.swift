@@ -85,6 +85,7 @@ class SearchViewController: BaseViewController, UserSelecting, StreamSelecting, 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
          self.navigationController?.navigationBarHidden=true
+         (tabBarController as! mTBViewController).hideButton()
         //UIApplication.sharedApplication().setStatusBarHidden(false, withAnimation: .Fade)
     }
     
