@@ -77,9 +77,9 @@
 		<key>UINavigationBar</key>
 		<dict>
 			<key>Style</key>
-			<string>UIBarStyleDefault</string>
+			<string>UIBarStyleBlack</string>
 			<key>Translucent</key>
-			<false/>
+			<true/>
 		</dict>
 	</dict>
 	<key>UISupportedInterfaceOrientations</key>
@@ -88,15 +88,9 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
-    
-    <key>LSApplicationQueriesSchemes</key>
-    <array>
-        <string>weixin</string>
-    </array>
-    <key>NSAppTransportSecurity</key>
-    <dict>
-        <key>NSAllowsArbitraryLoads</key>
-        <true/>
-    </dict>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>weixin</string>
+	</array>
 </dict>
 </plist>

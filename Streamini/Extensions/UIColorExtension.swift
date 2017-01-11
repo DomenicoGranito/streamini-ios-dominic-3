@@ -26,7 +26,8 @@ extension UIColor {
     
     // Dark green, color of UINavigation bar
     class func navigationBarColor() -> UIColor {
-        return UIColor(red: 149.0/255.0, green: 12.0/255.0, blue: 19.0/255.0, alpha: 1.0)
+       // return UIColor(red: 149.0/255.0, green: 12.0/255.0, blue: 19.0/255.0, alpha: 1.0)
+        return UIColor(red: 14.0/255.0, green: 102.0/255.0, blue: 129.0/255.0, alpha: 1.0)
     }
     
     //return UIColor(red: 14.0/255.0, green: 102.0/255.0, blue: 129.0/255.0, alpha: 1.0)

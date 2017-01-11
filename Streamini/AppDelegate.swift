@@ -62,6 +62,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,WXApiDelegate{
         UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.LightContent
         UIApplication.sharedApplication().setStatusBarHidden(false, withAnimation: .Fade)
         UINavigationBar.setCustomAppereance()
+        
+       // UINavigationBar.appearance().backgroundColor = UIColor.whiteColor()
         /*UIApplication.sharedApplication().setStatusBarHidden(false, withAnimation: .Fade)
         UINavigationBar.appearance().tintColor = UIColor.whiteColor()
         UINavigationBar.appearance().setBackgroundImage(UIImage(named: "nav-background"), forBarMetrics: UIBarMetrics.Default)

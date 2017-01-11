@@ -349,7 +349,7 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" id="Xqz-DH-rwJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" red="0.74443717279999999" green="0.55735154870000003" blue="0.25056629460000002" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="barTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <color key="selectedImageTintColor" red="0.74443717279999999" green="0.55735154870000003" blue="0.25056629460000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -381,7 +381,7 @@
                         <view alpha="0.64999997615814209" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WbR-XY-JoC" customClass="LineView" customModule="Streamini" customModuleProvider="target">
                             <frame key="frameInset" minY="400" width="375" height="44"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="554C10D0-8DFE-4082-AF48-4359443E8871" translatesAutoresizingMaskIntoConstraints="NO" id="bAf-AH-pQ5">
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="6E5A3930-947D-423A-90F2-A528E777A7E4" translatesAutoresizingMaskIntoConstraints="NO" id="bAf-AH-pQ5">
                                     <constraints>
                                         <constraint firstAttribute="height" constant="12" id="BYG-p1-viV"/>
                                         <constraint firstAttribute="width" constant="20" id="agt-QP-2YF"/>
@@ -405,7 +405,7 @@
                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="B0807D1D-8456-4E3D-A7C6-363E81CB2EDE" translatesAutoresizingMaskIntoConstraints="NO" id="41q-Rp-r7x">
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="6F2E5116-B3D1-4B1E-8C2F-FD3B0E06AF54" translatesAutoresizingMaskIntoConstraints="NO" id="41q-Rp-r7x">
                                     <constraints>
                                         <constraint firstAttribute="height" constant="26" id="TT8-ro-toq"/>
                                         <constraint firstAttribute="width" constant="26" id="mnO-gk-SW7"/>
@@ -1535,10 +1535,13 @@
         <scene sceneID="fP2-aB-di6">
             <objects>
                 <tableViewController id="GZe-kb-Al5" customClass="ProfileViewController" customModule="Streamini" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="do4-bU-8JW">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" sectionIndexMinimumDisplayRowCount="5" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="do4-bU-8JW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.070588235294117646" green="0.074509803921568626" blue="0.082352941176470587" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="separatorColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <sections>
                             <tableViewSection headerTitle="   " id="GgS-u9-zam" userLabel="Table Section 1">
                                 <cells>
@@ -5586,11 +5589,12 @@
             <objects>
                 <navigationController storyboardIdentifier="JoinStreamNavigationControllerId" automaticallyAdjustsScrollViewInsets="NO" id="vl6-2K-I2j" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" alpha="0.55000000000000004" contentMode="scaleToFill" misplaced="YES" id="xhH-o7-mSA">
+                    <navigationBar key="navigationBar" alpha="0.55000000000000004" contentMode="scaleToFill" misplaced="YES" barStyle="black" id="xhH-o7-mSA">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="tintColor" red="0.74443717279999999" green="0.55735154870000003" blue="0.25056629460000002" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="barTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
@@ -7293,14 +7297,14 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="g1T-GY-UdH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.062745098040000002" green="0.066666666669999999" blue="0.070588235289999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="tintColor" red="0.74443717279999999" green="0.55735154870000003" blue="0.25056629460000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="separatorColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <view key="tableFooterView" contentMode="scaleToFill" id="65W-6B-zEf">
                             <rect key="frame" x="0.0" y="447" width="375" height="480"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
-                                <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="200" sectionHeaderHeight="60" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="grq-Up-Sb4">
-                                    <frame key="frameInset" minY="-31" width="375" height="511"/>
+                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="200" sectionHeaderHeight="60" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="grq-Up-Sb4">
                                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                     <prototypes>
                                         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="200" id="tWe-1i-Z6w" customClass="AllCategoriesRow" customModule="Streamini" customModuleProvider="target">
@@ -7380,6 +7384,7 @@
                             <color key="backgroundColor" red="0.070588235289999995" green="0.074509803920000006" blue="0.08235294118" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstItem="grq-Up-Sb4" firstAttribute="leading" secondItem="65W-6B-zEf" secondAttribute="leading" id="9sL-jg-2ly"/>
+                                <constraint firstAttribute="bottom" secondItem="grq-Up-Sb4" secondAttribute="bottom" id="aw9-Lp-pYj"/>
                                 <constraint firstItem="grq-Up-Sb4" firstAttribute="top" secondItem="65W-6B-zEf" secondAttribute="top" constant="237" id="kbA-tc-bqW"/>
                                 <constraint firstAttribute="trailing" secondItem="grq-Up-Sb4" secondAttribute="trailing" id="oMW-6e-yIU"/>
                             </constraints>
@@ -7767,7 +7772,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="554C10D0-8DFE-4082-AF48-4359443E8871" width="45" height="27">
+        <image name="6E5A3930-947D-423A-90F2-A528E777A7E4" width="45" height="27">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGOjtYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK0HCBEW
 GxwgISgrLjQ3VSRudWxs1AkKCwwNDg8QViRjbGFzc1xOU0ltYWdlRmxhZ3NWTlNSZXBzV05TQ29sb3KA
@@ -7918,7 +7923,7 @@ LyE+IUIhSSFRIV4hYyFlIWchbCF0IXchfCGEIYchmSGcIaEAAAAAAAACAQAAAAAAAAA+AAAAAAAAAAAA
 AAAAAAAhow
 </mutableData>
         </image>
-        <image name="B0807D1D-8456-4E3D-A7C6-363E81CB2EDE" width="60" height="60">
+        <image name="6F2E5116-B3D1-4B1E-8C2F-FD3B0E06AF54" width="60" height="60">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -8241,8 +8246,8 @@ QoJChUKKAAAAAAAAAgEAAAAAAAAAQQAAAAAAAAAAAAAAAAAAQow
         <image name="user.png" width="40" height="41"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Buo-jA-njN"/>
-        <segue reference="BYz-25-82p"/>
         <segue reference="AcD-60-gNs"/>
+        <segue reference="BYz-25-82p"/>
+        <segue reference="Buo-jA-njN"/>
     </inferredMetricsTieBreakers>
 </document>
