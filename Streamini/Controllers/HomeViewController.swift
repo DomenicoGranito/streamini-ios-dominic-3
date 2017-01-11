@@ -19,9 +19,9 @@ class HomeViewController: BaseViewController
         //(tabBarController as! mTBViewController).showButton()
     }
     
-    override func preferredStatusBarStyle() -> UIStatusBarStyle {
-        return UIStatusBarStyle.LightContent
-    }
+   // override func preferredStatusBarStyle() -> UIStatusBarStyle {
+    //    return UIStatusBarStyle.LightContent
+   // }
     
     
     override func viewDidLoad()

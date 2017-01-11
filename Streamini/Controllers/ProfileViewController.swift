@@ -158,6 +158,7 @@ ProfileDelegate {
     }
     
     override func viewWillAppear(animated: Bool) {
+        self.navigationController!.setNavigationBarHidden(false, animated: false)
         super.viewWillAppear(animated)
         AmazonTool.shared.delegate = self
         UIApplication.sharedApplication().setStatusBarHidden(false, withAnimation: .Fade)

@@ -30,11 +30,11 @@ class mTBViewController: UITabBarController
 
     
     func hideButton() {
-        //     playView.hidden = true
+             playView.hidden = true
     }
     
     func showButton() {
-        //     playView.hidden = false
+            playView.hidden = false
         //   view.bringSubviewToFront(playView)
     }
     

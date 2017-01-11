@@ -84,6 +84,7 @@ class SearchViewController: BaseViewController, UserSelecting, StreamSelecting, 
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+         self.navigationController?.navigationBarHidden=true
         //UIApplication.sharedApplication().setStatusBarHidden(false, withAnimation: .Fade)
     }
     

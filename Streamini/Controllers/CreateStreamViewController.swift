@@ -200,6 +200,9 @@ UITextViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
     override func viewWillAppear(animated: Bool) {
+        
+        self.navigationController!.setNavigationBarHidden(true, animated: false)
+        (tabBarController as! mTBViewController).hideButton()
         super.viewWillAppear(animated)
         keyboardHandler!.register()
         UIApplication.sharedApplication().setStatusBarHidden(true, withAnimation: .Fade)
