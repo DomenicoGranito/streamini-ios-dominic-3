@@ -58,9 +58,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,WXApiDelegate{
         
         // Setup Amazon S3
         AmazonTool.shared
-        
-        UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.LightContent
-        UIApplication.sharedApplication().setStatusBarHidden(false, withAnimation: .Fade)
+        //UIApplication.sharedApplication().statusBarStyle = .LightContent
+      //  UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.init(rawValue: <#T##Int#>)
+       // UIApplication.sharedApplication().statusBarStyle = .Black
+     //   UIApplication.sharedApplication().statusBarStyle = .Default
+        UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.LightContent, animated: true)
+
+       // UIApplication.sharedApplication().setStatusBarHidden(false, withAnimation: .Fade)
         UINavigationBar.setCustomAppereance()
         
        // UINavigationBar.appearance().backgroundColor = UIColor.whiteColor()
