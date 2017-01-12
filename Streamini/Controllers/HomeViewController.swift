@@ -103,6 +103,17 @@ class HomeViewController: BaseViewController
         vc.categoryName=categoryNamesArray[gestureRecognizer.view!.tag] as? String
         vc.categoryID=categoryIDsArray[gestureRecognizer.view!.tag] as? Int
         navigationController?.pushViewController(vc, animated:true)
+       
+        
+        
+        
+       // navigationController?.pu(vc, animated:true, completion:nil)
+        
+       // DetailViewController *detailViewController = [[CategoriesViewController alloc] init]
+        //detailViewController.hidesBottomBarWhenPushed = true
+       // [[self navigationController] pushViewController:detailViewController animated:YES]
+       // [detailViewController release]
+       // detailViewController.hidesBottomBarWhenPushed = true
     }
     
     func numberOfSectionsInTableView(tableView:UITableView)->Int
