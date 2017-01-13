@@ -13,8 +13,8 @@ class GetStartedViewController: UIViewController
     @IBOutlet var descriptionLbl:UILabel?
     
     var backgroundPlayer:BackgroundVideo?
-    let titlesArray=["Browse","Find","New","Way","View"]
-    let descriptionsArray=["Lets meet of new way of explore world0", "Lets meet of new way of explore world1", "Lets meet of new way of explore world2", "Lets meet of new way of explore world3", "Lets meet of new way of explore world4"]
+    let titlesArray=["Beinit.Live","Discover","Stream Live Events","Search","Connect"]
+    let descriptionsArray=["Connection & Live Streaming the World of Premium Events in Asia", "Premium Events Playlists, Fashion Show Collections, Live Streaming Concerts", "Experience VR Live Stream with front row seating", "Find Agencies, Brands, Venues, Celebrities and Entertainment Talents", "Fashionistas , "]
     var count=0
     var timer:NSTimer?
     

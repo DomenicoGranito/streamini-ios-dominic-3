@@ -76,6 +76,7 @@ UITextViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
         LocationManager.shared.stopMonitoringLocation()
         self.nameTextView.resignFirstResponder()
         self.dismissViewControllerAnimated(true, completion: nil)
+      // self.popViewControllerAnimated(true)
     }
     
     // MARK: - Network responses
