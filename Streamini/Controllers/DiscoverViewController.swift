@@ -1,17 +1,16 @@
 //
-//  DiscoverViewController.swift
-// Streamini
+//  CategoriesViewController.swift
+//  Streamini
 //
-//  Created by Vasily Evreinov on 11/08/15.
-//  Copyright (c) 2015 UniProgy s.r.o. All rights reserved.
+//  Created by Ankit Garg on 9/9/16.
+//  Copyright © 2016 UniProgy s.r.o. All rights reserved.
 //
-
-import MessageUI
-
-
-
 
 class DiscoverViewController: BaseTableViewController, UINavigationControllerDelegate {
+    
+    @IBOutlet var itemsTbl:UITableView?
+    @IBOutlet var headerLbl:UILabel?
+    @IBOutlet var topImageView:UIImageView?
     
     @IBOutlet weak var followingLabel: UILabel!
     @IBOutlet weak var followingValueLabel: UILabel!
@@ -25,52 +24,36 @@ class DiscoverViewController: BaseTableViewController, UINavigationControllerDel
     @IBOutlet weak var feedbackLabel: UILabel!
     @IBOutlet weak var termsLabel: UILabel!
     @IBOutlet weak var privacyLabel: UILabel!
-    @IBOutlet weak var logoutLabel: UILabel!
-    @IBOutlet weak var changePasswordLabel: UILabel!
     
     
-    var categoryNamesArray=NSMutableArray()
-    var categoryIDsArray=NSMutableArray()
-    var allCategoryItemsArray=NSMutableArray()
-    
+    var allItemsArray=NSMutableArray()
+    var categoryName:String?
+    var page=0
+    var categoryID:Int?
+    var categories: [Category] = []
     var user: User?
-    
-    
-    
-    
-    func menuTapped(gestureRecognizer:UITapGestureRecognizer)
-    {
-        let storyboard=UIStoryboard(name:"Main", bundle:nil)
-        let vc=storyboard.instantiateViewControllerWithIdentifier("CategoriesViewController") as! CategoriesViewController
-        vc.categoryName=categoryNamesArray[gestureRecognizer.view!.tag] as? String
-        vc.categoryID=categoryIDsArray[gestureRecognizer.view!.tag] as? Int
-        navigationController?.pushViewController(vc, animated:true)
-    }
-
-    
-    
     
     func configureView()
     {
         self.title = NSLocalizedString("Discover", comment: "")
-       // followingLabel.text = NSLocalizedString("Discover_following", comment: "")
+        // followingLabel.text = NSLocalizedString("Discover_following", comment: "")
         followingLabel.text = NSLocalizedString("Charts", comment: "")
         followersLabel.text = NSLocalizedString("Playlists", comment: "")
         blockedLabel.text   = NSLocalizedString("Series", comment: "")
         streamsLabel.text   = NSLocalizedString("Channels", comment: "")
-      //  shareLabel.text     = NSLocalizedString("Live Streams", comment: "")
-       // feedbackLabel.text  = NSLocalizedString("Discover_feedback", comment: "")
-       // termsLabel.text     = NSLocalizedString("Discover_terms", comment: "")
-       // privacyLabel.text   = NSLocalizedString("Discover_privacy", comment: "")
-       // logoutLabel.text    = NSLocalizedString("Discover_logout", comment: "")
-       // changePasswordLabel.text = NSLocalizedString("Discover_change_password", comment: "")
+        //  shareLabel.text     = NSLocalizedString("Live Streams", comment: "")
+        // feedbackLabel.text  = NSLocalizedString("Discover_feedback", comment: "")
+        // termsLabel.text     = NSLocalizedString("Discover_terms", comment: "")
+        // privacyLabel.text   = NSLocalizedString("Discover_privacy", comment: "")
+        // logoutLabel.text    = NSLocalizedString("Discover_logout", comment: "")
+        // changePasswordLabel.text = NSLocalizedString("Discover_change_password", comment: "")
         
-      //  userHeaderView.delegate = self
+        //  userHeaderView.delegate = self
     }
     
     func successGetUser(user: User) {
         self.user = user
-       // userHeaderView.update(user)
+        // userHeaderView.update(user)
         
         followingValueLabel.text    = "\(user.following)"
         followersValueLabel.text    = "\(user.followers)"
@@ -79,20 +62,7 @@ class DiscoverViewController: BaseTableViewController, UINavigationControllerDel
         
         self.navigationItem.rightBarButtonItem = nil
     }
-    
-    func successFailure(error: NSError) {
-        handleError(error)
-    }
-    
-    
-    // MARK: - UIImagePickerControllerDelegate
-    
-    
-    func navigationController(navigationController: UINavigationController, didShowViewController viewController: UIViewController, animated: Bool) {
-        navigationController.navigationBar.tintColor = UIColor.whiteColor()
-        navigationController.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
-    }
-    
+
     
     override func viewDidLoad()
     {
@@ -103,87 +73,85 @@ class DiscoverViewController: BaseTableViewController, UINavigationControllerDel
         activator.startAnimating()
         
         self.navigationItem.rightBarButtonItem=UIBarButtonItem(customView:activator)
-        UserConnector().get(nil, success:successGetUser, failure:successFailure)
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        self.navigationController!.setNavigationBarHidden(false, animated: false)
-        super.viewWillAppear(animated)
-      
-        UIApplication.sharedApplication().setStatusBarHidden(false, withAnimation: .Fade)
-        UINavigationBar.setCustomAppereance()
-    }
-    
-    override func viewDidDisappear(animated: Bool) {
-        super.viewDidAppear(animated)
+       // UserConnector().get(nil, success:successGetUser, failure:successFailure)
+        
+        
+        
+        
+        
+        headerLbl?.text=categoryName?.uppercaseString
+        navigationController?.navigationBarHidden=true
        
+        StreamConnector().categories(categoriesSuccess, failure:categoriesFailure)
+       // StreamConnector().categoryStreams(categoryID!, pageID:page, success:successStreams, failure:failureStream)
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if let sid = segue.identifier {
-            if sid == "DiscoverToLegal" {
-                let controller = segue.destinationViewController as! LegalViewController
-                let index = (sender as! NSIndexPath).row
-                controller.type = (index == 2) ? LegalViewControllerType.TermsOfService : LegalViewControllerType.PrivacyPolicy
-            }
-            
-                 }
-    }
-    
-    
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: false)
-        
-        if indexPath.section == 1 { // following, followers, blocked, streams
-            
-            let storyboard=UIStoryboard(name:"Main", bundle:nil)
-            let vc=storyboard.instantiateViewControllerWithIdentifier("PeopleViewController") as! PeopleViewController
-           // vc.categoryName=categoryNamesArray[gestureRecognizer.view!.tag] as? String
-           // vc.categoryID=categoryIDsArray[gestureRecognizer.view!.tag] as? Int
-            navigationController?.pushViewController(vc, animated:true)
-
-            
-            
-            
-         //   self.performSegueWithIdentifier("DiscoverToDiscoverStatistics", sender: indexPath)
-        }
-        
-        if indexPath.section == 2 && indexPath.row == 0 { // share
-            UINavigationBar.resetCustomAppereance()
-            let shareMessage = NSLocalizedString("Discover_share_message", comment: "")
-            let activityController = UIActivityViewController(activityItems: [shareMessage], applicationActivities: nil)
-            self.presentViewController(activityController, animated: true, completion: nil)
-        }
-        
-        if indexPath.section == 2 && indexPath.row == 1 { // feedback
-            UINavigationBar.resetCustomAppereance()
-        }
-        
-        if indexPath.section == 2 && indexPath.row == 2 { // Terms Of Service
-            self.performSegueWithIdentifier("DiscoverToLegal", sender: indexPath)
-        }
-        
-        if indexPath.section == 2 && indexPath.row == 3 { // Privacy Policy
-            self.performSegueWithIdentifier("DiscoverToLegal", sender: indexPath)
-        }
-        
-        if indexPath.section == 3 && indexPath.row == 0 { // Change Password
-            self.performSegueWithIdentifier("DiscoverToPassword", sender: indexPath)
-        }
-        
-        if indexPath.section == 3 && indexPath.row == 1 { // logout
-           
-        }
-    }
-    
-    
-    
-    // MARK: - DiscoverDelegate
-    
-    func reload() {
-        UserConnector().get(nil, success: successGetUser, failure: successFailure)
+    override func viewWillAppear(animated:Bool)
+    {
+        UIApplication.sharedApplication().setStatusBarHidden(false, withAnimation:.Fade)
     }
     
    
-    // MARK: - UserHeaderViewDelegate
+    override func tableView(tableView:UITableView, viewForHeaderInSection section:Int)->UIView?
+    {
+        let headerView=UIView(frame:CGRectMake(0, 0, 60, tableView.frame.size.width))
+        headerView.backgroundColor=UIColor.clearColor()
+        
+        let titleLbl=UILabel(frame:CGRectMake(10, 20, 150, 20))
+        titleLbl.text=categoryName?.uppercaseString
+        titleLbl.font=UIFont.systemFontOfSize(14)
+        titleLbl.textColor=UIColor.lightGrayColor()
+        
+        let lineView=UIView(frame:CGRectMake(10, 59, tableView.frame.size.width-20, 1))
+        lineView.backgroundColor=UIColor.darkGrayColor()
+        
+        headerView.addSubview(lineView)
+        headerView.addSubview(titleLbl)
+        
+        return headerView
+    }
+    
+    override func tableView(tableView:UITableView, numberOfRowsInSection section:Int)->Int
+    {
+        //return categories.count
+        
+        return categories.count
+    }
+    
+    override func tableView(tableView:UITableView, cellForRowAtIndexPath indexPath:NSIndexPath)->UITableViewCell
+    {
+        let cell=tableView.dequeueReusableCellWithIdentifier("cell") as! AllCategoryRow
+        
+        cell.sectionItemsArray=categories[indexPath.row] as! NSArray
+        cell.navigationControllerReference=navigationController
+        
+        return cell
+    }
+    
+    override func tableView(tableView:UITableView, willDisplayCell cell:UITableViewCell, forRowAtIndexPath indexPath:NSIndexPath)
+    {
+        let cell=cell as! AllCategoryRow
+        
+        cell.reloadCollectionView()
+    }
+    
+    @IBAction func back()
+    {
+        navigationController?.popViewControllerAnimated(true)
+    }
+    
+    
+   func categoriesSuccess(cats: [Category]) 
+    {
+       // let catname=cats
+      //  categories.addObjectsFromArray(catname)
+        itemsTbl?.reloadData()
+    }
+    
+    
+    
+    func categoriesFailure(error:NSError)
+    {
+        handleError(error)
+    }
 }

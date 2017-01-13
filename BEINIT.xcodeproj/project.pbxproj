@@ -54,6 +54,10 @@
 		B6D413571E17AC1A001E8108 /* ARNImageTransitionNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D413541E17AC1A001E8108 /* ARNImageTransitionNavigationController.swift */; };
 		B6D413581E17AC1A001E8108 /* ARNImageZoomTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D413551E17AC1A001E8108 /* ARNImageZoomTransition.swift */; };
 		B6D413591E17AC1A001E8108 /* ARNModalImageTransitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D413561E17AC1A001E8108 /* ARNModalImageTransitionViewController.swift */; };
+		B6EAF8261E28CC84007038DC /* CategoryDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EAF8251E28CC83007038DC /* CategoryDataSource.swift */; };
+		B6EAF8281E28EF6E007038DC /* AllCategoryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EAF8271E28EF6E007038DC /* AllCategoryRow.swift */; };
+		B6EAF82A1E28F179007038DC /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EAF8291E28F179007038DC /* CategoryCell.swift */; };
+		B6EAF82C1E28F98B007038DC /* DiscoverViewControllerBK.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EAF82B1E28F98B007038DC /* DiscoverViewControllerBK.swift */; };
 		B70AB1321B73731200BAD62A /* LinkedUsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70AB1311B73731200BAD62A /* LinkedUsersViewController.swift */; };
 		B70AB1381B73839C00BAD62A /* UserHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70AB1371B73839C00BAD62A /* UserHeaderView.swift */; };
 		B70E04191B74E5B000422AF0 /* LinkedUserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70E04181B74E5B000422AF0 /* LinkedUserCell.swift */; };
@@ -211,6 +215,10 @@
 		B6D413541E17AC1A001E8108 /* ARNImageTransitionNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ARNImageTransitionNavigationController.swift; path = ARNTransitionAnimator/ARNImageTransitionNavigationController.swift; sourceTree = "<group>"; };
 		B6D413551E17AC1A001E8108 /* ARNImageZoomTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ARNImageZoomTransition.swift; path = ARNTransitionAnimator/ARNImageZoomTransition.swift; sourceTree = "<group>"; };
 		B6D413561E17AC1A001E8108 /* ARNModalImageTransitionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ARNModalImageTransitionViewController.swift; path = ARNTransitionAnimator/ARNModalImageTransitionViewController.swift; sourceTree = "<group>"; };
+		B6EAF8251E28CC83007038DC /* CategoryDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryDataSource.swift; sourceTree = "<group>"; };
+		B6EAF8271E28EF6E007038DC /* AllCategoryRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllCategoryRow.swift; sourceTree = "<group>"; };
+		B6EAF8291E28F179007038DC /* CategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
+		B6EAF82B1E28F98B007038DC /* DiscoverViewControllerBK.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverViewControllerBK.swift; sourceTree = "<group>"; };
 		B70AB1311B73731200BAD62A /* LinkedUsersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkedUsersViewController.swift; sourceTree = "<group>"; };
 		B70AB1371B73839C00BAD62A /* UserHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserHeaderView.swift; sourceTree = "<group>"; };
 		B70E04181B74E5B000422AF0 /* LinkedUserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkedUserCell.swift; sourceTree = "<group>"; };
@@ -462,6 +470,7 @@
 				B733B1F81B78DBD2002FEAB6 /* PeopleDataSource.swift */,
 				B71BA5DC1B84A9580055F427 /* BlockedDataSource.swift */,
 				A60F82F01D491AAF002E2CEA /* SearchDataSource.swift */,
+				B6EAF8251E28CC83007038DC /* CategoryDataSource.swift */,
 			);
 			path = DataSources;
 			sourceTree = "<group>";
@@ -643,9 +652,11 @@
 				3E20216C1D81A6530058DAAD /* HomeViewController.swift */,
 				3E20216E1D81AB440058DAAD /* CategoryRow.swift */,
 				3E2021701D81ACFE0058DAAD /* VideoCell.swift */,
+				B6EAF8291E28F179007038DC /* CategoryCell.swift */,
 				3EEF52BC1D83127B0015BA92 /* CategoriesViewController.swift */,
 				B6D198A41E23883F008B8604 /* ChartsViewController.swift */,
 				3EEF52BE1D83B5AF0015BA92 /* AllCategoriesRow.swift */,
+				B6EAF8271E28EF6E007038DC /* AllCategoryRow.swift */,
 				B72475821B411D910080BE1B /* CreateStreamViewController.swift */,
 				B7A886931B500C7100D37B63 /* LiveStreamViewController.swift */,
 				B7316E071B55342F0079D387 /* JoinStreamViewController.swift */,
@@ -659,6 +670,7 @@
 				B7AA45591B79F766001D293A /* ContainerViewController.swift */,
 				B7A6BB981B7A0CFE0080497F /* ProfileViewController.swift */,
 				B6D4134E1E156829001E8108 /* DiscoverViewController.swift */,
+				B6EAF82B1E28F98B007038DC /* DiscoverViewControllerBK.swift */,
 				B79669841B821C5D0071AF91 /* LegalViewController.swift */,
 				B71BA5DA1B84A86C0055F427 /* ProfileStatisticsViewController.swift */,
 				A631E6311D378D95002C7F78 /* PasswordViewController.swift */,
@@ -885,6 +897,7 @@
 				B794AD951B58E0160069C2A8 /* CommentLabel.swift in Sources */,
 				B794AD9A1B592F930069C2A8 /* MessageController.swift in Sources */,
 				B728153A1B5E4C400005BBC6 /* ViewersDataSource.swift in Sources */,
+				B6EAF8261E28CC84007038DC /* CategoryDataSource.swift in Sources */,
 				B7D5EA941B565B0B003EE25D /* MessageExtension.swift in Sources */,
 				B71BA5DB1B84A86C0055F427 /* ProfileStatisticsViewController.swift in Sources */,
 				B79187981B4437FC002DFAB4 /* AmazonTool.swift in Sources */,
@@ -895,6 +908,7 @@
 				A631E6321D378D95002C7F78 /* PasswordViewController.swift in Sources */,
 				A60F82E91D490F4D002E2CEA /* Category.swift in Sources */,
 				B77AABE81B398A3C007DE187 /* Connector.swift in Sources */,
+				B6EAF82A1E28F179007038DC /* CategoryCell.swift in Sources */,
 				B79469FE1BE1F94B0071CC97 /* StreamExtension.swift in Sources */,
 				3EEF52BD1D83127C0015BA92 /* CategoriesViewController.swift in Sources */,
 				B7316E081B55342F0079D387 /* JoinStreamViewController.swift in Sources */,
@@ -928,6 +942,7 @@
 				B71405991B62333B00EAEC61 /* ReplayView.swift in Sources */,
 				B70E041B1B74E92600422AF0 /* RecentStreamsDataSource.swift in Sources */,
 				B74188291B5CDD9400427156 /* ClosedMessageController.swift in Sources */,
+				B6EAF82C1E28F98B007038DC /* DiscoverViewControllerBK.swift in Sources */,
 				B77AABDE1B39847B007DE187 /* UserConnector.swift in Sources */,
 				A6F80F1F1BBC13B800A376CD /* UINavigationBarExtension.swift in Sources */,
 				3EF535AD1E0920B90049B2E9 /* AnimatedTransitioning .swift in Sources */,
@@ -936,6 +951,7 @@
 				B7D5EA9A1B579D47003EE25D /* CommentCell.swift in Sources */,
 				B796A4921BB1520E0018B085 /* ViewersDelegate.swift in Sources */,
 				B7D6F0B71B37F46A0070C36A /* Config.swift in Sources */,
+				B6EAF8281E28EF6E007038DC /* AllCategoryRow.swift in Sources */,
 				B6D413571E17AC1A001E8108 /* ARNImageTransitionNavigationController.swift in Sources */,
 				B7AA45581B79CAC8001D293A /* RootViewController.swift in Sources */,
 				3E20216F1D81AB440058DAAD /* CategoryRow.swift in Sources */,
