@@ -382,7 +382,7 @@
                         </containerView>
                         <view alpha="0.64999997615814209" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WbR-XY-JoC" customClass="LineView" customModule="Streamini" customModuleProvider="target">
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="E2D2DCEB-8760-4021-BBB3-486D0D987F33" translatesAutoresizingMaskIntoConstraints="NO" id="bAf-AH-pQ5">
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EDEE5570-1CE7-4E54-8D5D-2AA79E4712A7" translatesAutoresizingMaskIntoConstraints="NO" id="bAf-AH-pQ5">
                                     <constraints>
                                         <constraint firstAttribute="height" constant="12" id="BYG-p1-viV"/>
                                         <constraint firstAttribute="width" constant="20" id="agt-QP-2YF"/>
@@ -406,7 +406,7 @@
                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DA612C33-131E-4F82-908C-EE9D3E847FA4" translatesAutoresizingMaskIntoConstraints="NO" id="41q-Rp-r7x">
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="152D5B11-6605-41B0-957E-586BD1DA1F66" translatesAutoresizingMaskIntoConstraints="NO" id="41q-Rp-r7x">
                                     <constraints>
                                         <constraint firstAttribute="height" constant="26" id="TT8-ro-toq"/>
                                         <constraint firstAttribute="width" constant="26" id="mnO-gk-SW7"/>
@@ -7291,7 +7291,7 @@
         <!--Discover-->
         <scene sceneID="rrA-ar-txh">
             <objects>
-                <tableViewController id="Bo7-1L-Z3b" userLabel="Discover" customClass="DiscoverViewController" customModule="Streamini" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="DiscoverViewController" id="Bo7-1L-Z3b" userLabel="Discover" customClass="DiscoverViewController" customModule="Streamini" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" indicatorStyle="black" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="g1T-GY-UdH">
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -7560,11 +7560,9 @@
                                             <frame key="frameInset" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="65W-6B-zEf">
-                                                    <frame key="frameInset" minY="-260" width="375" height="563"/>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="65W-6B-zEf">
                                                     <subviews>
-                                                        <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" indicatorStyle="black" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="200" sectionHeaderHeight="60" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="grq-Up-Sb4">
-                                                            <frame key="frameInset" minY="237" width="375" height="277"/>
+                                                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" indicatorStyle="black" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="200" sectionHeaderHeight="60" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="grq-Up-Sb4" userLabel="items Tbl">
                                                             <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <color key="separatorColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <color key="sectionIndexBackgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -7624,8 +7622,17 @@
                                                                                             <constraint firstItem="meg-8L-A2e" firstAttribute="trailing" secondItem="zDe-vd-iza" secondAttribute="trailing" id="ohU-XA-T4j"/>
                                                                                             <constraint firstAttribute="bottom" secondItem="zDe-vd-iza" secondAttribute="bottom" constant="65" id="yVX-ZN-yg7"/>
                                                                                         </constraints>
+                                                                                        <connections>
+                                                                                            <outlet property="followersCountLbl" destination="L1G-4S-rei" id="eAz-6w-nwo"/>
+                                                                                            <outlet property="videoThumbnailImageView" destination="zDe-vd-iza" id="lep-Mb-7FL"/>
+                                                                                            <outlet property="videoTitleLbl" destination="meg-8L-A2e" id="Nfn-BT-v5a"/>
+                                                                                        </connections>
                                                                                     </collectionViewCell>
                                                                                 </cells>
+                                                                                <connections>
+                                                                                    <outlet property="dataSource" destination="tWe-1i-Z6w" id="Jm0-Tj-3cq"/>
+                                                                                    <outlet property="delegate" destination="tWe-1i-Z6w" id="Arg-AV-JTi"/>
+                                                                                </connections>
                                                                             </collectionView>
                                                                         </subviews>
                                                                         <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -7637,11 +7644,14 @@
                                                                         </constraints>
                                                                     </tableViewCellContentView>
                                                                     <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <connections>
+                                                                        <outlet property="collectionView" destination="D64-Ru-6hl" id="hQ3-nG-J7S"/>
+                                                                    </connections>
                                                                 </tableViewCell>
                                                             </prototypes>
                                                             <connections>
-                                                                <outlet property="dataSource" destination="lYe-th-Dna" id="o5y-mz-FTT"/>
-                                                                <outlet property="delegate" destination="lYe-th-Dna" id="1Zk-2H-YP2"/>
+                                                                <outlet property="dataSource" destination="Bo7-1L-Z3b" id="bhE-l8-5Zi"/>
+                                                                <outlet property="delegate" destination="Bo7-1L-Z3b" id="k7B-5b-mB0"/>
                                                             </connections>
                                                         </tableView>
                                                     </subviews>
@@ -7654,6 +7664,12 @@
                                                     </constraints>
                                                 </view>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="65W-6B-zEf" firstAttribute="top" secondItem="LiZ-Zp-SzX" secondAttribute="top" constant="-260" id="T3B-7T-e06"/>
+                                                <constraint firstAttribute="trailing" secondItem="65W-6B-zEf" secondAttribute="trailing" id="WE9-qa-8Nv"/>
+                                                <constraint firstItem="65W-6B-zEf" firstAttribute="leading" secondItem="LiZ-Zp-SzX" secondAttribute="leading" id="i6W-v5-Xhs"/>
+                                                <constraint firstItem="65W-6B-zEf" firstAttribute="centerY" secondItem="LiZ-Zp-SzX" secondAttribute="centerY" id="mQc-ZR-HSz"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
@@ -7673,6 +7689,7 @@
                         <outlet property="followersValueLabel" destination="3C9-oK-fvZ" id="HEp-5o-23Q"/>
                         <outlet property="followingLabel" destination="owa-GQ-eD9" id="akf-7e-xCl"/>
                         <outlet property="followingValueLabel" destination="CKK-9b-ypN" id="TNK-NY-k9Z"/>
+                        <outlet property="itemsTbl" destination="grq-Up-Sb4" id="MO5-PE-NOr"/>
                         <outlet property="streamsLabel" destination="eBd-Jf-yQr" id="yGN-eg-lHY"/>
                         <outlet property="streamsValueLabel" destination="GQ8-It-CpP" id="ufM-xs-Ggh"/>
                     </connections>
@@ -7848,7 +7865,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="DA612C33-131E-4F82-908C-EE9D3E847FA4" width="60" height="60">
+        <image name="152D5B11-6605-41B0-957E-586BD1DA1F66" width="60" height="60">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -8139,7 +8156,7 @@ AMIA2QDbAN1Bv0HEQc9B2EHrQe9B+kIDQghCEEITQhhCJ0IrQjJCOkJHQkxCTkJQQlVCXUJgQmVCbUJw
 QoJChUKKAAAAAAAAAgEAAAAAAAAAQQAAAAAAAAAAAAAAAAAAQow
 </mutableData>
         </image>
-        <image name="E2D2DCEB-8760-4021-BBB3-486D0D987F33" width="45" height="27">
+        <image name="EDEE5570-1CE7-4E54-8D5D-2AA79E4712A7" width="45" height="27">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGOjtYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK0HCBEW
 GxwgISgrLjQ3VSRudWxs1AkKCwwNDg8QViRjbGFzc1xOU0ltYWdlRmxhZ3NWTlNSZXBzV05TQ29sb3KA

@@ -35,11 +35,27 @@ class SearchViewController: BaseViewController, UserSelecting, StreamSelecting, 
     
     // called when cancel button pressed
     func searchBarCancelButtonClicked(searchBar: UISearchBar) {
+        searchBar.showsCancelButton = false
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
+    
+   
+    
+    func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
+        var barButton = UIBarButtonItem(title: "Button Title", style: UIBarButtonItemStyle.Done, target: self, action: "here")
+        searchBar.showsCancelButton = true
+        navigationItem.rightBarButtonItem = barButton
+        
+    }
+    
+    
     // called when text changes (including clear)
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        
+        
+        
         if searchText.characters.count > 0 && (dataSource!.mode == "streams" || dataSource!.mode == "people") {
             dataSource!.search(searchText)
         }
