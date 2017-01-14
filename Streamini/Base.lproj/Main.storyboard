@@ -382,7 +382,7 @@
                         </containerView>
                         <view alpha="0.64999997615814209" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WbR-XY-JoC" customClass="LineView" customModule="Streamini" customModuleProvider="target">
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="8284AA7F-6FA6-42FB-B9BC-ED72A52B94EE" translatesAutoresizingMaskIntoConstraints="NO" id="bAf-AH-pQ5">
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="C75B8918-CF84-4FD4-8DCA-FCBED2C88D6C" translatesAutoresizingMaskIntoConstraints="NO" id="bAf-AH-pQ5">
                                     <constraints>
                                         <constraint firstAttribute="height" constant="12" id="BYG-p1-viV"/>
                                         <constraint firstAttribute="width" constant="20" id="agt-QP-2YF"/>
@@ -406,7 +406,7 @@
                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="4BF6F1D5-67F5-4376-ACF5-BE8B0A3ACF3B" translatesAutoresizingMaskIntoConstraints="NO" id="41q-Rp-r7x">
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="8561D7DC-1CB1-40D9-96F7-CAE9EDE8305E" translatesAutoresizingMaskIntoConstraints="NO" id="41q-Rp-r7x">
                                     <constraints>
                                         <constraint firstAttribute="height" constant="26" id="TT8-ro-toq"/>
                                         <constraint firstAttribute="width" constant="26" id="mnO-gk-SW7"/>
@@ -7873,7 +7873,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="4BF6F1D5-67F5-4376-ACF5-BE8B0A3ACF3B" width="60" height="60">
+        <image name="8561D7DC-1CB1-40D9-96F7-CAE9EDE8305E" width="60" height="60">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -8164,7 +8164,7 @@ AMIA2QDbAN1Bv0HEQc9B2EHrQe9B+kIDQghCEEITQhhCJ0IrQjJCOkJHQkxCTkJQQlVCXUJgQmVCbUJw
 QoJChUKKAAAAAAAAAgEAAAAAAAAAQQAAAAAAAAAAAAAAAAAAQow
 </mutableData>
         </image>
-        <image name="8284AA7F-6FA6-42FB-B9BC-ED72A52B94EE" width="45" height="27">
+        <image name="C75B8918-CF84-4FD4-8DCA-FCBED2C88D6C" width="45" height="27">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGOjtYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK0HCBEW
 GxwgISgrLjQ3VSRudWxs1AkKCwwNDg8QViRjbGFzc1xOU0ltYWdlRmxhZ3NWTlNSZXBzV05TQ29sb3KA
