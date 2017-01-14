@@ -95,16 +95,16 @@ class DiscoverViewController: BaseTableViewController, UINavigationControllerDel
     
     override func tableView(tableView:UITableView, numberOfRowsInSection section:Int)->Int
     {
-        //return categories.count
-        
         return categories.count
+        
+        //return allItemsArray.count
     }
     
     override func tableView(tableView:UITableView, cellForRowAtIndexPath indexPath:NSIndexPath)->UITableViewCell
     {
         let cell=tableView.dequeueReusableCellWithIdentifier("cell") as! AllCategoryRow
         
-        cell.sectionItemsArray=categories[indexPath.row] as! NSArray
+        cell.sectionItemsArray=allItemsArray[indexPath.row] as! NSArray
         cell.navigationControllerReference=navigationController
         
         return cell
@@ -123,17 +123,58 @@ class DiscoverViewController: BaseTableViewController, UINavigationControllerDel
     }
     
     
-   func categoriesSuccess(cats: [Category]) 
+   func bkcategoriesSuccess(cats: [Category])
     {
        // let catname=cats
-      //  categories.addObjectsFromArray(catname)
+        //categories.addObjectsFromArray(cats)
         itemsTbl?.reloadData()
     }
     
-    
+    func categoriesSuccess(cats: [Category])
+    {
+        allItemsArray.addObjectsFromArray(getData(cats) as [AnyObject])
+        itemsTbl?.reloadData()
+    }
+
     
     func categoriesFailure(error:NSError)
     {
         handleError(error)
     }
+    
+    func getData(cats: [Category])->NSMutableArray
+    {
+        
+        
+        let data=cats
+        
+        var sectionItemsArray=NSMutableArray()
+        let allItemsArray=NSMutableArray()
+        var count=0
+        
+        for i in 0 ..< data.count
+       {
+            let videoID=data[i].id
+            let videoTitle=data[i].name
+          
+            
+            let video=Category()
+            video.id=videoID
+            video.name=videoTitle
+            
+            sectionItemsArray.addObject(video)
+            
+            count+=1
+            
+            if(count==2||(count==1&&i==data.count-1))
+            {
+                count=0
+                allItemsArray.addObject(sectionItemsArray)
+                sectionItemsArray=NSMutableArray()
+            }
+        }
+        
+        return allItemsArray
+    }
+
 }

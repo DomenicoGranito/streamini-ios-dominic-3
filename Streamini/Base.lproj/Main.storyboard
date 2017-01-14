@@ -382,7 +382,7 @@
                         </containerView>
                         <view alpha="0.64999997615814209" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WbR-XY-JoC" customClass="LineView" customModule="Streamini" customModuleProvider="target">
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EDEE5570-1CE7-4E54-8D5D-2AA79E4712A7" translatesAutoresizingMaskIntoConstraints="NO" id="bAf-AH-pQ5">
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="8284AA7F-6FA6-42FB-B9BC-ED72A52B94EE" translatesAutoresizingMaskIntoConstraints="NO" id="bAf-AH-pQ5">
                                     <constraints>
                                         <constraint firstAttribute="height" constant="12" id="BYG-p1-viV"/>
                                         <constraint firstAttribute="width" constant="20" id="agt-QP-2YF"/>
@@ -406,7 +406,7 @@
                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="152D5B11-6605-41B0-957E-586BD1DA1F66" translatesAutoresizingMaskIntoConstraints="NO" id="41q-Rp-r7x">
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="4BF6F1D5-67F5-4376-ACF5-BE8B0A3ACF3B" translatesAutoresizingMaskIntoConstraints="NO" id="41q-Rp-r7x">
                                     <constraints>
                                         <constraint firstAttribute="height" constant="26" id="TT8-ro-toq"/>
                                         <constraint firstAttribute="width" constant="26" id="mnO-gk-SW7"/>
@@ -7356,8 +7356,16 @@
                                                                 <constraint firstItem="jel-A6-s2C" firstAttribute="top" secondItem="JB8-Y8-stv" secondAttribute="top" id="Jk6-ex-n2Z"/>
                                                                 <constraint firstItem="jel-A6-s2C" firstAttribute="leading" secondItem="JB8-Y8-stv" secondAttribute="leading" id="mrN-o1-b58"/>
                                                             </constraints>
+                                                            <connections>
+                                                                <outlet property="followersCountLbl" destination="ybV-c6-86a" id="9VX-N0-KQi"/>
+                                                                <outlet property="videoThumbnailImageView" destination="jel-A6-s2C" id="npb-mm-A2T"/>
+                                                            </connections>
                                                         </collectionViewCell>
                                                     </cells>
+                                                    <connections>
+                                                        <outlet property="dataSource" destination="aES-PD-BU0" id="JRg-Nq-nZQ"/>
+                                                        <outlet property="delegate" destination="aES-PD-BU0" id="xH5-88-I2k"/>
+                                                    </connections>
                                                 </collectionView>
                                             </subviews>
                                             <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -7865,7 +7873,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="152D5B11-6605-41B0-957E-586BD1DA1F66" width="60" height="60">
+        <image name="4BF6F1D5-67F5-4376-ACF5-BE8B0A3ACF3B" width="60" height="60">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -8156,7 +8164,7 @@ AMIA2QDbAN1Bv0HEQc9B2EHrQe9B+kIDQghCEEITQhhCJ0IrQjJCOkJHQkxCTkJQQlVCXUJgQmVCbUJw
 QoJChUKKAAAAAAAAAgEAAAAAAAAAQQAAAAAAAAAAAAAAAAAAQow
 </mutableData>
         </image>
-        <image name="EDEE5570-1CE7-4E54-8D5D-2AA79E4712A7" width="45" height="27">
+        <image name="8284AA7F-6FA6-42FB-B9BC-ED72A52B94EE" width="45" height="27">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGOjtYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK0HCBEW
 GxwgISgrLjQ3VSRudWxs1AkKCwwNDg8QViRjbGFzc1xOU0ltYWdlRmxhZ3NWTlNSZXBzV05TQ29sb3KA
