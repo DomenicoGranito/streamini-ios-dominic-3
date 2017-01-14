@@ -6,11 +6,9 @@
 //  Copyright © 2016 UniProgy s.r.o. All rights reserved.
 //
 
-class DiscoverViewController: BaseTableViewController, UINavigationControllerDelegate {
-    
+class DiscoverViewController: BaseViewController
+{
     @IBOutlet var itemsTbl:UITableView?
-    //@IBOutlet var headerLbl:UILabel?
-    //@IBOutlet var topImageView:UIImageView?
     
     @IBOutlet weak var followingLabel: UILabel!
     @IBOutlet weak var followingValueLabel: UILabel!
@@ -27,9 +25,6 @@ class DiscoverViewController: BaseTableViewController, UINavigationControllerDel
     
     
     var allItemsArray=NSMutableArray()
-    var categoryName:String?
-    var page=0
-    var categoryID:Int?
     var categories: [Category] = []
     var user: User?
     
@@ -66,26 +61,19 @@ class DiscoverViewController: BaseTableViewController, UINavigationControllerDel
     
     override func viewDidLoad()
     {
-        super.viewDidLoad()
-        self.configureView()
+        configureView()
         
         let activator=UIActivityIndicatorView(activityIndicatorStyle:.White)
         activator.startAnimating()
         
         self.navigationItem.rightBarButtonItem=UIBarButtonItem(customView:activator)
-       // UserConnector().get(nil, success:successGetUser, failure:successFailure)
         
-        
-        
-        
-        
-       // headerLbl?.text=categoryName?.uppercaseString
         navigationController?.navigationBarHidden=true
        
         StreamConnector().categories(categoriesSuccess, failure:categoriesFailure)
-       // StreamConnector().categoryStreams(categoryID!, pageID:page, success:successStreams, failure:failureStream)
     }
-    override func tableView(tableView:UITableView, cellForRowAtIndexPath indexPath:NSIndexPath)->UITableViewCell
+    
+    func tableView(tableView:UITableView, cellForRowAtIndexPath indexPath:NSIndexPath)->UITableViewCell
     {
         let cell=tableView.dequeueReusableCellWithIdentifier("cell") as! AllCategoryRow
         
@@ -100,29 +88,22 @@ class DiscoverViewController: BaseTableViewController, UINavigationControllerDel
         UIApplication.sharedApplication().setStatusBarHidden(false, withAnimation:.Fade)
     }
     
-   
-    
-    override func tableView(tableView:UITableView, numberOfRowsInSection section:Int)->Int
+    func tableView(tableView:UITableView, numberOfRowsInSection section:Int)->Int
     {
-        
-        if section == 2
+        if section == 0
         {
-       // return categories.count
-        
-        return allItemsArray.count
-            
+            return allItemsArray.count
         }
+        
         return 0
     }
     
-        
-    override func tableView(tableView:UITableView, willDisplayCell cell:UITableViewCell, forRowAtIndexPath indexPath:NSIndexPath)
+    func tableView(tableView:UITableView, willDisplayCell cell:UITableViewCell, forRowAtIndexPath indexPath:NSIndexPath)
     {
         let cell=cell as! AllCategoryRow
         
         cell.reloadCollectionView()
     }
-    
     
     func categoriesSuccess(cats: [Category])
     {
@@ -130,7 +111,6 @@ class DiscoverViewController: BaseTableViewController, UINavigationControllerDel
         itemsTbl?.reloadData()
     }
 
-    
     func categoriesFailure(error:NSError)
     {
         handleError(error)
@@ -138,8 +118,6 @@ class DiscoverViewController: BaseTableViewController, UINavigationControllerDel
     
     func getData(cats: [Category])->NSMutableArray
     {
-        
-        
         let data=cats
         
         var sectionItemsArray=NSMutableArray()
@@ -170,5 +148,4 @@ class DiscoverViewController: BaseTableViewController, UINavigationControllerDel
         
         return allItemsArray
     }
-
 }
