@@ -382,7 +382,7 @@
                         </containerView>
                         <view alpha="0.64999997615814209" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WbR-XY-JoC" customClass="LineView" customModule="Streamini" customModuleProvider="target">
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="4DEBEA8E-C429-4765-AEBC-0D4783B4C209" translatesAutoresizingMaskIntoConstraints="NO" id="bAf-AH-pQ5">
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="3C8C81EB-E198-4D44-9F06-1CB381588199" translatesAutoresizingMaskIntoConstraints="NO" id="bAf-AH-pQ5">
                                     <constraints>
                                         <constraint firstAttribute="height" constant="12" id="BYG-p1-viV"/>
                                         <constraint firstAttribute="width" constant="20" id="agt-QP-2YF"/>
@@ -406,7 +406,7 @@
                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="C9EBF58B-8779-476A-84D8-14C6A3CE6602" translatesAutoresizingMaskIntoConstraints="NO" id="41q-Rp-r7x">
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DB948A2E-0F0C-4DF1-81F0-5D6BAF05CA56" translatesAutoresizingMaskIntoConstraints="NO" id="41q-Rp-r7x">
                                     <constraints>
                                         <constraint firstAttribute="height" constant="26" id="TT8-ro-toq"/>
                                         <constraint firstAttribute="width" constant="26" id="mnO-gk-SW7"/>
@@ -820,7 +820,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j0J-L5-0fo">
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="search" translatesAutoresizingMaskIntoConstraints="NO" id="fMu-Iz-EGe">
-                                        <frame key="frameInset" minX="157" minY="208" width="50" height="42"/>
+                                        <frame key="frameInset" minX="157" minY="208" width="42" height="42"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Search Beinit" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YoG-VA-nA4">
@@ -7876,7 +7876,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="4DEBEA8E-C429-4765-AEBC-0D4783B4C209" width="45" height="27">
+        <image name="3C8C81EB-E198-4D44-9F06-1CB381588199" width="45" height="27">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGOjtYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK0HCBEW
 GxwgISgrLjQ3VSRudWxs1AkKCwwNDg8QViRjbGFzc1xOU0ltYWdlRmxhZ3NWTlNSZXBzV05TQ29sb3KA
@@ -8027,7 +8027,7 @@ LyE+IUIhSSFRIV4hYyFlIWchbCF0IXchfCGEIYchmSGcIaEAAAAAAAACAQAAAAAAAAA+AAAAAAAAAAAA
 AAAAAAAhow
 </mutableData>
         </image>
-        <image name="C9EBF58B-8779-476A-84D8-14C6A3CE6602" width="60" height="60">
+        <image name="DB948A2E-0F0C-4DF1-81F0-5D6BAF05CA56" width="60" height="60">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
