@@ -382,7 +382,7 @@
                         </containerView>
                         <view alpha="0.64999997615814209" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WbR-XY-JoC" customClass="LineView" customModule="Streamini" customModuleProvider="target">
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="C32BEFCA-65F6-4C9B-A19A-A73BE4D51D3D" translatesAutoresizingMaskIntoConstraints="NO" id="bAf-AH-pQ5">
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="4DEBEA8E-C429-4765-AEBC-0D4783B4C209" translatesAutoresizingMaskIntoConstraints="NO" id="bAf-AH-pQ5">
                                     <constraints>
                                         <constraint firstAttribute="height" constant="12" id="BYG-p1-viV"/>
                                         <constraint firstAttribute="width" constant="20" id="agt-QP-2YF"/>
@@ -406,7 +406,7 @@
                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="F964FFED-01D1-4960-9420-2A3A453B60DD" translatesAutoresizingMaskIntoConstraints="NO" id="41q-Rp-r7x">
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="C9EBF58B-8779-476A-84D8-14C6A3CE6602" translatesAutoresizingMaskIntoConstraints="NO" id="41q-Rp-r7x">
                                     <constraints>
                                         <constraint firstAttribute="height" constant="26" id="TT8-ro-toq"/>
                                         <constraint firstAttribute="width" constant="26" id="mnO-gk-SW7"/>
@@ -3431,6 +3431,9 @@
                                         <include reference="kxn-Ow-BgT"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="closeButtonPressedWithSender:" destination="4la-a8-K8s" eventType="touchUpInside" id="h7q-6B-Fi5"/>
+                                </connections>
                             </button>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="gct-g5-vcA">
                                 <constraints>
@@ -7288,10 +7291,10 @@
             </objects>
             <point key="canvasLocation" x="295.19999999999999" y="-1511.6941529235382"/>
         </scene>
-        <!--Discover-->
+        <!--Discover View Controller-->
         <scene sceneID="rrA-ar-txh">
             <objects>
-                <tableViewController storyboardIdentifier="DiscoverViewController" id="Bo7-1L-Z3b" userLabel="Discover" customClass="DiscoverViewController" customModule="Streamini" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="DiscoverViewController" id="Bo7-1L-Z3b" userLabel="Discover View Controller" customClass="DiscoverViewController" customModule="Streamini" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" indicatorStyle="black" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="g1T-GY-UdH">
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -7873,7 +7876,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="C32BEFCA-65F6-4C9B-A19A-A73BE4D51D3D" width="45" height="27">
+        <image name="4DEBEA8E-C429-4765-AEBC-0D4783B4C209" width="45" height="27">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGOjtYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK0HCBEW
 GxwgISgrLjQ3VSRudWxs1AkKCwwNDg8QViRjbGFzc1xOU0ltYWdlRmxhZ3NWTlNSZXBzV05TQ29sb3KA
@@ -8024,7 +8027,7 @@ LyE+IUIhSSFRIV4hYyFlIWchbCF0IXchfCGEIYchmSGcIaEAAAAAAAACAQAAAAAAAAA+AAAAAAAAAAAA
 AAAAAAAhow
 </mutableData>
         </image>
-        <image name="F964FFED-01D1-4960-9420-2A3A453B60DD" width="60" height="60">
+        <image name="C9EBF58B-8779-476A-84D8-14C6A3CE6602" width="60" height="60">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -8339,7 +8342,7 @@ QoJChUKKAAAAAAAAAgEAAAAAAAAAQQAAAAAAAAAAAAAAAAAAQow
         <image name="play" width="20" height="23"/>
         <image name="play-big" width="60" height="70"/>
         <image name="prev_song" width="20" height="28"/>
-        <image name="rec-off" width="25" height="25"/>
+        <image name="rec-off" width="30" height="30"/>
         <image name="rotate" width="27" height="27"/>
         <image name="search" width="25" height="25"/>
         <image name="shuffle_icon" width="17" height="14"/>

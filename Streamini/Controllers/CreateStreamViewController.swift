@@ -75,8 +75,9 @@ UITextViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
     @IBAction func closeButtonPressed(sender: AnyObject) {
         LocationManager.shared.stopMonitoringLocation()
         self.nameTextView.resignFirstResponder()
+        self.navigationController?.popViewControllerAnimated(true)
         self.dismissViewControllerAnimated(true, completion: nil)
-      // self.popViewControllerAnimated(true)
+      
     }
     
     // MARK: - Network responses
@@ -166,7 +167,8 @@ UITextViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(CreateStreamViewController.categoryTapped(_:)))
         categoryLabel.addGestureRecognizer(tapGesture)
         categoryLabel.userInteractionEnabled = true
-        
+        categoryLabel.textColor = UIColor.whiteColor()
+        self.categoryPicker.backgroundColor = UIColor.blackColor().colorWithAlphaComponent(0.5)
         // connect category picker
         self.categoryPicker.delegate = self
         self.categoryPicker.dataSource = self
@@ -179,11 +181,12 @@ UITextViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
     func updateCategory()
     {
         let text = String(format: "%@: %@", NSLocalizedString("category", comment: ""), selectedCategory.name);
+        categoryLabel.textColor = UIColor.whiteColor()
         categoryLabel.text = text;
         // Set width constraint corresponds to the locality string lenght
         let size = categoryLabel.sizeThatFits(categoryLabel.bounds.size)
         categoryLabelWidthConstraint.constant = size.width + 10
-        categoryLabel.backgroundColor = UIColor.whiteColor()
+        categoryLabel.backgroundColor = UIColor.blackColor().colorWithAlphaComponent(0.5)
         self.view.layoutIfNeeded()
     }
     
@@ -201,7 +204,7 @@ UITextViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
     override func viewWillAppear(animated: Bool) {
-        
+        self.tabBarController?.hidesBottomBarWhenPushed = true
         self.navigationController!.setNavigationBarHidden(true, animated: false)
         (tabBarController as! mTBViewController).hideButton()
         super.viewWillAppear(animated)
