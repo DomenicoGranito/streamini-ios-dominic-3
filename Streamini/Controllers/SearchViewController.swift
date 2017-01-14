@@ -33,9 +33,15 @@ class SearchViewController: BaseViewController, UserSelecting, StreamSelecting, 
 
     // MARK: - UISearchBarDelegate
     
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+       // self.view.endEditing(<#T##force: Bool##Bool#>)
+    }
+    
     // called when cancel button pressed
     func searchBarCancelButtonClicked(searchBar: UISearchBar) {
         searchBar.showsCancelButton = false
+        searchBar.resignFirstResponder()
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     

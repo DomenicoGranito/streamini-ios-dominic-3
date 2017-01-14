@@ -85,21 +85,6 @@ class DiscoverViewController: BaseTableViewController, UINavigationControllerDel
         StreamConnector().categories(categoriesSuccess, failure:categoriesFailure)
        // StreamConnector().categoryStreams(categoryID!, pageID:page, success:successStreams, failure:failureStream)
     }
-    
-    override func viewWillAppear(animated:Bool)
-    {
-        UIApplication.sharedApplication().setStatusBarHidden(false, withAnimation:.Fade)
-    }
-    
-   
-    
-    override func tableView(tableView:UITableView, numberOfRowsInSection section:Int)->Int
-    {
-        return categories.count
-        
-        //return allItemsArray.count
-    }
-    
     override func tableView(tableView:UITableView, cellForRowAtIndexPath indexPath:NSIndexPath)->UITableViewCell
     {
         let cell=tableView.dequeueReusableCellWithIdentifier("cell") as! AllCategoryRow
@@ -109,7 +94,28 @@ class DiscoverViewController: BaseTableViewController, UINavigationControllerDel
         
         return cell
     }
+
+    override func viewWillAppear(animated:Bool)
+    {
+        UIApplication.sharedApplication().setStatusBarHidden(false, withAnimation:.Fade)
+    }
     
+   
+    
+    override func tableView(tableView:UITableView, numberOfRowsInSection section:Int)->Int
+    {
+        
+        if section == 2
+        {
+       // return categories.count
+        
+        return allItemsArray.count
+            
+        }
+        return 0
+    }
+    
+        
     override func tableView(tableView:UITableView, willDisplayCell cell:UITableViewCell, forRowAtIndexPath indexPath:NSIndexPath)
     {
         let cell=cell as! AllCategoryRow
@@ -117,18 +123,6 @@ class DiscoverViewController: BaseTableViewController, UINavigationControllerDel
         cell.reloadCollectionView()
     }
     
-    @IBAction func back()
-    {
-        navigationController?.popViewControllerAnimated(true)
-    }
-    
-    
-   func bkcategoriesSuccess(cats: [Category])
-    {
-       // let catname=cats
-        //categories.addObjectsFromArray(cats)
-        itemsTbl?.reloadData()
-    }
     
     func categoriesSuccess(cats: [Category])
     {
