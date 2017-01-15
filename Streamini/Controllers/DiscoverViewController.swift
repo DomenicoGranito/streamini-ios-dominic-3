@@ -10,69 +10,30 @@ class DiscoverViewController: BaseViewController
 {
     @IBOutlet var itemsTbl:UITableView?
     
-    @IBOutlet weak var followingLabel: UILabel!
-    @IBOutlet weak var followingValueLabel: UILabel!
-    @IBOutlet weak var followersLabel: UILabel!
-    @IBOutlet weak var followersValueLabel: UILabel!
-    @IBOutlet weak var blockedLabel: UILabel!
-    @IBOutlet weak var blockedValueLabel: UILabel!
-    @IBOutlet weak var streamsLabel: UILabel!
-    @IBOutlet weak var streamsValueLabel: UILabel!
-    @IBOutlet weak var shareLabel: UILabel!
-    @IBOutlet weak var feedbackLabel: UILabel!
-    @IBOutlet weak var termsLabel: UILabel!
-    @IBOutlet weak var privacyLabel: UILabel!
-    
-    
     var allItemsArray=NSMutableArray()
-    var categories: [Category] = []
-    var user: User?
     
     func configureView()
     {
-        self.title = NSLocalizedString("Discover", comment: "")
-        // followingLabel.text = NSLocalizedString("Discover_following", comment: "")
-        followingLabel.text = NSLocalizedString("Charts", comment: "")
-        followersLabel.text = NSLocalizedString("Playlists", comment: "")
-        blockedLabel.text   = NSLocalizedString("Series", comment: "")
-        streamsLabel.text   = NSLocalizedString("Channels", comment: "")
-        //  shareLabel.text     = NSLocalizedString("Live Streams", comment: "")
-        // feedbackLabel.text  = NSLocalizedString("Discover_feedback", comment: "")
-        // termsLabel.text     = NSLocalizedString("Discover_terms", comment: "")
-        // privacyLabel.text   = NSLocalizedString("Discover_privacy", comment: "")
-        // logoutLabel.text    = NSLocalizedString("Discover_logout", comment: "")
-        // changePasswordLabel.text = NSLocalizedString("Discover_change_password", comment: "")
-        
-        //  userHeaderView.delegate = self
+        self.title=NSLocalizedString("Discover", comment:"")
     }
-    
-    func successGetUser(user: User) {
-        self.user = user
-        // userHeaderView.update(user)
-        
-        followingValueLabel.text    = "\(user.following)"
-        followersValueLabel.text    = "\(user.followers)"
-        blockedValueLabel.text      = "\(user.blocked)"
-        streamsValueLabel.text      = "\(user.streams)"
-        
-        self.navigationItem.rightBarButtonItem = nil
-    }
-
     
     override func viewDidLoad()
     {
         configureView()
         
-        let activator=UIActivityIndicatorView(activityIndicatorStyle:.White)
-        activator.startAnimating()
-        
-        self.navigationItem.rightBarButtonItem=UIBarButtonItem(customView:activator)
-        
-        navigationController?.navigationBarHidden=true
-       
         StreamConnector().categories(categoriesSuccess, failure:categoriesFailure)
     }
     
+    override func viewWillAppear(animated:Bool)
+    {
+        UIApplication.sharedApplication().setStatusBarHidden(false, withAnimation:.Fade)
+    }
+
+    func tableView(tableView:UITableView, numberOfRowsInSection section:Int)->Int
+    {
+        return allItemsArray.count
+    }
+
     func tableView(tableView:UITableView, cellForRowAtIndexPath indexPath:NSIndexPath)->UITableViewCell
     {
         let cell=tableView.dequeueReusableCellWithIdentifier("cell") as! AllCategoryRow
@@ -82,21 +43,6 @@ class DiscoverViewController: BaseViewController
         
         return cell
     }
-
-    override func viewWillAppear(animated:Bool)
-    {
-        UIApplication.sharedApplication().setStatusBarHidden(false, withAnimation:.Fade)
-    }
-    
-    func tableView(tableView:UITableView, numberOfRowsInSection section:Int)->Int
-    {
-        if section == 0
-        {
-            return allItemsArray.count
-        }
-        
-        return 0
-    }
     
     func tableView(tableView:UITableView, willDisplayCell cell:UITableViewCell, forRowAtIndexPath indexPath:NSIndexPath)
     {
@@ -105,7 +51,7 @@ class DiscoverViewController: BaseViewController
         cell.reloadCollectionView()
     }
     
-    func categoriesSuccess(cats: [Category])
+    func categoriesSuccess(cats:[Category])
     {
         allItemsArray.addObjectsFromArray(getData(cats) as [AnyObject])
         itemsTbl?.reloadData()
@@ -116,29 +62,19 @@ class DiscoverViewController: BaseViewController
         handleError(error)
     }
     
-    func getData(cats: [Category])->NSMutableArray
+    func getData(cats:[Category])->NSMutableArray
     {
-        let data=cats
-        
         var sectionItemsArray=NSMutableArray()
         let allItemsArray=NSMutableArray()
         var count=0
         
-        for i in 0 ..< data.count
-       {
-            let videoID=data[i].id
-            let videoTitle=data[i].name
-          
-            
-            let video=Category()
-            video.id=videoID
-            video.name=videoTitle
-            
-            sectionItemsArray.addObject(video)
+        for i in 0 ..< cats.count
+        {
+            sectionItemsArray.addObject(cats[i])
             
             count+=1
             
-            if(count==2||(count==1&&i==data.count-1))
+            if(count==2||(count==1&&i==cats.count-1))
             {
                 count=0
                 allItemsArray.addObject(sectionItemsArray)

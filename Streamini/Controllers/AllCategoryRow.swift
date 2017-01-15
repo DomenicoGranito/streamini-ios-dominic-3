@@ -6,7 +6,7 @@
 //  Copyright © 2016 UniProgy s.r.o. All rights reserved.
 //
 
-class AllCategoryRow: UITableViewCell ,UINavigationControllerDelegate
+class AllCategoryRow: UITableViewCell
 {
     @IBOutlet var collectionView:UICollectionView?
     var sectionItemsArray:NSArray!
@@ -47,9 +47,7 @@ class AllCategoryRow: UITableViewCell ,UINavigationControllerDelegate
        // self.navigationController?.pushViewController(vc, animated:true)
     }
     
-    
-    
-     func collectionView(collectionView:UICollectionView, layout collectionViewLayout:UICollectionViewLayout, sizeForItemAtIndexPath indexPath:NSIndexPath)->CGSize
+    func collectionView(collectionView:UICollectionView, layout collectionViewLayout:UICollectionViewLayout, sizeForItemAtIndexPath indexPath:NSIndexPath)->CGSize
     {
         let width=(collectionView.frame.size.width-30)/2
         
