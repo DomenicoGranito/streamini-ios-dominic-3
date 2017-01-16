@@ -1,6 +1,6 @@
 //
 //  Use this file to import your target's public headers that you would like to expose to Swift.
-//
+////
 
 #import <RestKit.h>
 #import "RestKitObjC.h"
@@ -18,3 +18,6 @@
 #import "MZFormSheetController.h"
 
 #import "WXApi.h"
+#import <SwiftFilePath/SwiftFilePath.h>
+
+
