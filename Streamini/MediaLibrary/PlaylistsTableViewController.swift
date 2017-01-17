@@ -13,10 +13,10 @@ import CoreData
 class PlaylistsTableViewController: UITableViewController {
     
     @IBAction func didTapAddButton(sender: AnyObject) {
-     //   showTextFieldDialog("Add playlist", message: "", placeHolder: "Name", okButtonTitle: "Add", didTapOkButton: { title in
-       //     self.addPlaylist(title!)
-        //    self.refreshPlaylists()
-       // })
+        showTextFieldDialog("Add playlist", message: "", placeHolder: "Name", okButtonTitle: "Add", didTapOkButton: { title in
+           self.addPlaylist(title!)
+            self.refreshPlaylists()
+        })
     }
     
     private var context : NSManagedObjectContext!
@@ -35,10 +35,10 @@ class PlaylistsTableViewController: UITableViewController {
         tableView.delegate = self
         
         //set background image
-        tableView.backgroundColor = UIColor.clearColor()
-        let imgView = UIImageView(image: UIImage(named: "pastel.jpg"))
-        imgView.frame = tableView.frame
-        tableView.backgroundView = imgView
+     //   tableView.backgroundColor = UIColor.clearColor()
+      //  let imgView = UIImageView(image: UIImage(named: "pastel.jpg"))
+      //  imgView.frame = tableView.frame
+      //  tableView.backgroundView = imgView
         
         refreshPlaylists()
     }

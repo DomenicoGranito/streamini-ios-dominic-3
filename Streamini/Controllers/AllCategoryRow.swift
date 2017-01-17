@@ -27,7 +27,7 @@ class AllCategoryRow: UITableViewCell
         let cell=collectionView.dequeueReusableCellWithReuseIdentifier("categoryCell", forIndexPath:indexPath) as! CategoryCell
         
         let catname=sectionItemsArray[indexPath.row] as! Category
-        cell.followersCountLbl?.text=catname.name
+       // cell.followersCountLbl?.text=catname.name
         cell.videoTitleLbl?.text=catname.name
      //   cell.videoThumbnailImageView?.sd_setImageWithURL(NSURL(string:"http://cedricm.cn/thumbs/\(catname.id).jpg"))
         
@@ -38,14 +38,48 @@ class AllCategoryRow: UITableViewCell
         return cell
     }
     
-    func cellTapped(gestureRecognizer:UITapGestureRecognizer)
+    func bkcellTapped(gestureRecognizer:UITapGestureRecognizer)
     {
         let storyboard=UIStoryboard(name:"Main", bundle:nil)
         let vc=storyboard.instantiateViewControllerWithIdentifier("CategoriesViewController") as! CategoriesViewController
-       // vc.categoryName=cell.videoTitleLbl?.text//categoryNamesArray[gestureRecognizer.view!.tag] as? String
-       // vc.categoryID=categoryIDsArray[gestureRecognizer.view!.tag] as? Int
-       // self.navigationController?.pushViewController(vc, animated:true)
+        //  let catname=sectionItemsArray[indexPath.row] as! Category
+        
+        vc.categoryName=sectionItemsArray[gestureRecognizer.view!.tag] as? String
+      // vc.categoryID=sectionItemsArray
+   //     vc.categoryID=catname.id//categoryIDsArray[gestureRecognizer.view!.tag] as? Int
+        
+     //   self.root.presentViewController(vc, animated:true, completion:nil)
     }
+    
+    
+    func cellTapped(gestureRecognizer:UITapGestureRecognizer)
+    {
+        let root=UIApplication.sharedApplication().delegate!.window!?.rootViewController as! UINavigationController
+        
+        let video=sectionItemsArray[gestureRecognizer.view!.tag] as! Category
+        
+        let storyboard=UIStoryboard(name:"Main", bundle:nil)
+        let modalVC=storyboard.instantiateViewControllerWithIdentifier("CategoriesViewController") as! CategoriesViewController
+        
+        
+      //  let storyboardn=UIStoryboard(name:"Main", bundle:nil)
+       // let modalVC=storyboardn.instantiateViewControllerWithIdentifier("CategoriesViewController") as! CategoriesViewController
+        
+        // let video=oneCategoryItemsArray[gestureRecognizer.view!.tag] as! Category
+        
+        //modalVC.stream=video
+        modalVC.categoryName=video.name
+        modalVC.categoryID=Int(video.id)
+        navigationControllerReference?.pushViewController(modalVC, animated:true)
+        
+       // root.presentViewController(modalVC, animated:true, completion:nil)
+        
+        
+        
+    }
+    
+
+    
     
     func collectionView(collectionView:UICollectionView, layout collectionViewLayout:UICollectionViewLayout, sizeForItemAtIndexPath indexPath:NSIndexPath)->CGSize
     {

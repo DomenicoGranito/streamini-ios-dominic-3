@@ -72,13 +72,14 @@ UITextViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
         }
     }
     
+    
+    
     @IBAction func closeButtonPressed(sender: AnyObject) {
         LocationManager.shared.stopMonitoringLocation()
         self.nameTextView.resignFirstResponder()
         self.navigationController?.popViewControllerAnimated(true)
-        self.dismissViewControllerAnimated(true, completion: nil)
-      
-    }
+       // self.dismissViewControllerAnimated(true, completion: nil)
+           }
     
     // MARK: - Network responses
     
