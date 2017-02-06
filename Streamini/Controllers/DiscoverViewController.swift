@@ -41,8 +41,14 @@ class DiscoverViewController: BaseViewController
         cell.sectionItemsArray=allItemsArray[indexPath.row] as! NSArray
         cell.navigationControllerReference=navigationController
         
+        
+        
         return cell
     }
+    
+    
+
+    
     
     func tableView(tableView:UITableView, willDisplayCell cell:UITableViewCell, forRowAtIndexPath indexPath:NSIndexPath)
     {

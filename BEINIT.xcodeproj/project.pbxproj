@@ -15,6 +15,7 @@
 		3E2674DC1D7530BA00E33DCD /* lock.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E2674D81D7530BA00E33DCD /* lock.png */; };
 		3E2674DD1D7530BA00E33DCD /* msg.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E2674D91D7530BA00E33DCD /* msg.png */; };
 		3E2674DE1D7530BA00E33DCD /* user.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E2674DA1D7530BA00E33DCD /* user.png */; };
+		3E43B22BB8E6CD9EBE4097A8 /* libPods-Streamini.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 251968F20DFFC1F60FF3D7E8 /* libPods-Streamini.a */; };
 		3EEF52BD1D83127C0015BA92 /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EEF52BC1D83127B0015BA92 /* CategoriesViewController.swift */; };
 		3EEF52BF1D83B5AF0015BA92 /* AllCategoriesRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EEF52BE1D83B5AF0015BA92 /* AllCategoriesRow.swift */; };
 		3EF1F02C1D7197310055A372 /* GetStartedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF1F02B1D7197300055A372 /* GetStartedViewController.swift */; };
@@ -30,7 +31,6 @@
 		3EF535B41E0921430049B2E9 /* LineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF535B31E0921430049B2E9 /* LineView.swift */; };
 		3EF535B61E0922D40049B2E9 /* MusicPlayerTransitionAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF535B51E0922D40049B2E9 /* MusicPlayerTransitionAnimation.swift */; };
 		3EF535B81E092A330049B2E9 /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF535B71E092A330049B2E9 /* ModalViewController.swift */; };
-		90669A6B813E9ED726E0127C /* libPods-Streamini.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 29A97B2959D1C6CB52E9D8C7 /* libPods-Streamini.a */; };
 		A60F82E91D490F4D002E2CEA /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60F82E81D490F4D002E2CEA /* Category.swift */; };
 		A60F82EB1D490F70002E2CEA /* CategoryMappingProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60F82EA1D490F70002E2CEA /* CategoryMappingProvider.swift */; };
 		A60F82ED1D49168E002E2CEA /* SearchStreamCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60F82EC1D49168E002E2CEA /* SearchStreamCell.swift */; };
@@ -40,6 +40,10 @@
 		A68B73191BB2859800695C80 /* NSLayoutConstraint+preciseConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68B73181BB2859800695C80 /* NSLayoutConstraint+preciseConstant.swift */; };
 		A68B731D1BB28DBB00695C80 /* UIImage+imageWithColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68B731C1BB28DBB00695C80 /* UIImage+imageWithColor.swift */; };
 		A6F80F1F1BBC13B800A376CD /* UINavigationBarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F80F1E1BBC13B800A376CD /* UINavigationBarExtension.swift */; };
+		B63C1A3D1E2DCC2300EF2F7C /* ModalPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63C1A3C1E2DCC2300EF2F7C /* ModalPopup.swift */; };
+		B63C1A4A1E2DE9EE00EF2F7C /* SCLAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63C1A491E2DE9EE00EF2F7C /* SCLAlertView.swift */; };
+		B63C1A4C1E2DEA0400EF2F7C /* SCLExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63C1A4B1E2DEA0400EF2F7C /* SCLExtensions.swift */; };
+		B63C1A4E1E451AE100EF2F7C /* MyLibViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63C1A4D1E451AE000EF2F7C /* MyLibViewController.swift */; };
 		B64176D31DF4EDE200099A9D /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64176D21DF4EDE200099A9D /* PlayerView.swift */; };
 		B66561E21E09884100EDA684 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = B66561DD1E09884100EDA684 /* README.txt */; };
 		B66561E31E09884100EDA684 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B66561E11E09884100EDA684 /* libWeChatSDK.a */; };
@@ -219,7 +223,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		29A97B2959D1C6CB52E9D8C7 /* libPods-Streamini.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Streamini.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		251968F20DFFC1F60FF3D7E8 /* libPods-Streamini.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Streamini.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E20216C1D81A6530058DAAD /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		3E20216E1D81AB440058DAAD /* CategoryRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryRow.swift; sourceTree = "<group>"; };
 		3E2021701D81ACFE0058DAAD /* VideoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoCell.swift; sourceTree = "<group>"; };
@@ -254,6 +258,10 @@
 		A68B73181BB2859800695C80 /* NSLayoutConstraint+preciseConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSLayoutConstraint+preciseConstant.swift"; sourceTree = "<group>"; };
 		A68B731C1BB28DBB00695C80 /* UIImage+imageWithColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+imageWithColor.swift"; sourceTree = "<group>"; };
 		A6F80F1E1BBC13B800A376CD /* UINavigationBarExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UINavigationBarExtension.swift; sourceTree = "<group>"; };
+		B63C1A3C1E2DCC2300EF2F7C /* ModalPopup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalPopup.swift; sourceTree = "<group>"; };
+		B63C1A491E2DE9EE00EF2F7C /* SCLAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCLAlertView.swift; sourceTree = "<group>"; };
+		B63C1A4B1E2DEA0400EF2F7C /* SCLExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCLExtensions.swift; sourceTree = "<group>"; };
+		B63C1A4D1E451AE000EF2F7C /* MyLibViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyLibViewController.swift; sourceTree = "<group>"; };
 		B64176D21DF4EDE200099A9D /* PlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		B66561DD1E09884100EDA684 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = README.txt; path = OpenSDK1.7.5/README.txt; sourceTree = "<group>"; };
 		B66561DE1E09884100EDA684 /* WechatAuthSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WechatAuthSDK.h; path = OpenSDK1.7.5/WechatAuthSDK.h; sourceTree = "<group>"; };
@@ -444,7 +452,7 @@
 				B70FAA031B539BC000607EA9 /* SystemConfiguration.framework in Frameworks */,
 				B70FAA011B539BB300607EA9 /* CFNetwork.framework in Frameworks */,
 				B7EAD9531B4D72A40009C698 /* QuickLook.framework in Frameworks */,
-				90669A6B813E9ED726E0127C /* libPods-Streamini.a in Frameworks */,
+				3E43B22BB8E6CD9EBE4097A8 /* libPods-Streamini.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -481,7 +489,7 @@
 				B70FAA021B539BC000607EA9 /* SystemConfiguration.framework */,
 				B70FAA001B539BB300607EA9 /* CFNetwork.framework */,
 				B7EAD9521B4D72A40009C698 /* QuickLook.framework */,
-				29A97B2959D1C6CB52E9D8C7 /* libPods-Streamini.a */,
+				251968F20DFFC1F60FF3D7E8 /* libPods-Streamini.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -493,6 +501,15 @@
 				D65C4761E698023EB81062D0 /* Pods-Streamini.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		B63C1A481E2DE98C00EF2F7C /* SCLAlertView */ = {
+			isa = PBXGroup;
+			children = (
+				B63C1A491E2DE9EE00EF2F7C /* SCLAlertView.swift */,
+				B63C1A4B1E2DEA0400EF2F7C /* SCLExtensions.swift */,
+			);
+			name = SCLAlertView;
 			sourceTree = "<group>";
 		};
 		B66561DC1E09882C00EDA684 /* WECHAT */ = {
@@ -726,6 +743,7 @@
 		B7AA93201B3172740005972E /* Streamini */ = {
 			isa = PBXGroup;
 			children = (
+				B63C1A481E2DE98C00EF2F7C /* SCLAlertView */,
 				B67447C71E2BD89C0049890F /* New Group */,
 				3EF535A61E0920920049B2E9 /* ARNTransitionAnimator */,
 				B66561DC1E09882C00EDA684 /* WECHAT */,
@@ -846,6 +864,7 @@
 				3EEF52BC1D83127B0015BA92 /* CategoriesViewController.swift */,
 				B6D198A41E23883F008B8604 /* ChartsViewController.swift */,
 				3EEF52BE1D83B5AF0015BA92 /* AllCategoriesRow.swift */,
+				B63C1A3C1E2DCC2300EF2F7C /* ModalPopup.swift */,
 				B6EAF8271E28EF6E007038DC /* AllCategoryRow.swift */,
 				B72475821B411D910080BE1B /* CreateStreamViewController.swift */,
 				B7A886931B500C7100D37B63 /* LiveStreamViewController.swift */,
@@ -854,6 +873,7 @@
 				B7E15E4A1B6A24E5000C8C69 /* UserViewController.swift */,
 				B70AB1311B73731200BAD62A /* LinkedUsersViewController.swift */,
 				B6D4134C1E141DBE001E8108 /* TabBarViewController.swift */,
+				B63C1A4D1E451AE000EF2F7C /* MyLibViewController.swift */,
 				B733B1F41B78CF04002FEAB6 /* PeopleViewController.swift */,
 				B7AA45571B79CAC8001D293A /* RootViewController.swift */,
 				3EF535B71E092A330049B2E9 /* ModalViewController.swift */,
@@ -1067,6 +1087,7 @@
 				B791879A1B4437FC002DFAB4 /* SocialTool.swift in Sources */,
 				B7A6BB991B7A0CFE0080497F /* ProfileViewController.swift in Sources */,
 				B7DA8EA91B8349EE0082ED5C /* SelectorView.swift in Sources */,
+				B63C1A4C1E2DEA0400EF2F7C /* SCLExtensions.swift in Sources */,
 				B7316E061B552FBD0079D387 /* StreamPlayer.swift in Sources */,
 				B674481B1E2C63CC0049890F /* MiscFuncs.swift in Sources */,
 				B674481A1E2C63CC0049890F /* MenuAction.swift in Sources */,
@@ -1089,6 +1110,7 @@
 				B794AD9E1B59305B0069C2A8 /* CommentMessageController.swift in Sources */,
 				B794AD951B58E0160069C2A8 /* CommentLabel.swift in Sources */,
 				B794AD9A1B592F930069C2A8 /* MessageController.swift in Sources */,
+				B63C1A4A1E2DE9EE00EF2F7C /* SCLAlertView.swift in Sources */,
 				B728153A1B5E4C400005BBC6 /* ViewersDataSource.swift in Sources */,
 				B6EAF8261E28CC84007038DC /* CategoryDataSource.swift in Sources */,
 				B7D5EA941B565B0B003EE25D /* MessageExtension.swift in Sources */,
@@ -1107,6 +1129,7 @@
 				B67448191E2C63CC0049890F /* DownloadTableViewController.swift in Sources */,
 				B79469FE1BE1F94B0071CC97 /* StreamExtension.swift in Sources */,
 				3EEF52BD1D83127C0015BA92 /* CategoriesViewController.swift in Sources */,
+				B63C1A4E1E451AE100EF2F7C /* MyLibViewController.swift in Sources */,
 				B7316E081B55342F0079D387 /* JoinStreamViewController.swift in Sources */,
 				B6782DDA1E1969F600289D8A /* ARNVTransitionAnimator.swift in Sources */,
 				A68B731D1BB28DBB00695C80 /* UIImage+imageWithColor.swift in Sources */,
@@ -1147,6 +1170,7 @@
 				B74188291B5CDD9400427156 /* ClosedMessageController.swift in Sources */,
 				B6EAF82C1E28F98B007038DC /* DiscoverViewControllerBK.swift in Sources */,
 				B77AABDE1B39847B007DE187 /* UserConnector.swift in Sources */,
+				B63C1A3D1E2DCC2300EF2F7C /* ModalPopup.swift in Sources */,
 				A6F80F1F1BBC13B800A376CD /* UINavigationBarExtension.swift in Sources */,
 				3EF535AD1E0920B90049B2E9 /* AnimatedTransitioning .swift in Sources */,
 				B6D413581E17AC1A001E8108 /* ARNImageZoomTransition.swift in Sources */,

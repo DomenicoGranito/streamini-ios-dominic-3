@@ -34,7 +34,7 @@
 	<key>Wowza</key>
 	<dict>
 		<key>host</key>
-		<string>cedricm.cn</string>
+		<string>spectator.live</string>
 		<key>port</key>
 		<string>1935</string>
 		<key>application</key>
@@ -58,6 +58,8 @@
 	</dict>
 	<key>API</key>
 	<dict>
+		<key>media</key>
+		<string>http://spectator.live</string>
 		<key>site</key>
 		<string>http://beinit.live</string>
 		<key>host</key>

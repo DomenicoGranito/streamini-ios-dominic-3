@@ -12,6 +12,10 @@ class AllCategoriesRow: UITableViewCell
     var sectionItemsArray:NSArray!
     var navigationControllerReference:UINavigationController?
     
+    
+    
+    
+    
     func reloadCollectionView()
     {
         collectionView!.reloadData()
@@ -24,12 +28,14 @@ class AllCategoriesRow: UITableViewCell
     
     func collectionView(collectionView:UICollectionView, cellForItemAtIndexPath indexPath:NSIndexPath)->UICollectionViewCell
     {
+        let (host, port, application, _, _) = Config.shared.wowza()
+       
         let cell=collectionView.dequeueReusableCellWithReuseIdentifier("videoCell", forIndexPath:indexPath) as! VideoCell
         
         let video=sectionItemsArray[indexPath.row] as! Stream
         cell.followersCountLbl?.text=video.user.name 
         cell.videoTitleLbl?.text=video.title
-        cell.videoThumbnailImageView?.sd_setImageWithURL(NSURL(string:"http://cedricm.cn/thumbs/\(video.id).jpg"))
+        cell.videoThumbnailImageView?.sd_setImageWithURL(NSURL(string:"http://\(host)/thumbs/\(video.id).jpg"))
         
         let cellRecognizer=UITapGestureRecognizer(target:self, action:#selector(cellTapped))
         cell.tag=indexPath.row

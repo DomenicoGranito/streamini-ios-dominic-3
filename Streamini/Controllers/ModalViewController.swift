@@ -22,6 +22,10 @@ class ModalViewController: UIViewController
     @IBOutlet var controlsView:UIView?
     @IBOutlet var seekBar:UISlider?
     
+    
+   // @IBOutlet weak var playerView: PlayerView!
+    
+    
     var liked=false
     var isPlaying=false
     var player:AVPlayer?

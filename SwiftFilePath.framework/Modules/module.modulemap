@@ -1,0 +1,10 @@
+framework module SwiftFilePath {
+  umbrella header "SwiftFilePath.h"
+
+  export *
+  module * { export * }
+}
+
+module SwiftFilePath.Swift {
+    header "SwiftFilePath-Swift.h"
+}

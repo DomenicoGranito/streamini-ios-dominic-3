@@ -1,4 +1,6 @@
+inhibit_all_warnings!
 target "Streamini" do
+    pod 'AFNetworking'
 	pod 'RestKit', '~> 0.24.0'
 	pod 'SimpleKeychain'
 	pod 'AWSS3'
@@ -9,4 +11,6 @@ target "Streamini" do
 	pod 'SVPullToRefresh'
 	pod 'PubNub', '~> 3.7.11'
 	pod 'MZFormSheetController'
+    
+    
 end

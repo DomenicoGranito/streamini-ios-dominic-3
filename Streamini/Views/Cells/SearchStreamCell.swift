@@ -14,7 +14,7 @@ class SearchStreamCell: StreamCell {
     @IBOutlet weak var streamNameLabel: UILabel!
     @IBOutlet weak var streamLiveView: StreamLiveView!
     @IBOutlet weak var streamNameLabelHeight: NSLayoutConstraint!
-    
+   
     var userSelectingHandler: UserSelectingHandler?
     
     override func awakeFromNib() {
@@ -29,6 +29,7 @@ class SearchStreamCell: StreamCell {
     
     override func update(stream: Stream) {
         super.update(stream)
+        let (host, port, application, _, _) = Config.shared.wowza()
         
         self.backgroundColor = UIColor.blackColor()
         userLabel.text = stream.user.name
@@ -40,7 +41,7 @@ class SearchStreamCell: StreamCell {
         self.streamLiveView.setCount(stream.viewers)
                 
         //streamImageView.sd_setImageWithURL(stream.urlToStreamImage())
-        streamImageView.sd_setImageWithURL(NSURL(string:"http://cedricm.cn/thumbs/\(stream.id).jpg"))
+        streamImageView.sd_setImageWithURL(NSURL(string:"http://\(host)/thumbs/\(stream.id).jpg"))
 
     }
 }

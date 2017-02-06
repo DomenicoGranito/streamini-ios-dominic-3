@@ -15,6 +15,7 @@ class RecentStreamCell: StreamCell {
     @IBOutlet weak var playImageView: UIImageView!
     @IBOutlet weak var playWidthConstraint: NSLayoutConstraint!
     
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -27,8 +28,11 @@ class RecentStreamCell: StreamCell {
     }
     
     override func update(stream: Stream) {
+      
+        let (host, port, application, _, _) = Config.shared.wowza()
+        
         super.update(stream)
-        playImageView.sd_setImageWithURL(NSURL(string:"http://cedricm.cn/thumbs/\(stream.id).jpg"))
+        playImageView.sd_setImageWithURL(NSURL(string:"http://\(host)/thumbs/\(stream.id).jpg"))
         userLabel.text = stream.user.name
         streamNameLabel.text  = stream.title
         streamEndedLabel.text = stream.ended!.timeAgoSimple

@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate ,WXApiDelegate{
 
@@ -193,13 +194,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,WXApiDelegate{
         
             addCustomMenuItems()
            
-        
+        // WeChat: replace with your AppID
+        WXApi.registerApp("wx68aa08d12b601234")
+
         
         
         //weixin login 
         let req = SendAuthReq()
         req.scope = "snsapi_userinfo" //Important that this is the same
-        req.state = "co.company.yourapp_wx_login" //This can be any random value
+        req.state = "com.uniprogy.dominic_wx_login" //This can be any random value
         WXApi.sendReq(req)
         
         
@@ -257,9 +260,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,WXApiDelegate{
             }
         }
         
-        // WeChat: replace with your AppID
-        WXApi.registerApp("wx68aa08d12b601234")
-
+      
         
         
         return true

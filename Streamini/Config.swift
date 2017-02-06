@@ -42,6 +42,13 @@ class Config: NSObject {
         let site: String = apiData["site"] as! String
         return (site)
     }
+
+    func media() -> (String) {
+        let apiData: NSDictionary = data!["API"] as! NSDictionary
+        let media: String = apiData["media"] as! String
+        return (media)
+    }
+
     
     func wowza() -> (host: String, port: String, application: String, username: String, password: String) {
         let wowzaData: NSDictionary = data!["Wowza"] as! NSDictionary

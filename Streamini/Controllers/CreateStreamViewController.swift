@@ -8,6 +8,8 @@
 
 import AVFoundation
 import CoreLocation
+import SCLAlertView
+
 
 class CreateStreamViewController: BaseViewController, UITextFieldDelegate, LocationManagerDelegate,
 UITextViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
@@ -36,6 +38,10 @@ UITextViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
     var categories = [Category]()
     var selectedCategory = Category()
     var keep = 0
+    
+    var user: User?
+   
+    
     
     // MARK: - Actions
     
@@ -72,7 +78,19 @@ UITextViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
         }
     }
     
+    func showModal() {
     
+    let alert = SCLAlertView()
+    alert.showSuccess("Hello World", subTitle: "This is a more descriptive text.")
+        
+        // Upon displaying, change/close view
+      //  alertViewResponder.setTitle("New Title") // Rename title
+       // alertViewResponder.setSubTitle("New description") // Rename subtitle
+        //alertViewResponder.close() // Close view
+        
+        
+       
+    }
     
     @IBAction func closeButtonPressed(sender: AnyObject) {
         LocationManager.shared.stopMonitoringLocation()
@@ -202,6 +220,8 @@ UITextViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
         nameTextView.becomeFirstResponder()
         
         StreamConnector().categories(categoriesSuccess, failure: categoriesFailure)
+        
+        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -211,6 +231,13 @@ UITextViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
         super.viewWillAppear(animated)
         keyboardHandler!.register()
         UIApplication.sharedApplication().setStatusBarHidden(true, withAnimation: .Fade)
+        
+       showModal()
+       if  (self.user?.id == 463)
+       {
+            showModal()
+       }
+        
     }
     
     override func viewDidAppear(animated: Bool) {

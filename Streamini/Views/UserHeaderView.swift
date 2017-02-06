@@ -25,7 +25,7 @@ class UserHeaderView: UIView, UITextViewDelegate {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        likeIcon.tintColor = UIColor.navigationBarColor()
+      //  likeIcon.tintColor = UIColor.navigationBarColor()
         
         // Set placeholder for NameTextView
         if userDescriptionTextView != nil {
