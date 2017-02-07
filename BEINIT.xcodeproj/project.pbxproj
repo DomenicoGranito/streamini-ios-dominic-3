@@ -94,6 +94,7 @@
 		B674485E1E2CBB7D0049890F /* SwiftFilePath.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B674485D1E2CBB7D0049890F /* SwiftFilePath.framework */; };
 		B67448601E2CBF830049890F /* SwiftFilePath.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B674485D1E2CBB7D0049890F /* SwiftFilePath.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B6782DDA1E1969F600289D8A /* ARNVTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6782DD91E1969F500289D8A /* ARNVTransitionAnimator.swift */; };
+		B6A941CF1E48AB00003E2331 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A941CE1E48AB00003E2331 /* SettingsViewController.swift */; };
 		B6D198A51E23883F008B8604 /* ChartsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D198A41E23883F008B8604 /* ChartsViewController.swift */; };
 		B6D4134D1E141DBE001E8108 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D4134C1E141DBE001E8108 /* TabBarViewController.swift */; };
 		B6D4134F1E156829001E8108 /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D4134E1E156829001E8108 /* DiscoverViewController.swift */; };
@@ -315,6 +316,7 @@
 		B67448571E2C96B90049890F /* UIViewController+Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIViewController+Alert.swift"; path = "MediaLibrary/helper/extensions/UIViewController+Alert.swift"; sourceTree = "<group>"; };
 		B674485D1E2CBB7D0049890F /* SwiftFilePath.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SwiftFilePath.framework; sourceTree = "<group>"; };
 		B6782DD91E1969F500289D8A /* ARNVTransitionAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ARNVTransitionAnimator.swift; path = ARNTransitionAnimator/ARNVTransitionAnimator.swift; sourceTree = "<group>"; };
+		B6A941CE1E48AB00003E2331 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		B6D198A41E23883F008B8604 /* ChartsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartsViewController.swift; sourceTree = "<group>"; };
 		B6D4134C1E141DBE001E8108 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		B6D4134E1E156829001E8108 /* DiscoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverViewController.swift; sourceTree = "<group>"; };
@@ -877,6 +879,7 @@
 				B733B1F41B78CF04002FEAB6 /* PeopleViewController.swift */,
 				B7AA45571B79CAC8001D293A /* RootViewController.swift */,
 				3EF535B71E092A330049B2E9 /* ModalViewController.swift */,
+				B6A941CE1E48AB00003E2331 /* SettingsViewController.swift */,
 				B7AA45591B79F766001D293A /* ContainerViewController.swift */,
 				B7A6BB981B7A0CFE0080497F /* ProfileViewController.swift */,
 				B6D4134E1E156829001E8108 /* DiscoverViewController.swift */,
@@ -1182,6 +1185,7 @@
 				B6EAF8281E28EF6E007038DC /* AllCategoryRow.swift in Sources */,
 				B6D413571E17AC1A001E8108 /* ARNImageTransitionNavigationController.swift in Sources */,
 				B7AA45581B79CAC8001D293A /* RootViewController.swift in Sources */,
+				B6A941CF1E48AB00003E2331 /* SettingsViewController.swift in Sources */,
 				3E20216F1D81AB440058DAAD /* CategoryRow.swift in Sources */,
 				B7763AFF1B6110A600D469E3 /* NSDateExtension.swift in Sources */,
 				B77AABEC1B398B03007DE187 /* Error.swift in Sources */,

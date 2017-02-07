@@ -32,14 +32,12 @@ class MyLibViewController: UITableViewController {
 
     
     override func viewDidLoad() {
-     //   super.viewDidLoad()
-      //  configureView()
-        UserConnector().get(nil, success:successGetUser, failure:successFailure)
-      //  let userId = UserContainer.shared.logged().id
-       // dataSource = UserStatisticsDataSource.create(type, userId: userId, tableView: tableView)
-       // dataSource!.profileDelegate = profileDelegate
-      //  dataSource!.userSelectedDelegate = self
-       // dataSource!.reload()
+        let storyboard=UIStoryboard(name:"Main", bundle:nil)
+        let vc=storyboard.instantiateViewControllerWithIdentifier("PeopleViewController") as! PeopleViewController
+       // vc.user=user
+        navigationController?.pushViewController(vc, animated:true)
+        
+    
     }
 
    // @IBOutlet var MyProfile : UIButton!
