@@ -167,10 +167,12 @@ class Playlist: UITableViewController, UISearchResultsUpdating, PlaylistDelegate
     }
     func resetX(){
         x = []
+        if (songs != nil) {
         if songs.count > 0 {
             for index in 0 ..< songs.count {
                 x += [index]
             }
+        }
         }
     }
     

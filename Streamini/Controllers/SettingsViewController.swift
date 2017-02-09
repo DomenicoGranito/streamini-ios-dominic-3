@@ -18,9 +18,9 @@ protocol ProfilesDelegate: class {
     func close()
 }
 
-class SettingsViewController: BaseTableViewController, UIActionSheetDelegate,
-    UINavigationControllerDelegate,
-ProfileDelegate {
+//class SettingsViewController: UITableViewController, UIActionSheetDelegate,
+  //  UINavigationControllerDelegate, ProfilesDelegate {
+class SettingsViewController: UITableViewController {
     //@IBOutlet weak var userHeaderView: UserHeaderView!
     @IBOutlet weak var accountLabel: UILabel!
     @IBOutlet weak var accountValueLabel: UILabel!
@@ -30,72 +30,63 @@ ProfileDelegate {
     @IBOutlet weak var blockedValueLabel: UILabel!
     @IBOutlet weak var streamsLabel: UILabel!
     @IBOutlet weak var streamsValueLabel: UILabel!
+     @IBOutlet weak var aboutLabel: UILabel!
+     @IBOutlet weak var notificationLabel: UILabel!
     @IBOutlet weak var shareLabel: UILabel!
     @IBOutlet weak var logoutLabel: UILabel!
     
     var user: User?
-    var profileDelegate: ProfilesDelegate?
+    var profilesDelegate: ProfilesDelegate?
     var selectedImage: UIImage?
     
     
-    func logout() {
-        let actionSheet = UIActionSheet.confirmLogoutActionSheet(self)
-        actionSheet.tag = ProfilesActionSheetType.Logout.rawValue
-        actionSheet.showInView(self.view)
-    }
-    
+       
     func configureView()
     {
-        self.title = NSLocalizedString("profile_title", comment: "")
-        accountLabel.text = NSLocalizedString("profile_following", comment: "")
-        followersLabel.text = NSLocalizedString("profile_followers", comment: "")
-        blockedLabel.text   = NSLocalizedString("profile_blocked", comment: "")
-        streamsLabel.text   = NSLocalizedString("profile_streams", comment: "")
-        shareLabel.text     = NSLocalizedString("profile_share", comment: "")
+        self.title = "Settings"
+        accountLabel.text = "Account"
+        followersLabel.text = "Playback"
+        blockedLabel.text   = "Streaming Quality"
+        streamsLabel.text   = "Social"
+        notificationLabel.text = "Notifications"
+        aboutLabel.text = "About"
+        shareLabel.text     = "Devices"
         logoutLabel.text    = NSLocalizedString("profile_logout", comment: "")
          
       
     }
-    
+   
+    func logout() {
+ //       let actionSheet = UIActionSheet.confirmLogoutActionSheet(self)
+   //     actionSheet.tag = ProfilesActionSheetType.Logout.rawValue
+     //   actionSheet.showInView(self.view)
+    }
+
     func successGetUser(user: User) {
         self.user = user
-      
+       
         
-        accountValueLabel.text    = "\(user.following)"
-        followersValueLabel.text    = "\(user.followers)"
-        blockedValueLabel.text      = "\(user.blocked)"
-        streamsValueLabel.text      = "\(user.streams)"
-        
-        self.navigationItem.rightBarButtonItem = nil
+       // self.navigationItem.rightBarButtonItem = nil
     }
     
     func successFailure(error: NSError) {
-        handleError(error)
+   //     handleError(error)
     }
-    
-    
-    
-    func navigationController(navigationController: UINavigationController, didShowViewController viewController: UIViewController, animated: Bool) {
-        
-        
-        navigationController.navigationBar.tintColor = UIColor.blueColor()
-        navigationController.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.blueColor()]
-        
-        // navigationController.navigationBar.tintColor = UIColor.whiteColor()
-        // navigationController.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
+
+    func logoutFailure(error: NSError) {
+        print("failure", terminator: "")
     }
-    
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
         self.configureView()
-        
-        let activator=UIActivityIndicatorView(activityIndicatorStyle:.White)
-        activator.startAnimating()
-        
-        self.navigationItem.rightBarButtonItem=UIBarButtonItem(customView:activator)
         UserConnector().get(nil, success:successGetUser, failure:successFailure)
+       // let activator=UIActivityIndicatorView(activityIndicatorStyle:.White)
+        //activator.startAnimating()
+        
+       // self.navigationItem.rightBarButtonItem=UIBarButtonItem(customView:activator)
+       
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -111,25 +102,20 @@ ProfileDelegate {
         
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if let sid = segue.identifier {
-            if sid == "ProfileToLegal" {
-                let controller = segue.destinationViewController as! LegalViewController
-                let index = (sender as! NSIndexPath).row
-                controller.type = (index == 2) ? LegalViewControllerType.TermsOfService : LegalViewControllerType.PrivacyPolicy
-            }
-            
-            if sid == "ProfileToProfileStatistics" {
-                let controller = segue.destinationViewController as! ProfileStatisticsViewController
-                let index = (sender as! NSIndexPath).row
-                controller.type = ProfileStatisticsType(rawValue: index)!
-                controller.profileDelegate = self
+        
+    func actionSheet(actionSheet: UIActionSheet, clickedButtonAtIndex buttonIndex: Int) {
+        
+        if actionSheet.tag == ProfilesActionSheetType.Logout.rawValue {
+            if buttonIndex != actionSheet.cancelButtonIndex {
+                UserConnector().logout(logoutSuccess, failure: logoutFailure)
             }
         }
     }
+
+   
     
-    
-      func logoutSuccess()
+ 
+    func logoutSuccess()
     {
         if A0SimpleKeychain().stringForKey("PHPSESSID") != nil
         {
@@ -164,55 +150,31 @@ ProfileDelegate {
         self.navigationController!.popToRootViewControllerAnimated(true)
     }
     
-    func logoutFailure(error: NSError) {
-        print("failure", terminator: "")
-    }
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: false)
-        
-        if indexPath.section == 1 { // following, followers, blocked, streams
-            self.performSegueWithIdentifier("ProfileToProfileStatistics", sender: indexPath)
-        }
-        
-        if indexPath.section == 2 && indexPath.row == 0 { // share
-            UINavigationBar.resetCustomAppereance()
-            let shareMessage = NSLocalizedString("profile_share_message", comment: "")
-            let activityController = UIActivityViewController(activityItems: [shareMessage], applicationActivities: nil)
-            self.presentViewController(activityController, animated: true, completion: nil)
-        }
-        
-        if indexPath.section == 2 && indexPath.row == 1 { // feedback
-            UINavigationBar.resetCustomAppereance()
-          
-        }
-        
-        if indexPath.section == 2 && indexPath.row == 2 { // Terms Of Service
-            self.performSegueWithIdentifier("ProfileToLegal", sender: indexPath)
-        }
-        
-        if indexPath.section == 2 && indexPath.row == 3 { // Privacy Policy
-            self.performSegueWithIdentifier("ProfileToLegal", sender: indexPath)
-        }
-        
-        if indexPath.section == 3 && indexPath.row == 0 { // Change Password
-            self.performSegueWithIdentifier("ProfileToPassword", sender: indexPath)
-        }
-        
-        if indexPath.section == 3 && indexPath.row == 1 { // logout
-            logout()
-        }
-    }
-    
-    
-      func reload() {
+    func reload() {
         UserConnector().get(nil, success: successGetUser, failure: successFailure)
     }
     
     func close() {
     }
+
+   
+    
+   
+   // override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+     //   tableView.deselectRowAtIndexPath(indexPath, animated: false)
+        
+                     
+    
+       // if indexPath.section == 1 && indexPath.row == 1 { // logout
+         //   logout()
+       // }
+   // }
+    
+
     
     
+       
    
     
    }

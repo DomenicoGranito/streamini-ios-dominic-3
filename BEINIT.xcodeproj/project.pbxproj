@@ -95,6 +95,7 @@
 		B67448601E2CBF830049890F /* SwiftFilePath.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B674485D1E2CBB7D0049890F /* SwiftFilePath.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B6782DDA1E1969F600289D8A /* ARNVTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6782DD91E1969F500289D8A /* ARNVTransitionAnimator.swift */; };
 		B6A941CF1E48AB00003E2331 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A941CE1E48AB00003E2331 /* SettingsViewController.swift */; };
+		B6A941D11E4AA98A003E2331 /* SubscriptionVewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A941D01E4AA98A003E2331 /* SubscriptionVewController.swift */; };
 		B6D198A51E23883F008B8604 /* ChartsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D198A41E23883F008B8604 /* ChartsViewController.swift */; };
 		B6D4134D1E141DBE001E8108 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D4134C1E141DBE001E8108 /* TabBarViewController.swift */; };
 		B6D4134F1E156829001E8108 /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D4134E1E156829001E8108 /* DiscoverViewController.swift */; };
@@ -317,6 +318,7 @@
 		B674485D1E2CBB7D0049890F /* SwiftFilePath.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SwiftFilePath.framework; sourceTree = "<group>"; };
 		B6782DD91E1969F500289D8A /* ARNVTransitionAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ARNVTransitionAnimator.swift; path = ARNTransitionAnimator/ARNVTransitionAnimator.swift; sourceTree = "<group>"; };
 		B6A941CE1E48AB00003E2331 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		B6A941D01E4AA98A003E2331 /* SubscriptionVewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscriptionVewController.swift; sourceTree = "<group>"; };
 		B6D198A41E23883F008B8604 /* ChartsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartsViewController.swift; sourceTree = "<group>"; };
 		B6D4134C1E141DBE001E8108 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		B6D4134E1E156829001E8108 /* DiscoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverViewController.swift; sourceTree = "<group>"; };
@@ -885,6 +887,7 @@
 				B6D4134E1E156829001E8108 /* DiscoverViewController.swift */,
 				B6EAF82B1E28F98B007038DC /* DiscoverViewControllerBK.swift */,
 				B79669841B821C5D0071AF91 /* LegalViewController.swift */,
+				B6A941D01E4AA98A003E2331 /* SubscriptionVewController.swift */,
 				B71BA5DA1B84A86C0055F427 /* ProfileStatisticsViewController.swift */,
 				A631E6311D378D95002C7F78 /* PasswordViewController.swift */,
 				A60F82EE1D4917FE002E2CEA /* SearchViewController.swift */,
@@ -1138,6 +1141,7 @@
 				A68B731D1BB28DBB00695C80 /* UIImage+imageWithColor.swift in Sources */,
 				3E20216D1D81A6530058DAAD /* HomeViewController.swift in Sources */,
 				B7E15E571B6A6C1B000C8C69 /* DefaultStreamPlayerDelegate.swift in Sources */,
+				B6A941D11E4AA98A003E2331 /* SubscriptionVewController.swift in Sources */,
 				B733B1F51B78CF04002FEAB6 /* PeopleViewController.swift in Sources */,
 				3EF1F02C1D7197310055A372 /* GetStartedViewController.swift in Sources */,
 				B79669851B821C5D0071AF91 /* LegalViewController.swift in Sources */,

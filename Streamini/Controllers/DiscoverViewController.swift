@@ -5,9 +5,13 @@
 //  Created by Ankit Garg on 9/9/16.
 //  Copyright © 2016 UniProgy s.r.o. All rights reserved.
 //
-
-class DiscoverViewController: BaseViewController
+//BaseViewController
+class DiscoverViewController:BaseViewController
 {
+   
+   
+   
+    
     @IBOutlet var itemsTbl:UITableView?
     
     var allItemsArray=NSMutableArray()
@@ -21,8 +25,11 @@ class DiscoverViewController: BaseViewController
     {
         configureView()
         
+        
+        
         StreamConnector().categories(categoriesSuccess, failure:categoriesFailure)
     }
+    
     
     override func viewWillAppear(animated:Bool)
     {
@@ -33,21 +40,21 @@ class DiscoverViewController: BaseViewController
     {
         return allItemsArray.count
     }
-
+//UITableViewCell
     func tableView(tableView:UITableView, cellForRowAtIndexPath indexPath:NSIndexPath)->UITableViewCell
     {
+        
         let cell=tableView.dequeueReusableCellWithIdentifier("cell") as! AllCategoryRow
         
-        cell.sectionItemsArray=allItemsArray[indexPath.row] as! NSArray
-        cell.navigationControllerReference=navigationController
-        
-        
+            cell.sectionItemsArray=allItemsArray[indexPath.row] as! NSArray
+            cell.navigationControllerReference=navigationController
+            
         
         return cell
     }
     
     
-
+    
     
     
     func tableView(tableView:UITableView, willDisplayCell cell:UITableViewCell, forRowAtIndexPath indexPath:NSIndexPath)

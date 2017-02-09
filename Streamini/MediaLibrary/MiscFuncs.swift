@@ -104,7 +104,7 @@ public class MiscFuncs{
             
             settings.setValue(0, forKey: "quality")
             settings.setValue(0, forKey: "cache")
-            settings.setValue("https://www.youtube.com/playlist?list=PLyD2IQPajS7Z3VcvQmqJWPOQtXQ1qnDha", forKey: "playlist")
+            settings.setValue("https://www.spectator.live/playlist?list=PLyD2IQPajS7Z3VcvQmqJWPOQtXQ1qnDha", forKey: "playlist")
             do {
                 try context.save()
             } catch _ {

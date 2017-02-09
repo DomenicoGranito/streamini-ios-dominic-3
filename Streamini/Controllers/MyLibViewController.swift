@@ -32,12 +32,7 @@ class MyLibViewController: UITableViewController {
 
     
     override func viewDidLoad() {
-        let storyboard=UIStoryboard(name:"Main", bundle:nil)
-        let vc=storyboard.instantiateViewControllerWithIdentifier("PeopleViewController") as! PeopleViewController
-       // vc.user=user
-        navigationController?.pushViewController(vc, animated:true)
-        
-    
+          
     }
 
    // @IBOutlet var MyProfile : UIButton!
@@ -64,17 +59,7 @@ class MyLibViewController: UITableViewController {
     }
 
     
-    @IBAction func tapMyProfileButton(user:User)
-    {
-     
-        let storyboard=UIStoryboard(name:"Main", bundle:nil)
-        let vc=storyboard.instantiateViewControllerWithIdentifier("UserViewControllerId") as! UserViewController
-        vc.user=user
-        navigationController?.pushViewController(vc, animated:true)
-        
-        
-    }
-    
+       
    
 }
 

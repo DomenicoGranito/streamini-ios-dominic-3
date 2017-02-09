@@ -36,16 +36,22 @@ class UserViewController: BaseViewController, ProfileDelegate
     @IBOutlet var followingLabel:UILabel!
     @IBOutlet var followButton:UIButton!
     @IBOutlet var activityIndicator:UIActivityIndicatorView!
-    
+    @IBOutlet var more_dwn:UIButton!
     var user:User?
     var userStatisticsDelegate:UserStatisticsDelegate?
     var userStatusDelegate:UserStatusDelegate?
+    var downloadManager: DownloadManager!
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
         
         configureView()
+        
+        //testing
+       //  userHeaderView.delegate = self
+        //end test
+        
         update(user!.id)
         
         recentButtonPressed()
@@ -67,6 +73,16 @@ class UserViewController: BaseViewController, ProfileDelegate
         followButton.hidden=UserContainer.shared.logged().id==user!.id
     }
 
+    @IBAction func more_dwnButtonPressed()
+    {
+       var stream: Stream
+        var strurl:String
+            strurl = "Http://spectator.live/media/(stream.id)"
+            downloadManager.startDownloadVideoOrPlaylist(url: strurl)
+            self.navigationController?.popViewControllerAnimated(true)
+        
+    }
+    
     @IBAction func recentButtonPressed()
     {
         if let del=userStatisticsDelegate
