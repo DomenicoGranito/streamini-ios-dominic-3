@@ -12,8 +12,6 @@ class CategoryRow: UITableViewCell
     var oneCategoryItemsArray:NSArray!
     var navigationControllerReference:UINavigationController?
     
-    
-    
     func reloadCollectionView()
     {
         collectionView!.reloadData()
@@ -47,12 +45,6 @@ class CategoryRow: UITableViewCell
         
         let root=UIApplication.sharedApplication().delegate!.window!?.rootViewController as! UINavigationController
         
-        
-        
-        
-        
-        
-        
         let storyboardn=UIStoryboard(name:"Main", bundle:nil)
         let modalVC=storyboardn.instantiateViewControllerWithIdentifier("ModalViewController") as! ModalViewController
        
@@ -84,7 +76,5 @@ class CategoryRow: UITableViewCell
       //  joinController.stream=video
     //    joinController.isRecent=(video.ended != nil)
        // root.presentViewController(joinNavController, animated:true, completion:nil)
-        
-       
     }
 }

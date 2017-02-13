@@ -5,57 +5,39 @@
 //  Created by Ankit Garg on 9/9/16.
 //  Copyright © 2016 UniProgy s.r.o. All rights reserved.
 //
-//BaseViewController
+
 class DiscoverViewController:BaseViewController
 {
-   
-   
-   
-    
     @IBOutlet var itemsTbl:UITableView?
     
     var allItemsArray=NSMutableArray()
     
-    func configureView()
-    {
-        self.title=NSLocalizedString("Discover", comment:"")
-    }
-    
     override func viewDidLoad()
     {
-        configureView()
-        
-        
+        self.title=NSLocalizedString("Discover", comment:"")
         
         StreamConnector().categories(categoriesSuccess, failure:categoriesFailure)
     }
-    
     
     override func viewWillAppear(animated:Bool)
     {
         UIApplication.sharedApplication().setStatusBarHidden(false, withAnimation:.Fade)
     }
-
+    
     func tableView(tableView:UITableView, numberOfRowsInSection section:Int)->Int
     {
         return allItemsArray.count
     }
-//UITableViewCell
+    
     func tableView(tableView:UITableView, cellForRowAtIndexPath indexPath:NSIndexPath)->UITableViewCell
     {
-        
         let cell=tableView.dequeueReusableCellWithIdentifier("cell") as! AllCategoryRow
         
-            cell.sectionItemsArray=allItemsArray[indexPath.row] as! NSArray
-            cell.navigationControllerReference=navigationController
-            
+        cell.sectionItemsArray=allItemsArray[indexPath.row] as! NSArray
+        cell.navigationControllerReference=navigationController
         
         return cell
     }
-    
-    
-    
-    
     
     func tableView(tableView:UITableView, willDisplayCell cell:UITableViewCell, forRowAtIndexPath indexPath:NSIndexPath)
     {
@@ -69,7 +51,7 @@ class DiscoverViewController:BaseViewController
         allItemsArray.addObjectsFromArray(getData(cats) as [AnyObject])
         itemsTbl?.reloadData()
     }
-
+    
     func categoriesFailure(error:NSError)
     {
         handleError(error)

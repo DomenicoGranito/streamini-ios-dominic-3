@@ -12,10 +12,6 @@ class AllCategoriesRow: UITableViewCell
     var sectionItemsArray:NSArray!
     var navigationControllerReference:UINavigationController?
     
-    
-    
-    
-    
     func reloadCollectionView()
     {
         collectionView!.reloadData()
@@ -50,26 +46,16 @@ class AllCategoriesRow: UITableViewCell
         
         let video=sectionItemsArray[gestureRecognizer.view!.tag] as! Stream
         
-        
-        
-        
         let storyboardn=UIStoryboard(name:"Main", bundle:nil)
         let modalVC=storyboardn.instantiateViewControllerWithIdentifier("ModalViewController") as! ModalViewController
         
        // let video=oneCategoryItemsArray[gestureRecognizer.view!.tag] as! Stream
         
         modalVC.stream=video
-        
-        
+    
         root.presentViewController(modalVC, animated:true, completion:nil)
-        
-        
-     
     }
 
-    
-    
-    
     func bkcellTapped(gestureRecognizer:UITapGestureRecognizer)
     {
         let root=UIApplication.sharedApplication().delegate!.window!?.rootViewController as! UINavigationController
