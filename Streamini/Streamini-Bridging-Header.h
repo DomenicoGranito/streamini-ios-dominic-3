@@ -19,6 +19,7 @@
 
 #import "WXApi.h"
 #import <SwiftFilePath/SwiftFilePath.h>
+#import <NVActivityIndicatorView/NVActivityIndicatorView.h>
 //#import <SCLAlertView/SCLAlertView-Swift.h>
 
 

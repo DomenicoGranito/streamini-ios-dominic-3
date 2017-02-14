@@ -24,9 +24,6 @@ class DiscoverViewController:BaseViewController
     override func viewDidLoad()
     {
         configureView()
-        
-        
-        
         StreamConnector().categories(categoriesSuccess, failure:categoriesFailure)
     }
     

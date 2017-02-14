@@ -28,6 +28,8 @@ UITextViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
     @IBOutlet weak var locationLabelWidthConstraint: NSLayoutConstraint!
     @IBOutlet weak var categoryPickerConstraint: NSLayoutConstraint!
     
+    @IBOutlet weak var closeButton: UIButton!
+    
     @IBOutlet weak var goLiveButton: UIButton!
     @IBOutlet weak var trashButton: UIButton!
     
@@ -81,23 +83,48 @@ UITextViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
     func showModal() {
     
     let alert = SCLAlertView()
-    alert.showSuccess("Hello World", subTitle: "This is a more descriptive text.")
+    alert.addTextField("Want live streaming?")
+   // alert.addButton("First Button", target:closeButtonPressed(sender: AnyObject), selector:Selector("firstButton"))
+       // let evenField = alert.addButton("Login"){}
+       // let alertView = SCLAlertView()
+        alert.addButton("First Button", target:self, selector:Selector("firstButton"))
+        alert.addButton("Second Button") {
+            print("Second button tapped")
+        }
+        alert.showSuccess("Button View", subTitle: "This alert view has buttons")
+
         
+       // if evenField.
+        //{
+          //  LocationManager.shared.stopMonitoringLocation()
+           // self.nameTextView.resignFirstResponder()
+           // self.navigationController?.popViewControllerAnimated(true)
+           // self.dismissViewControllerAnimated(true, completion: nil)
+
+        //}
+
+    alert.showSuccess("PREMIUM FEATURE", subTitle: "Get unlimited live streams with BEINIT.")
+    
         // Upon displaying, change/close view
       //  alertViewResponder.setTitle("New Title") // Rename title
        // alertViewResponder.setSubTitle("New description") // Rename subtitle
         //alertViewResponder.close() // Close view
         
         
-       
     }
     
-    @IBAction func closeButtonPressed(sender: AnyObject) {
-        LocationManager.shared.stopMonitoringLocation()
-        self.nameTextView.resignFirstResponder()
-        self.navigationController?.popViewControllerAnimated(true)
-       // self.dismissViewControllerAnimated(true, completion: nil)
-           }
+    @IBAction func closeButtonPressed() {
+        
+        
+        navigationController?.popViewControllerAnimated(true)
+        
+         LocationManager.shared.stopMonitoringLocation()
+         self.nameTextView.resignFirstResponder()
+         self.navigationController?.popViewControllerAnimated(true)
+        self.dismissViewControllerAnimated(true, completion: nil)
+        self.presentingViewController?.dismissViewControllerAnimated(true, completion:nil )
+    }
+   
     
     // MARK: - Network responses
     

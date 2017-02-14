@@ -11,6 +11,34 @@ import MessageUI
 
 
 
+
+class TableViewCellb: UITableViewCell {
+    
+    @IBOutlet private weak var collectionView: UICollectionView!
+    
+}
+
+class TableViewCella: UITableViewCell {
+    
+    @IBOutlet private weak var collectionView: UICollectionView!
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 class bkDiscoverViewController: BaseTableViewController, UINavigationControllerDelegate {
     
     @IBOutlet weak var followingLabel: UILabel!

@@ -17,7 +17,7 @@ class BackgroundVideo{
     var videoURL: NSURL?
     var viewController:UIViewController?
     var hasBeenUsed: Bool = false
-    
+
     
     init (onViewController: UIViewController, withVideoURL URL: String) {
         self.viewController = onViewController

@@ -6,6 +6,28 @@
 //  Copyright © 2016 UniProgy s.r.o. All rights reserved.
 //
 
+extension UIFont {
+    
+    func withTraits(traits:UIFontDescriptorSymbolicTraits...) -> UIFont {
+        let descriptor = self.fontDescriptor().fontDescriptorWithSymbolicTraits(UIFontDescriptorSymbolicTraits(traits))
+        return UIFont(descriptor: descriptor!, size: 0)
+    }
+    
+    func bold() -> UIFont {
+        return withTraits(.TraitBold)
+    }
+    
+    func italic() -> UIFont {
+        return withTraits(.TraitItalic)
+    }
+    
+    func boldItalic() -> UIFont {
+        return withTraits(.TraitBold, .TraitItalic)
+    }
+    
+}
+
+
 class HomeViewController: BaseViewController
 {
     @IBOutlet var itemsTbl:UITableView?
@@ -73,13 +95,17 @@ class HomeViewController: BaseViewController
             titleLbl.text=categoryNamesArray[section].uppercaseString
         }
         
-        titleLbl.font=UIFont.systemFontOfSize(14)
-        titleLbl.textColor=UIColor.lightGrayColor()
+        titleLbl.font=UIFont.systemFontOfSize(24)
+       // titleLbl.font=UIFont.boldSystemFontOfSize(<#T##fontSize: CGFloat##CGFloat#>)
+        titleLbl.textColor=UIColor(colorLiteralRed:190/255, green:142/255, blue:64/255, alpha:1) //UIColor.lightGrayColor()
         
         let accessoryLbl=UILabel(frame:CGRectMake(tableView.frame.size.width-25, 20, 20, 20))
        // accessoryLbl.text=">"
-        accessoryLbl.font=UIFont.systemFontOfSize(18)
-        accessoryLbl.textColor=UIColor.lightGrayColor()
+        accessoryLbl.font=UIFont.systemFontOfSize(22)
+        accessoryLbl.textColor=UIColor(colorLiteralRed:190/255, green:142/255, blue:64/255, alpha:1)   ////lightGrayColor()
+        
+        
+        
         
         let lineView=UIView(frame:CGRectMake(5, 45, tableView.frame.size.width-10, 1))
         lineView.backgroundColor=UIColor.darkGrayColor()

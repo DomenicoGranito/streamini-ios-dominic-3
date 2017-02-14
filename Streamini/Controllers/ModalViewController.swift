@@ -98,7 +98,7 @@ class ModalViewController: UIViewController
     
     func hideControls()
     {
-        controlsView?.hidden=true
+       // controlsView?.hidden=true
     }
     
     func secondsToReadableTime(durationSeconds:Int)->String
@@ -187,6 +187,17 @@ class ModalViewController: UIViewController
     {
         
     }
+    
+    func userDidSelected(user:User)
+    {
+        let storyboard=UIStoryboard(name:"Main", bundle:nil)
+        let vc=storyboard.instantiateViewControllerWithIdentifier("UserViewControllerId") as! UserViewController
+        vc.user=user
+        navigationController?.pushViewController(vc, animated:true)
+        
+        
+    }
+
     
     @IBAction func more()
     {
