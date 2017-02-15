@@ -98,8 +98,6 @@
 		B6782DDA1E1969F600289D8A /* ARNVTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6782DD91E1969F500289D8A /* ARNVTransitionAnimator.swift */; };
 		B6A941CF1E48AB00003E2331 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A941CE1E48AB00003E2331 /* SettingsViewController.swift */; };
 		B6A941D11E4AA98A003E2331 /* SubscriptionVewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A941D01E4AA98A003E2331 /* SubscriptionVewController.swift */; };
-		B6BB60E01E4EAFB8009566E9 /* NVActivityIndicatorView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B6BB60DF1E4EAFB8009566E9 /* NVActivityIndicatorView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		B6BB60E11E4EAFC9009566E9 /* NVActivityIndicatorView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6BB60DF1E4EAFB8009566E9 /* NVActivityIndicatorView.framework */; };
 		B6D198A51E23883F008B8604 /* ChartsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D198A41E23883F008B8604 /* ChartsViewController.swift */; };
 		B6D4134D1E141DBE001E8108 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D4134C1E141DBE001E8108 /* TabBarViewController.swift */; };
 		B6D4134F1E156829001E8108 /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D4134E1E156829001E8108 /* DiscoverViewController.swift */; };
@@ -221,7 +219,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				B6BB60E01E4EAFB8009566E9 /* NVActivityIndicatorView.framework in Embed Frameworks */,
 				B67448601E2CBF830049890F /* SwiftFilePath.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -326,7 +323,6 @@
 		B6782DD91E1969F500289D8A /* ARNVTransitionAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ARNVTransitionAnimator.swift; path = ARNTransitionAnimator/ARNVTransitionAnimator.swift; sourceTree = "<group>"; };
 		B6A941CE1E48AB00003E2331 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		B6A941D01E4AA98A003E2331 /* SubscriptionVewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscriptionVewController.swift; sourceTree = "<group>"; };
-		B6BB60DF1E4EAFB8009566E9 /* NVActivityIndicatorView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = NVActivityIndicatorView.framework; sourceTree = "<group>"; };
 		B6D198A41E23883F008B8604 /* ChartsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartsViewController.swift; sourceTree = "<group>"; };
 		B6D4134C1E141DBE001E8108 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		B6D4134E1E156829001E8108 /* DiscoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverViewController.swift; sourceTree = "<group>"; };
@@ -453,7 +449,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B6BB60E11E4EAFC9009566E9 /* NVActivityIndicatorView.framework in Frameworks */,
 				B674485E1E2CBB7D0049890F /* SwiftFilePath.framework in Frameworks */,
 				B67448321E2C7FB40049890F /* MobileCoreServices.framework in Frameworks */,
 				B66561E31E09884100EDA684 /* libWeChatSDK.a in Frameworks */,
@@ -494,7 +489,6 @@
 			isa = PBXGroup;
 			children = (
 				865C333F1E520459008EA556 /* GameKit.framework */,
-				B6BB60DF1E4EAFB8009566E9 /* NVActivityIndicatorView.framework */,
 				B674485D1E2CBB7D0049890F /* SwiftFilePath.framework */,
 				B67448311E2C7FB30049890F /* MobileCoreServices.framework */,
 				B66561EA1E09890600EDA684 /* libz.tbd */,
