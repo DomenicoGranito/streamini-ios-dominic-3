@@ -59,7 +59,16 @@ class AllCategoryRow: UITableViewCell
         let video=sectionItemsArray[gestureRecognizer.view!.tag] as! Category
         
         let storyboard=UIStoryboard(name:"Main", bundle:nil)
-        let modalVC=storyboard.instantiateViewControllerWithIdentifier("CategoriesViewController") as! CategoriesViewController
+        
+        
+        //
+        let modalVC=storyboard.instantiateViewControllerWithIdentifier("SeriesViewController") as! SeriesViewController
+        navigationControllerReference?.pushViewController(modalVC, animated:true)
+
+
+        
+        
+       //here let modalVC=storyboard.instantiateViewControllerWithIdentifier("CategoriesViewController") as! CategoriesViewController
         
         
       //  let storyboardn=UIStoryboard(name:"Main", bundle:nil)
@@ -68,8 +77,9 @@ class AllCategoryRow: UITableViewCell
         // let video=oneCategoryItemsArray[gestureRecognizer.view!.tag] as! Category
         
         //modalVC.stream=video
-        modalVC.categoryName=video.name
-        modalVC.categoryID=Int(video.id)
+      //here  modalVC.categoryName=video.name
+     //here   modalVC.categoryID=Int(video.id)
+        
         navigationControllerReference?.pushViewController(modalVC, animated:true)
         
        // root.presentViewController(modalVC, animated:true, completion:nil)

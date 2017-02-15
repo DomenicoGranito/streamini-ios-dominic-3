@@ -31,6 +31,7 @@
 		3EF535B41E0921430049B2E9 /* LineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF535B31E0921430049B2E9 /* LineView.swift */; };
 		3EF535B61E0922D40049B2E9 /* MusicPlayerTransitionAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF535B51E0922D40049B2E9 /* MusicPlayerTransitionAnimation.swift */; };
 		3EF535B81E092A330049B2E9 /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF535B71E092A330049B2E9 /* ModalViewController.swift */; };
+		86564ECF1E540BA400584405 /* SeriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86564ECE1E540BA300584405 /* SeriesViewController.swift */; };
 		865C33401E520459008EA556 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 865C333F1E520459008EA556 /* GameKit.framework */; };
 		A60F82E91D490F4D002E2CEA /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60F82E81D490F4D002E2CEA /* Category.swift */; };
 		A60F82EB1D490F70002E2CEA /* CategoryMappingProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60F82EA1D490F70002E2CEA /* CategoryMappingProvider.swift */; };
@@ -255,6 +256,7 @@
 		3EF535B51E0922D40049B2E9 /* MusicPlayerTransitionAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicPlayerTransitionAnimation.swift; sourceTree = "<group>"; };
 		3EF535B71E092A330049B2E9 /* ModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
 		5DD5935F30978718BDF832C9 /* Pods-Streamini.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Streamini.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Streamini/Pods-Streamini.debug.xcconfig"; sourceTree = "<group>"; };
+		86564ECE1E540BA300584405 /* SeriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeriesViewController.swift; sourceTree = "<group>"; };
 		865C333F1E520459008EA556 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		A60F82E81D490F4D002E2CEA /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		A60F82EA1D490F70002E2CEA /* CategoryMappingProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryMappingProvider.swift; sourceTree = "<group>"; };
@@ -894,6 +896,7 @@
 				B6A941CE1E48AB00003E2331 /* SettingsViewController.swift */,
 				B7AA45591B79F766001D293A /* ContainerViewController.swift */,
 				B7A6BB981B7A0CFE0080497F /* ProfileViewController.swift */,
+				86564ECE1E540BA300584405 /* SeriesViewController.swift */,
 				B6D4134E1E156829001E8108 /* DiscoverViewController.swift */,
 				B6EAF82B1E28F98B007038DC /* DiscoverViewControllerBK.swift */,
 				B79669841B821C5D0071AF91 /* LegalViewController.swift */,
@@ -1215,6 +1218,7 @@
 				B76635F31B4BC47E0013FCE2 /* PubNubMessenger.swift in Sources */,
 				B7D6F0B11B37F16C0070C36A /* LoginViewController.swift in Sources */,
 				3EF535B01E0920B90049B2E9 /* TransitionAnimatable.swift in Sources */,
+				86564ECF1E540BA400584405 /* SeriesViewController.swift in Sources */,
 				B71BA5DD1B84A9580055F427 /* BlockedDataSource.swift in Sources */,
 				B7D5EA921B564BAA003EE25D /* Message.swift in Sources */,
 				B6D4134D1E141DBE001E8108 /* TabBarViewController.swift in Sources */,
