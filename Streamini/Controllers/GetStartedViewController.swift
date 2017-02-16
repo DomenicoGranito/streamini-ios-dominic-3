@@ -14,7 +14,7 @@ class GetStartedViewController: UIViewController
     
     var backgroundPlayer:BackgroundVideo?
     let titlesArray=["Beinit.Live","Discover","Stream Live Events","Search","Connect"]
-    let descriptionsArray=["Connection & Live Streaming the World of Premium Events in Asia", "Premium Events Playlists, Fashion Show Collections, Live Streaming Concerts", "Experience VR Live Stream with front row seating", "Find Agencies, Brands, Venues, Celebrities and Entertainment Talents", "Fashionistas , "]
+    let descriptionsArray=["Connecting & Live Streaming the World of Premium Events in Asia", "Premium Events Playlists, Fashion Show Collections, Live Streaming Concerts", "Experience VR Live Stream with front row seating", "Find Agencies, Brands, Venues, Celebrities and Entertainment Talents", "Connect with industry professionals, talents and Premium Agencies."]
     var count=0
     var timer:NSTimer?
     

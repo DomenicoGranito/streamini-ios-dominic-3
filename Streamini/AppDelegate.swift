@@ -20,8 +20,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,WXApiDelegate{
 
     
     
-    //dominicg weixin login
-    private let appID = "wx282a923ebe81d445"
+    //dominicg weixin login wx68aa08d12b601234 dgranito@gmail account
+    //wx282a923ebe81d445 demo account
+    //AppID：wx5bd67c93b16ab684 marie@cedricm.com account
+    //wxa0bd27aed1120e15 testing account login
+    
+    private let appID = "wx5bd67c93b16ab684"
     private let appSecret = "1710a218426502adfbf7352fdd451c9b"
     
     private let accessTokenPrefix = "https://api.weixin.qq.com/sns/oauth2/access_token?"
@@ -195,8 +199,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,WXApiDelegate{
             addCustomMenuItems()
            
         // WeChat: replace with your AppID
-        WXApi.registerApp("wx68aa08d12b601234")
-
+//        WXApi.registerApp("wx68aa08d12b601234")
+        WXApi.registerApp(appID);
         
         
         //weixin login 
