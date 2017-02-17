@@ -90,8 +90,10 @@ UITextViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
         alert.addButton("First Button", target:self, selector:Selector("firstButton"))
         alert.addButton("Second Button") {
             print("Second button tapped")
+            
+             self.performSegueWithIdentifier("about", sender: self)
         }
-        alert.showSuccess("Button View", subTitle: "This alert view has buttons")
+    //    alert.showSuccess("Button View", subTitle: "This alert view has buttons")
 
         
        // if evenField.
