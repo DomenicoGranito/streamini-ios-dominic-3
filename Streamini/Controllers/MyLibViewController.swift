@@ -50,6 +50,18 @@ class MyLibViewController: UITableViewController {
      //   self.performSegueWithIdentifier("MyProfile", sender:self)
    // }
     
+    @IBAction func myaccount(user:User)
+    {
+        let storyboard=UIStoryboard(name:"Main", bundle:nil)
+        let vc=storyboard.instantiateViewControllerWithIdentifier("UserViewControllerId") as! UserViewController
+        vc.user=UserContainer.shared.logged()
+        navigationController?.pushViewController(vc, animated:true)
+        
+       
+    }
+
+    
+    
     func successGetUser(user: User) {
         self.user = user
          }

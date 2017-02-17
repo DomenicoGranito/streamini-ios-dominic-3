@@ -91,8 +91,10 @@ UITextViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
         alert.addButton("First Button", target:self, selector:Selector("firstButton"))
         alert.addButton("Second Button") {
             print("Second button tapped")
-            
-             self.performSegueWithIdentifier("about", sender: self)
+            LocationManager.shared.stopMonitoringLocation()
+            self.nameTextView.resignFirstResponder()
+            self.dismissViewControllerAnimated(true, completion: nil)
+
         }
     //    alert.showSuccess("Button View", subTitle: "This alert view has buttons")
 
