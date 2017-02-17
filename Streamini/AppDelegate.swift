@@ -198,22 +198,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,WXApiDelegate{
         
             addCustomMenuItems()
            
-        // WeChat: replace with your AppID
-//        WXApi.registerApp("wx68aa08d12b601234")
-        WXApi.registerApp(appID);
-        
-        
-        //weixin login 
-        let req = SendAuthReq()
-        req.scope = "snsapi_userinfo" //Important that this is the same
-        req.state = "com.uniprogy.dominic_wx_login" //This can be any random value
-        WXApi.sendReq(req)
-        
-        
-        
-        //end login weixin
-        
-        
+              
         UITextField.appearance().tintColor=UIColor(colorLiteralRed:43/255, green:185/255, blue:86/255, alpha:1)
         UITextField.appearance().keyboardAppearance = .Dark
         
