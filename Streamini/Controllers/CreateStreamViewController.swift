@@ -87,6 +87,7 @@ UITextViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
    // alert.addButton("First Button", target:closeButtonPressed(sender: AnyObject), selector:Selector("firstButton"))
        // let evenField = alert.addButton("Login"){}
        // let alertView = SCLAlertView()
+       // alert.checkCircleIconImage(<#T##circleIconImage: UIImage?##UIImage?#>, defaultImage: <#T##UIImage#>)
         alert.addButton("First Button", target:self, selector:Selector("firstButton"))
         alert.addButton("Second Button") {
             print("Second button tapped")

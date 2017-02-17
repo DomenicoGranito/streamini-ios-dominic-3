@@ -80,12 +80,43 @@ class DiscoverViewController:BaseTableViewController
         NSRunLoop.mainRunLoop().addTimer(timer!, forMode:NSRunLoopCommonModes)
     }
     
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: false)
+        
+        if indexPath.section == 0 { // following, followers, blocked, streams
+            self.performSegueWithIdentifier("charts", sender: indexPath)
+        }
+        if indexPath.section == 1 { // following, followers, blocked, streams
+            self.performSegueWithIdentifier("channels", sender: indexPath)
+        }
+    }
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let sid = segue.identifier {
+            if sid == "charts" {
+                let controller = segue.destinationViewController as! ChartsViewController
+                let index = (sender as! NSIndexPath).row
+               // controller.type = (index == 2) ? LegalViewControllerType.TermsOfService : LegalViewControllerType.PrivacyPolicy
+            }
+            if sid == "channels" {
+                let controller = segue.destinationViewController as! PeopleViewController
+                let index = (sender as! NSIndexPath).row
+                // controller.type = (index == 2) ? LegalViewControllerType.TermsOfService : LegalViewControllerType.PrivacyPolicy
+            }
+            
+            
+        }
+    }
+
+    
+    
+    
     func reload()
     {
         if(allCategoriesArray.count>0&&recentStreamsArray.count>0)
         {
             menuItemTitlesArray=["Charts", "New Releases", "Videos", "Podcasts", "Discover", "Concerts"]
-            menuItemIconsArray=["user.png", "user.png", "user.png", "user.png", "user.png", "user.png"]
+            menuItemIconsArray=["user.png", "time.png", "video.png", "user.png", "user.png", "user.png"]
             
             itemsTbl?.reloadData()
             
